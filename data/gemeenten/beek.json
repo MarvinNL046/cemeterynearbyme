@@ -1,0 +1,86 @@
+{
+  "gemeente": "Beek",
+  "provincie": "Limburg",
+  "totaal_begraafplaatsen": 10,
+  "begraafplaatsen": [
+    {
+      "naam": "Begraafplaats De Nieuwe Hof",
+      "type": "gemeentelijke-begraafplaats",
+      "categorie": "Gemeentelijke begraafplaats",
+      "plaats": "Beek",
+      "slug": "begraafplaats-de-nieuwe-hof-beek"
+    },
+    {
+      "naam": "Oude algemene Begraafplaats St. Martinus",
+      "type": "gemeentelijke-begraafplaats",
+      "categorie": "Gemeentelijke begraafplaats",
+      "adres": "Pastoor Weltersstraat 22",
+      "slug": "oude-algemene-begraafplaats-st-martinus-beek"
+    },
+    {
+      "naam": "Joodse Begraafplaats",
+      "type": "joodse-begraafplaats",
+      "categorie": "Joodse begraafplaats",
+      "adres": "Jodenkerkhof",
+      "slug": "joodse-begraafplaats-beek"
+    },
+    {
+      "naam": "Begraafplaats",
+      "type": "bijzondere-begraafplaats",
+      "categorie": "Bijzondere begraafplaats",
+      "plaats": "Neerbeek",
+      "slug": "begraafplaats-beek-neerbeek"
+    },
+    {
+      "naam": "Kerkhof H Martinus",
+      "type": "bijzondere-begraafplaats",
+      "categorie": "Bijzondere begraafplaats",
+      "adres": "Burgemeester Janssenstraat 11",
+      "slug": "kerkhof-h-martinus-beek"
+    },
+    {
+      "naam": "NH Kerkhof",
+      "type": "bijzondere-begraafplaats",
+      "categorie": "Bijzondere begraafplaats",
+      "plaats": "Beek",
+      "slug": "nh-kerkhof-beek"
+    },
+    {
+      "naam": "RK Begraafplaats",
+      "type": "bijzondere-begraafplaats",
+      "categorie": "Bijzondere begraafplaats",
+      "plaats": "Spaubeek",
+      "slug": "rk-begraafplaats-beek-spaubeek"
+    },
+    {
+      "naam": "RK Kerkhof St. Hubertus",
+      "type": "bijzondere-begraafplaats",
+      "categorie": "Bijzondere begraafplaats",
+      "adres": "Pastoor Weltersstraat 22",
+      "plaats": "Groot Genhout",
+      "slug": "rk-kerkhof-st-hubertus-beek-groot-genhout"
+    },
+    {
+      "naam": "St. Annakerkhof",
+      "type": "bijzondere-begraafplaats",
+      "categorie": "Bijzondere begraafplaats",
+      "adres": "Oude Kerk 8",
+      "plaats": "Spaubeek",
+      "slug": "st-annakerkhof-beek-spaubeek"
+    },
+    {
+      "naam": "St. Laurentiuskerkhof Hoeve",
+      "type": "bijzondere-begraafplaats",
+      "categorie": "Bijzondere begraafplaats",
+      "adres": "Rubensstraat 4",
+      "plaats": "Spaubeek",
+      "slug": "st-laurentiuskerkhof-hoeve-beek-spaubeek"
+    }
+  ],
+  "plaatsen": [
+    "Beek",
+    "Neerbeek",
+    "Spaubeek",
+    "Groot Genhout"
+  ]
+}

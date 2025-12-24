@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Design Theme: Natuurlijke Waardigheid & Verbinding */
+
+    /* Backgrounds */
+    --background: 45 30% 96%;           /* Crème #F8F6F1 */
+    --foreground: 145 20% 20%;          /* Houtskool-groen #2A3B32 */
+
+    /* Cards & Popovers */
+    --card: 0 0% 100%;                  /* Wit */
+    --card-foreground: 145 20% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 145 20% 20%;
+
+    /* Primary: Bosgroen */
+    --primary: 145 30% 28%;             /* #2D4A3E */
+    --primary-foreground: 45 30% 95%;   /* Crème wit */
+
+    /* Secondary: Licht crème */
+    --secondary: 45 20% 92%;            /* #EDE9E0 */
+    --secondary-foreground: 145 20% 25%;
+
+    /* Accent: Oud Goud */
+    --accent: 39 55% 55%;               /* #C4A35A */
+    --accent-foreground: 145 30% 15%;   /* Donker groen */
+
+    /* Muted */
+    --muted: 45 20% 92%;
+    --muted-foreground: 145 15% 45%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 45 15% 85%;               /* #DDD8CC */
+    --input: 45 15% 85%;
+    --ring: 39 55% 55%;                 /* Goud focus ring */
+
+    /* Radius */
+    --radius: 1rem;
+
+    /* Custom Shadows */
+    --shadow-soft: 0 4px 20px rgba(45, 74, 62, 0.08);
+    --shadow-hover: 0 8px 30px rgba(45, 74, 62, 0.12);
+  }
+
+  /* Dark mode - keeping forest/gold theme */
+  .dark {
+    --background: 145 25% 10%;          /* Donker bosgroen */
+    --foreground: 45 30% 92%;           /* Licht crème */
+
+    --card: 145 25% 14%;
+    --card-foreground: 45 30% 92%;
+    --popover: 145 25% 14%;
+    --popover-foreground: 45 30% 92%;
+
+    --primary: 39 55% 55%;              /* Goud als primary in dark */
+    --primary-foreground: 145 30% 10%;
+
+    --secondary: 145 20% 18%;
+    --secondary-foreground: 45 30% 90%;
+
+    --accent: 39 55% 60%;
+    --accent-foreground: 145 30% 10%;
+
+    --muted: 145 20% 18%;
+    --muted-foreground: 45 20% 60%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 145 20% 20%;
+    --input: 145 20% 20%;
+    --ring: 39 55% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}

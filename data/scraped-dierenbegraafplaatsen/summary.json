@@ -1,0 +1,21 @@
+{
+  "totaal": 80,
+  "per_provincie": {
+    "Groningen": 2,
+    "Friesland": 2,
+    "Drenthe": 6,
+    "Overijssel": 5,
+    "Flevoland": 2,
+    "Gelderland": 14,
+    "Utrecht": 4,
+    "Noord-Holland": 10,
+    "Zuid-Holland": 10,
+    "Zeeland": 2,
+    "Noord-Brabant": 12,
+    "Limburg": 11
+  },
+  "met_website": 31,
+  "met_telefoon": 12,
+  "met_adres": 51,
+  "laatste_update": "2025-11-28T17:27:30.583Z"
+}

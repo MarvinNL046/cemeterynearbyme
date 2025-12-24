@@ -1,0 +1,30 @@
+# BegraafplaatsInDeBuurt.nl
+
+> De meest complete gids voor begraafplaatsen in Nederland
+
+## Samenvatting
+
+BegraafplaatsInDeBuurt.nl is een uitgebreide database met 6.883 begraafplaatsen in alle 12 provincies van Nederland. De site helpt bezoekers bij het vinden van informatie over begraafplaatsen voor uitvaartzorg, genealogisch onderzoek, of algemene oriëntatie.
+
+## Kerngegevens
+
+- 6.883 begraafplaatsen
+- 12 provincies volledig gedekt
+- 4 types: algemeen, natuur, joods, islamitisch
+- Inclusief reviews, ratings en contactgegevens
+
+## Hoofdpagina's
+
+- /zoeken - Zoek op plaats, postcode of naam
+- /vergelijk - Vergelijk tot 3 begraafplaatsen
+- /provincie/[naam] - Browse per provincie
+- /begraafplaats/[slug] - Detailpagina's
+
+## Contact
+
+- Website: https://begraafplaatsindebuurt.nl
+- Email: info@begraafplaatsindebuurt.nl
+
+## Meer informatie
+
+Zie /llms-full.txt voor uitgebreide documentatie.

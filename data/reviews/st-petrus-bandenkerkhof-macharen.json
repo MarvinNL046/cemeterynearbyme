@@ -1,0 +1,23 @@
+[
+  {
+    "reviewer_name": "Lisbeth Buis",
+    "rating": 5,
+    "review_text": "Ook lekker warm binnen, gelukkig!",
+    "review_date": "2023-01-13T12:22:13.552Z",
+    "reviewer_image": "https://lh3.googleusercontent.com/a/ACg8ocKUi5YI_pKLtC9p9ktCYLkrObLW0bbdXVO4MTikCvNbybHeQQ=s120-c-rp-mo-ba4-br100"
+  },
+  {
+    "reviewer_name": "Emma Dirckx",
+    "rating": 3,
+    "review_text": "Kerk in Macharen.",
+    "review_date": "2018-12-06T19:31:35.298Z",
+    "reviewer_image": "https://lh3.googleusercontent.com/a/ACg8ocLnJSLtQ2gtgDABiSJAmGlSwOJi-hseoKXA6JztVHFNTzvDzw=s120-c-rp-mo-ba6-br100"
+  },
+  {
+    "reviewer_name": "Hermien van Gool",
+    "rating": 4,
+    "review_text": "",
+    "review_date": "2019-05-03T06:27:04.010Z",
+    "reviewer_image": "https://lh3.googleusercontent.com/a-/ALV-UjVM823OgxOoMs1sbux_iaO7yZ7VWQpQIx_0nUli8e_clpGkQU4=s120-c-rp-mo-ba5-br100"
+  }
+]

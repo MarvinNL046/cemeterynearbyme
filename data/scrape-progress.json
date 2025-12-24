@@ -1,0 +1,93 @@
+{
+  "snapshotId": "s_mj46n1li22fr989l5i",
+  "startedAt": "2025-12-13T10:58:12.120Z",
+  "status": "running",
+  "totalUrls": 21,
+  "provincie": "Flevoland",
+  "urlMapping": [
+    {
+      "url": "https://www.google.nl/maps/search/Algemene%20en%20RK%20Begraafplaats%2C%20Graaf%20Florislaan%208312%2C%208312AX%2C%20Creil%2C%20Nederland?hl=nl",
+      "slug": "algemene-en-rk-begraafplaats-creil"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Algemene%20en%20RK%20Begraafplaats%2C%20Oosterringweg%208314%2C%208314PT%2C%20Bant%2C%20Nederland?hl=nl",
+      "slug": "algemene-en-rk-begraafplaats-bant"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Begraafplaats%2C%20Dasselaarweg%2026%2C%203896LT%2C%20Zeewolde%2C%20Nederland?hl=nl",
+      "slug": "begraafplaats-zeewolde"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Begraafplaats%2C%20Carlsonstraat%2011%2C%208254AM%2C%20Dronten%2C%20Nederland?hl=nl",
+      "slug": "begraafplaats-dronten"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Begraafplaats%20Olandhorst%2C%20Oostranddreef%201%2C%208212AZ%2C%20Lelystad%2C%20Nederland?hl=nl",
+      "slug": "begraafplaats-olandhorst-lelystad"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Begraafplaats%20Oosterdreef%2C%20Oosterdreef%2015%2C%201357DK%2C%20Almere-Haven%2C%20Nederland?hl=nl",
+      "slug": "begraafplaats-oosterdreef-almere-haven"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Gemeentelijke%20Begraafplaats%20De%20Vormt%2C%20Vormtweg%2011%2C%208321NC%2C%20Urk%2C%20Nederland?hl=nl",
+      "slug": "gemeentelijke-begraafplaats-de-vormt-urk"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Gemeentelijke%20Begraafplaats%20met%20RK%20deel%2C%20Espelerlaan%2069A%2C%208302DC%2C%20Emmeloord%2C%20Nederland?hl=nl",
+      "slug": "gemeentelijke-begraafplaats-met-rk-deel-emmeloord"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Gemeentelijke%20en%20RK%20Begraafplaats%2C%20Akkerstraat%208308%2C%208308AD%2C%20Nagele%2C%20Nederland?hl=nl",
+      "slug": "gemeentelijke-en-rk-begraafplaats-nagele"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Gemeentelijke%20en%20RK%20Begraafplaats%2C%20Vaartweg%208311%2C%208311AA%2C%20Tollebeek%2C%20Nederland?hl=nl",
+      "slug": "gemeentelijke-en-rk-begraafplaats-tollebeek"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Gemeentelijke%20en%20RK%20Begraafplaats%2C%20Carlsonstraat%2011%2C%208307BX%2C%20Ens%2C%20Nederland?hl=nl",
+      "slug": "gemeentelijke-en-rk-begraafplaats-ens"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Gemeentelijke%20en%20RK%20Begraafplaats%2C%20Winstonstraat%208317%2C%208317AB%2C%20Marknesse%2C%20Nederland?hl=nl",
+      "slug": "gemeentelijke-en-rk-begraafplaats-marknesse"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Gemeentelijke%20en%20RK%20Begraafplaats%2C%20Blankenhammerweg%208315%2C%208315PH%2C%20Luttelgeest%2C%20Nederland?hl=nl",
+      "slug": "gemeentelijke-en-rk-begraafplaats-luttelgeest"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Gemeentelijke%20en%20RK%20Begraafplaats%2C%20Winstonstraat%208317%2C%208317AB%2C%20Kraggenburg%2C%20Nederland?hl=nl",
+      "slug": "gemeentelijke-en-rk-begraafplaats-kraggenburg"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Gemeentelijke%20en%20RK%20Begraafplaats%2C%20Vaartweg%208311%2C%208311AA%2C%20Espel%2C%20Nederland?hl=nl",
+      "slug": "gemeentelijke-en-rk-begraafplaats-espel"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Gemeentelijke%20en%20RK%20Begraafplaats%2C%20Pottenbakkersstraat%2020a%2C%208313BD%2C%20Rutten%2C%20Nederland?hl=nl",
+      "slug": "gemeentelijke-en-rk-begraafplaats-rutten"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Islamitische%20Begraafplaats%20Raza-Ul-Mawa%2C%20Kruidenweg%203%2C%201312SR%2C%20Almere%2C%20Nederland?hl=nl",
+      "slug": "islamitische-begraafplaats-raza-ul-mawa-almere"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Joodse%20Begraafplaats%2C%20Googweg%206%2C%201399ER%2C%20Almere%2C%20Nederland?hl=nl",
+      "slug": "joodse-begraafplaats-almere"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Kerkhofje%20aan%20Zee%20vm.%20NH%20kerkhof%2C%20Carlsonstraat%2011%2C%208321GB%2C%20Urk%2C%20Nederland?hl=nl",
+      "slug": "kerkhofje-aan-zee-vm-nh-kerkhof-urk"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Kruidenwijk%2C%20Middenweg%20189h%2C%20Almere%2C%20Nederland?hl=nl",
+      "slug": "kruidenwijk-almere"
+    },
+    {
+      "url": "https://www.google.nl/maps/search/Oude%20Gemeentelijke%20Begraafplaats%20Holkenkamp%2C%20Carlsonstraat%2011%2C%208321AZ%2C%20Urk%2C%20Nederland?hl=nl",
+      "slug": "oude-gemeentelijke-begraafplaats-holkenkamp-urk"
+    }
+  ]
+}

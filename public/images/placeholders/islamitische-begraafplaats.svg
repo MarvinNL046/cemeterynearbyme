@@ -1,0 +1,83 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky-isl" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4FC3F7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B3E5FC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="800" height="450" fill="url(#sky-isl)"/>
+
+  <!-- Subtle clouds -->
+  <ellipse cx="180" cy="80" rx="100" ry="40" fill="white" opacity="0.6"/>
+  <ellipse cx="620" cy="100" rx="90" ry="35" fill="white" opacity="0.5"/>
+
+  <!-- Ground - sand/earth tones -->
+  <rect x="0" y="290" width="800" height="160" fill="#A1887F"/>
+  <rect x="0" y="300" width="800" height="150" fill="#8D6E63" opacity="0.5"/>
+
+  <!-- Mosque silhouette in background -->
+  <g fill="#546E7A" opacity="0.3">
+    <rect x="620" y="150" width="80" height="140"/>
+    <!-- Dome -->
+    <ellipse cx="660" cy="150" rx="50" ry="30"/>
+    <!-- Minaret -->
+    <rect x="710" y="100" width="20" height="190"/>
+    <ellipse cx="720" cy="100" rx="15" ry="10"/>
+    <!-- Crescent on top -->
+    <path d="M715,85 Q725,80 720,90 Q715,85 715,85" fill="#546E7A"/>
+  </g>
+
+  <!-- Islamic gravestones - simple, uniform, facing Mecca -->
+  <g fill="#E0E0E0">
+    <!-- Row 1 - simple rectangular markers -->
+    <rect x="120" y="260" width="25" height="40" rx="3"/>
+    <rect x="180" y="258" width="28" height="42" rx="3"/>
+    <rect x="245" y="262" width="25" height="38" rx="3"/>
+    <rect x="310" y="259" width="27" height="41" rx="3"/>
+    <rect x="375" y="261" width="25" height="39" rx="3"/>
+    <rect x="440" y="258" width="28" height="42" rx="3"/>
+    <rect x="505" y="260" width="25" height="40" rx="3"/>
+    <rect x="570" y="259" width="27" height="41" rx="3"/>
+  </g>
+
+  <g fill="#BDBDBD" transform="translate(0, 55)">
+    <!-- Row 2 -->
+    <rect x="150" y="260" width="25" height="38" rx="3"/>
+    <rect x="215" y="258" width="26" height="40" rx="3"/>
+    <rect x="280" y="261" width="25" height="39" rx="3"/>
+    <rect x="345" y="259" width="27" height="41" rx="3"/>
+    <rect x="410" y="260" width="25" height="38" rx="3"/>
+    <rect x="475" y="258" width="26" height="40" rx="3"/>
+    <rect x="540" y="261" width="25" height="39" rx="3"/>
+  </g>
+
+  <!-- Crescent moon symbols on some stones -->
+  <g fill="#78909C">
+    <path d="M130,275 Q140,270 135,285 Q125,280 130,275" transform="scale(0.8)"/>
+    <path d="M310,268 Q320,263 315,278 Q305,273 310,268" transform="translate(70,0) scale(0.8)"/>
+    <path d="M510,270 Q520,265 515,280 Q505,275 510,270" transform="translate(-20,0) scale(0.8)"/>
+  </g>
+
+  <!-- Low shrubs -->
+  <g fill="#7CB342" opacity="0.7">
+    <ellipse cx="80" cy="310" rx="30" ry="15"/>
+    <ellipse cx="750" cy="315" rx="35" ry="18"/>
+  </g>
+
+  <!-- Palm tree -->
+  <g transform="translate(50, 140)">
+    <rect x="15" y="100" width="12" height="70" fill="#8D6E63"/>
+    <!-- Palm fronds -->
+    <path d="M21,100 Q-20,60 21,80" stroke="#558B2F" stroke-width="3" fill="none"/>
+    <path d="M21,100 Q60,60 21,80" stroke="#558B2F" stroke-width="3" fill="none"/>
+    <path d="M21,100 Q-10,50 21,75" stroke="#689F38" stroke-width="3" fill="none"/>
+    <path d="M21,100 Q50,50 21,75" stroke="#689F38" stroke-width="3" fill="none"/>
+    <path d="M21,100 Q21,40 21,70" stroke="#7CB342" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- Type label -->
+  <rect x="0" y="380" width="800" height="70" fill="black" opacity="0.5"/>
+  <text x="400" y="425" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">Islamitische Begraafplaats</text>
+</svg>

@@ -1,0 +1,30 @@
+[
+  {
+    "reviewer_name": "Leo Hartog",
+    "rating": 4,
+    "review_text": "Netjes bijgehouden en ruim.",
+    "review_date": "2022-11-10T22:24:09.076Z",
+    "reviewer_image": "https://lh3.googleusercontent.com/a-/ALV-UjUJy2haoPnxsCPyEbEVBXReZMKkzleBXasrS5fMGYj-0lJAK1us6A=s120-c-rp-mo-ba6-br100"
+  },
+  {
+    "reviewer_name": "Ilona Koster",
+    "rating": 4,
+    "review_text": "Mooi",
+    "review_date": "2021-07-11T15:49:51.840Z",
+    "reviewer_image": "https://lh3.googleusercontent.com/a/ACg8ocIE53N57SUrmEQ4nEF7y7TP8mc1aiXA00gFbQgBN4g9PklZmA=s120-c-rp-mo-br100"
+  },
+  {
+    "reviewer_name": "Ingo Dijkstra",
+    "rating": 5,
+    "review_text": "",
+    "review_date": "2022-08-08T17:33:26.224Z",
+    "reviewer_image": "https://lh3.googleusercontent.com/a/ACg8ocIHKFDw3qaW7Rf0qVvuNlZ5CFYQWDAHw85sLBCG7NquHc1DUQ=s120-c-rp-mo-ba3-br100"
+  },
+  {
+    "reviewer_name": "Carla Bannink",
+    "rating": 4,
+    "review_text": "",
+    "review_date": "2020-03-31T17:29:18.718Z",
+    "reviewer_image": "https://lh3.googleusercontent.com/a/ACg8ocLNjNzXEswM8li3r7H4n8Ex-_7phR7OoFENs2wrpVI9CK6teg=s120-c-rp-mo-br100"
+  }
+]

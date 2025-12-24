@@ -1,0 +1,90 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky-prot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8F5E9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grass-prot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#66BB6A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#388E3C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="800" height="450" fill="url(#sky-prot)"/>
+
+  <!-- Soft clouds -->
+  <ellipse cx="150" cy="80" rx="80" ry="35" fill="white" opacity="0.6"/>
+  <ellipse cx="500" cy="60" rx="100" ry="40" fill="white" opacity="0.5"/>
+  <ellipse cx="700" cy="100" rx="70" ry="30" fill="white" opacity="0.4"/>
+
+  <!-- Ground -->
+  <rect x="0" y="280" width="800" height="170" fill="url(#grass-prot)"/>
+
+  <!-- Stone wall/fence -->
+  <rect x="0" y="260" width="800" height="25" fill="#9E9E9E" opacity="0.6"/>
+
+  <!-- Simple church silhouette -->
+  <g transform="translate(600, 120)" fill="#5D4037" opacity="0.25">
+    <rect x="0" y="60" width="120" height="100"/>
+    <polygon points="60,-20 0,60 120,60"/>
+    <rect x="50" y="-50" width="20" height="40"/>
+  </g>
+
+  <!-- Trees -->
+  <g transform="translate(30, 170)">
+    <rect x="20" y="90" width="16" height="50" fill="#5D4037"/>
+    <ellipse cx="28" cy="55" rx="35" ry="50" fill="#2E7D32"/>
+  </g>
+  <g transform="translate(720, 180)">
+    <rect x="15" y="80" width="14" height="45" fill="#5D4037"/>
+    <ellipse cx="22" cy="50" ry="45" rx="30" fill="#388E3C"/>
+  </g>
+
+  <!-- Simple crosses (Protestant style - plain) -->
+  <g fill="#546E7A">
+    <rect x="175" y="210" width="10" height="80"/>
+    <rect x="162" y="225" width="36" height="8"/>
+  </g>
+
+  <g fill="#607D8B">
+    <rect x="295" y="200" width="12" height="90"/>
+    <rect x="280" y="218" width="42" height="10"/>
+  </g>
+
+  <g fill="#546E7A">
+    <rect x="415" y="208" width="10" height="82"/>
+    <rect x="402" y="223" width="36" height="8"/>
+  </g>
+
+  <g fill="#607D8B">
+    <rect x="535" y="195" width="12" height="95"/>
+    <rect x="520" y="215" width="42" height="10"/>
+  </g>
+
+  <!-- Simple gravestones -->
+  <g fill="#78909C">
+    <rect x="180" y="285" width="30" height="40" rx="15" ry="15"/>
+    <rect x="300" y="282" width="35" height="45" rx="17" ry="17"/>
+    <rect x="420" y="288" width="28" height="38" rx="14" ry="14"/>
+    <rect x="540" y="280" width="32" height="48" rx="16" ry="16"/>
+  </g>
+
+  <!-- Row 2 gravestones -->
+  <g fill="#90A4AE" transform="translate(0, 50)">
+    <rect x="230" y="280" width="28" height="38" rx="14" ry="14"/>
+    <rect x="360" y="278" width="32" height="42" rx="16" ry="16"/>
+    <rect x="480" y="282" width="26" height="36" rx="13" ry="13"/>
+  </g>
+
+  <!-- Simple flowers -->
+  <g>
+    <circle cx="195" cy="320" r="4" fill="#7E57C2"/>
+    <circle cx="317" cy="318" r="5" fill="#5C6BC0"/>
+    <circle cx="556" cy="320" r="4" fill="#7E57C2"/>
+  </g>
+
+  <!-- Type label -->
+  <rect x="0" y="380" width="800" height="70" fill="#37474F" opacity="0.7"/>
+  <text x="400" y="425" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">Protestantse Begraafplaats</text>
+</svg>

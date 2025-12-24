@@ -1,0 +1,23 @@
+[
+  {
+    "reviewer_name": "Edith",
+    "rating": 5,
+    "review_text": "Mooie groene begraafplaats.",
+    "review_date": "2019-08-18T18:27:36.943Z",
+    "reviewer_image": "https://lh3.googleusercontent.com/a/ACg8ocKvilpEmcfOi7fBO7EU8zrkrUKbmeOAE0Y9RTM1onGUIzhXzA=s120-c-rp-mo-ba7-br100"
+  },
+  {
+    "reviewer_name": "Ennes Baasbinky",
+    "rating": 5,
+    "review_text": "",
+    "review_date": "2022-06-11T14:03:58.244Z",
+    "reviewer_image": "https://lh3.googleusercontent.com/a-/ALV-UjXd1lwsZa18tl_YzHNju3OBlIV8IvEj0e8KJxb9SSLJ4Skjv0U=s120-c-rp-mo-br100"
+  },
+  {
+    "reviewer_name": "André Groen",
+    "rating": 4,
+    "review_text": "",
+    "review_date": "2017-03-29T19:29:46.142Z",
+    "reviewer_image": "https://lh3.googleusercontent.com/a-/ALV-UjUv_4WlsTvb42UuvOKETH3MdPGKn3qjDYWCEQlIDS0k6TTfsGIMMw=s120-c-rp-mo-ba5-br100"
+  }
+]

@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <!-- Sky gradient background -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F4FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#64B5F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1976D2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="630" fill="url(#skyGradient)"/>
+
+  <!-- Clouds -->
+  <ellipse cx="200" cy="100" rx="80" ry="40" fill="white" opacity="0.8"/>
+  <ellipse cx="250" cy="90" rx="60" ry="35" fill="white" opacity="0.8"/>
+  <ellipse cx="170" cy="85" rx="50" ry="30" fill="white" opacity="0.8"/>
+
+  <ellipse cx="800" cy="120" rx="90" ry="45" fill="white" opacity="0.7"/>
+  <ellipse cx="860" cy="110" rx="70" ry="40" fill="white" opacity="0.7"/>
+  <ellipse cx="750" cy="105" rx="55" ry="32" fill="white" opacity="0.7"/>
+
+  <ellipse cx="1050" cy="80" rx="70" ry="35" fill="white" opacity="0.6"/>
+  <ellipse cx="1090" cy="70" rx="50" ry="28" fill="white" opacity="0.6"/>
+
+  <!-- Rolling hills in background -->
+  <ellipse cx="300" cy="450" rx="400" ry="120" fill="#81C784" opacity="0.6"/>
+  <ellipse cx="900" cy="430" rx="450" ry="100" fill="#81C784" opacity="0.5"/>
+
+  <!-- Ground/Grass -->
+  <rect x="0" y="400" width="1200" height="230" fill="url(#grassGradient)"/>
+
+  <!-- Canal/Water -->
+  <path d="M0 480 Q300 460, 600 480 T1200 470 L1200 520 Q900 530, 600 520 T0 530 Z" fill="url(#waterGradient)" opacity="0.8"/>
+
+  <!-- Windmill Base -->
+  <rect x="540" y="280" width="120" height="200" rx="5" fill="#8D6E63"/>
+  <rect x="550" y="290" width="100" height="180" rx="3" fill="#A1887F"/>
+
+  <!-- Windmill Top -->
+  <polygon points="600,180 520,280 680,280" fill="#5D4037"/>
+
+  <!-- Windmill Blades -->
+  <g transform="translate(600,230)">
+    <!-- Blade 1 -->
+    <rect x="-12" y="-120" width="24" height="120" rx="3" fill="#EFEBE9" stroke="#8D6E63" stroke-width="2"/>
+    <!-- Blade 2 -->
+    <rect x="-12" y="0" width="24" height="120" rx="3" fill="#EFEBE9" stroke="#8D6E63" stroke-width="2" transform="rotate(90)"/>
+    <!-- Blade 3 -->
+    <rect x="-12" y="0" width="24" height="120" rx="3" fill="#D7CCC8" stroke="#8D6E63" stroke-width="2"/>
+    <!-- Blade 4 -->
+    <rect x="-12" y="-120" width="24" height="120" rx="3" fill="#D7CCC8" stroke="#8D6E63" stroke-width="2" transform="rotate(90)"/>
+    <!-- Center -->
+    <circle r="15" fill="#5D4037"/>
+  </g>
+
+  <!-- Windmill Door -->
+  <rect x="575" y="410" width="50" height="70" rx="25" fill="#5D4037"/>
+
+  <!-- Windmill Windows -->
+  <rect x="565" y="320" width="30" height="40" rx="3" fill="#FFF9C4"/>
+  <rect x="605" y="320" width="30" height="40" rx="3" fill="#FFF9C4"/>
+
+  <!-- Trees left side -->
+  <circle cx="150" cy="380" r="50" fill="#388E3C"/>
+  <circle cx="120" cy="400" r="45" fill="#2E7D32"/>
+  <circle cx="180" cy="400" r="40" fill="#43A047"/>
+  <rect x="145" y="420" width="10" height="60" fill="#5D4037"/>
+
+  <!-- Trees right side -->
+  <circle cx="1000" cy="370" r="55" fill="#388E3C"/>
+  <circle cx="970" cy="390" r="50" fill="#2E7D32"/>
+  <circle cx="1030" cy="395" r="45" fill="#43A047"/>
+  <rect x="995" y="430" width="12" height="50" fill="#5D4037"/>
+
+  <!-- Tulips left -->
+  <g transform="translate(80, 520)">
+    <rect x="0" y="0" width="3" height="30" fill="#2E7D32"/>
+    <ellipse cx="1.5" cy="-5" rx="8" ry="12" fill="#E53935"/>
+  </g>
+  <g transform="translate(100, 530)">
+    <rect x="0" y="0" width="3" height="25" fill="#2E7D32"/>
+    <ellipse cx="1.5" cy="-5" rx="8" ry="12" fill="#FFEB3B"/>
+  </g>
+  <g transform="translate(120, 525)">
+    <rect x="0" y="0" width="3" height="28" fill="#2E7D32"/>
+    <ellipse cx="1.5" cy="-5" rx="8" ry="12" fill="#FF9800"/>
+  </g>
+
+  <!-- Tulips right -->
+  <g transform="translate(1080, 520)">
+    <rect x="0" y="0" width="3" height="30" fill="#2E7D32"/>
+    <ellipse cx="1.5" cy="-5" rx="8" ry="12" fill="#9C27B0"/>
+  </g>
+  <g transform="translate(1100, 530)">
+    <rect x="0" y="0" width="3" height="25" fill="#2E7D32"/>
+    <ellipse cx="1.5" cy="-5" rx="8" ry="12" fill="#E91E63"/>
+  </g>
+  <g transform="translate(1120, 525)">
+    <rect x="0" y="0" width="3" height="28" fill="#2E7D32"/>
+    <ellipse cx="1.5" cy="-5" rx="8" ry="12" fill="#FF5722"/>
+  </g>
+
+  <!-- Small gravestones in distance (subtle reference to cemetery theme) -->
+  <rect x="350" y="440" width="15" height="25" rx="3" fill="#9E9E9E" opacity="0.5"/>
+  <rect x="375" y="445" width="12" height="20" rx="2" fill="#9E9E9E" opacity="0.5"/>
+  <rect x="395" y="442" width="14" height="23" rx="3" fill="#9E9E9E" opacity="0.5"/>
+
+  <rect x="800" y="438" width="14" height="24" rx="3" fill="#9E9E9E" opacity="0.5"/>
+  <rect x="822" y="443" width="12" height="19" rx="2" fill="#9E9E9E" opacity="0.5"/>
+  <rect x="842" y="440" width="13" height="22" rx="3" fill="#9E9E9E" opacity="0.5"/>
+
+  <!-- Text overlay background -->
+  <rect x="350" y="540" width="500" height="60" rx="8" fill="white" opacity="0.9"/>
+
+  <!-- Text -->
+  <text x="600" y="575" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#374151" font-weight="500">
+    Ontdek begraafplaatsen in deze provincie
+  </text>
+</svg>

@@ -1,0 +1,27 @@
+{
+  "totaal": 3870,
+  "per_provincie": {
+    "drenthe": 162,
+    "flevoland": 21,
+    "friesland": 485,
+    "gelderland": 633,
+    "groningen": 378,
+    "limburg": 443,
+    "noord-brabant": 652,
+    "noord-holland": 389,
+    "overijssel": 306,
+    "utrecht": 65,
+    "zeeland": 201,
+    "zuid-holland": 135
+  },
+  "per_type": {
+    "Gemeentelijk": 1315,
+    "Bijzonder": 2286,
+    "Joods": 202
+  },
+  "met_adres": 3480,
+  "met_postcode": 3580,
+  "met_foto": 3869,
+  "met_jaar": 2368,
+  "laatste_update": "2025-11-27T21:17:55.482Z"
+}

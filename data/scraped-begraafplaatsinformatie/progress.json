@@ -1,0 +1,20 @@
+{
+  "lastProvince": "zuid-holland",
+  "lastIndex": 0,
+  "completedProvinces": [
+    "drenthe",
+    "flevoland",
+    "friesland",
+    "gelderland",
+    "groningen",
+    "limburg",
+    "noord-brabant",
+    "noord-holland",
+    "overijssel",
+    "utrecht",
+    "zeeland",
+    "zuid-holland"
+  ],
+  "totalScraped": 3869,
+  "timestamp": "2025-11-27T21:17:53.464Z"
+}

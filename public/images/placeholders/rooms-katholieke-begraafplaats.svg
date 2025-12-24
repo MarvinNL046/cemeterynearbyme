@@ -1,0 +1,88 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky-rk" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#B8860B;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#F5F5DC;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grass-rk" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="800" height="450" fill="url(#sky-rk)"/>
+
+  <!-- Soft clouds -->
+  <ellipse cx="200" cy="70" rx="90" ry="35" fill="white" opacity="0.5"/>
+  <ellipse cx="600" cy="90" rx="80" ry="30" fill="white" opacity="0.4"/>
+
+  <!-- Ground -->
+  <rect x="0" y="280" width="800" height="170" fill="url(#grass-rk)"/>
+
+  <!-- Path -->
+  <path d="M400,450 L400,300" fill="none" stroke="#D4A574" stroke-width="60" opacity="0.5"/>
+
+  <!-- Church silhouette in background -->
+  <g transform="translate(320, 100)" fill="#5D4037" opacity="0.3">
+    <rect x="0" y="80" width="160" height="120"/>
+    <polygon points="80,0 0,80 160,80"/>
+    <rect x="70" y="-30" width="20" height="50"/>
+    <rect x="60" y="-40" width="40" height="15"/>
+  </g>
+
+  <!-- Large ornate crosses -->
+  <g transform="translate(150, 200)" fill="#607D8B">
+    <rect x="20" y="0" width="12" height="90"/>
+    <rect x="5" y="15" width="42" height="10"/>
+    <circle cx="26" cy="10" r="8" fill="none" stroke="#607D8B" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(350, 190)" fill="#78909C">
+    <rect x="22" y="0" width="14" height="100"/>
+    <rect x="5" y="18" width="48" height="12"/>
+    <ellipse cx="29" cy="12" rx="10" ry="10" fill="none" stroke="#78909C" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(550, 205)" fill="#607D8B">
+    <rect x="20" y="0" width="12" height="85"/>
+    <rect x="5" y="15" width="42" height="10"/>
+    <circle cx="26" cy="10" r="8" fill="none" stroke="#607D8B" stroke-width="3"/>
+  </g>
+
+  <!-- Gravestones with crosses -->
+  <g fill="#90A4AE">
+    <rect x="220" y="270" width="35" height="50" rx="5"/>
+    <rect x="232" y="250" width="4" height="25"/>
+    <rect x="225" y="258" width="18" height="4"/>
+
+    <rect x="450" y="265" width="38" height="55" rx="6"/>
+    <rect x="464" y="245" width="4" height="25"/>
+    <rect x="457" y="253" width="18" height="4"/>
+
+    <rect x="620" y="272" width="32" height="48" rx="5"/>
+    <rect x="631" y="255" width="4" height="22"/>
+    <rect x="625" y="262" width="16" height="4"/>
+  </g>
+
+  <!-- Gravestones row 2 -->
+  <g fill="#B0BEC5" transform="translate(0, 55)">
+    <rect x="280" y="265" width="30" height="45" rx="4"/>
+    <rect x="380" y="260" width="34" height="50" rx="5"/>
+    <rect x="500" y="268" width="28" height="42" rx="4"/>
+  </g>
+
+  <!-- Flowers and candles -->
+  <g>
+    <circle cx="237" cy="315" r="5" fill="#E91E63"/>
+    <circle cx="469" cy="312" r="6" fill="#F44336"/>
+    <circle cx="636" cy="315" r="5" fill="#9C27B0"/>
+    <!-- Candle flames -->
+    <ellipse cx="255" cy="310" rx="3" ry="5" fill="#FFA726"/>
+    <ellipse cx="488" cy="308" rx="3" ry="5" fill="#FFA726"/>
+  </g>
+
+  <!-- Type label -->
+  <rect x="0" y="380" width="800" height="70" fill="#5D4037" opacity="0.7"/>
+  <text x="400" y="425" font-family="system-ui, sans-serif" font-size="26" font-weight="bold" fill="white" text-anchor="middle">Rooms-Katholieke Begraafplaats</text>
+</svg>

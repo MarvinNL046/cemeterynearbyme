@@ -1,0 +1,228 @@
+{
+  "gemeente": "Beekdaelen",
+  "provincie": "Limburg",
+  "aantal_begraafplaatsen": 21,
+  "plaatsen": [
+    "Amstenrade",
+    "Bingelrade",
+    "Doenrade",
+    "Hulsberg",
+    "Jabeek",
+    "Merkelbeek",
+    "Nuth",
+    "Oirsbeek",
+    "Puth",
+    "Schimmert",
+    "Schinnen",
+    "Schinveld",
+    "Sweikhuizen",
+    "Vaesrade",
+    "Wijnandsrade"
+  ],
+  "begraafplaatsen": [
+    {
+      "naam_begraafplaats": "Begraafplaats Hulsberg",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "algemene begraafplaats",
+      "adres": "Kerkheuvel",
+      "plaats": "Hulsberg",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "begraafplaats-hulsberg-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Begraafplaats Oudenbosch",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "algemene begraafplaats",
+      "adres": "Körnerstraat 17",
+      "plaats": "Wijnandsrade",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "begraafplaats-oudenbosch-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Gemeentelijke Begraafplaats",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "algemene begraafplaats",
+      "plaats": "Merkelbeek",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "gemeentelijke-begraafplaats-merkelbeek-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Gemeentelijke Begraafplaats Daelderveld",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "algemene begraafplaats",
+      "adres": "Slagboomsweg",
+      "plaats": "Nuth",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "gemeentelijke-begraafplaats-daelderveld-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Openbare Begraafplaats",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "algemene begraafplaats",
+      "plaats": "Schimmert",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "openbare-begraafplaats-schimmert-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Joodse Begraafplaats Schimmert",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "joodse begraafplaats",
+      "plaats": "Schimmert",
+      "openingstijden": "Op afspraak",
+      "slug": "joodse-begraafplaats-schimmert-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Begraafplaats",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Kerkhofweg",
+      "plaats": "Sweikhuizen",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "begraafplaats-sweikhuizen-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Begraafplaats",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "plaats": "Schinveld",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "begraafplaats-schinveld-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "H Stephanuskerkhof",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Panhuysstraat 3",
+      "plaats": "Wijnandsrade",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "h-stephanuskerkhof-wijnandsrade-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "H. Bavokerkhof",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Deweverplein 1",
+      "plaats": "Nuth",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "h-bavokerkhof-nuth-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Kerkhof H. Lambertus",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Raadhuisstraat 10",
+      "plaats": "Oirsbeek",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "kerkhof-h-lambertus-oirsbeek-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Kloosterbegraafplaats Dochters der Wijsheid Montfortanen",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Vroenhof 87",
+      "plaats": "Schimmert",
+      "openingstijden": "Op afspraak",
+      "slug": "kloosterbegraafplaats-dochters-der-wijsheid-montfortanen-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Kloosterbegraafplaats Karmel",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "plaats": "Merkelbeek",
+      "openingstijden": "Op afspraak",
+      "slug": "kloosterbegraafplaats-karmel-merkelbeek-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Onze Lieve Vrouwe Onbevlekt ontvangen",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Aan de Kerk 3",
+      "plaats": "Amstenrade",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "onze-lieve-vrouwe-onbevlekt-ontvangen-amstenrade-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "Oude Kerkhof",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "plaats": "Bingelrade",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "oude-kerkhof-bingelrade-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "RK Kerkhof H. Clemens",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Kerkheuvel",
+      "plaats": "Hulsberg",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "rk-kerkhof-h-clemens-hulsberg-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "RK Kerkhof H. Gertrudis",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Dorpstraat 34",
+      "plaats": "Jabeek",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "rk-kerkhof-h-gertrudis-jabeek-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "RK Kerkhof H. Jozef",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Kerkstraat 42",
+      "plaats": "Doenrade",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "rk-kerkhof-h-jozef-doenrade-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "St Petrus Canisiusbegraafplaats",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Kerkweg 72",
+      "plaats": "Puth",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "st-petrus-canisiusbegraafplaats-puth-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "St. Dionysiuskerkhof",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Deken Keulenplein 2a",
+      "plaats": "Schinnen",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "st-dionysiuskerkhof-schinnen-beekdaelen"
+    },
+    {
+      "naam_begraafplaats": "St. Servatiusbegraafplaats",
+      "gemeente": "Beekdaelen",
+      "provincie": "Limburg",
+      "type": "bijzondere begraafplaats",
+      "adres": "Servatiusstraat 10",
+      "plaats": "Vaesrade",
+      "openingstijden": "Dagelijks geopend",
+      "slug": "st-servatiusbegraafplaats-vaesrade-beekdaelen"
+    }
+  ]
+}

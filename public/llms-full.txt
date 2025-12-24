@@ -1,0 +1,156 @@
+# BegraafplaatsInDeBuurt.nl - Volledige Documentatie
+
+> De meest complete gids voor begraafplaatsen in Nederland
+
+## Over BegraafplaatsInDeBuurt.nl
+
+BegraafplaatsInDeBuurt.nl is de meest uitgebreide online database van begraafplaatsen in Nederland. De website biedt gedetailleerde informatie over 6.883 begraafplaatsen verspreid over alle 12 provincies.
+
+De site is bedoeld voor:
+- Mensen die een laatste rustplaats zoeken voor een dierbare
+- Genealogen en familieonderzoekers
+- Uitvaartprofessionals
+- Iedereen die informatie zoekt over begraafplaatsen
+
+## Statistieken
+
+| Categorie | Aantal |
+|-----------|--------|
+| Totaal begraafplaatsen | 6.883 |
+| Provincies | 12 |
+| Gemeenten | 342 |
+| Met Google reviews | 1.846 |
+
+## Types begraafplaatsen
+
+### Algemene begraafplaatsen
+Gemeentelijke en particuliere begraafplaatsen die openstaan voor iedereen, ongeacht religieuze achtergrond. Dit omvat ook rooms-katholieke begraafplaatsen.
+
+### Natuurbegraafplaatsen
+Begraafplaatsen in een natuurlijke omgeving waar ecologie en biodiversiteit centraal staan. Graven worden niet gemarkeerd met traditionele grafstenen maar met natuurlijke elementen.
+
+### Joodse begraafplaatsen
+Begraafplaatsen specifiek voor de joodse gemeenschap, met inachtneming van joodse tradities en gebruiken rondom begraven.
+
+### Islamitische begraafplaatsen
+Begraafplaatsen ingericht volgens islamitische voorschriften, met graven gericht naar Mekka.
+
+## Navigatiestructuur
+
+### Hoofdpagina's
+- `/` - Homepage met zoekfunctie en provincieoverzicht
+- `/zoeken` - Uitgebreide zoekpagina met filters op type, provincie en plaats
+- `/vergelijk` - Tool om tot 3 begraafplaatsen naast elkaar te vergelijken
+
+### Geografische navigatie
+- `/provincie/[naam]` - Overzicht van alle gemeenten binnen een provincie
+- `/gemeente/[naam]` - Overzicht van alle plaatsen binnen een gemeente
+- `/plaats/[naam]` - Alle begraafplaatsen in een specifieke plaats
+
+### Detailpagina's
+- `/begraafplaats/[slug]` - Volledige informatie over één begraafplaats
+- `/type/[type]` - Alle begraafplaatsen van een bepaald type
+
+### Informatief
+- `/blog` - Artikelen over begraafplaatsen, uitvaarttradities en genealogie
+- `/info/rooms-katholieke-begraafplaatsen` - Uitleg over R.K. begraafplaatsen
+
+## Informatie per begraafplaats
+
+Elke begraafplaatspagina kan de volgende informatie bevatten:
+
+### Basisgegevens
+- Officiële naam
+- Type begraafplaats
+- Adres (straat, postcode, plaats)
+- Gemeente en provincie
+
+### Contactgegevens
+- Telefoonnummer
+- Website
+- Openingstijden
+
+### Locatie
+- GPS-coördinaten
+- Interactieve Google Maps kaart
+- Routebeschrijving
+
+### Reviews
+- Google Maps beoordeling (1-5 sterren)
+- Aantal reviews
+- Recente recensies
+
+### Media
+- Foto's van de begraafplaats
+- Streetview (indien beschikbaar)
+
+### Beschrijving
+- Uitgebreide tekst over de begraafplaats (400+ woorden)
+- Geschiedenis en bijzonderheden
+- Faciliteiten en voorzieningen
+
+## Veelgestelde vragen
+
+### Wat kost begraven in Nederland?
+De kosten voor begraven variëren sterk per gemeente en type begraafplaats. Gemiddeld liggen de grafrechten tussen €1.500 en €5.000 voor een periode van 10-20 jaar. Natuurbegraafplaatsen kunnen duurder zijn (€3.000 - €8.000) maar bieden vaak eeuwigdurende grafrust.
+
+### Wat is het verschil tussen een algemene en gemeentelijke begraafplaats?
+Een gemeentelijke begraafplaats wordt beheerd door de gemeente en staat open voor alle inwoners. Een algemene begraafplaats kan ook particulier beheerd worden maar staat eveneens open voor iedereen.
+
+### Hoe vind ik een begraafplaats bij mij in de buurt?
+Gebruik de zoekfunctie op /zoeken en voer je postcode, plaatsnaam of gemeente in. Je kunt ook filteren op type begraafplaats of provincie.
+
+### Kan ik meerdere begraafplaatsen vergelijken?
+Ja, met de vergelijkingstool op /vergelijk kun je tot 3 begraafplaatsen naast elkaar zetten om faciliteiten, locatie en andere kenmerken te vergelijken.
+
+### Waar vind ik rooms-katholieke begraafplaatsen?
+Rooms-katholieke begraafplaatsen zijn gecategoriseerd als "algemene begraafplaats" in onze database. Zoek op termen als "R.K.", "katholiek", "parochie" of de naam van een heilige om ze te vinden.
+
+### Zijn de reviews betrouwbaar?
+De reviews komen rechtstreeks van Google Maps en zijn geschreven door echte bezoekers. Wij modereren deze niet maar tonen ze zoals ze op Google staan.
+
+## Provincies
+
+Nederland heeft 12 provincies, elk met hun eigen begraafplaatsen:
+
+1. **Drenthe** - Landelijke begraafplaatsen in een rustige omgeving
+2. **Flevoland** - Moderne begraafplaatsen in de jongste provincie
+3. **Friesland** - Historische kerkhoven en moderne faciliteiten
+4. **Gelderland** - Grote variatie van natuur tot stedelijk
+5. **Groningen** - Karakteristieke Groningse begraafplaatsen
+6. **Limburg** - Katholieke traditie en natuurbegraafplaatsen
+7. **Noord-Brabant** - Mix van katholiek en algemeen
+8. **Noord-Holland** - Van Amsterdam tot landelijk
+9. **Overijssel** - Traditionele en moderne opties
+10. **Utrecht** - Historische en hedendaagse begraafplaatsen
+11. **Zeeland** - Kustgebied met eigen karakter
+12. **Zuid-Holland** - Grootste provincie qua inwoners
+
+## Technische informatie
+
+### Website
+- URL: https://begraafplaatsindebuurt.nl
+- Framework: Next.js 14
+- Hosting: Vercel
+
+### SEO & Indexering
+- Sitemap: https://begraafplaatsindebuurt.nl/sitemap.xml
+- Robots.txt: https://begraafplaatsindebuurt.nl/robots.txt
+- Structured data: JSON-LD op alle pagina's
+
+### API (niet publiek)
+De website heeft interne API endpoints die niet bedoeld zijn voor extern gebruik.
+
+## Contact
+
+- **Website**: https://begraafplaatsindebuurt.nl
+- **Email**: info@begraafplaatsindebuurt.nl
+- **Locatie**: Nederland
+
+## Juridisch
+
+BegraafplaatsInDeBuurt.nl is een onafhankelijke informatieve website. Wij zijn niet verbonden aan specifieke uitvaartondernemingen, begraafplaatsen of overheidsinstanties. De informatie op deze website is verzameld uit openbare bronnen en wordt regelmatig bijgewerkt.
+
+## Laatste update
+
+December 2025

@@ -1,0 +1,1553 @@
+[
+  {
+    "naam_begraafplaats": "Begraafplaats De Nieuwe Hof",
+    "gemeente": "Beek",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Bosserveldlaan",
+    "postcode": "6191 SK",
+    "plaats": "Beek",
+    "jaar_oprichting": "1974",
+    "beheerder": "Gemeentelijk",
+    "gps_coordinaten": "50.939822,5.809351",
+    "openingstijden": "Dagelijks geopend van zonsopgang tot zonsondergang",
+    "telefoon": "046 - 43 89 222",
+    "website": "https://www.gemeentebeek.nl",
+    "faciliteiten": "Parkeerplaats, Rolstoeltoegankelijk, Aula",
+    "oppervlakte": "11700",
+    "aantal_graven": "1178",
+    "aantal_personen": "1722",
+    "status": "Compleet",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Janssen",
+        "aantal": 39
+      },
+      {
+        "naam": "Jacobs",
+        "aantal": 29
+      },
+      {
+        "naam": "Smeets",
+        "aantal": 21
+      },
+      {
+        "naam": "Houben",
+        "aantal": 20
+      },
+      {
+        "naam": "Jansen",
+        "aantal": 20
+      }
+    ],
+    "slug": "begraafplaats-de-nieuwe-hof-beek"
+  },
+  {
+    "naam_begraafplaats": "Oude algemene Begraafplaats St. Martinus",
+    "gemeente": "Beek",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Sint Martinusstraat",
+    "plaats": "Beek",
+    "gps_coordinaten": "50.937433,5.798743",
+    "oppervlakte": "9800",
+    "aantal_graven": "588",
+    "aantal_personen": "1037",
+    "status": "Volledig",
+    "jaar_oprichting": "1917",
+    "beheerder": "Gemeentelijk",
+    "telefoon": "046 - 43 89 222",
+    "website": "https://www.gemeentebeek.nl",
+    "openingstijden": "Dagelijks geopend",
+    "bijzondere_kenmerken": "Historisch kerkhof voor de Sint-Martinuskerk, recent gerenoveerd tot gedenkpark met nieuwe paden, banken en levenslooppaadje. Bevat unieke oude zerken met bijzondere beeldhouwwerken.",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Lemmens",
+        "aantal": 52
+      },
+      {
+        "naam": "Janssen",
+        "aantal": 22
+      },
+      {
+        "naam": "Voncken",
+        "aantal": 21
+      },
+      {
+        "naam": "Peters",
+        "aantal": 17
+      },
+      {
+        "naam": "Wouters",
+        "aantal": 16
+      },
+      {
+        "naam": "Gelissen",
+        "aantal": 16
+      },
+      {
+        "naam": "Frusch",
+        "aantal": 15
+      },
+      {
+        "naam": "Martens",
+        "aantal": 14
+      },
+      {
+        "naam": "Smeets",
+        "aantal": 13
+      },
+      {
+        "naam": "Corten",
+        "aantal": 12
+      }
+    ],
+    "slug": "oude-algemene-begraafplaats-st-martinus-beek"
+  },
+  {
+    "naam_begraafplaats": "Joodse Begraafplaats",
+    "gemeente": "Beek",
+    "provincie": "Limburg",
+    "type": "joodse begraafplaats",
+    "adres": "Putbroekerweg",
+    "postcode": "6191 PL",
+    "plaats": "Beek",
+    "gps_coordinaten": "50.93447,5.805888",
+    "oppervlakte": "500",
+    "aantal_graven": "19",
+    "aantal_personen": "30",
+    "status": "Volledig",
+    "jaar_oprichting": "1794",
+    "openingstijden": "Op afspraak",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Hellendag",
+        "aantal": 8
+      },
+      {
+        "naam": "Cohen",
+        "aantal": 5
+      },
+      {
+        "naam": "Meier",
+        "aantal": 3
+      },
+      {
+        "naam": "de Leeuw",
+        "aantal": 2
+      },
+      {
+        "naam": "Kanarek",
+        "aantal": 2
+      },
+      {
+        "naam": "Wolf",
+        "aantal": 2
+      },
+      {
+        "naam": "Jacobs",
+        "aantal": 1
+      },
+      {
+        "naam": "Dreifusz",
+        "aantal": 1
+      },
+      {
+        "naam": "ten Brink",
+        "aantal": 1
+      },
+      {
+        "naam": "Frenkel",
+        "aantal": 1
+      }
+    ],
+    "slug": "joodse-begraafplaats-beek"
+  },
+  {
+    "naam_begraafplaats": "Begraafplaats Neerbeek",
+    "gemeente": "Beek",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Aldenhofstraat",
+    "postcode": "6191 GZ",
+    "plaats": "Neerbeek",
+    "gps_coordinaten": "50.952204,5.817179",
+    "oppervlakte": "4200",
+    "aantal_graven": "456",
+    "aantal_personen": "749",
+    "status": "Volledig",
+    "jaar_oprichting": "1933",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "046 - 43 89 222",
+    "website": "https://www.gemeentebeek.nl",
+    "beheerder": "Gemeentelijk",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Janssen",
+        "aantal": 29
+      },
+      {
+        "naam": "Lemmens",
+        "aantal": 17
+      },
+      {
+        "naam": "Kubben",
+        "aantal": 13
+      },
+      {
+        "naam": "Penners",
+        "aantal": 11
+      },
+      {
+        "naam": "Banens",
+        "aantal": 9
+      },
+      {
+        "naam": "Clerx",
+        "aantal": 8
+      },
+      {
+        "naam": "Wouters",
+        "aantal": 8
+      },
+      {
+        "naam": "Schols",
+        "aantal": 8
+      },
+      {
+        "naam": "Jansen",
+        "aantal": 7
+      },
+      {
+        "naam": "Verjans",
+        "aantal": 6
+      }
+    ],
+    "slug": "begraafplaats-neerbeek-beek"
+  },
+  {
+    "naam_begraafplaats": "Kerkhof H Martinus",
+    "gemeente": "Beek",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Burgemeester Janssenstraat 11",
+    "postcode": "6191 JB",
+    "plaats": "Beek",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "046 - 43 89 222",
+    "website": "https://www.gemeentebeek.nl",
+    "slug": "kerkhof-h-martinus-beek"
+  },
+  {
+    "naam_begraafplaats": "NH Kerkhof",
+    "gemeente": "Beek",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "postcode": "6191 GZ",
+    "plaats": "Beek",
+    "jaar_oprichting": "1837",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "046 - 43 89 222",
+    "website": "https://www.gemeentebeek.nl",
+    "slug": "nh-kerkhof-beek"
+  },
+  {
+    "naam_begraafplaats": "RK Begraafplaats Spaubeek",
+    "gemeente": "Beek",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "postcode": "6176 BE",
+    "plaats": "Spaubeek",
+    "jaar_oprichting": "1918",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "046 - 43 89 222",
+    "website": "https://www.gemeentebeek.nl",
+    "slug": "rk-begraafplaats-spaubeek-beek"
+  },
+  {
+    "naam_begraafplaats": "RK Kerkhof St. Hubertus",
+    "gemeente": "Beek",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Pastoor Weltersstraat 22",
+    "postcode": "6191 NZ",
+    "plaats": "Groot Genhout",
+    "jaar_oprichting": "1937",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "046 - 43 89 222",
+    "website": "https://www.gemeentebeek.nl",
+    "slug": "rk-kerkhof-st-hubertus-beek"
+  },
+  {
+    "naam_begraafplaats": "St. Annakerkhof",
+    "gemeente": "Beek",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Oude Kerk 8",
+    "postcode": "6176 AT",
+    "plaats": "Spaubeek",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "046 - 43 89 222",
+    "website": "https://www.gemeentebeek.nl",
+    "slug": "st-annakerkhof-spaubeek-beek"
+  },
+  {
+    "naam_begraafplaats": "St. Laurentiuskerkhof Hoeve",
+    "gemeente": "Beek",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Rubensstraat 4",
+    "postcode": "6176 CW",
+    "plaats": "Spaubeek",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "046 - 43 89 222",
+    "website": "https://www.gemeentebeek.nl",
+    "slug": "st-laurentiuskerkhof-hoeve-spaubeek-beek"
+  },
+  {
+    "naam_begraafplaats": "Begraafplaats Hulsberg",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Kerkheuvel",
+    "postcode": "6336 AX",
+    "plaats": "Hulsberg",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "088 - 450 2000",
+    "email": "gemeente@beekdaelen.nl",
+    "website": "https://www.beekdaelen.nl",
+    "beheerder": "Gemeentelijk",
+    "bijzondere_kenmerken": "Gemeentelijke begraafplaats met actuele tarieven beschikbaar via de gemeente website",
+    "slug": "begraafplaats-hulsberg-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Begraafplaats Oudenbosch",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Körnerstraat 17",
+    "postcode": "6363 BX",
+    "plaats": "Wijnandsrade",
+    "jaar_oprichting": "1971",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "088 - 450 2000",
+    "email": "gemeente@beekdaelen.nl",
+    "website": "https://www.beekdaelen.nl",
+    "beheerder": "Gemeentelijk",
+    "bijzondere_kenmerken": "De gemeentelijke begraafplaats in Oudenbosch ligt in de wijk van Wijnandsrade in de Gemeente Beekdaelen. Opgericht in 1971. U kunt via de website van de gemeente Beekdaelen een graf op deze begraafplaats aanvragen.",
+    "beschrijving": "De gemeentelijke begraafplaats in Oudenbosch ligt in de wijk van Wijnandsrade in de Gemeente Beekdaelen. U kunt informatie vinden op de website van de gemeente Beekdaelen en daar ook een graf aanvragen. De begraafplaats Oudenbosch bevindt zich in Wijnandsrade, een plaats binnen de gemeente Beekdaelen.",
+    "slug": "begraafplaats-oudenbosch-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Gemeentelijke Begraafplaats",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "postcode": "6447 AW",
+    "plaats": "Merkelbeek",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "088 - 450 2000",
+    "email": "gemeente@beekdaelen.nl",
+    "website": "https://www.beekdaelen.nl",
+    "beheerder": "Gemeentelijk",
+    "bijzondere_kenmerken": "Gemeentelijke begraafplaats met actuele tarieven beschikbaar via de gemeente website",
+    "slug": "gemeentelijke-begraafplaats-merkelbeek-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Gemeentelijke Begraafplaats Daelderveld",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Slagboomsweg",
+    "postcode": "6361 EK",
+    "plaats": "Nuth",
+    "jaar_oprichting": "1931",
+    "gps_coordinaten": "50.920871,5.883087",
+    "oppervlakte": "27200",
+    "aantal_graven": "1",
+    "aantal_personen": "2",
+    "status": "Nog niets ingevoerd, vrijwilliger gezocht",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "088 - 450 2000",
+    "email": "gemeente@beekdaelen.nl",
+    "website": "https://www.beekdaelen.nl",
+    "beheerder": "Gemeentelijk",
+    "bijzondere_kenmerken": "Gemeentelijke begraafplaats uit 1931 met actuele tarieven beschikbaar via de gemeente website",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Cobben",
+        "aantal": 1
+      },
+      {
+        "naam": "Frissen",
+        "aantal": 1
+      }
+    ],
+    "slug": "gemeentelijke-begraafplaats-daelderveld-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Openbare Begraafplaats",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "postcode": "6333 AB",
+    "plaats": "Schimmert",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "088 - 450 2000",
+    "email": "gemeente@beekdaelen.nl",
+    "website": "https://www.beekdaelen.nl",
+    "beheerder": "Gemeentelijk",
+    "bijzondere_kenmerken": "Gemeentelijke begraafplaats met actuele tarieven beschikbaar via de gemeente website",
+    "slug": "openbare-begraafplaats-schimmert-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Joodse Begraafplaats Schimmert",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "joodse begraafplaats",
+    "adres": "Kerkhofsteeg",
+    "postcode": "6333 AB",
+    "plaats": "Schimmert",
+    "jaar_oprichting": "1822",
+    "gps_coordinaten": "50.905758,5.828384",
+    "oppervlakte": "10400",
+    "aantal_graven": "1010",
+    "aantal_personen": "1578",
+    "status": "In Bewerking (deel van de graven ingevoerd)",
+    "openingstijden": "Op afspraak",
+    "telefoon": "088 - 450 2000",
+    "email": "gemeente@beekdaelen.nl",
+    "website": "https://www.beekdaelen.nl",
+    "rating": "5.0",
+    "reviews": "5",
+    "bijzondere_kenmerken": "Historische Joodse begraafplaats uit 1822 met bijzondere grafstenen. Gelegen aan de rand van het Ravensbos met prachtige vergezichten over het Limburgse land. Er staat een rustbank voor de ingang. Inmiddels zijn 60 monumenten verwijderd door ruiming.",
+    "beschrijving": "Deze historische Joodse begraafplaats in Schimmert is een verrassende ontdekking. De begraafplaats heeft bijzondere oude grafstenen en ligt op een mooie locatie met vergezichten over het Limburgse landschap. Perfect te bezoeken tijdens een wandeling vanuit het Ravensbos.",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Vankan",
+        "aantal": 46
+      },
+      {
+        "naam": "Speetjens",
+        "aantal": 35
+      },
+      {
+        "naam": "Lemmens",
+        "aantal": 34
+      },
+      {
+        "naam": "Goossens",
+        "aantal": 31
+      },
+      {
+        "naam": "Lucassen",
+        "aantal": 28
+      },
+      {
+        "naam": "Knols",
+        "aantal": 28
+      },
+      {
+        "naam": "Soons",
+        "aantal": 25
+      },
+      {
+        "naam": "Frissen",
+        "aantal": 23
+      },
+      {
+        "naam": "Timmers",
+        "aantal": 22
+      },
+      {
+        "naam": "Kuipers",
+        "aantal": 20
+      }
+    ],
+    "slug": "joodse-begraafplaats-schimmert-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Begraafplaats Sweikhuizen",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Kerkhofweg",
+    "postcode": "6174 RB",
+    "plaats": "Sweikhuizen",
+    "gps_coordinaten": "50.954099,5.844224",
+    "oppervlakte": "900",
+    "aantal_graven": "172",
+    "aantal_personen": "294",
+    "status": "Volledig (alle graven en personen ingevoerd)",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "1",
+    "bijzondere_kenmerken": "Een van de mooiste begraafplaatsen in Limburg, gelegen op een heuvel met landerijen en bossen rondom. Zeer goed onderhouden met een serene rust. Inmiddels zijn 26 monumenten verwijderd door ruiming.",
+    "beschrijving": "Begraafplaats Sweikhuizen ligt op een prachtige locatie bovenop een heuvel, omgeven door landerijen en bossen. Deze zeer goed onderhouden begraafplaats straalt een serene rust uit en wordt beschouwd als een van de mooiste begraafplaatsen in Limburg.",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Meels",
+        "aantal": 16
+      },
+      {
+        "naam": "Goessens",
+        "aantal": 9
+      },
+      {
+        "naam": "Dols",
+        "aantal": 9
+      },
+      {
+        "naam": "Budé",
+        "aantal": 6
+      },
+      {
+        "naam": "Janssen",
+        "aantal": 6
+      },
+      {
+        "naam": "Cals",
+        "aantal": 6
+      },
+      {
+        "naam": "Keulers",
+        "aantal": 6
+      },
+      {
+        "naam": "Boijens",
+        "aantal": 6
+      },
+      {
+        "naam": "Boyens",
+        "aantal": 5
+      },
+      {
+        "naam": "Kisters",
+        "aantal": 5
+      }
+    ],
+    "slug": "begraafplaats-sweikhuizen-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "RK Begraafplaats Schinveld",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Grote Gats",
+    "postcode": "6451 CN",
+    "plaats": "Schinveld",
+    "gps_coordinaten": "50.970163,5.974933",
+    "oppervlakte": "5700",
+    "aantal_graven": "950",
+    "aantal_personen": "1574",
+    "status": "Volledig (alle graven en personen ingevoerd)",
+    "openingstijden": "Dagelijks geopend",
+    "bijzondere_kenmerken": "Rooms-Katholieke begraafplaats met een grote geschiedenis in Schinveld",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Theunissen",
+        "aantal": 74
+      },
+      {
+        "naam": "Dohmen",
+        "aantal": 54
+      },
+      {
+        "naam": "Janssen",
+        "aantal": 39
+      },
+      {
+        "naam": "Rademakers",
+        "aantal": 36
+      },
+      {
+        "naam": "Jacobs",
+        "aantal": 36
+      },
+      {
+        "naam": "Geraets",
+        "aantal": 24
+      },
+      {
+        "naam": "Reijnders",
+        "aantal": 24
+      },
+      {
+        "naam": "Peters",
+        "aantal": 23
+      },
+      {
+        "naam": "Gelissen",
+        "aantal": 23
+      },
+      {
+        "naam": "Joosten",
+        "aantal": 22
+      }
+    ],
+    "slug": "begraafplaats-schinveld-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "H Stephanuskerkhof",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Panhuysstraat 3",
+    "postcode": "6363 BZ",
+    "plaats": "Wijnandsrade",
+    "openingstijden": "Dagelijks geopend",
+    "gps_coordinaten": "50.9,5.883",
+    "beschrijving": "Het parochiële kerkhof ligt naast de Sint-Stefanuskerk, een rijksmonument uit de 15e eeuw dat in 1750-1753 werd vergroot. De kerk ligt bij de oude motteburcht en het kasteel Wijnandsrade, grenzend aan de slotgracht. In 1943 werden de toren en een groot deel van het schip verwoest door een tijdbom, maar de kerk werd na de oorlog gerestaureerd.",
+    "bijzondere_kenmerken": "Historisch kerkhof bij de Sint-Stefanuskerk (rijksmonument), gelegen aan de weg van Hulsberg/Swier naar Nuth. De kerk grenst aan de slotgracht van kasteel Wijnandsrade en heeft een rijke geschiedenis sinds 1307.",
+    "slug": "h-stephanuskerkhof-wijnandsrade-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "H. Bavokerkhof",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Deweverplein 1",
+    "postcode": "6361 BZ",
+    "plaats": "Nuth",
+    "gps_coordinaten": "50.917,5.883",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "3",
+    "beschrijving": "Het kerkhof ligt rond de Sint-Bavokerk, een rijksmonument in het oudste gedeelte van Nuth. De kerk staat op een kerkheuvel waar de huizen in een cirkel omheen zijn gebouwd. Om de kerk ligt een grasveld met verschillende grafkruizen. De kerk heeft waarschijnlijk al sinds de middeleeuwen op deze plek gestaan, met een altaarsteen en doopvont uit de 12e eeuw.",
+    "bijzondere_kenmerken": "Historisch kerkhof rond de Sint-Bavokerk (rijksmonument) op een kerkheuvel in het centrum van Nuth. De kerk werd in 1763 gebouwd over de oude kerk heen door architect Laurenz Mefferdatis uit Aken. In 1923 werden de zijbeuken en een nieuw koorgedeelte aangebouwd. Parkeren kan bij het Scalaplein.",
+    "slug": "h-bavokerkhof-nuth-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Kerkhof H. Lambertus",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Raadhuisstraat 10",
+    "postcode": "6438 GZ",
+    "plaats": "Oirsbeek",
+    "gps_coordinaten": "50.950524,5.907237",
+    "oppervlakte": "2000",
+    "status": "Nog niets ingevoerd, vrijwilliger gezocht",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "088 - 450 2000",
+    "email": "gemeente@beekdaelen.nl",
+    "website": "https://www.beekdaelen.nl",
+    "rating": "5.0",
+    "reviews": "4",
+    "beschrijving": "Het kerkhof ligt rond de Sint-Lambertuskerk midden in het dorp Oirsbeek. De kerk en het kerkhof worden omgeven door een ringmuur. De kerk heeft een lange geschiedenis die teruggaat tot de 13e/14e eeuw toen er een kerkje van maaskeien stond. De huidige kerk werd in 1953 ontworpen door architect Frits Peutz.",
+    "bijzondere_kenmerken": "Historisch kerkhof bij de Sint-Lambertuskerk (rijksmonument) met belangrijke graven waaronder dat van priester-historicus Jos. Habets (1829-1893). De kerk bevat moderne glasinlood ramen en kunstwerken. Van 1273 tot 1794 had het Klooster St. Gerlach het patronaatsrecht.",
+    "slug": "kerkhof-h-lambertus-oirsbeek-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Kloosterbegraafplaats Dochters der Wijsheid Montfortanen",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Vroenhof 87",
+    "postcode": "6301 KE",
+    "plaats": "Schimmert",
+    "jaar_oprichting": "1882",
+    "openingstijden": "Op afspraak",
+    "rating": "5.0",
+    "reviews": "5",
+    "aantal_graven": "320",
+    "bijzondere_kenmerken": "Historische kloosterbegraafplaats (Paterskerkhof) met identieke grafstenen voor alle religieuzen. Opgericht in 1882 met 320 graven van paters Montfortanen, zusters Dochters der Wijsheid, 2 bisschoppen, 157 paters, 77 zusters en 63 broeders. Monument voor in het buitenland begraven paters.",
+    "beschrijving": "De Kloosterbegraafplaats van de Dochters der Wijsheid en Montfortanen, ook bekend als het Paterskerkhof, ligt in de buurtschap Op de Bies in Schimmert. De begraafplaats dient als laatste rustplaats voor de paters Montfortanen en zusters Dochters der Wijsheid. Alle 230 grafstenen zijn identiek, zonder onderscheid tussen bisschop, pater, broeder of zuster. De Montfortanen vestigden zich in 1881 in Schimmert nadat ze uit Frankrijk werden verdreven.",
+    "slug": "kloosterbegraafplaats-dochters-der-wijsheid-montfortanen-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Kloosterbegraafplaats Karmel",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Wilmenweg",
+    "postcode": "6447 AW",
+    "plaats": "Merkelbeek",
+    "jaar_oprichting": "1933",
+    "gps_coordinaten": "50.953759,5.942124",
+    "oppervlakte": "3800",
+    "status": "Nog niets ingevoerd, vrijwilliger gezocht",
+    "openingstijden": "Op afspraak",
+    "bijzondere_kenmerken": "Kloosterbegraafplaats bij de H. Clemens Kerk aan de Wilmenweg. Opgericht in 1933.",
+    "slug": "kloosterbegraafplaats-karmel-merkelbeek-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Onze Lieve Vrouwe Onbevlekt ontvangen",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Aan de Kerk 3",
+    "postcode": "6436 CT",
+    "plaats": "Amstenrade",
+    "jaar_oprichting": "1852",
+    "gps_coordinaten": "50.933333,5.933333",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "5",
+    "bijzondere_kenmerken": "Kerkhof bij de neogotische parochiekerk (rijksmonument) met dubbeltorenfront. De kerk werd gebouwd in 1852-1856 door architect Carl Weber en verbouwd in 1932-1933. Op de kerkheuvel liggen enkele graven, waaronder die van de familie Marchant d'Ansembourg die een grafelijke kapel in de kerk hebben.",
+    "beschrijving": "Het kerkhof ligt op een kerkheuvel naast de Kerk van Onze-Lieve-Vrouw Onbevlekt Ontvangen, een rijksmonument uit 1852-1856. De kerk heeft een bijzondere geschiedenis door de financiële bijdrage van graaf Jean Baptiste Marchant d'Ansembourg, die in ruil daarvoor begraafrechten bij de kerk verkreeg. De kerk ligt aan de rand van Amstenrade tussen de boomgaarden, tegenover kasteel Amstenrade.",
+    "slug": "onze-lieve-vrouwe-onbevlekt-ontvangen-amstenrade-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Oude Kerkhof",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "postcode": "6456 AD",
+    "plaats": "Bingelrade",
+    "jaar_oprichting": "1579",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "088 - 450 2000",
+    "email": "gemeente@beekdaelen.nl",
+    "website": "https://www.beekdaelen.nl",
+    "bijzondere_kenmerken": "Historisch kerkhof uit 1579. Een van de oudste begraafplaatsen in de gemeente Beekdaelen.",
+    "slug": "oude-kerkhof-bingelrade-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "RK Kerkhof H. Clemens",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Kerkheuvel",
+    "postcode": "6336 AX",
+    "plaats": "Hulsberg",
+    "jaar_oprichting": "1820",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "5",
+    "bijzondere_kenmerken": "Rooms-Katholiek kerkhof rond de Sint-Clemenskerk uit 1820, gelegen op een heuvel in het centrum van Hulsberg. Romantische eeuwenoude graven rond de goed onderhouden kerk. Veel aantrekkelijke horeca in de directe omgeving.",
+    "beschrijving": "Het RK Kerkhof H. Clemens ligt rond de bijzonder mooie Sint-Clemenskerk in het rustige dorp Hulsberg. De kerk werd gebouwd in 1820 en is zeer goed onderhouden. Het kerkhof met zijn eeuwenoude graven vormt een romantisch geheel op de kerkheuvel. Vanuit hier zijn diverse wandelroutes mogelijk.",
+    "slug": "rk-kerkhof-h-clemens-hulsberg-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "RK Kerkhof H. Gertrudis",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Dorpstraat 34",
+    "postcode": "6454 AG",
+    "plaats": "Jabeek",
+    "gps_coordinaten": "50.98194,5.94167",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "3",
+    "telefoon": "088 - 450 2000",
+    "email": "gemeente@beekdaelen.nl",
+    "website": "https://www.beekdaelen.nl",
+    "bijzondere_kenmerken": "Historisch kerkhof rond de Sint-Gertrudiskerk (rijksmonument) met kerkhofmuur. De kerk heeft een 15e-eeuwse laatgotische toren en werd in 1858-1859 herbouwd in neogotische stijl door architect Pierre Cuypers. Gelegen op een kerkheuvel in het oudste deel van het dorp.",
+    "beschrijving": "Het RK Kerkhof H. Gertrudis ligt rond de Sint-Gertrudiskerk aan de Dorpstraat in Jabeek. De kerk staat op een kerkheuvel in het historische centrum en is omgeven door een kerkhof met kerkhofmuur. De huidige neogotische kerk werd ontworpen door de beroemde architect Pierre Cuypers, waarbij de 15e-eeuwse toren behouden bleef.",
+    "slug": "rk-kerkhof-h-gertrudis-jabeek-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "RK Kerkhof H. Jozef",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Kerkstraat 42",
+    "postcode": "6439 AS",
+    "plaats": "Doenrade",
+    "jaar_oprichting": "1930",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "5",
+    "bijzondere_kenmerken": "Complete calvarieberg op het centrale punt, oorspronkelijk opgezet als kruismodel, maar door intensief gebruik veranderd",
+    "beschrijving": "De R.K. begraafplaats H. Jozef in Doenrade werd in 1930 aangelegd, tegelijk met de stichting van de H. Jozefparochie. De begraafplaats heeft een centrale calvarieberg en was oorspronkelijk opgezet als kruismodel, hoewel dit door intensief gebruik is veranderd. Vroeger werd begraven op basis van rang en stand, maar tegenwoordig is er vrije keuze van grafplaatsen.",
+    "slug": "rk-kerkhof-h-jozef-doenrade-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "St Petrus Canisiusbegraafplaats",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Kerkweg 72",
+    "postcode": "6155 KP",
+    "plaats": "Puth",
+    "gps_coordinaten": "50.956111,5.870556",
+    "jaar_oprichting": "1930",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "5",
+    "bijzondere_kenmerken": "Kerkhof bij de Sint-Petrus Canisiuskerk (gemeentelijk monument sinds 2023), zakelijk-expressionistische stijl",
+    "beschrijving": "De St Petrus Canisiusbegraafplaats ligt bij de gelijknamige kerk in het rustige dorpje Puth aan de Kerkweg. De kerk werd in 1930-1931 gebouwd in zakelijk-expressionistische stijl naar ontwerp van Caspar en Joseph Franssen. De kerk is sinds april 2023 een gemeentelijk monument. Sinds april 2022 worden er geen missen meer gehouden vanwege afnemend kerkbezoek en verzakkingsschade.",
+    "slug": "st-petrus-canisiusbegraafplaats-puth-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "St. Dionysiuskerkhof",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Deken Keulenplein 2a",
+    "postcode": "6365 BJ",
+    "plaats": "Schinnen",
+    "gps_coordinaten": "50.941667,5.888333",
+    "jaar_oprichting": "11e eeuw",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "5",
+    "bijzondere_kenmerken": "Historisch kerkhof op een kerkheuvel bij de Sint-Dionysiuskerk (rijksmonument), toren uit 11e eeuw met Romeinse resten",
+    "beschrijving": "Het St. Dionysiuskerkhof ligt op een kerkheuvel naast de gelijknamige kerk, een rijksmonument met delen uit de 11e eeuw. De kerktoren bevat zelfs Romeinse resten waaronder een Korinthisch kapiteel uit de 2e-3e eeuw. De kerk kent een lange geschiedenis als eigenkerk en werd door de eeuwen heen uitgebreid. Het kerkhof ligt tussen de kerk en een hoge keermuur aan de zuidzijde.",
+    "slug": "st-dionysiuskerkhof-schinnen-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "St. Servatiusbegraafplaats",
+    "gemeente": "Beekdaelen",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Servatiusstraat 10",
+    "postcode": "6361 JK",
+    "plaats": "Vaesrade",
+    "gps_coordinaten": "50.929444,5.9025",
+    "jaar_oprichting": "1929",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "4",
+    "bijzondere_kenmerken": "Kerkhof op kerkheuvel bij de Sint-Servatiuskerk (rijksmonument), expressionistische/neogotische stijl, met historie teruggaand tot 1596",
+    "beschrijving": "De St. Servatiusbegraafplaats ligt op een kerkheuvel bij de Sint-Servatiuskerk in Vaesrade. De huidige kerk uit 1929 werd ontworpen door architect Nic. Ramakers in een stijl beïnvloed door expressionisme en neogotiek. De locatie kent een lange religieuze geschiedenis met een kapel uit 1596, kluizenaars vanaf 1714, en een rectoraatskerk uit 1857 voordat de huidige kerk werd gebouwd.",
+    "slug": "st-servatiusbegraafplaats-vaesrade-beekdaelen"
+  },
+  {
+    "naam_begraafplaats": "Algemene Begraafplaats Beesel",
+    "gemeente": "Beesel",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Ouddorp",
+    "postcode": "5954 BD",
+    "plaats": "Beesel",
+    "gps_coordinaten": "51.268643,6.031959",
+    "oppervlakte": "7300",
+    "aantal_graven": "12",
+    "aantal_personen": "20",
+    "status": "In Planning (nog niet gestart met invoer)",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "1",
+    "beheerder": "Gemeentelijk",
+    "bijzondere_kenmerken": "Werkgroep Aad Kerkhof (Oud Kerkhof) onderhoudt het kerkhof om dit historisch monument te behouden. Vrijwilligers werken elke dinsdag van Pasen tot november.",
+    "beschrijving": "De Algemene Begraafplaats Beesel ligt in Ouddorp en wordt onderhouden door een toegewijde groep vrijwilligers. De werkgroep Aad Kerkhof zet zich in om dit historische monument in goede staat te behouden door wekelijks onderhoud en kleine herstelwerkzaamheden uit te voeren.",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Schoenmakers",
+        "aantal": 3
+      },
+      {
+        "naam": "Hendrix",
+        "aantal": 2
+      },
+      {
+        "naam": "van Helden",
+        "aantal": 1
+      },
+      {
+        "naam": "Peeters",
+        "aantal": 1
+      },
+      {
+        "naam": "Reijnders",
+        "aantal": 1
+      },
+      {
+        "naam": "Evers",
+        "aantal": 1
+      },
+      {
+        "naam": "Driessen",
+        "aantal": 1
+      },
+      {
+        "naam": "Sillekens",
+        "aantal": 1
+      },
+      {
+        "naam": "op de Laak",
+        "aantal": 1
+      },
+      {
+        "naam": "Bettinger",
+        "aantal": 1
+      }
+    ],
+    "slug": "algemene-begraafplaats-beesel-beesel"
+  },
+  {
+    "naam_begraafplaats": "Algemene Begraafplaats Reuver",
+    "gemeente": "Beesel",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Oude Molenweg",
+    "postcode": "5954 BD",
+    "plaats": "Reuver",
+    "openingstijden": "Dagelijks geopend",
+    "beheerder": "Gemeentelijk",
+    "telefoon": "077 - 474 92 92",
+    "email": "info@beesel.nl",
+    "rating": "5.0",
+    "reviews": "1",
+    "bijzondere_kenmerken": "Een van de vier begraafplaatsen in gemeente Beesel",
+    "beschrijving": "De Algemene Begraafplaats Reuver ligt aan de Oude Molenweg en wordt beheerd door de gemeente Beesel. Voor informatie over grafrechten of andere vragen kunt u contact opnemen met de gemeente.",
+    "slug": "algemene-begraafplaats-reuver-beesel"
+  },
+  {
+    "naam_begraafplaats": "Kloosterbegraafplaats Heilig Hart",
+    "gemeente": "Beesel",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Pastoor Vranckenlaan 6",
+    "postcode": "5953 CP",
+    "plaats": "Reuver",
+    "gps_coordinaten": "51.283333,6.083333",
+    "jaar_oprichting": "1890",
+    "beheerder": "Privé beheer",
+    "openingstijden": "Op afspraak",
+    "rating": "5.0",
+    "reviews": "1",
+    "bijzondere_kenmerken": "Neogotische kloosterkapel, streng symmetrisch complex met drie rijkversierde topgevels, voor het klooster staat een Heilig Hartbeeld uit 1925",
+    "beschrijving": "De Kloosterbegraafplaats Heilig Hart is verbonden aan het voormalige Heilig Hartklooster, gebouwd in 1890-1891 door architect Emmanuel Corbey voor de Dominicanessen van de Heilige Catharina van Siena. Het complex is opgebouwd in traditionalistisch-eclectische stijl met neogotische elementen, vooral zichtbaar in de kloosterkapel. Het gebouw diende oorspronkelijk als klooster met lagere school (1891), kweekschool (1899) en later ook een MULO (1921). In 1981 werd het complex omgevormd tot een kloosterbejaardenoord, gevolgd door een ingrijpende verbouwing in 2009. De begraafplaats ligt bij dit historische complex en wordt mogelijk ook aangeduid als de RK begraafplaats van Reuver.",
+    "foto": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Reuver-Pastoor_Vranckenlaan_2-6_Heilig_Hartklooster_%282%29.JPG/800px-Reuver-Pastoor_Vranckenlaan_2-6_Heilig_Hartklooster_%282%29.JPG",
+    "slug": "kloosterbegraafplaats-heilig-hart-reuver-beesel"
+  },
+  {
+    "naam_begraafplaats": "RK Begraafplaats",
+    "gemeente": "Beesel",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "postcode": "5954 BD",
+    "plaats": "Reuver",
+    "jaar_oprichting": "1840",
+    "openingstijden": "Dagelijks geopend",
+    "beheerder": "Parochie H. Lambertus",
+    "rating": "5.0",
+    "reviews": "1",
+    "bijzondere_kenmerken": "Historische RK begraafplaats uit 1840, beheerd door parochie H. Lambertus",
+    "beschrijving": "Deze historische Rooms-Katholieke begraafplaats in Reuver dateert uit 1840 en wordt beheerd door de parochie H. Lambertus. Het is een van de vier begraafplaatsen in de gemeente Beesel.",
+    "slug": "rk-begraafplaats-reuver-beesel"
+  },
+  {
+    "naam_begraafplaats": "RK Begraafplaats",
+    "gemeente": "Beesel",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Kerkpad",
+    "plaats": "Beesel",
+    "openingstijden": "Dagelijks geopend",
+    "beheerder": "Parochie H. Gertrudis",
+    "bijzondere_kenmerken": "RK begraafplaats beheerd door parochie H. Gertrudis",
+    "beschrijving": "De Rooms-Katholieke begraafplaats in Beesel wordt beheerd door de parochie H. Gertrudis. Het is een van de vier begraafplaatsen in de gemeente Beesel.",
+    "slug": "rk-begraafplaats-beesel-beesel"
+  },
+  {
+    "naam_begraafplaats": "Begraafplaats Nieuw-Bergen",
+    "gemeente": "Bergen (L.)",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Oude Baan 10",
+    "postcode": "5854 PJ",
+    "plaats": "Nieuw-Bergen",
+    "gps_coordinaten": "51.601388,6.043611",
+    "openingstijden": "Dagelijks geopend",
+    "beheerder": "Gemeentelijk",
+    "rating": "5.0",
+    "reviews": "2",
+    "bijzondere_kenmerken": "Gemeentelijke begraafplaats in Nieuw-Bergen met rustige ligging",
+    "beschrijving": "De gemeentelijke begraafplaats van Nieuw-Bergen ligt aan de Oude Baan 10 in de gemeente Bergen (L.). Voor informatie over graf- en crematiekosten kunt u terecht op de website van de gemeente Bergen. De begraafplaats heeft een rustige ligging in het dorp Nieuw-Bergen.",
+    "slug": "begraafplaats-nieuw-bergen-bergen-l"
+  },
+  {
+    "naam_begraafplaats": "Kerkhof St. Vitus",
+    "gemeente": "Bergen (L.)",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Hoenderstraat 9",
+    "postcode": "5855 AG",
+    "plaats": "Well",
+    "gps_coordinaten": "51.548333,6.0925",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "3",
+    "jaar_oprichting": "historisch",
+    "bijzondere_kenmerken": "Historisch kerkhof met fundamenten van de oude Sint-Vituskerk uit WOII, Kerkhofkapel Calvarieberg, nabij de Sint-Vituskapel uit 1954",
+    "beschrijving": "Het oude Kerkhof St. Vitus ligt aan de zuidzijde van Well aan de Maas, nabij de plaats waar de Hoenderstraat uitkomt op de Grotestraat. Het kerkhof bevat de fundamenten van de oude Sint-Vituskerk die tijdens de Tweede Wereldoorlog zwaar beschadigd raakte en moest worden afgebroken. Op het kerkhof staat ook de Kerkhofkapel Calvarieberg. In 1954 werd naast de plek van de verwoeste kerk de Sint-Vituskapel gebouwd, een bakstenen kapel met driezijdige koorsluiting en rondboogvensters. De kapel bevat vier grote zwart-wittekeningen van kunstenaar Jan Fellinger uit Nijmegen die scènes uitbeelden uit het leven van de heilige Vitus. In 2021 werd tegen de kapel een monument voor oorlogsslachtoffers geplaatst.",
+    "slug": "kerkhof-st-vitus-well-bergen-l"
+  },
+  {
+    "naam_begraafplaats": "Nieuwe St. Vitus Begraafplaats",
+    "gemeente": "Bergen (L.)",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Oude Baan 10",
+    "postcode": "5854 PJ",
+    "plaats": "Well",
+    "gps_coordinaten": "51.601388,6.043611",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "2",
+    "beheerder": "Parochie",
+    "bijzondere_kenmerken": "Nieuwe begraafplaats van de St. Vitus parochie, gelegen aan dezelfde straat als de gemeentelijke begraafplaats Nieuw-Bergen",
+    "beschrijving": "De Nieuwe St. Vitus Begraafplaats is de moderne begraafplaats van de parochie St. Vitus in Well. Deze bijzondere begraafplaats ligt aan de Oude Baan, dezelfde straat waar ook de gemeentelijke begraafplaats van Nieuw-Bergen zich bevindt. Dit is de opvolger van het historische Kerkhof St. Vitus dat bij de oude kerk aan de Hoenderstraat ligt.",
+    "slug": "nieuwe-st-vitus-begraafplaats-well-bergen-l"
+  },
+  {
+    "naam_begraafplaats": "RK Begraafplaats",
+    "gemeente": "Bergen (L.)",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Boterdijk",
+    "postcode": "5853 EE",
+    "plaats": "Siebengewald",
+    "gps_coordinaten": "51.655092,6.105713",
+    "jaar_oprichting": "1864",
+    "oppervlakte": "5200",
+    "aantal_graven": "391",
+    "aantal_personen": "690",
+    "status": "Volledig (alle graven en personen ingevoerd)",
+    "openingstijden": "Dagelijks geopend",
+    "website": "https://parochiesiebengewald.nl",
+    "email": "math@loonen.info",
+    "beheerder": "Parochie",
+    "bijzondere_kenmerken": "Historische RK begraafplaats uit 1864 met 391 graven",
+    "beschrijving": "De Rooms-Katholieke begraafplaats van Siebengewald dateert uit 1864 en ligt aan de Boterdijk. Met 391 graven en 690 begraven personen is dit een belangrijke begraafplaats voor de parochie. De status is volledig, wat betekent dat alle graven en personen zijn ingevoerd in de database. De begraafplaats heeft een oppervlakte van ongeveer 5.200 m².",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Janssen",
+        "aantal": 64
+      },
+      {
+        "naam": "Kersten",
+        "aantal": 27
+      },
+      {
+        "naam": "Peters",
+        "aantal": 21
+      },
+      {
+        "naam": "Gramser",
+        "aantal": 15
+      },
+      {
+        "naam": "Stammen",
+        "aantal": 13
+      },
+      {
+        "naam": "Jacobs",
+        "aantal": 12
+      },
+      {
+        "naam": "Tebarts",
+        "aantal": 11
+      },
+      {
+        "naam": "Piron",
+        "aantal": 10
+      },
+      {
+        "naam": "Lauf",
+        "aantal": 10
+      },
+      {
+        "naam": "Koks",
+        "aantal": 10
+      }
+    ],
+    "slug": "rk-begraafplaats-siebengewald-bergen-l"
+  },
+  {
+    "naam_begraafplaats": "RK Begraafplaats HH. Cosmas en Damianus",
+    "gemeente": "Bergen (L.)",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Pastoor Berdenstraat",
+    "postcode": "5851 AM",
+    "plaats": "Afferden",
+    "gps_coordinaten": "51.633611,6.011111",
+    "openingstijden": "Dagelijks geopend",
+    "telefoon": "06 - 288 734 24",
+    "email": "rickblom7@hotmail.com",
+    "beheerder": "Parochie Cosmas en Damianus",
+    "rating": "5.0",
+    "reviews": "4",
+    "bijzondere_kenmerken": "Historisch kerkhof bij sfeervolle RK kerk, Mariakapel voor wintervieringen, mogelijkheid voor avondwake en uitvaartdienst ook bij crematie",
+    "beschrijving": "De RK Begraafplaats HH. Cosmas en Damianus ligt bij de mooie en sfeervolle Rooms-katholieke kerk in Afferden. De parochie heeft een actieve gemeenschap waarbij alle vieringen vanaf 1 november gedurende de wintermaanden in de Mariakapel worden gehouden. Elke dinsdagochtend van 9.00 tot 11.00 uur is de sacristie geopend voor het opgeven van misintenties, aanvragen voor doopvieringen, uitvaarten en vragen over de kerk en het kerkhof. Ook bij crematie is het mogelijk om een avondwake en/of uitvaartdienst in de kerk te houden. Pastoor Blom (06-557 228 69) wordt graag betrokken bij alle uitvaarten.",
+    "slug": "rk-begraafplaats-hh-cosmas-en-damianus-afferden-bergen-l"
+  },
+  {
+    "naam_begraafplaats": "RK Kerkhof H. Catharina",
+    "gemeente": "Bergen (L.)",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Kerkstraat 16",
+    "postcode": "5431 DS",
+    "plaats": "Wellerlooi",
+    "jaar_oprichting": "1953",
+    "openingstijden": "Dagelijks geopend",
+    "gps_coordinaten": "51.533333,6.083333",
+    "rating": "5.0",
+    "reviews": "1",
+    "beheerder": "Parochie",
+    "bijzondere_kenmerken": "RK kerkhof uit 1953 bij de H. Catharina kerk in Wellerlooi",
+    "beschrijving": "Het Rooms-Katholieke kerkhof H. Catharina ligt bij de gelijknamige kerk aan de Kerkstraat 16 in Wellerlooi. Het kerkhof dateert uit 1953 en wordt beheerd door de parochie. Gelegen in het rustige dorp Wellerlooi in de gemeente Bergen (L.).",
+    "slug": "rk-kerkhof-h-catharina-wellerlooi-bergen-l"
+  },
+  {
+    "naam_begraafplaats": "St. Petrusbegraafplaats",
+    "gemeente": "Bergen (L.)",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Kerkstraat 6",
+    "postcode": "5854 AK",
+    "plaats": "Bergen",
+    "gps_coordinaten": "51.600661,6.031855",
+    "oppervlakte": "1800",
+    "aantal_graven": "335",
+    "aantal_personen": "653",
+    "status": "Volledig (alle graven en personen ingevoerd)",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "4",
+    "beheerder": "Parochie",
+    "bijzondere_kenmerken": "Multifunctionele kerk met mooie kapel, kunstwerken, prachtige lampen en moderne entree",
+    "beschrijving": "De St. Petrusbegraafplaats ligt bij de St. Petruskerk aan de Kerkstraat 6 (ook bekend als Oude Kerkstraat 9) in het centrum van Bergen. De kerk heeft de laatste jaren een multifunctioneel karakter gekregen met een mooie moderne entree en prachtige lampen. Naast de kerk is een kleine kapel die zeer sfeervol is en wel toegankelijk is wanneer de kerk gesloten is. Het kerkhof heeft een oppervlakte van ongeveer 1.800 m² met 335 graven waarin 653 personen zijn begraven.",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Cox",
+        "aantal": 21
+      },
+      {
+        "naam": "Janssen",
+        "aantal": 15
+      },
+      {
+        "naam": "Josten",
+        "aantal": 13
+      },
+      {
+        "naam": "Rutten",
+        "aantal": 11
+      },
+      {
+        "naam": "Martens",
+        "aantal": 11
+      },
+      {
+        "naam": "van Lin",
+        "aantal": 11
+      },
+      {
+        "naam": "Maas",
+        "aantal": 10
+      },
+      {
+        "naam": "Tissen",
+        "aantal": 8
+      },
+      {
+        "naam": "Peters",
+        "aantal": 8
+      },
+      {
+        "naam": "Smits",
+        "aantal": 8
+      }
+    ],
+    "slug": "st-petrusbegraafplaats-bergen-bergen-l"
+  },
+  {
+    "naam_begraafplaats": "Gemeentelijke Begraafplaats Merkelbeekerstraat",
+    "gemeente": "Brunssum",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Merkelbeekerstraat",
+    "postcode": "6441 JD",
+    "plaats": "Brunssum",
+    "gps_coordinaten": "50.9517,5.97113",
+    "oppervlakte": "28100",
+    "aantal_graven": "1888",
+    "aantal_personen": "3327",
+    "status": "Volledig (alle graven en personen ingevoerd)",
+    "openingstijden": "Dagelijks geopend. November t/m maart: 8:00-17:00 uur, april t/m oktober: 8:00-20:00 uur",
+    "telefoon": "045 - 527 8555",
+    "website": "https://www.brunssum.nl",
+    "beheerder": "Gemeentelijk",
+    "bijzondere_kenmerken": "Hondenverbod (m.u.v. geleide-/hulphonden), info-bord met verlopen graven bij ingang, huur 10 of 20 jaar",
+    "beschrijving": "De Gemeentelijke Begraafplaats Merkelbeekerstraat is de algemene begraafplaats van Brunssum met een oppervlakte van 28.100 m². De begraafplaats heeft 1.888 graven waarin 3.327 personen zijn begraven. U kunt hier een graf huren voor 10 of 20 jaar. Op de begraafplaats geldt een hondenverbod, met uitzondering van geleide- of hulphonden. Bij de ingang vindt u een info-bord met een lijst van graven waarvan de huurtermijn is verlopen of bijna afloopt. De gemeente roept rechthebbenden van deze graven op om contact op te nemen voor verlenging of afspraken over verwijdering.",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Janssen",
+        "aantal": 48
+      },
+      {
+        "naam": "Hermans",
+        "aantal": 36
+      },
+      {
+        "naam": "Peters",
+        "aantal": 29
+      },
+      {
+        "naam": "Stevelmans",
+        "aantal": 27
+      },
+      {
+        "naam": "Velraeds",
+        "aantal": 26
+      },
+      {
+        "naam": "Quaedvlieg",
+        "aantal": 25
+      },
+      {
+        "naam": "Vromen",
+        "aantal": 24
+      },
+      {
+        "naam": "Eggen",
+        "aantal": 24
+      },
+      {
+        "naam": "Arets",
+        "aantal": 22
+      },
+      {
+        "naam": "Smeets",
+        "aantal": 21
+      }
+    ],
+    "slug": "gemeentelijke-begraafplaats-merkelbeekerstraat-brunssum"
+  },
+  {
+    "naam_begraafplaats": "Algemene Begraafplaats Samenwerking",
+    "gemeente": "Brunssum",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Heulenderstraat 29",
+    "postcode": "6441 TX",
+    "plaats": "Brunssum",
+    "jaar_oprichting": "1913",
+    "gps_coordinaten": "50.945,5.963",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "5",
+    "beheerder": "Gemeente Brunssum",
+    "bijzondere_kenmerken": "328 Britse/Engelse oorlogsgraven, Cross of Sacrifice, herdenkingskapel, jaarlijkse herdenkingen 4 mei en 11 november, ereburgerschap 2019",
+    "beschrijving": "De Algemene Begraafplaats Samenwerking, ook bekend als het 'Engelse Kerkhof', is een goed onderhouden Britse ereveld uit 1913 met 328 gesneuvelde soldaten uit de Tweede Wereldoorlog. Van de 328 graven zijn 327 met naam, rang en eenheid geëerd, één bleef onbekend. Het kerkhof heeft een Cross of Sacrifice en een kleine herdenkingskapel. Jaarlijks worden deze militairen herdacht op 4 mei (Dodenherdenking) met een kerkdienst in de Sint Gregorius kerk om 19:00 uur, gevolgd door kransleggingen op beide begraafplaatsen. Ook op 11 november (Remembrance Day) is er een herdenking. Op 19 september 2019 ontvingen de gevallenen het ereburgerschap van de gemeente Brunssum. Alle graven zijn geadopteerd door mensen uit Brunssum. Let op: hondenverbod geldt, behalve voor geleide-/hulphonden.",
+    "slug": "algemene-begraafplaats-samenwerking-brunssum"
+  },
+  {
+    "naam_begraafplaats": "Britisch War Cemetery",
+    "gemeente": "Brunssum",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Heufstraat",
+    "postcode": "6441 TX",
+    "plaats": "Brunssum",
+    "jaar_oprichting": "1944",
+    "gps_coordinaten": "50.945,5.963",
+    "openingstijden": "24 uur per dag geopend",
+    "telefoon": "06 - 150 588 20",
+    "email": "Info@warcemetery.nl",
+    "beheerder": "Commonwealth War Graves Commission",
+    "aantal_graven": "328",
+    "rating": "5.0",
+    "reviews": "5",
+    "bijzondere_kenmerken": "Britse oorlogsbegraafplaats WOII, Cross of Sacrifice (ontwerp Sir Reginald Blomfield), alle graven geadopteerd, register en gastenboek aanwezig",
+    "beschrijving": "De Oorlogsbegraafplaats van het Gemenebest Brunssum is een Brits ereveld beheerd door de Commonwealth War Graves Commission. Er liggen 328 Britse soldaten uit de Tweede Wereldoorlog begraven, waarvan één onbekend (geadopteerd door gemeente Brunssum). De eerste doden kwamen in november 1944 van een veldhospitaal in Merkelbeek tijdens de Britse 43rd (Wessex) Division operaties tussen Roer en Maas (Operatie Blackcock). Later kwamen 50 mijnenruimers die omkwamen bij de Duitse grens (januari 1945) en anderen die sneuvelden rond Geilenkirchen. Het Cross of Sacrifice is uitgevoerd in natuursteen met bronzen zwaard. Alle graven zijn geadopteerd via Stichting War Cemetery Brunssum onder beschermheerschap van burgemeester L. Winants. Contact: Shirley van Dishoeck-Sinfield.",
+    "slug": "britisch-war-cemetery-brunssum"
+  },
+  {
+    "naam_begraafplaats": "Kerkhof Rumpen",
+    "gemeente": "Brunssum",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Tolenhof",
+    "postcode": "6443 BC",
+    "plaats": "Brunssum",
+    "jaar_oprichting": "1924",
+    "gps_coordinaten": "50.940824,5.976245",
+    "oppervlakte": "6000",
+    "aantal_graven": "1024",
+    "aantal_personen": "1708",
+    "status": "Volledig (alle graven en personen ingevoerd)",
+    "openingstijden": "Dagelijks 09:00-19:00 uur (automatisch hek). Bij insluiting: kleine toegangspoort met automatische knop",
+    "telefoon": "045 - 525 2296",
+    "beheerder": "RK Parochie H. Vincentius a Paulo",
+    "rating": "5.0",
+    "reviews": "3",
+    "bijzondere_kenmerken": "Militair oorlogsgraf, gedenkteken WOII slachtoffers, automatische poorten, parochie kantoor Prins Hendriklaan 378",
+    "beschrijving": "RK Begraafplaats Rumpen wordt beheerd door Parochie H. Vincentius a Paulo (kantoor: Prins Hendriklaan 378, Brunssum). De begraafplaats uit 1924 heeft een oppervlakte van 6.000 m² met 1.024 graven waarin 1.708 personen zijn begraven. Op het kerkhof bevindt zich een militair oorlogsgraf en een gedenkteken voor omgekomen slachtoffers tijdens de Tweede Wereldoorlog. De toegangspoorten openen en sluiten automatisch (09:00-19:00 uur). Mocht u per ongeluk ingesloten raken, dan kunt u de kleine toegangspoort gebruiken met de automatische knop waarvan aanwijzingen op de poort staan.",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Hendriks",
+        "aantal": 21
+      },
+      {
+        "naam": "Smeets",
+        "aantal": 19
+      },
+      {
+        "naam": "Peters",
+        "aantal": 19
+      },
+      {
+        "naam": "Janssen",
+        "aantal": 17
+      },
+      {
+        "naam": "Peeters",
+        "aantal": 15
+      },
+      {
+        "naam": "Nauts",
+        "aantal": 14
+      },
+      {
+        "naam": "Hendrix",
+        "aantal": 14
+      },
+      {
+        "naam": "Jansen",
+        "aantal": 11
+      },
+      {
+        "naam": "Theunissen",
+        "aantal": 11
+      },
+      {
+        "naam": "van Goethem",
+        "aantal": 9
+      }
+    ],
+    "slug": "kerkhof-rumpen-brunssum"
+  },
+  {
+    "naam_begraafplaats": "Oude Kerkhof St. Clemens",
+    "gemeente": "Brunssum",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Groeneweg 2-4",
+    "postcode": "6441 LL",
+    "plaats": "Brunssum",
+    "jaar_oprichting": "1000",
+    "gps_coordinaten": "50.95,5.966667",
+    "openingstijden": "Dagelijks geopend",
+    "rating": "5.0",
+    "reviews": "5",
+    "website": "https://www.clemensdomein.nl",
+    "bijzondere_kenmerken": "Rijksmonument met Sint-Clemenskerk (ca. 1000), praalgraf Baron De Negri, Lourdesgrot (1887), muurschilderingen Dom Romanus Jacobs, Romeinse wegkruising",
+    "beschrijving": "Het Oude Kerkhof St. Clemens ligt bij de historische Sint-Clemenskerk uit ongeveer het jaar 1000, op de grens met Merkelbeek. Dit rijksmonument vormde het centrum van de parochie tot 1879. Het Clemensdomein omvat behalve het kerkhof ook de gerestaureerde kerk (nu museumkerkje), een Lourdesgrot uit 1887, en het praalgraf van het adellijk echtpaar Baron De Negri. De locatie ligt op een historische plek waar de Romeinse heirbaan Aken-Xanten de Merkelbekerbeek kruiste. Het terrein biedt mogelijkheden voor bruiloften en ceremonies. In 2013-2014 is de kerk gerestaureerd waarbij muurschilderingen uit 1901 van Dom Romanus Jacobs zijn blootgelegd. Het is een prachtig wandelgebied met veel historie, beheerd door 50 vrijwilligers.",
+    "slug": "oude-kerkhof-st-clemens-brunssum"
+  },
+  {
+    "naam_begraafplaats": "RK Begraafplaats St Barbara",
+    "gemeente": "Brunssum",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Schildstraat 44",
+    "postcode": "6444 XM",
+    "plaats": "Treebeek",
+    "jaar_oprichting": "1940",
+    "gps_coordinaten": "50.936938,5.951308",
+    "openingstijden": "Dagelijks geopend",
+    "oppervlakte": "2800",
+    "aantal_graven": "381",
+    "aantal_personen": "682",
+    "status": "Volledig",
+    "beheerder": "Parochie",
+    "email": "kerkhofsintbarbara@gmail.com",
+    "telefoon": "045 527 15 84",
+    "rating": "5.0",
+    "reviews": "1",
+    "bijzondere_kenmerken": "Gelegen achter de Heilige Barbarakerk in Treebeek, bestemd voor RK parochianen",
+    "beschrijving": "De RK Begraafplaats St Barbara ligt achter de Heilige Barbarakerk in Treebeek, Brunssum. Deze katholieke begraafplaats uit 1940 is bestemd voor het begraven van overledenen of het bijzetten van asbussen van personen die bij leven behoorden tot de RK parochies in Brunssum. Met een oppervlakte van 2.800 m² biedt de begraafplaats plaats aan 381 graven waarin 682 personen zijn begraven. De beheerder F. de Bock kan worden bereikt voor vragen over reglement, tarieven, plattegrond en grafrechten.",
+    "meest_voorkomende_namen": [
+      {
+        "naam": "Derks",
+        "aantal": 9
+      },
+      {
+        "naam": "Serrarens",
+        "aantal": 8
+      },
+      {
+        "naam": "Schneider",
+        "aantal": 7
+      },
+      {
+        "naam": "Janssen",
+        "aantal": 7
+      },
+      {
+        "naam": "Jacobs",
+        "aantal": 7
+      },
+      {
+        "naam": "Storms",
+        "aantal": 6
+      },
+      {
+        "naam": "Cox",
+        "aantal": 6
+      },
+      {
+        "naam": "Navis",
+        "aantal": 5
+      },
+      {
+        "naam": "Brassé",
+        "aantal": 5
+      },
+      {
+        "naam": "Wolfs",
+        "aantal": 5
+      }
+    ],
+    "slug": "rk-begraafplaats-st-barbara-brunssum"
+  },
+  {
+    "naam_begraafplaats": "Gemeentelijke Begraafplaats Annahof",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Nieuwe Markt 55",
+    "plaats": "Echt",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "gemeentelijke-begraafplaats-annahof-echt"
+  },
+  {
+    "naam_begraafplaats": "Gemeentelijke Begraafplaats Elsene",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "algemene begraafplaats",
+    "adres": "Elsenewal 21A",
+    "plaats": "Nieuwstadt",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "gemeentelijke-begraafplaats-elsene-nieuwstadt"
+  },
+  {
+    "naam_begraafplaats": "H. Joannes de Doperkerkhof",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Millenerstraat 1",
+    "plaats": "Nieuwstadt",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "h-joannes-de-doperkerkhof-nieuwstadt"
+  },
+  {
+    "naam_begraafplaats": "Kerkhof Onze Lieve Vrouwe Onbevlekt Ontvangen",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Kerkplein",
+    "plaats": "Echt",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "kerkhof-onze-lieve-vrouwe-onbevlekt-ontvangen-echt"
+  },
+  {
+    "naam_begraafplaats": "Kerkhof St. Amalberga",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Salvatorplein 10",
+    "plaats": "Susteren",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "kerkhof-st-amalberga-susteren"
+  },
+  {
+    "naam_begraafplaats": "Kloosterbegraafplaats Karmelitessen",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Bovenste straat 48",
+    "plaats": "Echt",
+    "openingstijden": "Op afspraak",
+    "slug": "kloosterbegraafplaats-karmelitessen-echt"
+  },
+  {
+    "naam_begraafplaats": "Kloosterbegraafplaats Liefdezusters van het Kostbaar Bloed",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Klooster van de Liefdezusters van Het Kostbaar Bloed",
+    "plaats": "Koningsbosch",
+    "openingstijden": "Op afspraak",
+    "slug": "kloosterbegraafplaats-liefdezusters-van-het-kostbaar-bloed-koningsbosch"
+  },
+  {
+    "naam_begraafplaats": "Kloosterbegraafplaats Ursulinen",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Nieuwe Markt 55",
+    "plaats": "Echt",
+    "openingstijden": "Op afspraak",
+    "slug": "kloosterbegraafplaats-ursulinen-echt"
+  },
+  {
+    "naam_begraafplaats": "Oude RK Begraafplaats",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Diepstraat",
+    "plaats": "Roosteren",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "oude-rk-begraafplaats-roosteren"
+  },
+  {
+    "naam_begraafplaats": "Oude kerkhof",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Vleutstraat 17",
+    "plaats": "Dieteren",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "oude-kerkhof-dieteren"
+  },
+  {
+    "naam_begraafplaats": "RK Begraafplaats H. Jodocus",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Diepstraat",
+    "plaats": "Sint Joost",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "rk-begraafplaats-h-jodocus-sint-joost"
+  },
+  {
+    "naam_begraafplaats": "RK Begraafplaats Heilige Hoop",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Diepstraat",
+    "plaats": "Mariahoop",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "rk-begraafplaats-heilige-hoop-mariahoop"
+  },
+  {
+    "naam_begraafplaats": "RK Begraafplaats Onze Lieve Vrouw Onbevlekt Ontvangen",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Vincentiuslaan 40A",
+    "plaats": "Koningsbosch",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "rk-begraafplaats-onze-lieve-vrouw-onbevlekt-ontvangen-koningsbosch"
+  },
+  {
+    "naam_begraafplaats": "RK Kerkhof Mariaveld",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Vincentiuslaan 40A",
+    "plaats": "Susteren",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "rk-kerkhof-mariaveld-susteren"
+  },
+  {
+    "naam_begraafplaats": "Sint Annakerkhof",
+    "gemeente": "Echt-Susteren",
+    "provincie": "Limburg",
+    "type": "bijzondere begraafplaats",
+    "adres": "Nieuwe Markt 55",
+    "plaats": "Echt",
+    "openingstijden": "Dagelijks geopend",
+    "slug": "sint-annakerkhof-echt"
+  }
+]
