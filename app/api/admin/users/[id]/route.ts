@@ -33,7 +33,7 @@ export async function GET(
 
     if (!user) {
       return NextResponse.json(
-        { error: 'Gebruiker niet gevonden' },
+        { error: 'User not found' },
         { status: 404 }
       );
     }
@@ -74,7 +74,7 @@ export async function PATCH(
     // Prevent self-demotion
     if (adminUser && adminUser.id === userId && role && role !== 'admin') {
       return NextResponse.json(
-        { error: 'Je kunt je eigen admin rechten niet verwijderen' },
+        { error: 'You cannot remove your own admin rights' },
         { status: 400 }
       );
     }
@@ -88,7 +88,7 @@ export async function PATCH(
 
     if (!existingUser) {
       return NextResponse.json(
-        { error: 'Gebruiker niet gevonden' },
+        { error: 'User not found' },
         { status: 404 }
       );
     }
@@ -103,7 +103,7 @@ export async function PATCH(
 
       if (emailTaken) {
         return NextResponse.json(
-          { error: 'Dit e-mailadres is al in gebruik' },
+          { error: 'This email address is already in use' },
           { status: 409 }
         );
       }
@@ -147,7 +147,7 @@ export async function DELETE(
     // Prevent self-deletion
     if (adminUser && adminUser.id === userId) {
       return NextResponse.json(
-        { error: 'Je kunt je eigen account niet verwijderen' },
+        { error: 'You cannot delete your own account' },
         { status: 400 }
       );
     }
@@ -161,7 +161,7 @@ export async function DELETE(
 
     if (!existingUser) {
       return NextResponse.json(
-        { error: 'Gebruiker niet gevonden' },
+        { error: 'User not found' },
         { status: 404 }
       );
     }

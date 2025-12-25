@@ -2,119 +2,119 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Algemene Voorwaarden | Begraafplaats in de Buurt',
-  description: 'Algemene voorwaarden van Begraafplaats in de Buurt.',
+  title: 'Terms of Service | Cemetery Near Me',
+  description: 'Terms of service for Cemetery Near Me.',
 };
 
-export default function VoorwaardenPage() {
+export default function TermsPage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
       <nav className="mb-8">
         <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
           <li><Link href="/" className="hover:text-foreground">Home</Link></li>
           <li>/</li>
-          <li className="text-foreground">Algemene Voorwaarden</li>
+          <li className="text-foreground">Terms of Service</li>
         </ol>
       </nav>
 
-      <h1 className="text-4xl font-bold mb-8">Algemene Voorwaarden</h1>
-      
+      <h1 className="text-4xl font-bold mb-8">Terms of Service</h1>
+
       <div className="prose prose-gray max-w-none">
         <p className="text-lg text-muted-foreground mb-6">
-          Laatst bijgewerkt: {new Date().toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' })}
+          Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
         </p>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">1. Definities</h2>
+          <h2 className="text-2xl font-semibold mb-4">1. Definitions</h2>
           <p className="mb-4">
-            In deze algemene voorwaarden wordt verstaan onder:
+            In these terms of service, the following terms apply:
           </p>
           <ul className="list-disc pl-6 mb-4">
-            <li><strong>Website:</strong> Begraafplaats in de Buurt (begraafplaatsindebuurt.nl)</li>
-            <li><strong>Gebruiker:</strong> Iedere bezoeker van de website</li>
-            <li><strong>Informatie:</strong> Alle gegevens over begraafplaatsen op de website</li>
+            <li><strong>Website:</strong> Cemetery Near Me (cemeterynearbyme.com)</li>
+            <li><strong>User:</strong> Any visitor to the website</li>
+            <li><strong>Information:</strong> All data about cemeteries on the website</li>
           </ul>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">2. Toepasselijkheid</h2>
+          <h2 className="text-2xl font-semibold mb-4">2. Applicability</h2>
           <p className="mb-4">
-            Deze algemene voorwaarden zijn van toepassing op elk gebruik van de website Begraafplaats in de Buurt. 
-            Door gebruik te maken van onze website, accepteert u deze voorwaarden.
+            These terms of service apply to all use of the Cemetery Near Me website.
+            By using our website, you accept these terms.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">3. Gebruik van de website</h2>
+          <h2 className="text-2xl font-semibold mb-4">3. Use of the Website</h2>
           <p className="mb-4">
-            De website is bedoeld voor informatieve doeleinden. Gebruikers kunnen:
+            The website is intended for informational purposes. Users can:
           </p>
           <ul className="list-disc pl-6 mb-4">
-            <li>Zoeken naar begraafplaatsen in Nederland</li>
-            <li>Informatie bekijken over openingstijden en faciliteiten</li>
-            <li>Routebeschrijvingen opvragen</li>
+            <li>Search for cemeteries in the United States</li>
+            <li>View information about opening hours and facilities</li>
+            <li>Get directions to cemeteries</li>
           </ul>
           <p className="mb-4">
-            Het is niet toegestaan om de website te gebruiken voor illegale doeleinden of op een manier die 
-            schade kan toebrengen aan de website of andere gebruikers.
+            It is not permitted to use the website for illegal purposes or in a manner that
+            could cause damage to the website or other users.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">4. Intellectueel eigendom</h2>
+          <h2 className="text-2xl font-semibold mb-4">4. Intellectual Property</h2>
           <p className="mb-4">
-            Alle inhoud op deze website, inclusief teksten, afbeeldingen, logo&apos;s en datastructuren, is eigendom 
-            van Begraafplaats in de Buurt of haar licentiegevers. Het is niet toegestaan om zonder schriftelijke 
-            toestemming inhoud te kopiëren, reproduceren of distribueren.
+            All content on this website, including texts, images, logos, and data structures, is the property
+            of Cemetery Near Me or its licensors. It is not permitted to copy, reproduce, or distribute
+            content without written permission.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">5. Aansprakelijkheid</h2>
+          <h2 className="text-2xl font-semibold mb-4">5. Disclaimer</h2>
           <p className="mb-4">
-            Wij streven ernaar om accurate en actuele informatie te verstrekken, maar kunnen niet garanderen dat alle 
-            informatie te allen tijde volledig correct is. Begraafplaats in de Buurt is niet aansprakelijk voor:
+            We strive to provide accurate and up-to-date information, but cannot guarantee that all
+            information is completely correct at all times. Cemetery Near Me is not liable for:
           </p>
           <ul className="list-disc pl-6 mb-4">
-            <li>Onjuistheden in de verstrekte informatie</li>
-            <li>Beslissingen genomen op basis van informatie op de website</li>
-            <li>Technische storingen of onderbrekingen</li>
-            <li>Schade door gebruik van de website</li>
+            <li>Inaccuracies in the provided information</li>
+            <li>Decisions made based on information on the website</li>
+            <li>Technical failures or interruptions</li>
+            <li>Damages resulting from use of the website</li>
           </ul>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">6. Links naar externe websites</h2>
+          <h2 className="text-2xl font-semibold mb-4">6. Links to External Websites</h2>
           <p className="mb-4">
-            Onze website kan links bevatten naar externe websites. Wij zijn niet verantwoordelijk voor de inhoud 
-            of het privacybeleid van deze externe websites.
+            Our website may contain links to external websites. We are not responsible for the content
+            or privacy policies of these external websites.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">7. Wijzigingen</h2>
+          <h2 className="text-2xl font-semibold mb-4">7. Changes</h2>
           <p className="mb-4">
-            Wij behouden ons het recht voor om deze algemene voorwaarden op elk moment te wijzigen. Wijzigingen 
-            worden van kracht zodra ze op de website zijn gepubliceerd. Het is uw verantwoordelijkheid om 
-            regelmatig de voorwaarden te controleren.
+            We reserve the right to modify these terms of service at any time. Changes
+            become effective as soon as they are published on the website. It is your responsibility to
+            regularly check the terms.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">8. Toepasselijk recht</h2>
+          <h2 className="text-2xl font-semibold mb-4">8. Governing Law</h2>
           <p className="mb-4">
-            Op deze algemene voorwaarden is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de 
-            bevoegde rechter in Nederland.
+            These terms of service are governed by the laws of the United States. Any disputes will be
+            submitted to the competent courts in the United States.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">9. Contact</h2>
           <p className="mb-4">
-            Voor vragen over deze algemene voorwaarden kunt u contact met ons opnemen:
+            For questions about these terms of service, you can contact us at:
           </p>
           <p className="mb-4">
-            E-mail: <a href="mailto:info@begraafplaatsindebuurt.nl" className="text-primary hover:underline">info@begraafplaatsindebuurt.nl</a>
+            Email: <a href="mailto:info@cemeterynearbyme.com" className="text-primary hover:underline">info@cemeterynearbyme.com</a>
           </p>
         </section>
       </div>

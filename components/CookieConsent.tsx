@@ -105,34 +105,34 @@ export default function CookieConsent() {
             <Cookie className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
             
             <div className="flex-1">
-              <h3 className="font-semibold text-lg mb-2">Cookie instellingen</h3>
+              <h3 className="font-semibold text-lg mb-2">Cookie Settings</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Wij gebruiken cookies om uw ervaring te verbeteren, het verkeer te analyseren en relevante advertenties te tonen. 
-                Door op &quot;Alles accepteren&quot; te klikken, stemt u in met ons gebruik van cookies.
+                We use cookies to improve your experience, analyze traffic, and show relevant advertisements.
+                By clicking &quot;Accept All&quot;, you consent to our use of cookies.
               </p>
 
               {showDetails && (
                 <div className="mb-4 space-y-3 bg-gray-50 p-4 rounded-lg">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-medium text-sm">Noodzakelijke cookies</h4>
-                      <p className="text-xs text-muted-foreground">Essentieel voor het functioneren van de website</p>
+                      <h4 className="font-medium text-sm">Necessary cookies</h4>
+                      <p className="text-xs text-muted-foreground">Essential for the website to function</p>
                     </div>
-                    <input 
-                      type="checkbox" 
-                      checked={consent.necessary} 
-                      disabled 
+                    <input
+                      type="checkbox"
+                      checked={consent.necessary}
+                      disabled
                       className="h-4 w-4"
                     />
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-medium text-sm">Analytische cookies</h4>
-                      <p className="text-xs text-muted-foreground">Helpen ons begrijpen hoe bezoekers de site gebruiken</p>
+                      <h4 className="font-medium text-sm">Analytics cookies</h4>
+                      <p className="text-xs text-muted-foreground">Help us understand how visitors use the site</p>
                     </div>
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       checked={consent.analytics}
                       onChange={(e) => setConsent({ ...consent, analytics: e.target.checked })}
                       className="h-4 w-4"
@@ -141,11 +141,11 @@ export default function CookieConsent() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-medium text-sm">Advertentie cookies</h4>
-                      <p className="text-xs text-muted-foreground">Voor gepersonaliseerde advertenties (Google AdSense, Mediavine)</p>
+                      <h4 className="font-medium text-sm">Advertising cookies</h4>
+                      <p className="text-xs text-muted-foreground">For personalized advertisements (Google AdSense, Mediavine)</p>
                     </div>
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       checked={consent.advertising}
                       onChange={(e) => setConsent({ ...consent, advertising: e.target.checked })}
                       className="h-4 w-4"
@@ -154,11 +154,11 @@ export default function CookieConsent() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-medium text-sm">Functionele cookies</h4>
-                      <p className="text-xs text-muted-foreground">Onthouden voorkeuren en instellingen</p>
+                      <h4 className="font-medium text-sm">Functional cookies</h4>
+                      <p className="text-xs text-muted-foreground">Remember preferences and settings</p>
                     </div>
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       checked={consent.functionality}
                       onChange={(e) => setConsent({ ...consent, functionality: e.target.checked })}
                       className="h-4 w-4"
@@ -168,36 +168,36 @@ export default function CookieConsent() {
               )}
 
               <div className="flex flex-wrap items-center gap-2">
-                <Button 
+                <Button
                   onClick={acceptAll}
                   className="bg-primary hover:bg-primary/90"
                 >
-                  Alles accepteren
+                  Accept All
                 </Button>
-                
+
                 {showDetails ? (
-                  <Button 
+                  <Button
                     onClick={acceptSelected}
                     variant="outline"
                   >
-                    Selectie opslaan
+                    Save Selection
                   </Button>
                 ) : (
-                  <Button 
+                  <Button
                     onClick={() => setShowDetails(true)}
                     variant="outline"
                     className="flex items-center gap-1"
                   >
                     <Settings className="w-4 h-4" />
-                    Instellingen
+                    Settings
                   </Button>
                 )}
-                
-                <Button 
+
+                <Button
                   onClick={rejectAll}
                   variant="ghost"
                 >
-                  Alleen noodzakelijk
+                  Necessary Only
                 </Button>
 
                 <a 
@@ -212,7 +212,7 @@ export default function CookieConsent() {
             <button
               onClick={rejectAll}
               className="text-muted-foreground hover:text-foreground"
-              aria-label="Sluiten"
+              aria-label="Close"
             >
               <X className="w-5 h-5" />
             </button>

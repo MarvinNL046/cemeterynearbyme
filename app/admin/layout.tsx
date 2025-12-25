@@ -25,11 +25,11 @@ interface UserData {
 
 const navItems = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/admin/users', label: 'Gebruikers', icon: Users },
+  { href: '/admin/users', label: 'Users', icon: Users },
   { href: '/admin/claims', label: 'Claims', icon: FileCheck },
-  { href: '/admin/cemeteries', label: 'Begraafplaatsen', icon: Building2 },
+  { href: '/admin/cemeteries', label: 'Cemeteries', icon: Building2 },
   { href: '/admin/feedback', label: 'Feedback', icon: MessageSquare },
-  { href: '/admin/settings', label: 'Instellingen', icon: Settings },
+  { href: '/admin/settings', label: 'Settings', icon: Settings },
 ];
 
 export default function AdminLayout({
@@ -152,7 +152,7 @@ export default function AdminLayout({
                   </svg>
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm font-semibold text-white truncate">Begraafplaats</p>
+                  <p className="text-sm font-semibold text-white truncate">Cemetery</p>
                   <p className="text-xs text-gold-300">Admin Panel</p>
                 </div>
               </Link>
@@ -199,7 +199,7 @@ export default function AdminLayout({
                 className="w-full flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/10 hover:text-white rounded-lg transition-colors mt-2"
               >
                 <LogOut className="w-5 h-5" />
-                Uitloggen
+                Log out
               </button>
             </div>
           </div>

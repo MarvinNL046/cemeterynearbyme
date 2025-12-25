@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
     const user = await getCurrentUser();
 
     if (!user) {
-      return NextResponse.json({ error: 'Niet ingelogd' }, { status: 401 });
+      return NextResponse.json({ error: 'Not logged in' }, { status: 401 });
     }
 
     // Set RLS context - now queries are automatically filtered by user
@@ -56,7 +56,7 @@ export async function GET(request: NextRequest) {
     }
   } catch (error) {
     console.error('Error fetching favorites:', error);
-    return NextResponse.json({ error: 'Er ging iets mis' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }
 
@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
     const user = await getCurrentUser();
 
     if (!user) {
-      return NextResponse.json({ error: 'Niet ingelogd' }, { status: 401 });
+      return NextResponse.json({ error: 'Not logged in' }, { status: 401 });
     }
 
     // Set RLS context
@@ -88,7 +88,7 @@ export async function POST(request: NextRequest) {
     if (existing.length > 0) {
       return NextResponse.json({
         success: true,
-        message: 'Al toegevoegd aan favorieten'
+        message: 'Already added to favorites'
       });
     }
 
@@ -101,11 +101,11 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Toegevoegd aan favorieten'
+      message: 'Added to favorites'
     });
   } catch (error) {
     console.error('Error adding favorite:', error);
-    return NextResponse.json({ error: 'Er ging iets mis' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }
 
@@ -115,7 +115,7 @@ export async function DELETE(request: NextRequest) {
     const user = await getCurrentUser();
 
     if (!user) {
-      return NextResponse.json({ error: 'Niet ingelogd' }, { status: 401 });
+      return NextResponse.json({ error: 'Not logged in' }, { status: 401 });
     }
 
     // Set RLS context
@@ -136,10 +136,10 @@ export async function DELETE(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Verwijderd uit favorieten'
+      message: 'Removed from favorites'
     });
   } catch (error) {
     console.error('Error removing favorite:', error);
-    return NextResponse.json({ error: 'Er ging iets mis' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }

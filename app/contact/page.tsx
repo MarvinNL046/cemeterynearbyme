@@ -35,7 +35,7 @@ export default function ContactPage() {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
-        // Reset status na 5 seconden
+        // Reset status after 5 seconds
         setTimeout(() => setSubmitStatus('idle'), 5000);
       } else {
         setSubmitStatus('error');
@@ -70,11 +70,11 @@ export default function ContactPage() {
           </nav>
 
           <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4">
-            Neem Contact Op
+            Contact Us
           </h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl">
-            Heeft u een vraag, opmerking of wilt u samenwerken?
-            We horen graag van u en reageren binnen 1-2 werkdagen.
+            Have a question, comment, or want to collaborate?
+            We&apos;d love to hear from you and will respond within 1-2 business days.
           </p>
         </div>
       </div>
@@ -85,16 +85,16 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <Card className="p-8 shadow-soft">
-                <h2 className="font-serif text-2xl font-bold mb-6">Stuur ons een bericht</h2>
+                <h2 className="font-serif text-2xl font-bold mb-6">Send us a message</h2>
 
                 {submitStatus === 'success' && (
                   <div className="mb-6 p-4 bg-forest-50 border border-forest-200 rounded-lg flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-forest-600 shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-forest-700 font-medium">Bericht verzonden!</p>
+                      <p className="text-forest-700 font-medium">Message sent!</p>
                       <p className="text-forest-600 text-sm">
-                        Bedankt voor uw bericht. We nemen zo snel mogelijk contact met u op.
-                        U ontvangt een bevestigingsmail op het opgegeven e-mailadres.
+                        Thank you for your message. We will get back to you as soon as possible.
+                        You will receive a confirmation email at the address provided.
                       </p>
                     </div>
                   </div>
@@ -104,9 +104,9 @@ export default function ContactPage() {
                   <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
                     <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-red-700 font-medium">Er ging iets mis</p>
+                      <p className="text-red-700 font-medium">Something went wrong</p>
                       <p className="text-red-600 text-sm">
-                        Probeer het opnieuw of stuur een e-mail naar info@begraafplaatsindebuurt.nl.
+                        Please try again or send an email to info@cemeterynearbyme.com.
                       </p>
                     </div>
                   </div>
@@ -116,7 +116,7 @@ export default function ContactPage() {
                   <div className="grid gap-6 md:grid-cols-2">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
-                        Naam <span className="text-accent">*</span>
+                        Name <span className="text-accent">*</span>
                       </label>
                       <Input
                         id="name"
@@ -125,14 +125,14 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Uw naam"
+                        placeholder="Your name"
                         className="border-2 focus:border-accent"
                       />
                     </div>
 
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium mb-2">
-                        E-mailadres <span className="text-accent">*</span>
+                        Email address <span className="text-accent">*</span>
                       </label>
                       <Input
                         id="email"
@@ -141,7 +141,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="uw@email.nl"
+                        placeholder="your@email.com"
                         className="border-2 focus:border-accent"
                       />
                     </div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                      Onderwerp <span className="text-accent">*</span>
+                      Subject <span className="text-accent">*</span>
                     </label>
                     <select
                       id="subject"
@@ -159,18 +159,18 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-accent bg-background"
                     >
-                      <option value="">Selecteer een onderwerp</option>
-                      <option value="algemeen">Algemene vraag</option>
-                      <option value="informatie">Informatie toevoegen/wijzigen</option>
-                      <option value="samenwerking">Samenwerking</option>
-                      <option value="technisch">Technisch probleem</option>
-                      <option value="anders">Anders</option>
+                      <option value="">Select a subject</option>
+                      <option value="general">General inquiry</option>
+                      <option value="information">Add/update information</option>
+                      <option value="partnership">Partnership</option>
+                      <option value="technical">Technical issue</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Bericht <span className="text-accent">*</span>
+                      Message <span className="text-accent">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -179,7 +179,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      placeholder="Uw bericht..."
+                      placeholder="Your message..."
                       className="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-accent resize-none bg-background"
                     />
                   </div>
@@ -190,11 +190,11 @@ export default function ContactPage() {
                     className="bg-accent text-accent-foreground hover:bg-accent/90"
                   >
                     {isSubmitting ? (
-                      <>Verzenden...</>
+                      <>Sending...</>
                     ) : (
                       <>
                         <Send className="w-4 h-4 mr-2" />
-                        Bericht verzenden
+                        Send message
                       </>
                     )}
                   </Button>
@@ -208,19 +208,19 @@ export default function ContactPage() {
             <div className="space-y-6">
               {/* Contact Info Card */}
               <Card className="p-6 shadow-soft">
-                <h3 className="font-serif text-lg font-semibold mb-4">Contactgegevens</h3>
+                <h3 className="font-serif text-lg font-semibold mb-4">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center shrink-0">
                       <Mail className="w-5 h-5 text-forest-700" />
                     </div>
                     <div>
-                      <p className="font-medium">E-mail</p>
+                      <p className="font-medium">Email</p>
                       <a
-                        href="mailto:info@begraafplaatsindebuurt.nl"
+                        href="mailto:info@cemeterynearbyme.com"
                         className="text-sm text-accent hover:underline"
                       >
-                        info@begraafplaatsindebuurt.nl
+                        info@cemeterynearbyme.com
                       </a>
                     </div>
                   </div>
@@ -230,9 +230,9 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5 text-forest-700" />
                     </div>
                     <div>
-                      <p className="font-medium">Locatie</p>
+                      <p className="font-medium">Location</p>
                       <p className="text-sm text-muted-foreground">
-                        Limburg, Nederland
+                        United States
                       </p>
                     </div>
                   </div>
@@ -242,9 +242,9 @@ export default function ContactPage() {
                       <Clock className="w-5 h-5 text-forest-700" />
                     </div>
                     <div>
-                      <p className="font-medium">Reactietijd</p>
+                      <p className="font-medium">Response Time</p>
                       <p className="text-sm text-muted-foreground">
-                        Binnen 1-2 werkdagen
+                        Within 1-2 business days
                       </p>
                     </div>
                   </div>
@@ -253,16 +253,16 @@ export default function ContactPage() {
 
               {/* FAQ Topics Card */}
               <Card className="p-6 shadow-soft">
-                <h3 className="font-serif text-lg font-semibold mb-4">Veelgestelde onderwerpen</h3>
+                <h3 className="font-serif text-lg font-semibold mb-4">Common Topics</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center shrink-0">
                       <MessageSquare className="w-4 h-4 text-accent" />
                     </div>
                     <div>
-                      <p className="font-medium text-sm">Informatie toevoegen</p>
+                      <p className="font-medium text-sm">Add Information</p>
                       <p className="text-xs text-muted-foreground">
-                        Beheert u een begraafplaats? We voegen graag uw informatie toe.
+                        Do you manage a cemetery? We&apos;d be happy to add your information.
                       </p>
                     </div>
                   </div>
@@ -272,9 +272,9 @@ export default function ContactPage() {
                       <MessageSquare className="w-4 h-4 text-accent" />
                     </div>
                     <div>
-                      <p className="font-medium text-sm">Onjuiste informatie</p>
+                      <p className="font-medium text-sm">Incorrect Information</p>
                       <p className="text-xs text-muted-foreground">
-                        Klopt er iets niet? Laat het ons weten voor correctie.
+                        Something not right? Let us know so we can correct it.
                       </p>
                     </div>
                   </div>
@@ -284,9 +284,9 @@ export default function ContactPage() {
                       <MessageSquare className="w-4 h-4 text-accent" />
                     </div>
                     <div>
-                      <p className="font-medium text-sm">Samenwerking</p>
+                      <p className="font-medium text-sm">Partnership</p>
                       <p className="text-xs text-muted-foreground">
-                        Interesse in een partnership? We horen graag van u.
+                        Interested in a partnership? We&apos;d love to hear from you.
                       </p>
                     </div>
                   </div>
@@ -295,17 +295,16 @@ export default function ContactPage() {
 
               {/* Admin Verification Card */}
               <Card className="p-6 shadow-soft bg-gradient-to-br from-forest-50 to-gold-50/50 dark:from-forest-900/20 dark:to-gold-900/10 border-forest-100 dark:border-forest-800">
-                <h3 className="font-serif text-lg font-semibold mb-3">Voor beheerders</h3>
+                <h3 className="font-serif text-lg font-semibold mb-3">For Cemetery Managers</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Beheert u een begraafplaats en wilt u dat uw informatie correct
-                  en volledig is? Neem contact op voor een gratis verificatie van
-                  uw gegevens.
+                  Do you manage a cemetery and want to ensure your information is accurate
+                  and complete? Contact us for a free verification of your listing.
                 </p>
                 <a
-                  href="mailto:info@begraafplaatsindebuurt.nl?subject=Beheerder verificatie"
+                  href="mailto:info@cemeterynearbyme.com?subject=Cemetery Manager Verification"
                   className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
                 >
-                  Verificatie aanvragen
+                  Request verification
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </Card>
@@ -315,16 +314,16 @@ export default function ContactPage() {
           {/* CTA Section */}
           <div className="mt-16 text-center">
             <h2 className="font-serif text-2xl font-semibold mb-4">
-              Liever direct zoeken?
+              Prefer to search directly?
             </h2>
             <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-              Zoek direct naar begraafplaatsen in onze uitgebreide database met meer dan 3.800 locaties.
+              Search our extensive database of cemeteries across the United States.
             </p>
             <Link
-              href="/zoeken"
+              href="/search"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
             >
-              Zoek begraafplaatsen
+              Search Cemeteries
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

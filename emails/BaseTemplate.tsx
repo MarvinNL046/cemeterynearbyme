@@ -38,8 +38,8 @@ export const BaseTemplate = ({ preview, children }: BaseTemplateProps) => {
           {/* Header */}
           <Section style={header}>
             <Text style={logoText}>
-              <span style={{ color: colors.white }}>Begraafplaats</span>
-              <span style={{ color: colors.accent }}>indebuurt</span>
+              <span style={{ color: colors.white }}>Cemetery</span>
+              <span style={{ color: colors.accent }}>NearMe</span>
             </Text>
           </Section>
 
@@ -51,23 +51,23 @@ export const BaseTemplate = ({ preview, children }: BaseTemplateProps) => {
           {/* Footer */}
           <Section style={footer}>
             <Text style={footerText}>
-              &copy; {new Date().getFullYear()} Begraafplaats in de Buurt
+              &copy; {new Date().getFullYear()} Cemetery Near Me
             </Text>
             <Text style={footerLinks}>
-              <Link href="https://www.begraafplaatsindebuurt.nl" style={link}>
+              <Link href="https://www.cemeterynearbyme.com" style={link}>
                 Website
               </Link>
               {' • '}
-              <Link href="https://www.begraafplaatsindebuurt.nl/contact" style={link}>
+              <Link href="https://www.cemeterynearbyme.com/contact" style={link}>
                 Contact
               </Link>
               {' • '}
-              <Link href="https://www.begraafplaatsindebuurt.nl/privacy" style={link}>
+              <Link href="https://www.cemeterynearbyme.com/privacy" style={link}>
                 Privacy
               </Link>
             </Text>
             <Text style={footerDisclaimer}>
-              Dit is een automatisch gegenereerd bericht van begraafplaatsindebuurt.nl
+              This is an automated message from cemeterynearbyme.com
             </Text>
           </Section>
         </Container>

@@ -141,7 +141,7 @@ export default function AdminClaimsPage() {
   };
 
   const handleDelete = async (claimId: number) => {
-    if (!confirm('Weet je zeker dat je deze claim wilt verwijderen?')) return;
+    if (!confirm('Are you sure you want to delete this claim?')) return;
     try {
       const response = await fetch(`/api/admin/claims/${claimId}`, {
         method: 'DELETE',
@@ -166,21 +166,21 @@ export default function AdminClaimsPage() {
         return (
           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
             <CheckCircle className="w-3 h-3" />
-            Goedgekeurd
+            Approved
           </span>
         );
       case 'pending':
         return (
           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-700">
             <Clock className="w-3 h-3" />
-            In afwachting
+            Pending
           </span>
         );
       case 'rejected':
         return (
           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-700">
             <AlertCircle className="w-3 h-3" />
-            Afgewezen
+            Rejected
           </span>
         );
       default:
@@ -193,7 +193,7 @@ export default function AdminClaimsPage() {
       <div className="mb-8">
         <h1 className="text-2xl font-bold font-serif text-foreground">Claims</h1>
         <p className="text-muted-foreground">
-          Bekijk en beheer begraafplaats claims ({pagination?.total || 0} totaal)
+          Review and manage cemetery claims ({pagination?.total || 0} total)
         </p>
       </div>
 
@@ -206,7 +206,7 @@ export default function AdminClaimsPage() {
               <Input
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Zoek op begraafplaats naam..."
+                placeholder="Search by cemetery name..."
                 className="pl-10"
               />
             </div>
@@ -215,12 +215,12 @@ export default function AdminClaimsPage() {
               onChange={(e) => setStatusFilter(e.target.value)}
               className="h-10 px-3 rounded-md border border-input bg-background text-sm"
             >
-              <option value="">Alle statussen</option>
-              <option value="pending">In afwachting</option>
-              <option value="approved">Goedgekeurd</option>
-              <option value="rejected">Afgewezen</option>
+              <option value="">All statuses</option>
+              <option value="pending">Pending</option>
+              <option value="approved">Approved</option>
+              <option value="rejected">Rejected</option>
             </select>
-            <Button type="submit">Zoeken</Button>
+            <Button type="submit">Search</Button>
           </form>
         </CardContent>
       </Card>
@@ -234,7 +234,7 @@ export default function AdminClaimsPage() {
             </div>
           ) : claims.length === 0 ? (
             <div className="p-12 text-center text-muted-foreground">
-              Geen claims gevonden
+              No claims found
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -242,10 +242,10 @@ export default function AdminClaimsPage() {
                 <thead className="bg-muted/50">
                   <tr>
                     <th className="text-left p-4 text-sm font-medium">Claim</th>
-                    <th className="text-left p-4 text-sm font-medium hidden md:table-cell">Aanvrager</th>
+                    <th className="text-left p-4 text-sm font-medium hidden md:table-cell">Claimant</th>
                     <th className="text-left p-4 text-sm font-medium">Status</th>
-                    <th className="text-left p-4 text-sm font-medium hidden sm:table-cell">Ingediend</th>
-                    <th className="text-right p-4 text-sm font-medium">Acties</th>
+                    <th className="text-left p-4 text-sm font-medium hidden sm:table-cell">Submitted</th>
+                    <th className="text-right p-4 text-sm font-medium">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y">
@@ -256,7 +256,7 @@ export default function AdminClaimsPage() {
                           <p className="font-medium line-clamp-1">
                             {claim.claimantName || claim.userName || `Claim #${claim.id}`}
                           </p>
-                          <p className="text-xs text-muted-foreground">{claim.businessRole || 'Beheerder'}</p>
+                          <p className="text-xs text-muted-foreground">{claim.businessRole || 'Manager'}</p>
                         </div>
                       </td>
                       <td className="p-4 hidden md:table-cell">
@@ -270,7 +270,7 @@ export default function AdminClaimsPage() {
                       </td>
                       <td className="p-4 hidden sm:table-cell">
                         <span className="text-sm text-muted-foreground">
-                          {new Date(claim.createdAt).toLocaleDateString('nl-NL')}
+                          {new Date(claim.createdAt).toLocaleDateString('en-US')}
                         </span>
                       </td>
                       <td className="p-4 text-right">
@@ -297,7 +297,7 @@ export default function AdminClaimsPage() {
                                   className="w-full flex items-center gap-2 px-4 py-2 text-sm hover:bg-muted transition-colors"
                                 >
                                   <Eye className="w-4 h-4" />
-                                  Details bekijken
+                                  View details
                                 </button>
                                 {claim.status === 'pending' && (
                                   <>
@@ -307,7 +307,7 @@ export default function AdminClaimsPage() {
                                       className="w-full flex items-center gap-2 px-4 py-2 text-sm text-green-600 hover:bg-green-50 transition-colors"
                                     >
                                       <CheckCircle className="w-4 h-4" />
-                                      Goedkeuren
+                                      Approve
                                     </button>
                                     <button
                                       onClick={() => {
@@ -317,7 +317,7 @@ export default function AdminClaimsPage() {
                                       className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
                                     >
                                       <XCircle className="w-4 h-4" />
-                                      Afwijzen
+                                      Reject
                                     </button>
                                   </>
                                 )}
@@ -326,7 +326,7 @@ export default function AdminClaimsPage() {
                                   className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
                                 >
                                   <Trash2 className="w-4 h-4" />
-                                  Verwijderen
+                                  Delete
                                 </button>
                               </div>
                             </>
@@ -344,7 +344,7 @@ export default function AdminClaimsPage() {
           {pagination && pagination.totalPages > 1 && (
             <div className="p-4 border-t flex items-center justify-between">
               <span className="text-sm text-muted-foreground">
-                Pagina {pagination.page} van {pagination.totalPages}
+                Page {pagination.page} of {pagination.totalPages}
               </span>
               <div className="flex gap-2">
                 <Button
@@ -392,21 +392,21 @@ export default function AdminClaimsPage() {
                   <p className="text-sm text-muted-foreground">{showDetails.userEmail}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Functie</p>
+                  <p className="text-sm text-muted-foreground">Role</p>
                   <p className="font-medium">{showDetails.businessRole || '-'}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Telefoon</p>
+                  <p className="text-sm text-muted-foreground">Phone</p>
                   <p className="font-medium">{showDetails.claimantPhone || '-'}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Verificatie</p>
+                  <p className="text-sm text-muted-foreground">Verification</p>
                   <p className="font-medium">{showDetails.verificationMethod || '-'}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Ingediend</p>
+                  <p className="text-sm text-muted-foreground">Submitted</p>
                   <p className="font-medium">
-                    {new Date(showDetails.createdAt).toLocaleDateString('nl-NL', {
+                    {new Date(showDetails.createdAt).toLocaleDateString('en-US', {
                       day: 'numeric',
                       month: 'long',
                       year: 'numeric',
@@ -421,21 +421,21 @@ export default function AdminClaimsPage() {
 
               {showDetails.notes && (
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Notities</p>
+                  <p className="text-sm text-muted-foreground mb-1">Notes</p>
                   <p className="text-sm bg-muted/50 p-3 rounded-lg whitespace-pre-wrap">{showDetails.notes}</p>
                 </div>
               )}
 
               {showDetails.adminNotes && (
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Admin notities</p>
+                  <p className="text-sm text-muted-foreground mb-1">Admin notes</p>
                   <p className="text-sm bg-blue-50 text-blue-700 p-3 rounded-lg">{showDetails.adminNotes}</p>
                 </div>
               )}
 
               {showDetails.rejectionReason && (
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Afwijzingsreden</p>
+                  <p className="text-sm text-muted-foreground mb-1">Rejection reason</p>
                   <p className="text-sm bg-red-50 text-red-700 p-3 rounded-lg">{showDetails.rejectionReason}</p>
                 </div>
               )}
@@ -446,7 +446,7 @@ export default function AdminClaimsPage() {
                   onClick={() => setShowDetails(null)}
                   className="flex-1"
                 >
-                  Sluiten
+                  Close
                 </Button>
                 {showDetails.status === 'pending' && (
                   <Button
@@ -457,7 +457,7 @@ export default function AdminClaimsPage() {
                     className="flex-1 bg-green-600 hover:bg-green-700"
                   >
                     <CheckCircle className="w-4 h-4 mr-2" />
-                    Goedkeuren
+                    Approve
                   </Button>
                 )}
               </div>
@@ -471,19 +471,19 @@ export default function AdminClaimsPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <Card className="w-full max-w-md">
             <CardHeader>
-              <CardTitle className="text-lg font-serif">Claim afwijzen</CardTitle>
+              <CardTitle className="text-lg font-serif">Reject claim</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Reden voor afwijzing *
+                    Reason for rejection *
                   </label>
                   <textarea
                     value={rejectionReason}
                     onChange={(e) => setRejectionReason(e.target.value)}
                     className="w-full h-32 px-3 py-2 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Leg uit waarom deze claim wordt afgewezen..."
+                    placeholder="Explain why this claim is being rejected..."
                     required
                   />
                 </div>
@@ -497,7 +497,7 @@ export default function AdminClaimsPage() {
                     className="flex-1"
                     disabled={actionLoading}
                   >
-                    Annuleren
+                    Cancel
                   </Button>
                   <Button
                     variant="destructive"
@@ -508,7 +508,7 @@ export default function AdminClaimsPage() {
                     {actionLoading ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
                     ) : (
-                      'Afwijzen'
+                      'Reject'
                     )}
                   </Button>
                 </div>

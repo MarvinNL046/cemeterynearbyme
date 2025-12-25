@@ -1,8 +1,8 @@
 /**
- * Affiliate Partner Configuratie
+ * Affiliate Partner Configuration
  *
- * Voeg hier affiliate partners toe. Zet 'active: true' wanneer je een partner hebt.
- * De ads worden alleen getoond als er minstens één actieve partner is.
+ * Add affiliate partners here. Set 'active: true' when you have a partner.
+ * Ads are only shown when there is at least one active partner.
  */
 
 export interface AffiliatePartner {
@@ -13,7 +13,7 @@ export interface AffiliatePartner {
   imageUrl?: string;
   buttonText: string;
   active: boolean;
-  // Optionele tracking parameters
+  // Optional tracking parameters
   utmSource?: string;
   utmMedium?: string;
   utmCampaign?: string;
@@ -21,71 +21,71 @@ export interface AffiliatePartner {
 
 export const affiliatePartners: AffiliatePartner[] = [
   {
-    id: 'uitvaartverzekering',
-    name: 'Uitvaartverzekering Vergelijken',
-    description: 'Vergelijk uitvaartverzekeringen en bespaar tot 30% op uw premie.',
-    url: 'https://example.com/uitvaartverzekering',
-    imageUrl: '/images/affiliates/uitvaartverzekering.png',
-    buttonText: 'Vergelijk nu',
-    active: false, // Zet op true wanneer je een partner hebt
-    utmSource: 'begraafplaatsindebuurt',
+    id: 'funeral-insurance',
+    name: 'Compare Funeral Insurance',
+    description: 'Compare funeral insurance plans and save up to 30% on your premium.',
+    url: 'https://example.com/funeral-insurance',
+    imageUrl: '/images/affiliates/funeral-insurance.png',
+    buttonText: 'Compare now',
+    active: false, // Set to true when you have a partner
+    utmSource: 'cemeterynearbyme',
     utmMedium: 'sidebar',
-    utmCampaign: 'uitvaartverzekering',
+    utmCampaign: 'funeral-insurance',
   },
   {
-    id: 'bloemen',
-    name: 'Rouwbloemen Bestellen',
-    description: 'Bestel prachtige rouwboeketten en kransen voor een laatste groet.',
-    url: 'https://example.com/bloemen',
-    imageUrl: '/images/affiliates/bloemen.png',
-    buttonText: 'Bekijk aanbod',
+    id: 'flowers',
+    name: 'Order Sympathy Flowers',
+    description: 'Order beautiful sympathy arrangements and wreaths for a final tribute.',
+    url: 'https://example.com/flowers',
+    imageUrl: '/images/affiliates/flowers.png',
+    buttonText: 'View selection',
     active: false,
-    utmSource: 'begraafplaatsindebuurt',
+    utmSource: 'cemeterynearbyme',
     utmMedium: 'sidebar',
-    utmCampaign: 'rouwbloemen',
+    utmCampaign: 'sympathy-flowers',
   },
   {
-    id: 'grafmonument',
-    name: 'Grafmonumenten',
-    description: 'Ontwerp een persoonlijk grafmonument. Vrijblijvend advies aan huis.',
-    url: 'https://example.com/grafmonumenten',
-    imageUrl: '/images/affiliates/grafmonument.png',
-    buttonText: 'Vraag offerte aan',
+    id: 'headstones',
+    name: 'Headstones & Monuments',
+    description: 'Design a personalized headstone. Free in-home consultation.',
+    url: 'https://example.com/headstones',
+    imageUrl: '/images/affiliates/headstones.png',
+    buttonText: 'Request quote',
     active: false,
-    utmSource: 'begraafplaatsindebuurt',
+    utmSource: 'cemeterynearbyme',
     utmMedium: 'sidebar',
-    utmCampaign: 'grafmonument',
+    utmCampaign: 'headstones',
   },
   {
-    id: 'uitvaartondernemer',
-    name: 'Uitvaartondernemers',
-    description: 'Vind een betrouwbare uitvaartondernemer in uw regio.',
-    url: 'https://example.com/uitvaart',
-    imageUrl: '/images/affiliates/uitvaart.png',
-    buttonText: 'Vind ondernemer',
+    id: 'funeral-homes',
+    name: 'Funeral Homes',
+    description: 'Find a trusted funeral home in your area.',
+    url: 'https://example.com/funeral-homes',
+    imageUrl: '/images/affiliates/funeral-homes.png',
+    buttonText: 'Find funeral home',
     active: false,
-    utmSource: 'begraafplaatsindebuurt',
+    utmSource: 'cemeterynearbyme',
     utmMedium: 'sidebar',
-    utmCampaign: 'uitvaartondernemer',
+    utmCampaign: 'funeral-homes',
   },
 ];
 
 /**
- * Helper functie om actieve partners op te halen
+ * Helper function to get active partners
  */
 export function getActivePartners(): AffiliatePartner[] {
   return affiliatePartners.filter(partner => partner.active);
 }
 
 /**
- * Helper functie om te checken of er actieve partners zijn
+ * Helper function to check if there are active partners
  */
 export function hasActivePartners(): boolean {
   return affiliatePartners.some(partner => partner.active);
 }
 
 /**
- * Helper functie om affiliate URL te bouwen met UTM parameters
+ * Helper function to build affiliate URL with UTM parameters
  */
 export function buildAffiliateUrl(partner: AffiliatePartner): string {
   const url = new URL(partner.url);

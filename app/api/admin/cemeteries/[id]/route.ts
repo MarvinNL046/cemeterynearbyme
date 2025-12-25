@@ -21,22 +21,22 @@ export async function GET(
       .select({
         id: userCemeteries.id,
         userId: userCemeteries.userId,
-        naam: userCemeteries.naam,
+        name: userCemeteries.name,
         slug: userCemeteries.slug,
         type: userCemeteries.type,
-        adres: userCemeteries.adres,
-        postcode: userCemeteries.postcode,
-        plaats: userCemeteries.plaats,
-        gemeente: userCemeteries.gemeente,
-        provincie: userCemeteries.provincie,
-        gpsCoordinaten: userCemeteries.gpsCoordinaten,
-        telefoon: userCemeteries.telefoon,
+        address: userCemeteries.address,
+        zipCode: userCemeteries.zipCode,
+        city: userCemeteries.city,
+        county: userCemeteries.county,
+        state: userCemeteries.state,
+        gpsCoordinates: userCemeteries.gpsCoordinates,
+        phone: userCemeteries.phone,
         email: userCemeteries.email,
         website: userCemeteries.website,
-        beschrijving: userCemeteries.beschrijving,
-        openingstijden: userCemeteries.openingstijden,
-        faciliteiten: userCemeteries.faciliteiten,
-        jaarOprichting: userCemeteries.jaarOprichting,
+        description: userCemeteries.description,
+        openingHours: userCemeteries.openingHours,
+        facilities: userCemeteries.facilities,
+        yearEstablished: userCemeteries.yearEstablished,
         photos: userCemeteries.photos,
         status: userCemeteries.status,
         rejectionReason: userCemeteries.rejectionReason,
@@ -54,7 +54,7 @@ export async function GET(
 
     if (!cemetery) {
       return NextResponse.json(
-        { error: 'Begraafplaats niet gevonden' },
+        { error: 'Cemetery not found' },
         { status: 404 }
       );
     }
@@ -86,7 +86,7 @@ export async function PATCH(
     // Validate status
     if (status && !['pending', 'approved', 'rejected'].includes(status)) {
       return NextResponse.json(
-        { error: 'Ongeldige status' },
+        { error: 'Invalid status' },
         { status: 400 }
       );
     }
@@ -94,7 +94,7 @@ export async function PATCH(
     // If rejecting, require a reason
     if (status === 'rejected' && !rejectionReason) {
       return NextResponse.json(
-        { error: 'Reden voor afwijzing is verplicht' },
+        { error: 'Rejection reason is required' },
         { status: 400 }
       );
     }
@@ -108,7 +108,7 @@ export async function PATCH(
 
     if (!existingCemetery) {
       return NextResponse.json(
-        { error: 'Begraafplaats niet gevonden' },
+        { error: 'Cemetery not found' },
         { status: 404 }
       );
     }
@@ -167,7 +167,7 @@ export async function DELETE(
 
     if (!existingCemetery) {
       return NextResponse.json(
-        { error: 'Begraafplaats niet gevonden' },
+        { error: 'Cemetery not found' },
         { status: 404 }
       );
     }

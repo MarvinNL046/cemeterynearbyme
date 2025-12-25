@@ -72,21 +72,21 @@ export async function POST(request: NextRequest) {
     // Validation
     if (!file || !slug || !uploaderName) {
       return NextResponse.json(
-        { error: 'Bestand, begraafplaats en naam zijn verplicht' },
+        { error: 'File, cemetery, and name are required' },
         { status: 400 }
       );
     }
 
     if (!ALLOWED_TYPES.includes(file.type)) {
       return NextResponse.json(
-        { error: 'Alleen JPG, PNG, WebP en HEIC bestanden zijn toegestaan' },
+        { error: 'Only JPG, PNG, WebP, and HEIC files are allowed' },
         { status: 400 }
       );
     }
 
     if (file.size > MAX_FILE_SIZE) {
       return NextResponse.json(
-        { error: 'Bestand is te groot (max 10MB)' },
+        { error: 'File is too large (max 10MB)' },
         { status: 400 }
       );
     }
@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
 
     if (parseInt(recentUploads[0].count) >= DAILY_LIMIT) {
       return NextResponse.json(
-        { error: `U kunt maximaal ${DAILY_LIMIT} foto's per dag uploaden voor deze begraafplaats` },
+        { error: `You can upload a maximum of ${DAILY_LIMIT} photos per day for this cemetery` },
         { status: 429 }
       );
     }
@@ -164,7 +164,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Foto succesvol geüpload!',
+      message: 'Photo uploaded successfully!',
       photo: {
         id: result[0].id,
         fileUrl: result[0].file_url
@@ -173,7 +173,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Error uploading photo:', error);
     return NextResponse.json(
-      { error: 'Er ging iets mis bij het uploaden' },
+      { error: 'Something went wrong while uploading' },
       { status: 500 }
     );
   }
@@ -202,7 +202,7 @@ export async function DELETE(request: NextRequest) {
     `;
 
     if (photos.length === 0) {
-      return NextResponse.json({ error: 'Foto niet gevonden' }, { status: 404 });
+      return NextResponse.json({ error: 'Photo not found' }, { status: 404 });
     }
 
     const photo = photos[0];
@@ -210,7 +210,7 @@ export async function DELETE(request: NextRequest) {
     // Check if the requester is the original uploader
     if (photo.ip_hash !== ipHash) {
       return NextResponse.json(
-        { error: 'U kunt alleen uw eigen foto\'s verwijderen' },
+        { error: 'You can only delete your own photos' },
         { status: 403 }
       );
     }
@@ -229,12 +229,12 @@ export async function DELETE(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Foto succesvol verwijderd'
+      message: 'Photo deleted successfully'
     });
   } catch (error) {
     console.error('Error deleting photo:', error);
     return NextResponse.json(
-      { error: 'Er ging iets mis bij het verwijderen' },
+      { error: 'Something went wrong while deleting' },
       { status: 500 }
     );
   }

@@ -32,7 +32,7 @@ export default function CompareButton({ cemeteryId, cemeteryName }: CompareButto
   const toggleCompare = () => {
     const saved = localStorage.getItem('compareList');
     let list = saved ? JSON.parse(saved) : [];
-    
+
     if (isAdded) {
       // Remove from list
       list = list.filter((item: CompareItem) => item.id !== cemeteryId);
@@ -41,15 +41,15 @@ export default function CompareButton({ cemeteryId, cemeteryName }: CompareButto
       if (list.length < 3) {
         list.push({ id: cemeteryId, name: cemeteryName });
       } else {
-        alert('Je kunt maximaal 3 begraafplaatsen vergelijken');
+        alert('You can compare up to 3 cemeteries');
         return;
       }
     }
-    
+
     localStorage.setItem('compareList', JSON.stringify(list));
     setCompareList(list);
     setIsAdded(!isAdded);
-    
+
     // Trigger storage event for other components
     window.dispatchEvent(new Event('storage'));
   };
@@ -65,20 +65,20 @@ export default function CompareButton({ cemeteryId, cemeteryName }: CompareButto
         {isAdded ? (
           <>
             <Check className="w-4 h-4" />
-            Toegevoegd aan vergelijking
+            Added to comparison
           </>
         ) : (
           <>
             <Plus className="w-4 h-4" />
-            Vergelijk
+            Compare
           </>
         )}
       </Button>
-      
+
       {compareList.length > 0 && (
-        <Link href="/vergelijk">
+        <Link href="/compare">
           <Button variant="secondary" size="sm">
-            Bekijk vergelijking ({compareList.length})
+            View comparison ({compareList.length})
           </Button>
         </Link>
       )}

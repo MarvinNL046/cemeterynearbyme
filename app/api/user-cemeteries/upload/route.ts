@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
 
     if (!user) {
       return NextResponse.json(
-        { error: 'Je moet ingelogd zijn om foto\'s te uploaden' },
+        { error: 'You must be logged in to upload photos' },
         { status: 401 }
       );
     }
@@ -30,21 +30,21 @@ export async function POST(request: NextRequest) {
 
     if (!file) {
       return NextResponse.json(
-        { error: 'Geen bestand gevonden' },
+        { error: 'No file found' },
         { status: 400 }
       );
     }
 
     if (!ALLOWED_TYPES.includes(file.type)) {
       return NextResponse.json(
-        { error: 'Alleen JPG, PNG, WebP en HEIC bestanden zijn toegestaan' },
+        { error: 'Only JPG, PNG, WebP and HEIC files are allowed' },
         { status: 400 }
       );
     }
 
     if (file.size > MAX_FILE_SIZE) {
       return NextResponse.json(
-        { error: 'Bestand is te groot (max 10MB)' },
+        { error: 'File is too large (max 10MB)' },
         { status: 400 }
       );
     }
@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Error uploading photo:', error);
     return NextResponse.json(
-      { error: 'Er ging iets mis bij het uploaden' },
+      { error: 'Something went wrong while uploading' },
       { status: 500 }
     );
   }

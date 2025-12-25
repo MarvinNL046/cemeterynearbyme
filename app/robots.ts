@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/cache/'],
+      disallow: ['/api/', '/cache/', '/admin/'],
     },
-    sitemap: 'https://www.begraafplaatsindebuurt.nl/sitemap.xml',
+    sitemap: 'https://www.cemeterynearbyme.com/sitemap.xml',
   };
 }

@@ -28,7 +28,7 @@ export default function SearchBar({
     const params = new URLSearchParams();
     if (location) params.set('location', location);
     if (query) params.set('q', query);
-    router.push(`/zoeken?${params.toString()}`);
+    router.push(`/search?${params.toString()}`);
   };
 
   if (variant === 'hero') {
@@ -47,7 +47,7 @@ export default function SearchBar({
             type="text"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            placeholder="Locatie of postcode"
+            placeholder="City or ZIP code"
             className="flex-1 bg-transparent outline-none text-foreground placeholder:text-muted-foreground min-w-0"
           />
         </div>
@@ -59,7 +59,7 @@ export default function SearchBar({
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Naam (optioneel)"
+            placeholder="Name (optional)"
             className="flex-1 bg-transparent outline-none text-foreground placeholder:text-muted-foreground min-w-0"
           />
         </div>
@@ -72,7 +72,7 @@ export default function SearchBar({
           className="rounded-none sm:rounded-r-xl m-0 px-6 py-3 shrink-0"
         >
           <Search className="w-5 h-5 md:mr-2" />
-          <span className="hidden md:inline">Zoeken</span>
+          <span className="hidden md:inline">Search</span>
         </Button>
       </form>
     );
@@ -93,7 +93,7 @@ export default function SearchBar({
             type="text"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            placeholder="Zoek op locatie..."
+            placeholder="Search by location..."
             className="flex-1 bg-transparent outline-none text-sm text-foreground placeholder:text-muted-foreground"
           />
         </div>
@@ -120,7 +120,7 @@ export default function SearchBar({
           type="text"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          placeholder="Locatie of postcode"
+          placeholder="City or ZIP code"
           className="flex-1 bg-transparent outline-none text-foreground placeholder:text-muted-foreground"
         />
       </div>
@@ -132,7 +132,7 @@ export default function SearchBar({
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Naam (optioneel)"
+          placeholder="Name (optional)"
           className="flex-1 bg-transparent outline-none text-foreground placeholder:text-muted-foreground"
         />
       </div>
@@ -140,7 +140,7 @@ export default function SearchBar({
       {/* Search Button */}
       <Button variant="gold" size="lg" type="submit">
         <Search className="w-5 h-5 sm:mr-2" />
-        <span className="hidden sm:inline">Zoeken</span>
+        <span className="hidden sm:inline">Search</span>
       </Button>
     </form>
   );

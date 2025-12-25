@@ -1,36 +1,39 @@
-// Site configuration for multi-tenant setup
+// Site configuration for Cemetery Near Me (USA)
 export const getSiteConfig = () => {
-  // Determine site based on environment variable or domain
-  const domain = process.env.NEXT_PUBLIC_SITE_DOMAIN || 
-                 (typeof window !== 'undefined' ? window.location.hostname : 'begraafplaatsindebuurt.nl');
-  
+  const domain = process.env.NEXT_PUBLIC_SITE_DOMAIN ||
+                 (typeof window !== 'undefined' ? window.location.hostname : 'cemeterynearbyme.com');
+
   const configs: Record<string, {
     id: string;
     domain: string;
     name: string;
     description: string;
   }> = {
-    'begraafplaatsindebuurt.nl': {
-      id: 'begraafplaats',
-      domain: 'begraafplaatsindebuurt.nl',
-      name: 'Begraafplaats in de Buurt',
-      description: 'Vind begraafplaatsen bij u in de buurt'
+    'cemeterynearbyme.com': {
+      id: 'cemetery',
+      domain: 'cemeterynearbyme.com',
+      name: 'Cemetery Near Me',
+      description: 'Find cemeteries and memorial parks near you'
+    },
+    'www.cemeterynearbyme.com': {
+      id: 'cemetery',
+      domain: 'cemeterynearbyme.com',
+      name: 'Cemetery Near Me',
+      description: 'Find cemeteries and memorial parks near you'
     },
     'localhost:3000': {
-      // Voor development
-      id: 'begraafplaats',
-      domain: 'begraafplaatsindebuurt.nl',
-      name: 'Begraafplaats in de Buurt',
-      description: 'Vind begraafplaatsen bij u in de buurt'
+      id: 'cemetery',
+      domain: 'cemeterynearbyme.com',
+      name: 'Cemetery Near Me',
+      description: 'Find cemeteries and memorial parks near you'
     },
     'localhost:3001': {
-      // Alternatieve development port
-      id: 'begraafplaats',
-      domain: 'begraafplaatsindebuurt.nl',
-      name: 'Begraafplaats in de Buurt',
-      description: 'Vind begraafplaatsen bij u in de buurt'
+      id: 'cemetery',
+      domain: 'cemeterynearbyme.com',
+      name: 'Cemetery Near Me',
+      description: 'Find cemeteries and memorial parks near you'
     }
   };
 
-  return configs[domain] || configs['begraafplaatsindebuurt.nl'];
+  return configs[domain] || configs['cemeterynearbyme.com'];
 };

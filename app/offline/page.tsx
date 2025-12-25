@@ -13,11 +13,11 @@ export default function OfflinePage() {
         </div>
 
         <h1 className="text-2xl font-bold text-foreground mb-2">
-          Geen internetverbinding
+          No Internet Connection
         </h1>
 
         <p className="text-muted-foreground mb-6">
-          Het lijkt erop dat je offline bent. Controleer je internetverbinding en probeer het opnieuw.
+          It looks like you&apos;re offline. Check your internet connection and try again.
         </p>
 
         <div className="space-y-3">
@@ -25,11 +25,11 @@ export default function OfflinePage() {
             onClick={() => window.location.reload()}
             className="w-full px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors"
           >
-            Opnieuw proberen
+            Try Again
           </button>
 
           <p className="text-sm text-muted-foreground">
-            Eerder bezochte pagina&apos;s zijn mogelijk nog beschikbaar.
+            Previously visited pages may still be available.
           </p>
         </div>
       </div>

@@ -2,7 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { db, websiteFeedback } from '@/lib/db';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to avoid build errors when API key is not set
+let resend: Resend | null = null;
+function getResend(): Resend | null {
+  if (!process.env.RESEND_API_KEY) return null;
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -42,31 +50,33 @@ export async function POST(request: NextRequest) {
       status: 'new',
     }).returning();
 
-    // Send email notification for feedback
-    try {
-      const ratingStars = rating ? '⭐'.repeat(rating) + '☆'.repeat(5 - rating) : 'Geen rating';
-      const ratingText = rating ? `${'★'.repeat(rating)}${'☆'.repeat(5 - rating)} (${rating}/5)` : 'Geen rating';
+    // Send email notification for feedback (only if Resend is configured)
+    const resendClient = getResend();
+    if (resendClient) {
+      try {
+        const ratingStars = rating ? '⭐'.repeat(rating) + '☆'.repeat(5 - rating) : 'No rating';
+        const ratingText = rating ? `${'★'.repeat(rating)}${'☆'.repeat(5 - rating)} (${rating}/5)` : 'No rating';
 
-      // Plain text version for better deliverability
-      const feedbackEmailText = `
-Nieuwe Feedback - Begraafplaats in de Buurt
+        // Plain text version for better deliverability
+        const feedbackEmailText = `
+New Feedback - Cemetery Near Me
 
-Type: ${type === 'rating' ? 'Beoordeling' : 'Feedback bericht'}
+Type: ${type === 'rating' ? 'Rating' : 'Feedback message'}
 ${rating ? `Rating: ${ratingText}` : ''}
-${comment ? `Bericht: ${comment}` : ''}
-Pagina: ${page_title || 'Onbekend'}
-URL: https://www.begraafplaatsindebuurt.nl${page_url || '/'}
+${comment ? `Message: ${comment}` : ''}
+Page: ${page_title || 'Unknown'}
+URL: https://www.cemeterynearbyme.com${page_url || '/'}
 
-Ontvangen op: ${new Date().toLocaleString('nl-NL', { timeZone: 'Europe/Amsterdam' })}
+Received on: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}
 
 ---
-Dit is een automatische notificatie van begraafplaatsindebuurt.nl
-      `.trim();
+This is an automatic notification from cemeterynearbyme.com
+        `.trim();
 
-      await resend.emails.send({
-        from: 'Begraafplaats in de Buurt <noreply@begraafplaatsindebuurt.nl>',
-        to: ['info@begraafplaatsindebuurt.nl'],
-        subject: `[Feedback] ${type === 'rating' ? `Rating: ${rating}/5` : 'Nieuwe feedback'} - ${page_title || 'Website'}`,
+        await resendClient.emails.send({
+        from: 'Cemetery Near Me <noreply@cemeterynearbyme.com>',
+        to: ['info@cemeterynearbyme.com'],
+        subject: `[Feedback] ${type === 'rating' ? `Rating: ${rating}/5` : 'New feedback'} - ${page_title || 'Website'}`,
         html: `
 <!DOCTYPE html>
 <html>
@@ -76,17 +86,17 @@ Dit is een automatische notificatie van begraafplaatsindebuurt.nl
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="background: #2D4A3E; padding: 20px; border-radius: 8px 8px 0 0;">
     <h1 style="color: white; margin: 0; font-size: 20px;">
-      <span style="color: white;">Begraafplaats</span><span style="color: #C4A35A;">indebuurt</span>
+      <span style="color: white;">Cemetery</span><span style="color: #C4A35A;">NearMe</span>
     </h1>
   </div>
 
   <div style="background: white; padding: 24px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 8px 8px;">
-    <h2 style="color: #2D4A3E; margin-top: 0;">Nieuwe Feedback Ontvangen</h2>
+    <h2 style="color: #2D4A3E; margin-top: 0;">New Feedback Received</h2>
 
     <table style="width: 100%; border-collapse: collapse;">
       <tr>
         <td style="padding: 8px 0; border-bottom: 1px solid #eee; font-weight: bold; width: 120px;">Type:</td>
-        <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${type === 'rating' ? 'Beoordeling' : 'Feedback bericht'}</td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${type === 'rating' ? 'Rating' : 'Feedback message'}</td>
       </tr>
       ${rating ? `
       <tr>
@@ -96,18 +106,18 @@ Dit is een automatische notificatie van begraafplaatsindebuurt.nl
       ` : ''}
       ${comment ? `
       <tr>
-        <td style="padding: 8px 0; border-bottom: 1px solid #eee; font-weight: bold; vertical-align: top;">Bericht:</td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee; font-weight: bold; vertical-align: top;">Message:</td>
         <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${comment}</td>
       </tr>
       ` : ''}
       <tr>
-        <td style="padding: 8px 0; border-bottom: 1px solid #eee; font-weight: bold;">Pagina:</td>
-        <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${page_title || 'Onbekend'}</td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee; font-weight: bold;">Page:</td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #eee;">${page_title || 'Unknown'}</td>
       </tr>
       <tr>
         <td style="padding: 8px 0; font-weight: bold;">URL:</td>
         <td style="padding: 8px 0;">
-          <a href="https://www.begraafplaatsindebuurt.nl${page_url}" style="color: #C4A35A;">
+          <a href="https://www.cemeterynearbyme.com${page_url}" style="color: #C4A35A;">
             ${page_url || '/'}
           </a>
         </td>
@@ -115,7 +125,7 @@ Dit is een automatische notificatie van begraafplaatsindebuurt.nl
     </table>
 
     <p style="color: #666; font-size: 12px; margin-top: 20px;">
-      Ontvangen op: ${new Date().toLocaleString('nl-NL', { timeZone: 'Europe/Amsterdam' })}
+      Received on: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}
     </p>
   </div>
 </body>
@@ -123,21 +133,22 @@ Dit is een automatische notificatie van begraafplaatsindebuurt.nl
         `,
         text: feedbackEmailText,
         headers: {
-          'List-Unsubscribe': '<https://www.begraafplaatsindebuurt.nl/afmelden>',
+          'List-Unsubscribe': '<https://www.cemeterynearbyme.com/unsubscribe>',
         },
         tags: [
-          { name: 'platform', value: 'begraafplaatsindebuurt' },
+          { name: 'platform', value: 'cemeterynearbyme' },
           { name: 'type', value: 'feedback-notification' },
         ],
-      });
-    } catch (emailError) {
-      // Don't fail the request if email fails
-      console.error('Failed to send feedback notification email:', emailError);
+        });
+      } catch (emailError) {
+        // Don't fail the request if email fails
+        console.error('Failed to send feedback notification email:', emailError);
+      }
     }
 
     return NextResponse.json({
       success: true,
-      message: 'Bedankt voor uw feedback!',
+      message: 'Thank you for your feedback!',
       data
     });
   } catch (error) {

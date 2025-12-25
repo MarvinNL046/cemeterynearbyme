@@ -70,28 +70,28 @@ export default function AdminDashboard() {
 
   const statCards = [
     {
-      title: 'Totaal Gebruikers',
+      title: 'Total Users',
       value: stats?.totalUsers || 0,
       icon: Users,
       color: 'bg-blue-500',
       href: '/admin/users',
     },
     {
-      title: 'Totaal Claims',
+      title: 'Total Claims',
       value: stats?.totalClaims || 0,
       icon: FileCheck,
       color: 'bg-green-500',
       href: '/admin/claims',
     },
     {
-      title: 'In Afwachting',
+      title: 'Pending',
       value: stats?.pendingClaims || 0,
       icon: Clock,
       color: 'bg-yellow-500',
       href: '/admin/claims?status=pending',
     },
     {
-      title: 'Ingezonden Locaties',
+      title: 'Submitted Locations',
       value: stats?.totalUserCemeteries || 0,
       icon: Building2,
       color: 'bg-purple-500',
@@ -104,7 +104,7 @@ export default function AdminDashboard() {
       <div className="mb-8">
         <h1 className="text-2xl font-bold font-serif text-foreground">Admin Dashboard</h1>
         <p className="text-muted-foreground">
-          Beheer gebruikers, claims en begraafplaats vermeldingen.
+          Manage users, claims and cemetery listings.
         </p>
       </div>
 
@@ -133,12 +133,12 @@ export default function AdminDashboard() {
         {/* Recent Users */}
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle className="text-lg font-serif">Recente Registraties</CardTitle>
+            <CardTitle className="text-lg font-serif">Recent Registrations</CardTitle>
             <Link
               href="/admin/users"
               className="text-sm text-accent hover:underline flex items-center gap-1"
             >
-              Bekijk alle
+              View all
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </CardHeader>
@@ -162,13 +162,13 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                     <span className="text-xs text-muted-foreground">
-                      {new Date(user.createdAt).toLocaleDateString('nl-NL')}
+                      {new Date(user.createdAt).toLocaleDateString('en-US')}
                     </span>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-muted-foreground text-sm">Nog geen gebruikers</p>
+              <p className="text-muted-foreground text-sm">No users yet</p>
             )}
           </CardContent>
         </Card>
@@ -176,12 +176,12 @@ export default function AdminDashboard() {
         {/* Recent Claims */}
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle className="text-lg font-serif">Recente Claims</CardTitle>
+            <CardTitle className="text-lg font-serif">Recent Claims</CardTitle>
             <Link
               href="/admin/claims"
               className="text-sm text-accent hover:underline flex items-center gap-1"
             >
-              Bekijk alle
+              View all
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </CardHeader>
@@ -215,13 +215,13 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                     <span className="text-xs text-muted-foreground">
-                      {new Date(claim.createdAt).toLocaleDateString('nl-NL')}
+                      {new Date(claim.createdAt).toLocaleDateString('en-US')}
                     </span>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-muted-foreground text-sm">Nog geen claims</p>
+              <p className="text-muted-foreground text-sm">No claims yet</p>
             )}
           </CardContent>
         </Card>
@@ -230,7 +230,7 @@ export default function AdminDashboard() {
       {/* Quick Actions */}
       <Card className="mt-6">
         <CardHeader>
-          <CardTitle className="text-lg font-serif">Snelle Acties</CardTitle>
+          <CardTitle className="text-lg font-serif">Quick Actions</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-3">
@@ -239,21 +239,21 @@ export default function AdminDashboard() {
               className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 text-yellow-800 rounded-lg hover:bg-yellow-200 transition-colors"
             >
               <Clock className="w-4 h-4" />
-              Wachtende claims ({stats?.pendingClaims || 0})
+              Pending claims ({stats?.pendingClaims || 0})
             </Link>
             <Link
               href="/admin/cemeteries?status=pending"
               className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-800 rounded-lg hover:bg-purple-200 transition-colors"
             >
               <Building2 className="w-4 h-4" />
-              Nieuwe locaties ({stats?.pendingCemeteries || 0})
+              New locations ({stats?.pendingCemeteries || 0})
             </Link>
             <Link
               href="/admin/users"
               className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-lg hover:bg-blue-200 transition-colors"
             >
               <Users className="w-4 h-4" />
-              Gebruikers beheren
+              Manage users
             </Link>
           </div>
         </CardContent>

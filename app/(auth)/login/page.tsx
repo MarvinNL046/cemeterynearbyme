@@ -32,13 +32,13 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Er is iets misgegaan');
+        throw new Error(data.error || 'Something went wrong');
       }
 
       setCodeHash(data.codeHash);
       setStep('code');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Er is iets misgegaan');
+      setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setLoading(false);
     }
@@ -59,13 +59,13 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Er is iets misgegaan');
+        throw new Error(data.error || 'Something went wrong');
       }
 
       // Redirect to dashboard on success
       router.push('/dashboard');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Er is iets misgegaan');
+      setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setLoading(false);
     }
@@ -78,7 +78,7 @@ export default function LoginPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/hero-cemetery.jpg"
-            alt="Serene begraafplaats"
+            alt="Serene cemetery"
             fill
             className="object-cover opacity-30"
           />
@@ -89,17 +89,17 @@ export default function LoginPage() {
               <Trees className="w-6 h-6 text-gold-400" />
             </div>
             <div>
-              <span className="text-2xl font-serif font-bold text-white">Begraafplaats</span>
-              <span className="text-2xl font-serif font-bold text-gold-400">indebuurt</span>
+              <span className="text-2xl font-serif font-bold text-white">Cemetery</span>
+              <span className="text-2xl font-serif font-bold text-gold-400">NearMe</span>
             </div>
           </Link>
           <h2 className="font-serif text-4xl xl:text-5xl font-bold text-white leading-tight mb-6">
-            Vind rust, historie
+            Find peace, history
             <br />
-            <span className="text-gold-300">en herinnering.</span>
+            <span className="text-gold-300">and remembrance.</span>
           </h2>
           <p className="text-white/70 text-lg max-w-md">
-            Beheer uw begraafplaats vermeldingen en help bezoekers de juiste informatie te vinden.
+            Manage your cemetery listings and help visitors find the right information.
           </p>
         </div>
       </div>
@@ -112,8 +112,8 @@ export default function LoginPage() {
             <Link href="/" className="inline-flex items-center gap-2">
               <Trees className="w-8 h-8 text-primary" />
               <div>
-                <span className="text-xl font-serif font-bold text-primary">Begraafplaats</span>
-                <span className="text-xl font-serif font-bold text-accent">indebuurt</span>
+                <span className="text-xl font-serif font-bold text-primary">Cemetery</span>
+                <span className="text-xl font-serif font-bold text-accent">NearMe</span>
               </div>
             </Link>
           </div>
@@ -122,12 +122,12 @@ export default function LoginPage() {
             {/* Header */}
             <div className="text-center mb-8">
               <h1 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-2">
-                Welkom terug
+                Welcome back
               </h1>
               <p className="text-muted-foreground">
                 {step === 'email'
-                  ? 'Log in met uw e-mailadres'
-                  : 'Voer de verificatiecode in'}
+                  ? 'Log in with your email address'
+                  : 'Enter the verification code'}
               </p>
             </div>
 
@@ -142,7 +142,7 @@ export default function LoginPage() {
               <form onSubmit={handleSendCode} className="space-y-6">
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    E-mailadres
+                    Email address
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -151,7 +151,7 @@ export default function LoginPage() {
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="naam@voorbeeld.nl"
+                      placeholder="name@example.com"
                       required
                       className="w-full pl-10 pr-4 py-3 border border-input rounded-lg bg-background focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
                     />
@@ -169,7 +169,7 @@ export default function LoginPage() {
                     <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
                     <>
-                      Verstuur code
+                      Send code
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </>
                   )}
@@ -179,10 +179,10 @@ export default function LoginPage() {
               <form onSubmit={handleVerifyCode} className="space-y-6">
                 <div>
                   <label htmlFor="code" className="block text-sm font-medium text-foreground mb-2">
-                    Verificatiecode
+                    Verification code
                   </label>
                   <p className="text-sm text-muted-foreground mb-3">
-                    We hebben een 6-cijferige code gestuurd naar <strong className="text-foreground">{email}</strong>
+                    We sent a 6-digit code to <strong className="text-foreground">{email}</strong>
                   </p>
                   <div className="relative">
                     <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -211,7 +211,7 @@ export default function LoginPage() {
                     <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
                     <>
-                      Inloggen
+                      Log in
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </>
                   )}
@@ -226,7 +226,7 @@ export default function LoginPage() {
                   }}
                   className="w-full text-muted-foreground hover:text-foreground text-sm py-2 transition-colors"
                 >
-                  Ander e-mailadres gebruiken
+                  Use different email address
                 </button>
               </form>
             )}
@@ -234,9 +234,9 @@ export default function LoginPage() {
             {/* Footer */}
             <div className="mt-8 pt-6 border-t border-border text-center">
               <p className="text-muted-foreground">
-                Nog geen account?{' '}
+                Don&apos;t have an account?{' '}
                 <Link href="/register" className="text-accent hover:text-accent/80 font-semibold transition-colors">
-                  Registreren
+                  Register
                 </Link>
               </p>
             </div>
@@ -244,9 +244,9 @@ export default function LoginPage() {
 
           {/* Additional Info */}
           <p className="text-center text-muted-foreground text-sm mt-6">
-            Door in te loggen gaat u akkoord met onze{' '}
+            By logging in you agree to our{' '}
             <Link href="/privacy" className="text-accent hover:underline">
-              privacyverklaring
+              privacy policy
             </Link>
           </p>
         </div>

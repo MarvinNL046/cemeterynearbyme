@@ -3,9 +3,9 @@ import { db, userCemeteries } from '@/lib/db';
 import { getCurrentUser } from '@/lib/auth';
 import { eq, desc } from 'drizzle-orm';
 
-// Generate a slug from cemetery name and gemeente
-function generateSlug(naam: string, gemeente: string): string {
-  const combined = `${naam}-${gemeente}`;
+// Generate a slug from cemetery name and county
+function generateSlug(name: string, county: string): string {
+  const combined = `${name}-${county}`;
   return combined
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
@@ -20,7 +20,7 @@ export async function GET(_request: NextRequest) {
 
     if (!user) {
       return NextResponse.json(
-        { error: 'Je moet ingelogd zijn om je begraafplaatsen te bekijken' },
+        { error: 'You must be logged in to view your cemeteries' },
         { status: 401 }
       );
     }
@@ -35,7 +35,7 @@ export async function GET(_request: NextRequest) {
   } catch (error) {
     console.error('Error fetching user cemeteries:', error);
     return NextResponse.json(
-      { error: 'Er is een fout opgetreden bij het ophalen van je begraafplaatsen' },
+      { error: 'An error occurred while fetching your cemeteries' },
       { status: 500 }
     );
   }
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
 
     if (!user) {
       return NextResponse.json(
-        { error: 'Je moet ingelogd zijn om een begraafplaats toe te voegen' },
+        { error: 'You must be logged in to add a cemetery' },
         { status: 401 }
       );
     }
@@ -56,18 +56,18 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
 
     // Validate required fields
-    const requiredFields = ['naam', 'plaats', 'gemeente', 'provincie'];
+    const requiredFields = ['name', 'city', 'county', 'state'];
     for (const field of requiredFields) {
       if (!body[field]?.trim()) {
         return NextResponse.json(
-          { error: `Veld '${field}' is verplicht` },
+          { error: `Field '${field}' is required` },
           { status: 400 }
         );
       }
     }
 
     // Generate slug
-    const slug = generateSlug(body.naam, body.gemeente);
+    const slug = generateSlug(body.name, body.county);
 
     // Check for duplicate slug
     const existing = await db
@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
 
     if (existing.length > 0) {
       return NextResponse.json(
-        { error: 'Er bestaat al een begraafplaats met deze naam in deze gemeente' },
+        { error: 'A cemetery with this name already exists in this municipality' },
         { status: 409 }
       );
     }
@@ -96,29 +96,29 @@ export async function POST(request: NextRequest) {
       .insert(userCemeteries)
       .values({
         userId: user.id,
-        naam: body.naam.trim(),
+        name: body.name.trim(),
         slug,
-        type: body.type?.trim() || 'algemene begraafplaats',
-        adres: body.adres?.trim() || null,
-        postcode: body.postcode?.trim() || null,
-        plaats: body.plaats.trim(),
-        gemeente: body.gemeente.trim(),
-        provincie: body.provincie.trim(),
-        gpsCoordinaten: body.gpsCoordinaten?.trim() || null,
-        telefoon: body.telefoon?.trim() || null,
+        type: body.type?.trim() || 'general cemetery',
+        address: body.address?.trim() || null,
+        zipCode: body.zipCode?.trim() || null,
+        city: body.city.trim(),
+        county: body.county.trim(),
+        state: body.state.trim(),
+        gpsCoordinates: body.gpsCoordinates?.trim() || null,
+        phone: body.phone?.trim() || null,
         email: body.email?.trim() || null,
         website: body.website?.trim() || null,
-        beschrijving: body.beschrijving?.trim() || null,
-        openingstijden: body.openingstijden?.trim() || null,
-        faciliteiten: body.faciliteiten?.trim() || null,
-        jaarOprichting: body.jaarOprichting?.trim() || null,
+        description: body.description?.trim() || null,
+        openingHours: body.openingHours?.trim() || null,
+        facilities: body.facilities?.trim() || null,
+        yearEstablished: body.yearEstablished?.trim() || null,
         photos: photos.length > 0 ? JSON.stringify(photos) : null,
         status: 'pending',
       })
       .returning();
 
     return NextResponse.json({
-      message: 'Begraafplaats succesvol ingediend ter beoordeling',
+      message: 'Cemetery successfully submitted for review',
       submission: {
         id: submission.id,
         slug: submission.slug,
@@ -128,7 +128,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Error creating user cemetery:', error);
     return NextResponse.json(
-      { error: 'Er is een fout opgetreden bij het toevoegen van de begraafplaats' },
+      { error: 'An error occurred while adding the cemetery' },
       { status: 500 }
     );
   }

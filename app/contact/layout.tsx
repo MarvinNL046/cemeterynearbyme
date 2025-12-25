@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact | Begraafplaats in de Buurt',
-  description: 'Neem contact op met Begraafplaats in de Buurt voor vragen, suggesties of samenwerkingen.',
+  title: 'Contact | Cemetery Near Me',
+  description: 'Contact Cemetery Near Me for questions, suggestions or collaborations.',
 };
 
 export default function ContactLayout({

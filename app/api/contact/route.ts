@@ -4,7 +4,10 @@ import { render } from '@react-email/components';
 import { ContactFormEmail } from '@/emails/ContactFormEmail';
 import { ContactConfirmationEmail } from '@/emails/ContactConfirmationEmail';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend only when API key is available (prevents build errors)
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 interface ContactFormData {
   name: string;
@@ -15,11 +18,11 @@ interface ContactFormData {
 
 // Subject label mapping
 const subjectLabels: Record<string, string> = {
-  algemeen: 'Algemene vraag',
-  informatie: 'Informatie toevoegen/wijzigen',
-  samenwerking: 'Samenwerking',
-  technisch: 'Technisch probleem',
-  anders: 'Anders',
+  general: 'General inquiry',
+  information: 'Add/update information',
+  partnership: 'Partnership',
+  technical: 'Technical issue',
+  other: 'Other',
 };
 
 export async function POST(request: Request) {
@@ -30,7 +33,7 @@ export async function POST(request: Request) {
     // Validate required fields
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
-        { error: 'Alle velden zijn verplicht' },
+        { error: 'All fields are required' },
         { status: 400 }
       );
     }
@@ -39,7 +42,7 @@ export async function POST(request: Request) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: 'Ongeldig e-mailadres' },
+        { error: 'Invalid email address' },
         { status: 400 }
       );
     }
@@ -67,32 +70,41 @@ export async function POST(request: Request) {
 
     // Plain text version for better deliverability
     const adminEmailText = `
-Nieuw contactbericht via Begraafplaats in de Buurt
+New contact message via Cemetery Near Me
 
-Van: ${name}
-E-mail: ${email}
-Onderwerp: ${subjectLabel}
+From: ${name}
+Email: ${email}
+Subject: ${subjectLabel}
 
-Bericht:
+Message:
 ${message}
 
 ---
-Dit bericht is verzonden via het contactformulier op begraafplaatsindebuurt.nl
+This message was sent via the contact form on cemeterynearbyme.com
     `.trim();
+
+    // Check if Resend is configured
+    if (!resend) {
+      console.warn('Resend API key not configured');
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      );
+    }
 
     // Send email to site owner with tags
     const { error } = await resend.emails.send({
-      from: 'Begraafplaats in de Buurt <noreply@begraafplaatsindebuurt.nl>',
-      to: ['info@begraafplaatsindebuurt.nl'],
+      from: 'Cemetery Near Me <noreply@cemeterynearbyme.com>',
+      to: ['info@cemeterynearbyme.com'],
       replyTo: email,
       subject: `[Contact] ${subjectLabel} - ${name}`,
       html: adminEmailHtml,
       text: adminEmailText,
       headers: {
-        'List-Unsubscribe': '<https://www.begraafplaatsindebuurt.nl/afmelden>',
+        'List-Unsubscribe': '<https://www.cemeterynearbyme.com/unsubscribe>',
       },
       tags: [
-        { name: 'platform', value: 'begraafplaatsindebuurt' },
+        { name: 'platform', value: 'cemeterynearbyme' },
         { name: 'type', value: 'contact-form' },
         { name: 'category', value: subject },
       ],
@@ -101,42 +113,42 @@ Dit bericht is verzonden via het contactformulier op begraafplaatsindebuurt.nl
     if (error) {
       console.error('Resend error:', error);
       return NextResponse.json(
-        { error: 'Er ging iets mis bij het verzenden van uw bericht' },
+        { error: 'Something went wrong while sending your message' },
         { status: 500 }
       );
     }
 
     // Plain text confirmation
     const confirmationEmailText = `
-Beste ${name},
+Dear ${name},
 
-Bedankt voor uw bericht. Wij hebben uw bericht goed ontvangen en zullen zo spoedig mogelijk reageren.
+Thank you for your message. We have received your message and will respond as soon as possible.
 
-Onderwerp: ${subjectLabel}
+Subject: ${subjectLabel}
 
-Uw bericht:
+Your message:
 ${message}
 
-Met vriendelijke groet,
-Begraafplaats in de Buurt
+Best regards,
+Cemetery Near Me
 
 ---
-Dit is een automatische bevestiging. Antwoord niet op deze email.
-https://www.begraafplaatsindebuurt.nl
+This is an automated confirmation. Do not reply to this email.
+https://www.cemeterynearbyme.com
     `.trim();
 
     // Send confirmation email to the sender with tags
     await resend.emails.send({
-      from: 'Begraafplaats in de Buurt <noreply@begraafplaatsindebuurt.nl>',
+      from: 'Cemetery Near Me <noreply@cemeterynearbyme.com>',
       to: [email],
-      subject: 'Bevestiging: Uw bericht is ontvangen',
+      subject: 'Confirmation: Your message has been received',
       html: confirmationEmailHtml,
       text: confirmationEmailText,
       headers: {
-        'List-Unsubscribe': '<https://www.begraafplaatsindebuurt.nl/afmelden>',
+        'List-Unsubscribe': '<https://www.cemeterynearbyme.com/unsubscribe>',
       },
       tags: [
-        { name: 'platform', value: 'begraafplaatsindebuurt' },
+        { name: 'platform', value: 'cemeterynearbyme' },
         { name: 'type', value: 'contact-confirmation' },
         { name: 'category', value: subject },
       ],
@@ -146,7 +158,7 @@ https://www.begraafplaatsindebuurt.nl
   } catch (error) {
     console.error('Contact API error:', error);
     return NextResponse.json(
-      { error: 'Er ging iets mis bij het verwerken van uw bericht' },
+      { error: 'Something went wrong while processing your message' },
       { status: 500 }
     );
   }

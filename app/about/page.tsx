@@ -5,15 +5,15 @@ import { Card } from '@/components/ui/card';
 import InlineAd from '@/components/ads/InlineAd';
 
 export const metadata: Metadata = {
-  title: 'Over ons | Begraafplaats in de Buurt',
-  description: 'Ontdek het verhaal achter Begraafplaats in de Buurt, de meest complete gids voor begraafplaatsen in Nederland.',
+  title: 'About Us | Cemetery Near Me',
+  description: 'Learn about Cemetery Near Me, the most comprehensive directory of cemeteries and memorial parks in the United States.',
   openGraph: {
-    title: 'Over Begraafplaats in de Buurt',
-    description: 'Uw betrouwbare gids voor het vinden van begraafplaatsen in Nederland',
+    title: 'About Cemetery Near Me',
+    description: 'Your trusted guide for finding cemeteries across the United States',
   },
 };
 
-export default function OverOnsPage() {
+export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -24,16 +24,16 @@ export default function OverOnsPage() {
             <ol className="flex items-center space-x-2 text-sm text-primary-foreground/70">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li>/</li>
-              <li className="text-white">Over ons</li>
+              <li className="text-white">About Us</li>
             </ol>
           </nav>
 
           <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4">
-            Over Begraafplaats in de Buurt
+            About Cemetery Near Me
           </h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl">
-            De meest complete en betrouwbare gids voor begraafplaatsen in Nederland,
-            met zorg samengesteld om u te helpen in moeilijke tijden.
+            The most comprehensive and reliable directory of cemeteries in the United States,
+            carefully curated to help you during difficult times.
           </p>
         </div>
       </div>
@@ -43,10 +43,9 @@ export default function OverOnsPage() {
           {/* Introduction */}
           <Card className="p-8 shadow-soft mb-12">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Begraafplaats in de Buurt is ontstaan uit de behoefte aan een complete,
-              betrouwbare en toegankelijke database van alle begraafplaatsen in Nederland.
-              Wij geloven dat iedereen eenvoudig informatie moet kunnen vinden over
-              begraafplaatsen in hun omgeving.
+              Cemetery Near Me was created to provide a complete, reliable, and accessible
+              database of cemeteries across the United States. We believe everyone should
+              be able to easily find information about cemeteries in their area.
             </p>
           </Card>
 
@@ -58,22 +57,21 @@ export default function OverOnsPage() {
               <div className="w-10 h-10 rounded-lg bg-accent text-accent-foreground flex items-center justify-center">
                 <Target className="w-5 h-5" />
               </div>
-              <h2 className="font-serif text-2xl font-bold">Onze Missie</h2>
+              <h2 className="font-serif text-2xl font-bold">Our Mission</h2>
             </div>
             <Card className="p-6 shadow-soft bg-gradient-to-br from-forest-50 to-gold-50/50 dark:from-forest-900/20 dark:to-gold-900/10 border-forest-100 dark:border-forest-800">
               <p className="text-muted-foreground leading-relaxed">
-                Wij streven ernaar om de meest complete en gebruiksvriendelijke bron
-                te zijn voor informatie over begraafplaatsen in Nederland. Of u nu
-                op zoek bent naar een laatste rustplaats voor een dierbare, historisch
-                onderzoek doet, of gewoon meer wilt weten over begraafplaatsen in uw
-                omgeving - wij zijn er om u te helpen.
+                We strive to be the most complete and user-friendly resource for cemetery
+                information in the United States. Whether you&apos;re looking for a final resting
+                place for a loved one, conducting genealogical research, or simply want to learn
+                more about cemeteries in your area - we&apos;re here to help.
               </p>
             </Card>
           </section>
 
           {/* What We Offer Section */}
           <section className="mb-16">
-            <h2 className="font-serif text-2xl font-bold mb-6">Wat Wij Bieden</h2>
+            <h2 className="font-serif text-2xl font-bold mb-6">What We Offer</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card className="p-6 shadow-soft border-2 border-transparent hover:border-accent/30 transition-all duration-300">
                 <div className="flex items-start gap-4">
@@ -81,10 +79,10 @@ export default function OverOnsPage() {
                     <Users className="w-6 h-6 text-forest-700" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-semibold text-lg mb-2">Complete Database</h3>
+                    <h3 className="font-serif font-semibold text-lg mb-2">Comprehensive Database</h3>
                     <p className="text-sm text-muted-foreground">
-                      Meer dan 3.800 begraafplaatsen met actuele informatie over
-                      openingstijden, faciliteiten en contactgegevens.
+                      Thousands of cemeteries with up-to-date information including
+                      hours, facilities, and contact details.
                     </p>
                   </div>
                 </div>
@@ -96,10 +94,10 @@ export default function OverOnsPage() {
                     <Heart className="w-6 h-6 text-forest-700" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-semibold text-lg mb-2">Met Zorg Samengesteld</h3>
+                    <h3 className="font-serif font-semibold text-lg mb-2">Carefully Curated</h3>
                     <p className="text-sm text-muted-foreground">
-                      Elke begraafplaats is zorgvuldig gedocumenteerd met respect
-                      voor de gevoelige aard van deze informatie.
+                      Each cemetery is carefully documented with respect for the
+                      sensitive nature of this information.
                     </p>
                   </div>
                 </div>
@@ -111,10 +109,10 @@ export default function OverOnsPage() {
                     <Clock className="w-6 h-6 text-forest-700" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-semibold text-lg mb-2">Altijd Actueel</h3>
+                    <h3 className="font-serif font-semibold text-lg mb-2">Always Updated</h3>
                     <p className="text-sm text-muted-foreground">
-                      We werken continu aan het actualiseren van informatie zoals
-                      openingstijden en contactgegevens.
+                      We continuously work to keep information such as hours and
+                      contact details current.
                     </p>
                   </div>
                 </div>
@@ -126,10 +124,10 @@ export default function OverOnsPage() {
                     <Shield className="w-6 h-6 text-forest-700" />
                   </div>
                   <div>
-                    <h3 className="font-serif font-semibold text-lg mb-2">Privacy Eerst</h3>
+                    <h3 className="font-serif font-semibold text-lg mb-2">Privacy First</h3>
                     <p className="text-sm text-muted-foreground">
-                      We respecteren uw privacy en volgen strikt de AVG-richtlijnen
-                      bij het verwerken van gegevens.
+                      We respect your privacy and strictly follow data protection
+                      guidelines when processing information.
                     </p>
                   </div>
                 </div>
@@ -139,7 +137,7 @@ export default function OverOnsPage() {
 
           {/* Values Section */}
           <section className="mb-16">
-            <h2 className="font-serif text-2xl font-bold mb-6">Onze Waarden</h2>
+            <h2 className="font-serif text-2xl font-bold mb-6">Our Values</h2>
             <div className="grid gap-4 md:grid-cols-3">
               <Card className="p-6 shadow-soft text-center">
                 <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -147,7 +145,7 @@ export default function OverOnsPage() {
                 </div>
                 <h3 className="font-serif font-semibold mb-2">Respect</h3>
                 <p className="text-sm text-muted-foreground">
-                  We behandelen dit onderwerp met het respect en de waardigheid die het verdient.
+                  We treat this subject with the respect and dignity it deserves.
                 </p>
               </Card>
 
@@ -155,9 +153,9 @@ export default function OverOnsPage() {
                 <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="font-serif font-semibold mb-2">Toegankelijkheid</h3>
+                <h3 className="font-serif font-semibold mb-2">Accessibility</h3>
                 <p className="text-sm text-muted-foreground">
-                  Informatie moet voor iedereen gemakkelijk vindbaar en begrijpelijk zijn.
+                  Information should be easy to find and understand for everyone.
                 </p>
               </Card>
 
@@ -165,9 +163,9 @@ export default function OverOnsPage() {
                 <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="font-serif font-semibold mb-2">Betrouwbaarheid</h3>
+                <h3 className="font-serif font-semibold mb-2">Reliability</h3>
                 <p className="text-sm text-muted-foreground">
-                  We streven naar 100% accurate en up-to-date informatie.
+                  We strive for 100% accurate and up-to-date information.
                 </p>
               </Card>
             </div>
@@ -175,61 +173,16 @@ export default function OverOnsPage() {
 
           <InlineAd />
 
-          {/* Founder Section */}
-          <section className="mb-16">
-            <h2 className="font-serif text-2xl font-bold mb-6">Over de Oprichter</h2>
-            <Card className="p-8 shadow-soft">
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="md:col-span-1">
-                  <img
-                    src="/images/team/marvin-profiel-foto.webp"
-                    alt="Marvin Smit - Oprichter van Begraafplaats in de Buurt"
-                    className="aspect-square object-cover rounded-xl shadow-soft"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="md:col-span-2">
-                  <h3 className="font-serif text-xl font-semibold mb-4">Marvin Smit</h3>
-                  <div className="space-y-4 text-muted-foreground">
-                    <p>
-                      Hallo, ik ben Marvin Smit, 36 jaar oud en woonachtig in het mooie Limburg.
-                      Als gepassioneerd webontwikkelaar richt ik mij op het bouwen van informatieve
-                      websites die echt waarde toevoegen voor gebruikers.
-                    </p>
-                    <p>
-                      Het idee voor Begraafplaats in de Buurt ontstond in 2023 toen ik mijn geliefde
-                      oma verloor. In die emotionele periode merkte ik hoe lastig het was om goede
-                      informatie te vinden over begraafplaatsen in onze regio. Versnipperde informatie,
-                      verouderde openingstijden, en websites die al jaren niet meer bijgewerkt waren.
-                    </p>
-                    <p>
-                      Als webontwikkelaar dacht ik: &quot;Dit moet beter kunnen.&quot; Wat begon als een
-                      persoonlijk project om mijn familie te helpen, groeide uit tot deze landelijke
-                      database. Ik besteedde maanden aan het verzamelen, verifiëren en verrijken van
-                      informatie over meer dan 3.800 begraafplaatsen.
-                    </p>
-                    <p>
-                      Mijn doel is simpel: niemand zou in moeilijke tijden ook nog eens uren moeten
-                      zoeken naar praktische informatie. Met Begraafplaats in de Buurt wil ik een
-                      betrouwbare, respectvolle bron bieden die families helpt in hun zoektocht naar
-                      een waardige laatste rustplaats.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </section>
-
           {/* Quote Section */}
           <Card className="p-8 shadow-soft bg-gradient-to-r from-forest-50 to-gold-50/30 dark:from-forest-900/20 dark:to-gold-900/10 border-forest-100 dark:border-forest-800 mb-16">
             <div className="flex items-start gap-4">
               <Quote className="w-8 h-8 text-accent shrink-0" />
               <div>
                 <p className="text-lg font-medium text-foreground mb-4 italic">
-                  &quot;Samen maken we informatie over begraafplaatsen toegankelijk voor iedereen&quot;
+                  &quot;Making cemetery information accessible to everyone across America&quot;
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  - Marvin Smit, oprichter Begraafplaats in de Buurt
+                  - Cemetery Near Me Team
                 </p>
               </div>
             </div>
@@ -241,20 +194,19 @@ export default function OverOnsPage() {
               <div className="w-10 h-10 rounded-lg bg-accent text-accent-foreground flex items-center justify-center">
                 <Sparkles className="w-5 h-5" />
               </div>
-              <h2 className="font-serif text-2xl font-bold">Toekomstvisie</h2>
+              <h2 className="font-serif text-2xl font-bold">Future Vision</h2>
             </div>
             <Card className="p-6 shadow-soft">
               <p className="text-muted-foreground mb-6">
-                We blijven continu werken aan het verbeteren van onze dienstverlening.
-                In de toekomst willen we:
+                We continue to work on improving our services. In the future, we plan to:
               </p>
               <ul className="space-y-3">
                 {[
-                  'Interactieve kaarten toevoegen voor betere navigatie',
-                  'Historische informatie uitbreiden met archiefmateriaal',
-                  'Een platform bieden voor het delen van herinneringen',
-                  'Samenwerken met genealogische onderzoekers',
-                  'Uitbreiden naar België en Duitsland',
+                  'Add interactive maps for better navigation',
+                  'Expand historical information with archive materials',
+                  'Provide a platform for sharing memories and tributes',
+                  'Partner with genealogical researchers',
+                  'Add virtual tours of historic cemeteries',
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3 text-muted-foreground">
                     <div className="w-6 h-6 rounded-full bg-forest-100 flex items-center justify-center shrink-0">
@@ -269,28 +221,27 @@ export default function OverOnsPage() {
 
           {/* Collaboration Section */}
           <section className="mb-16">
-            <h2 className="font-serif text-2xl font-bold mb-6">Samenwerking</h2>
+            <h2 className="font-serif text-2xl font-bold mb-6">Collaboration</h2>
             <Card className="p-6 shadow-soft">
               <p className="text-muted-foreground mb-4">
-                Beheert u een begraafplaats of heeft u aanvullende informatie?
-                We staan altijd open voor samenwerking om onze database te verbeteren
-                en uit te breiden.
+                Do you manage a cemetery or have additional information to share?
+                We&apos;re always open to collaboration to improve and expand our database.
               </p>
               <p className="text-muted-foreground mb-6">
-                Neem gerust contact met ons op via{' '}
+                Feel free to reach out via{' '}
                 <Link href="/contact" className="text-accent hover:underline font-medium">
-                  ons contactformulier
+                  our contact form
                 </Link>{' '}
-                of stuur een e-mail naar{' '}
-                <a href="mailto:info@begraafplaatsindebuurt.nl" className="text-accent hover:underline font-medium">
-                  info@begraafplaatsindebuurt.nl
+                or send an email to{' '}
+                <a href="mailto:info@cemeterynearbyme.com" className="text-accent hover:underline font-medium">
+                  info@cemeterynearbyme.com
                 </a>.
               </p>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/90 transition-colors"
               >
-                Neem contact op
+                Contact Us
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Card>
@@ -299,16 +250,16 @@ export default function OverOnsPage() {
           {/* CTA Section */}
           <div className="text-center">
             <h2 className="font-serif text-2xl font-semibold mb-4">
-              Begin uw zoektocht
+              Start Your Search
             </h2>
             <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-              Ontdek de meer dan 3.800 begraafplaatsen in onze database en vind de informatie die u zoekt.
+              Discover cemeteries across the United States and find the information you need.
             </p>
             <Link
-              href="/zoeken"
+              href="/search"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
             >
-              Zoek begraafplaatsen
+              Search Cemeteries
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

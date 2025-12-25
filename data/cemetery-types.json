@@ -1,0 +1,196 @@
+{
+  "types": [
+    {
+      "slug": "national-cemetery",
+      "name": "National Cemetery",
+      "description": "National cemeteries are burial grounds maintained by the federal government, primarily for military veterans and their dependents.",
+      "search_terms": ["national cemetery", "veterans national cemetery", "federal cemetery"]
+    },
+    {
+      "slug": "veterans-cemetery",
+      "name": "Veterans Cemetery",
+      "description": "State-run cemeteries honoring military veterans who served our nation.",
+      "search_terms": ["veterans cemetery", "VA cemetery", "military cemetery"]
+    },
+    {
+      "slug": "memorial-park",
+      "name": "Memorial Park",
+      "description": "Beautifully landscaped cemeteries with park-like settings and flat markers.",
+      "search_terms": ["memorial park", "memorial gardens", "lawn cemetery"]
+    },
+    {
+      "slug": "natural-burial",
+      "name": "Natural Burial Ground",
+      "description": "Eco-friendly burial sites that allow for natural decomposition and conservation.",
+      "search_terms": ["natural burial", "green cemetery", "eco burial", "conservation cemetery"]
+    },
+    {
+      "slug": "green-cemetery",
+      "name": "Green Cemetery",
+      "description": "Environmentally sustainable cemeteries focused on natural preservation.",
+      "search_terms": ["green cemetery", "eco cemetery", "sustainable burial"]
+    },
+    {
+      "slug": "catholic-cemetery",
+      "name": "Catholic Cemetery",
+      "description": "Cemeteries operated by or affiliated with the Catholic Church.",
+      "search_terms": ["catholic cemetery", "parish cemetery", "church cemetery catholic"]
+    },
+    {
+      "slug": "jewish-cemetery",
+      "name": "Jewish Cemetery",
+      "description": "Traditional Jewish burial grounds following Jewish law and customs.",
+      "search_terms": ["jewish cemetery", "hebrew cemetery", "jewish memorial park"]
+    },
+    {
+      "slug": "muslim-cemetery",
+      "name": "Muslim Cemetery",
+      "description": "Islamic cemeteries following Muslim burial traditions and facing Mecca.",
+      "search_terms": ["muslim cemetery", "islamic cemetery", "muslim burial ground"]
+    },
+    {
+      "slug": "baptist-cemetery",
+      "name": "Baptist Cemetery",
+      "description": "Burial grounds associated with Baptist churches and congregations.",
+      "search_terms": ["baptist cemetery", "baptist church cemetery"]
+    },
+    {
+      "slug": "methodist-cemetery",
+      "name": "Methodist Cemetery",
+      "description": "Cemeteries affiliated with Methodist churches.",
+      "search_terms": ["methodist cemetery", "united methodist cemetery"]
+    },
+    {
+      "slug": "lutheran-cemetery",
+      "name": "Lutheran Cemetery",
+      "description": "Burial grounds associated with Lutheran congregations.",
+      "search_terms": ["lutheran cemetery", "lutheran church cemetery"]
+    },
+    {
+      "slug": "presbyterian-cemetery",
+      "name": "Presbyterian Cemetery",
+      "description": "Cemeteries maintained by Presbyterian churches.",
+      "search_terms": ["presbyterian cemetery"]
+    },
+    {
+      "slug": "episcopal-cemetery",
+      "name": "Episcopal Cemetery",
+      "description": "Anglican/Episcopal church burial grounds.",
+      "search_terms": ["episcopal cemetery", "anglican cemetery"]
+    },
+    {
+      "slug": "orthodox-cemetery",
+      "name": "Orthodox Cemetery",
+      "description": "Eastern Orthodox Christian cemeteries.",
+      "search_terms": ["orthodox cemetery", "greek orthodox cemetery", "russian orthodox cemetery"]
+    },
+    {
+      "slug": "historic-cemetery",
+      "name": "Historic Cemetery",
+      "description": "Historically significant cemeteries often listed on national or state registers.",
+      "search_terms": ["historic cemetery", "old cemetery", "antique cemetery", "colonial cemetery"]
+    },
+    {
+      "slug": "pioneer-cemetery",
+      "name": "Pioneer Cemetery",
+      "description": "Early American settlement burial grounds from frontier times.",
+      "search_terms": ["pioneer cemetery", "frontier cemetery", "settler cemetery"]
+    },
+    {
+      "slug": "civil-war-cemetery",
+      "name": "Civil War Cemetery",
+      "description": "Cemeteries containing graves of Civil War soldiers.",
+      "search_terms": ["civil war cemetery", "confederate cemetery", "union cemetery"]
+    },
+    {
+      "slug": "family-cemetery",
+      "name": "Family Cemetery",
+      "description": "Private burial grounds on family property.",
+      "search_terms": ["family cemetery", "private cemetery", "family burial ground"]
+    },
+    {
+      "slug": "community-cemetery",
+      "name": "Community Cemetery",
+      "description": "Non-denominational cemeteries serving local communities.",
+      "search_terms": ["community cemetery", "public cemetery", "town cemetery"]
+    },
+    {
+      "slug": "municipal-cemetery",
+      "name": "Municipal Cemetery",
+      "description": "City or town-operated public cemeteries.",
+      "search_terms": ["municipal cemetery", "city cemetery", "public cemetery"]
+    },
+    {
+      "slug": "county-cemetery",
+      "name": "County Cemetery",
+      "description": "Cemeteries maintained by county governments.",
+      "search_terms": ["county cemetery", "potter's field"]
+    },
+    {
+      "slug": "crematorium",
+      "name": "Crematorium",
+      "description": "Facilities offering cremation services, often with columbarium niches.",
+      "search_terms": ["crematorium", "cremation services", "crematory"]
+    },
+    {
+      "slug": "mausoleum",
+      "name": "Mausoleum",
+      "description": "Above-ground tomb structures for entombment.",
+      "search_terms": ["mausoleum", "crypt", "entombment"]
+    },
+    {
+      "slug": "columbarium",
+      "name": "Columbarium",
+      "description": "Structures with niches for storing cremated remains.",
+      "search_terms": ["columbarium", "niche", "cremation niche", "urn vault"]
+    },
+    {
+      "slug": "pet-cemetery",
+      "name": "Pet Cemetery",
+      "description": "Cemeteries dedicated to the burial of pets and animals.",
+      "search_terms": ["pet cemetery", "animal cemetery", "pet memorial"]
+    },
+    {
+      "slug": "african-american-cemetery",
+      "name": "African American Cemetery",
+      "description": "Historically significant burial grounds for African American communities.",
+      "search_terms": ["african american cemetery", "colored cemetery", "freedmen cemetery"]
+    },
+    {
+      "slug": "native-american-cemetery",
+      "name": "Native American Cemetery",
+      "description": "Sacred burial grounds of Indigenous peoples.",
+      "search_terms": ["native american cemetery", "indian burial ground", "tribal cemetery"]
+    },
+    {
+      "slug": "chinese-cemetery",
+      "name": "Chinese Cemetery",
+      "description": "Cemeteries serving Chinese-American communities.",
+      "search_terms": ["chinese cemetery", "asian cemetery"]
+    },
+    {
+      "slug": "masonic-cemetery",
+      "name": "Masonic Cemetery",
+      "description": "Cemeteries affiliated with Freemason lodges.",
+      "search_terms": ["masonic cemetery", "freemason cemetery", "odd fellows cemetery"]
+    },
+    {
+      "slug": "fraternal-cemetery",
+      "name": "Fraternal Cemetery",
+      "description": "Burial grounds operated by fraternal organizations.",
+      "search_terms": ["fraternal cemetery", "elks cemetery", "knights of columbus cemetery"]
+    },
+    {
+      "slug": "sailors-cemetery",
+      "name": "Sailors Cemetery",
+      "description": "Cemeteries for merchant sailors and naval personnel.",
+      "search_terms": ["sailors cemetery", "seamen cemetery", "maritime cemetery"]
+    },
+    {
+      "slug": "garden-cemetery",
+      "name": "Garden Cemetery",
+      "description": "Victorian-era cemeteries designed as landscaped parks.",
+      "search_terms": ["garden cemetery", "rural cemetery", "landscape cemetery"]
+    }
+  ]
+}

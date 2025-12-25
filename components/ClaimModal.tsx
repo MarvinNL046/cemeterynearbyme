@@ -93,13 +93,13 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Er is iets misgegaan');
+        throw new Error(data.error || 'Something went wrong');
       }
 
       setClaimId(data.claimId);
       setStep('verify-code');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Er is iets misgegaan');
+      setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setLoading(false);
     }
@@ -120,12 +120,12 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Er is iets misgegaan');
+        throw new Error(data.error || 'Something went wrong');
       }
 
       setStep('success');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Er is iets misgegaan');
+      setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setLoading(false);
     }
@@ -167,7 +167,7 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
         {step === 'check-auth' && (
           <div className="p-12 text-center">
             <Loader2 className="w-8 h-8 animate-spin text-green-600 mx-auto" />
-            <p className="mt-4 text-gray-600">Even geduld...</p>
+            <p className="mt-4 text-gray-600">Please wait...</p>
           </div>
         )}
 
@@ -179,10 +179,10 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
                 <AlertCircle className="w-8 h-8 text-yellow-600" />
               </div>
               <h2 className="text-xl font-bold text-gray-900 mb-2">
-                Account vereist
+                Account Required
               </h2>
               <p className="text-gray-600">
-                Om een vermelding te claimen moet je eerst inloggen of een account aanmaken.
+                To claim a listing, you must first log in or create an account.
               </p>
             </div>
 
@@ -191,13 +191,13 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
                 onClick={() => router.push('/login')}
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
               >
-                Inloggen
+                Log In
               </button>
               <button
                 onClick={() => router.push('/register')}
                 className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold py-3 px-4 rounded-lg transition-colors"
               >
-                Account aanmaken
+                Create Account
               </button>
             </div>
           </div>
@@ -208,7 +208,7 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
           <div className="p-8">
             <div className="mb-6">
               <h2 className="text-xl font-bold text-gray-900 mb-2">
-                Claim deze vermelding
+                Claim This Listing
               </h2>
               <p className="text-gray-600 text-sm">
                 <strong>{cemeteryName}</strong>
@@ -224,7 +224,7 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
             <form onSubmit={handleSubmitClaim} className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Uw functie *
+                  Your Role *
                 </label>
                 <div className="relative">
                   <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -234,19 +234,19 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
                     required
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all appearance-none bg-white"
                   >
-                    <option value="">Selecteer uw functie</option>
-                    <option value="eigenaar">Eigenaar</option>
-                    <option value="beheerder">Beheerder</option>
-                    <option value="medewerker">Medewerker</option>
-                    <option value="gemeente">Gemeente</option>
-                    <option value="anders">Anders</option>
+                    <option value="">Select your role</option>
+                    <option value="owner">Owner</option>
+                    <option value="manager">Manager</option>
+                    <option value="employee">Employee</option>
+                    <option value="municipality">Municipality</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Uw naam *
+                  Your Name *
                 </label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -262,7 +262,7 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Telefoonnummer
+                  Phone Number
                 </label>
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -270,7 +270,7 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
                     type="tel"
                     value={claimantPhone}
                     onChange={(e) => setClaimantPhone(e.target.value)}
-                    placeholder="06-12345678"
+                    placeholder="(555) 123-4567"
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all"
                   />
                 </div>
@@ -278,7 +278,7 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Verificatie e-mail *
+                  Verification Email *
                 </label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -291,19 +291,19 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
                   />
                 </div>
                 <p className="mt-1 text-xs text-gray-500">
-                  We sturen een verificatiecode naar dit adres
+                  We will send a verification code to this address
                 </p>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Opmerkingen (optioneel)
+                  Notes (optional)
                 </label>
                 <textarea
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   rows={3}
-                  placeholder="Eventuele opmerkingen over uw claim..."
+                  placeholder="Any additional notes about your claim..."
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all resize-none"
                 />
               </div>
@@ -317,7 +317,7 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
                   <Loader2 className="w-5 h-5 animate-spin" />
                 ) : (
                   <>
-                    Verstuur claim
+                    Submit Claim
                     <ArrowRight className="w-5 h-5" />
                   </>
                 )}
@@ -334,10 +334,10 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
                 <Mail className="w-8 h-8 text-green-600" />
               </div>
               <h2 className="text-xl font-bold text-gray-900 mb-2">
-                Verifieer uw e-mail
+                Verify Your Email
               </h2>
               <p className="text-gray-600">
-                We hebben een 6-cijferige code gestuurd naar{' '}
+                We&apos;ve sent a 6-digit code to{' '}
                 <strong>{verificationEmail || user?.email}</strong>
               </p>
             </div>
@@ -351,7 +351,7 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
             <form onSubmit={handleVerifyCode} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Verificatiecode
+                  Verification Code
                 </label>
                 <div className="relative">
                   <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -376,7 +376,7 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
                   <Loader2 className="w-5 h-5 animate-spin" />
                 ) : (
                   <>
-                    Verifiëren
+                    Verify
                     <ArrowRight className="w-5 h-5" />
                   </>
                 )}
@@ -392,16 +392,16 @@ export default function ClaimModal({ isOpen, onClose, cemeteryName, cemeterySlug
               <CheckCircle className="w-8 h-8 text-green-600" />
             </div>
             <h2 className="text-xl font-bold text-gray-900 mb-2">
-              Claim ingediend!
+              Claim Submitted!
             </h2>
             <p className="text-gray-600 mb-6">
-              Uw claim voor <strong>{cemeteryName}</strong> is succesvol ingediend en wordt zo spoedig mogelijk beoordeeld.
+              Your claim for <strong>{cemeteryName}</strong> has been successfully submitted and will be reviewed shortly.
             </p>
             <button
               onClick={handleGoToDashboard}
               className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
             >
-              Naar dashboard
+              Go to Dashboard
             </button>
           </div>
         )}

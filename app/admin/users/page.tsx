@@ -84,11 +84,11 @@ export default function AdminUsersPage() {
         router.push('/dashboard');
       } else {
         const data = await response.json();
-        alert(data.error || 'Kon niet impersoneren');
+        alert(data.error || 'Could not impersonate');
       }
     } catch (error) {
       console.error('Error impersonating:', error);
-      alert('Er ging iets mis');
+      alert('Something went wrong');
     } finally {
       setImpersonating(false);
     }
@@ -197,9 +197,9 @@ export default function AdminUsersPage() {
     <div className="p-6 lg:p-8">
       <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold font-serif text-foreground">Gebruikers</h1>
+          <h1 className="text-2xl font-bold font-serif text-foreground">Users</h1>
           <p className="text-muted-foreground">
-            Beheer alle geregistreerde gebruikers ({pagination?.total || 0} totaal)
+            Manage all registered users ({pagination?.total || 0} total)
           </p>
         </div>
       </div>
@@ -213,7 +213,7 @@ export default function AdminUsersPage() {
               <Input
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Zoek op naam of e-mail..."
+                placeholder="Search by name or email..."
                 className="pl-10"
               />
             </div>
@@ -222,11 +222,11 @@ export default function AdminUsersPage() {
               onChange={(e) => setRoleFilter(e.target.value)}
               className="h-10 px-3 rounded-md border border-input bg-background text-sm"
             >
-              <option value="">Alle rollen</option>
-              <option value="user">Gebruiker</option>
+              <option value="">All roles</option>
+              <option value="user">User</option>
               <option value="admin">Admin</option>
             </select>
-            <Button type="submit">Zoeken</Button>
+            <Button type="submit">Search</Button>
           </form>
         </CardContent>
       </Card>
@@ -240,17 +240,17 @@ export default function AdminUsersPage() {
             </div>
           ) : users.length === 0 ? (
             <div className="p-12 text-center text-muted-foreground">
-              Geen gebruikers gevonden
+              No users found
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-muted/50">
                   <tr>
-                    <th className="text-left p-4 text-sm font-medium">Gebruiker</th>
+                    <th className="text-left p-4 text-sm font-medium">User</th>
                     <th className="text-left p-4 text-sm font-medium">Status</th>
-                    <th className="text-left p-4 text-sm font-medium hidden sm:table-cell">Aangemeld</th>
-                    <th className="text-right p-4 text-sm font-medium">Acties</th>
+                    <th className="text-left p-4 text-sm font-medium hidden sm:table-cell">Registered</th>
+                    <th className="text-right p-4 text-sm font-medium">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y">
@@ -282,15 +282,15 @@ export default function AdminUsersPage() {
                                 Admin
                               </>
                             ) : (
-                              'Gebruiker'
+                              'User'
                             )}
                           </span>
                           {user.emailVerified ? (
-                            <span className="inline-flex items-center text-green-600" title="E-mail geverifieerd">
+                            <span className="inline-flex items-center text-green-600" title="Email verified">
                               <CheckCircle className="w-4 h-4" />
                             </span>
                           ) : (
-                            <span className="inline-flex items-center text-yellow-600" title="E-mail niet geverifieerd">
+                            <span className="inline-flex items-center text-yellow-600" title="Email not verified">
                               <XCircle className="w-4 h-4" />
                             </span>
                           )}
@@ -298,7 +298,7 @@ export default function AdminUsersPage() {
                       </td>
                       <td className="p-4 hidden sm:table-cell">
                         <span className="text-sm text-muted-foreground">
-                          {new Date(user.createdAt).toLocaleDateString('nl-NL')}
+                          {new Date(user.createdAt).toLocaleDateString('en-US')}
                         </span>
                       </td>
                       <td className="p-4 text-right">
@@ -320,7 +320,7 @@ export default function AdminUsersPage() {
           {pagination && pagination.totalPages > 1 && (
             <div className="p-4 border-t flex items-center justify-between">
               <span className="text-sm text-muted-foreground">
-                Pagina {pagination.page} van {pagination.totalPages}
+                Page {pagination.page} of {pagination.totalPages}
               </span>
               <div className="flex gap-2">
                 <Button
@@ -365,7 +365,7 @@ export default function AdminUsersPage() {
               className="w-full flex items-center gap-2 px-4 py-2 text-sm text-blue-600 hover:bg-blue-50 transition-colors disabled:opacity-50"
             >
               <UserCheck className="w-4 h-4" />
-              Bekijk als gebruiker
+              View as user
             </button>
             <button
               onClick={() => {
@@ -376,7 +376,7 @@ export default function AdminUsersPage() {
               className="w-full flex items-center gap-2 px-4 py-2 text-sm hover:bg-muted transition-colors"
             >
               <Edit className="w-4 h-4" />
-              Bewerken
+              Edit
             </button>
             <button
               onClick={() => {
@@ -389,12 +389,12 @@ export default function AdminUsersPage() {
               {users.find(u => u.id === openMenu)?.role === 'admin' ? (
                 <>
                   <ShieldOff className="w-4 h-4" />
-                  Admin verwijderen
+                  Remove admin
                 </>
               ) : (
                 <>
                   <Shield className="w-4 h-4" />
-                  Admin maken
+                  Make admin
                 </>
               )}
             </button>
@@ -406,7 +406,7 @@ export default function AdminUsersPage() {
               className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
             >
               <Trash2 className="w-4 h-4" />
-              Verwijderen
+              Delete
             </button>
           </div>
         </>
@@ -417,12 +417,12 @@ export default function AdminUsersPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <Card className="w-full max-w-md">
             <CardHeader>
-              <CardTitle>Gebruiker bewerken</CardTitle>
+              <CardTitle>Edit user</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleUpdateUser} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1">Naam</label>
+                  <label className="block text-sm font-medium mb-1">Name</label>
                   <Input
                     value={editingUser.name}
                     onChange={(e) => setEditingUser({ ...editingUser, name: e.target.value })}
@@ -430,7 +430,7 @@ export default function AdminUsersPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">E-mail</label>
+                  <label className="block text-sm font-medium mb-1">Email</label>
                   <Input
                     type="email"
                     value={editingUser.email}
@@ -445,10 +445,10 @@ export default function AdminUsersPage() {
                     onClick={() => setEditingUser(null)}
                     className="flex-1"
                   >
-                    Annuleren
+                    Cancel
                   </Button>
                   <Button type="submit" variant="gold" className="flex-1">
-                    Opslaan
+                    Save
                   </Button>
                 </div>
               </form>
@@ -465,9 +465,9 @@ export default function AdminUsersPage() {
               <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Trash2 className="w-6 h-6 text-red-600" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Gebruiker verwijderen?</h3>
+              <h3 className="text-lg font-semibold mb-2">Delete user?</h3>
               <p className="text-muted-foreground text-sm mb-6">
-                Dit kan niet ongedaan worden gemaakt. Alle claims van deze gebruiker worden ook verwijderd.
+                This cannot be undone. All claims from this user will also be deleted.
               </p>
               <div className="flex gap-3">
                 <Button
@@ -475,14 +475,14 @@ export default function AdminUsersPage() {
                   onClick={() => setShowDeleteConfirm(null)}
                   className="flex-1"
                 >
-                  Annuleren
+                  Cancel
                 </Button>
                 <Button
                   variant="destructive"
                   onClick={() => handleDelete(showDeleteConfirm)}
                   className="flex-1"
                 >
-                  Verwijderen
+                  Delete
                 </Button>
               </div>
             </CardContent>

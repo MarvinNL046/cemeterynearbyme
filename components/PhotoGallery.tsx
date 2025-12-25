@@ -49,7 +49,7 @@ export default function PhotoGallery({ cemeterySlug, cemeteryName }: PhotoGaller
   };
 
   const handleDelete = async (photoId: number) => {
-    if (!confirm('Weet u zeker dat u deze foto wilt verwijderen?')) {
+    if (!confirm('Are you sure you want to delete this photo?')) {
       return;
     }
 
@@ -64,7 +64,7 @@ export default function PhotoGallery({ cemeterySlug, cemeteryName }: PhotoGaller
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Verwijderen mislukt');
+        throw new Error(data.error || 'Delete failed');
       }
 
       // Close lightbox if the deleted photo was open
@@ -75,7 +75,7 @@ export default function PhotoGallery({ cemeterySlug, cemeteryName }: PhotoGaller
       // Refresh photos
       setRefreshKey(prev => prev + 1);
     } catch (err) {
-      setDeleteError(err instanceof Error ? err.message : 'Er ging iets mis');
+      setDeleteError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setDeletingId(null);
     }
@@ -121,7 +121,7 @@ export default function PhotoGallery({ cemeterySlug, cemeteryName }: PhotoGaller
       <div className="bg-white rounded-xl shadow-sm border p-6">
         <div className="flex items-center gap-3 mb-4">
           <Camera className="w-5 h-5 text-primary" />
-          <h2 className="text-xl font-semibold">Foto&apos;s van bezoekers</h2>
+          <h2 className="text-xl font-semibold">Visitor Photos</h2>
         </div>
         <div className="grid grid-cols-3 gap-2">
           {[1, 2, 3].map((i) => (
@@ -138,7 +138,7 @@ export default function PhotoGallery({ cemeterySlug, cemeteryName }: PhotoGaller
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <Camera className="w-5 h-5 text-primary" />
-            <h2 className="text-xl font-semibold">Foto&apos;s van bezoekers</h2>
+            <h2 className="text-xl font-semibold">Visitor Photos</h2>
             {photos.length > 0 && (
               <span className="text-sm text-muted-foreground">({photos.length})</span>
             )}
@@ -152,9 +152,9 @@ export default function PhotoGallery({ cemeterySlug, cemeteryName }: PhotoGaller
         {photos.length === 0 ? (
           <div className="text-center py-8 text-muted-foreground">
             <Camera className="w-12 h-12 mx-auto mb-3 opacity-30" />
-            <p className="font-medium">Nog geen foto&apos;s</p>
+            <p className="font-medium">No photos yet</p>
             <p className="text-sm mt-1">
-              Bent u hier geweest? Deel uw foto&apos;s van {cemeteryName}!
+              Have you visited? Share your photos of {cemeteryName}!
             </p>
           </div>
         ) : (
@@ -238,7 +238,7 @@ export default function PhotoGallery({ cemeterySlug, cemeteryName }: PhotoGaller
                   <span>{photos[selectedIndex].uploader_name}</span>
                   <span className="mx-2">•</span>
                   <span>
-                    {new Date(photos[selectedIndex].created_at).toLocaleDateString('nl-NL', {
+                    {new Date(photos[selectedIndex].created_at).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric'
@@ -258,7 +258,7 @@ export default function PhotoGallery({ cemeterySlug, cemeteryName }: PhotoGaller
                     ) : (
                       <Trash2 className="w-4 h-4" />
                     )}
-                    Verwijderen
+                    Delete
                   </button>
                 )}
               </div>

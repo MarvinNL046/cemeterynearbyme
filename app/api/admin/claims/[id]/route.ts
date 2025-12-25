@@ -45,7 +45,7 @@ export async function GET(
 
     if (!claim) {
       return NextResponse.json(
-        { error: 'Claim niet gevonden' },
+        { error: 'Claim not found' },
         { status: 404 }
       );
     }
@@ -78,7 +78,7 @@ export async function PATCH(
     const validStatuses = ['pending', 'verification_sent', 'verified', 'approved', 'rejected', 'expired'];
     if (status && !validStatuses.includes(status)) {
       return NextResponse.json(
-        { error: 'Ongeldige status' },
+        { error: 'Invalid status' },
         { status: 400 }
       );
     }
@@ -86,7 +86,7 @@ export async function PATCH(
     // If rejecting, require a reason
     if (status === 'rejected' && !rejectionReason) {
       return NextResponse.json(
-        { error: 'Reden voor afwijzing is verplicht' },
+        { error: 'Rejection reason is required' },
         { status: 400 }
       );
     }
@@ -100,7 +100,7 @@ export async function PATCH(
 
     if (!existingClaim) {
       return NextResponse.json(
-        { error: 'Claim niet gevonden' },
+        { error: 'Claim not found' },
         { status: 404 }
       );
     }
@@ -161,7 +161,7 @@ export async function DELETE(
 
     if (!existingClaim) {
       return NextResponse.json(
-        { error: 'Claim niet gevonden' },
+        { error: 'Claim not found' },
         { status: 404 }
       );
     }

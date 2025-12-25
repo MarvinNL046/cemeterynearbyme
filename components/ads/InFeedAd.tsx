@@ -19,7 +19,7 @@ export default function InFeedAd({
     <div className={`my-4 ${className}`}>
       <div className="bg-secondary/30 rounded-lg border border-border/50 overflow-hidden">
         <div className="px-3 py-1.5 bg-secondary/50 border-b border-border/50">
-          <p className="text-xs text-muted-foreground">Gesponsord</p>
+          <p className="text-xs text-muted-foreground">Sponsored</p>
         </div>
 
         {/* In-feed ad - blends with content */}

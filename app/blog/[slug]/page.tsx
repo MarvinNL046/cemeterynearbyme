@@ -9,6 +9,7 @@ import SidebarAd from '@/components/ads/SidebarAd';
 import FeedbackForm from '@/components/FeedbackForm';
 import { blogPosts, getRelatedPosts } from '@/lib/blog-data';
 import { blogContent } from '@/lib/blog-content';
+import { getCtaStatsText } from '@/lib/stats-config';
 
 // Function to get blog post by slug
 function getBlogPost(slug: string) {
@@ -25,14 +26,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   if (!post) {
     return {
-      title: 'Artikel niet gevonden',
+      title: 'Article not found',
     };
   }
 
   return {
-    title: `${post.title} | Blog - Begraafplaats in de Buurt`,
+    title: `${post.title} | Blog - Cemetery Near Me`,
     description: post.excerpt,
-    keywords: `${post.category.toLowerCase()}, begraafplaats, nederland, ${post.title.toLowerCase().split(' ').slice(0, 3).join(', ')}`,
+    keywords: `${post.category.toLowerCase()}, cemetery, usa, ${post.title.toLowerCase().split(' ').slice(0, 3).join(', ')}`,
     authors: [{ name: post.author }],
     openGraph: {
       title: post.title,
@@ -40,8 +41,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       type: 'article',
       authors: [post.author],
       publishedTime: post.date,
-      siteName: 'Begraafplaats in de Buurt',
-      locale: 'nl_NL',
+      siteName: 'Cemetery Near Me',
+      locale: 'en_US',
     },
     twitter: {
       card: 'summary_large_image',
@@ -85,15 +86,15 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     dateModified: post.date,
     publisher: {
       '@type': 'Organization',
-      name: 'Begraafplaats in de Buurt',
+      name: 'Cemetery Near Me',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.begraafplaatsindebuurt.nl/logo.png',
+        url: 'https://www.cemeterynearbyme.com/logo.png',
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://www.begraafplaatsindebuurt.nl/blog/${params.slug}`,
+      '@id': `https://www.cemeterynearbyme.com/blog/${params.slug}`,
     },
   };
 
@@ -123,7 +124,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               className="inline-flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-white mb-4 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Terug naar blog
+              Back to blog
             </Link>
 
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 max-w-4xl">
@@ -139,7 +140,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               </span>
               <span className="flex items-center gap-1">
                 <Calendar className="w-4 h-4" />
-                {new Date(post.date).toLocaleDateString('nl-NL', {
+                {new Date(post.date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
@@ -147,7 +148,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               </span>
               <span className="flex items-center gap-1">
                 <Clock className="w-4 h-4" />
-                {post.readTime} leestijd
+                {post.readTime} read
               </span>
               <span className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-xs font-medium">
                 {post.category}
@@ -195,7 +196,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                 <Card className="p-6 shadow-soft mb-8">
                   <h3 className="font-serif font-semibold mb-4 flex items-center gap-2">
                     <Share2 className="w-5 h-5 text-accent" />
-                    Deel dit artikel
+                    Share this article
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     <Button variant="outline" size="sm" className="hover:border-accent hover:text-accent">
@@ -208,7 +209,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                       LinkedIn
                     </Button>
                     <Button variant="outline" size="sm" className="hover:border-accent hover:text-accent">
-                      E-mail
+                      Email
                     </Button>
                   </div>
                 </Card>
@@ -226,7 +227,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
                 {/* Related Posts */}
                 <Card className="p-6 shadow-soft">
-                  <h3 className="font-serif font-semibold mb-4">Gerelateerde artikelen</h3>
+                  <h3 className="font-serif font-semibold mb-4">Related articles</h3>
                   <div className="space-y-4">
                     {relatedPosts.map((relatedPost) => (
                       <div key={relatedPost.slug} className="group">
@@ -237,7 +238,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                           {relatedPost.title}
                         </Link>
                         <p className="text-xs text-muted-foreground mt-1">
-                          {relatedPost.readTime} leestijd
+                          {relatedPost.readTime} read
                         </p>
                       </div>
                     ))}
@@ -249,17 +250,17 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                   <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mb-4">
                     <BookOpen className="w-5 h-5 text-accent" />
                   </div>
-                  <h3 className="font-serif font-semibold mb-3">Nieuwsbrief</h3>
+                  <h3 className="font-serif font-semibold mb-3">Newsletter</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Ontvang maandelijks nieuwe artikelen in uw inbox.
+                    Receive monthly new articles in your inbox.
                   </p>
                   <input
                     type="email"
-                    placeholder="Uw e-mailadres"
+                    placeholder="Your email address"
                     className="w-full px-3 py-2 text-sm border-2 rounded-lg mb-2 focus:outline-none focus:border-accent bg-background"
                   />
                   <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="sm">
-                    Aanmelden
+                    Subscribe
                   </Button>
                 </Card>
               </aside>
@@ -268,24 +269,24 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             {/* CTA Section */}
             <div className="mt-16 text-center">
               <h2 className="font-serif text-2xl font-semibold mb-4">
-                Op zoek naar een begraafplaats?
+                Looking for a cemetery?
               </h2>
               <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-                Zoek direct naar begraafplaatsen in onze uitgebreide database met meer dan 3.800 locaties.
+                {getCtaStatsText()}
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
-                  href="/zoeken"
+                  href="/search"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
                 >
-                  Zoek begraafplaatsen
+                  Search cemeteries
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/blog"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/90 transition-colors"
                 >
-                  Meer artikelen
+                  More articles
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

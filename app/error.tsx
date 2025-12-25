@@ -23,11 +23,11 @@ export default function Error({
           <AlertTriangle className="w-8 h-8 text-red-600" />
         </div>
 
-        <h1 className="text-2xl font-bold mb-4">Er ging iets mis</h1>
+        <h1 className="text-2xl font-bold mb-4">Something Went Wrong</h1>
 
         <p className="text-muted-foreground mb-8">
-          Onze excuses, er is een fout opgetreden bij het laden van deze pagina.
-          Probeer het opnieuw of ga terug naar de homepage.
+          We apologize, an error occurred while loading this page.
+          Please try again or return to the homepage.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -36,7 +36,7 @@ export default function Error({
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
           >
             <RotateCcw className="w-5 h-5" />
-            Probeer opnieuw
+            Try Again
           </button>
 
           <Link
@@ -44,26 +44,26 @@ export default function Error({
             className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors"
           >
             <Home className="w-5 h-5" />
-            Naar homepage
+            Go to Homepage
           </Link>
         </div>
 
         <div className="mt-8 pt-8 border-t">
           <p className="text-sm text-muted-foreground mb-4">
-            Of zoek direct naar een begraafplaats:
+            Or search for a cemetery directly:
           </p>
           <Link
-            href="/zoeken"
+            href="/search"
             className="inline-flex items-center gap-2 text-primary hover:underline"
           >
             <Search className="w-4 h-4" />
-            Zoeken
+            Search
           </Link>
         </div>
 
         {error.digest && (
           <p className="mt-8 text-xs text-muted-foreground">
-            Foutcode: {error.digest}
+            Error code: {error.digest}
           </p>
         )}
       </div>

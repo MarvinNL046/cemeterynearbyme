@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Begraafplaats in de Buurt',
-  description: 'Privacy policy van Begraafplaats in de Buurt. Lees hoe wij omgaan met uw gegevens.',
+  title: 'Privacy Policy | Cemetery Near Me',
+  description: 'Privacy policy of Cemetery Near Me. Learn how we handle your data.',
 };
 
 export default function PrivacyPage() {
@@ -18,99 +18,109 @@ export default function PrivacyPage() {
       </nav>
 
       <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
-      
+
       <div className="prose prose-gray max-w-none">
         <p className="text-lg text-muted-foreground mb-6">
-          Laatst bijgewerkt: {new Date().toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' })}
+          Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
         </p>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">1. Introductie</h2>
+          <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
           <p className="mb-4">
-            Begraafplaats in de Buurt respecteert uw privacy en is toegewijd aan het beschermen van uw persoonlijke gegevens. 
-            Deze privacy policy informeert u over hoe wij omgaan met uw persoonlijke gegevens wanneer u onze website bezoekt.
+            Cemetery Near Me respects your privacy and is committed to protecting your personal data.
+            This privacy policy informs you about how we handle your personal data when you visit our website.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">2. Welke gegevens verzamelen wij?</h2>
-          <p className="mb-4">Wij verzamelen minimale gegevens om onze dienst te kunnen aanbieden:</p>
+          <h2 className="text-2xl font-semibold mb-4">2. What Data Do We Collect?</h2>
+          <p className="mb-4">We collect minimal data to provide our service:</p>
           <ul className="list-disc pl-6 mb-4">
-            <li>Technische gegevens zoals IP-adres, browsertype en apparaatinformatie</li>
-            <li>Gebruiksgegevens zoals bezochte pagina&apos;s en zoektermen</li>
-            <li>Cookies voor het verbeteren van de gebruikerservaring</li>
+            <li>Technical data such as IP address, browser type, and device information</li>
+            <li>Usage data such as pages visited and search terms</li>
+            <li>Cookies to improve user experience</li>
           </ul>
           <p className="mb-4">
-            Wij verzamelen geen persoonlijk identificeerbare informatie tenzij u deze vrijwillig aan ons verstrekt 
-            (bijvoorbeeld bij het versturen van een e-mail).
+            We do not collect personally identifiable information unless you voluntarily provide it
+            (for example, when sending an email).
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">3. Hoe gebruiken wij deze gegevens?</h2>
-          <p className="mb-4">De verzamelde gegevens worden gebruikt voor:</p>
+          <h2 className="text-2xl font-semibold mb-4">3. How Do We Use This Data?</h2>
+          <p className="mb-4">The collected data is used for:</p>
           <ul className="list-disc pl-6 mb-4">
-            <li>Het verbeteren van onze website en dienstverlening</li>
-            <li>Het analyseren van websiteverkeer en gebruikersgedrag</li>
-            <li>Het waarborgen van de veiligheid van onze website</li>
-            <li>Het voldoen aan wettelijke verplichtingen</li>
+            <li>Improving our website and services</li>
+            <li>Analyzing website traffic and user behavior</li>
+            <li>Ensuring the security of our website</li>
+            <li>Complying with legal obligations</li>
           </ul>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">4. Cookies</h2>
           <p className="mb-4">
-            Onze website gebruikt cookies om uw gebruikerservaring te verbeteren. Dit zijn kleine tekstbestanden die op 
-            uw apparaat worden opgeslagen. U kunt cookies weigeren of verwijderen via uw browserinstellingen, maar dit 
-            kan de functionaliteit van de website beïnvloeden.
+            Our website uses cookies to improve your user experience. These are small text files stored on
+            your device. You can refuse or delete cookies through your browser settings, but this
+            may affect the functionality of the website.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">5. Gegevensbeveiliging</h2>
+          <h2 className="text-2xl font-semibold mb-4">5. Data Security</h2>
           <p className="mb-4">
-            Wij nemen passende technische en organisatorische maatregelen om uw gegevens te beschermen tegen 
-            ongeautoriseerde toegang, verlies of misbruik. Onze website gebruikt HTTPS-encryptie voor veilige 
-            gegevensoverdracht.
+            We take appropriate technical and organizational measures to protect your data against
+            unauthorized access, loss, or misuse. Our website uses HTTPS encryption for secure
+            data transfer.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">6. Delen van gegevens</h2>
+          <h2 className="text-2xl font-semibold mb-4">6. Sharing of Data</h2>
           <p className="mb-4">
-            Wij verkopen, verhuren of delen uw persoonlijke gegevens niet met derden voor marketingdoeleinden. 
-            Gegevens worden alleen gedeeld wanneer dit wettelijk verplicht is of noodzakelijk voor de werking van onze dienst.
+            We do not sell, rent, or share your personal data with third parties for marketing purposes.
+            Data is only shared when legally required or necessary for the operation of our service.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">7. Uw rechten</h2>
-          <p className="mb-4">Onder de AVG heeft u de volgende rechten:</p>
+          <h2 className="text-2xl font-semibold mb-4">7. Your Rights</h2>
+          <p className="mb-4">You have the following rights regarding your data:</p>
           <ul className="list-disc pl-6 mb-4">
-            <li>Recht op inzage van uw gegevens</li>
-            <li>Recht op correctie van onjuiste gegevens</li>
-            <li>Recht op verwijdering van gegevens</li>
-            <li>Recht op beperking van de verwerking</li>
-            <li>Recht op gegevensoverdraagbaarheid</li>
-            <li>Recht van bezwaar</li>
+            <li>Right to access your data</li>
+            <li>Right to correct inaccurate data</li>
+            <li>Right to delete data</li>
+            <li>Right to restrict processing</li>
+            <li>Right to data portability</li>
+            <li>Right to object</li>
           </ul>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">8. Contact</h2>
+          <h2 className="text-2xl font-semibold mb-4">8. California Privacy Rights</h2>
           <p className="mb-4">
-            Voor vragen over deze privacy policy of het uitoefenen van uw rechten kunt u contact met ons opnemen via:
-          </p>
-          <p className="mb-4">
-            E-mail: <a href="mailto:info@begraafplaatsindebuurt.nl" className="text-primary hover:underline">info@begraafplaatsindebuurt.nl</a>
+            If you are a California resident, you have additional rights under the California Consumer
+            Privacy Act (CCPA). This includes the right to know what personal information we collect,
+            the right to delete your information, and the right to opt-out of the sale of your personal
+            information. We do not sell personal information.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">9. Wijzigingen</h2>
+          <h2 className="text-2xl font-semibold mb-4">9. Contact</h2>
           <p className="mb-4">
-            Wij behouden ons het recht voor om deze privacy policy te wijzigen. Significante wijzigingen worden op 
-            onze website gecommuniceerd. Wij adviseren u om deze pagina regelmatig te controleren.
+            For questions about this privacy policy or to exercise your rights, you can contact us at:
+          </p>
+          <p className="mb-4">
+            Email: <a href="mailto:info@cemeterynearbyme.com" className="text-primary hover:underline">info@cemeterynearbyme.com</a>
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">10. Changes</h2>
+          <p className="mb-4">
+            We reserve the right to modify this privacy policy. Significant changes will be communicated on
+            our website. We advise you to check this page regularly.
           </p>
         </section>
       </div>

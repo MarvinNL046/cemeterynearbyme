@@ -50,7 +50,7 @@ export default function ComparePage() {
   const loadCemeteries = async (items: CompareItem[]) => {
     setLoading(true);
     try {
-      const promises = items.map(item => 
+      const promises = items.map(item =>
         fetch(`/api/cemetery/${item.id}`).then(res => res.json())
       );
       const results = await Promise.all(promises);
@@ -81,7 +81,7 @@ export default function ComparePage() {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="text-center py-12">
-          <p>Begraafplaatsen laden...</p>
+          <p>Loading cemeteries...</p>
         </div>
       </div>
     );
@@ -91,15 +91,15 @@ export default function ComparePage() {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto text-center py-12">
-          <h1 className="text-3xl font-bold mb-4">Vergelijk Begraafplaatsen</h1>
+          <h1 className="text-3xl font-bold mb-4">Compare Cemeteries</h1>
           <p className="text-muted-foreground mb-8">
-            Je hebt nog geen begraafplaatsen geselecteerd om te vergelijken.
-            Ga naar een begraafplaats pagina en klik op de &quot;Vergelijk&quot; knop.
+            You haven&apos;t selected any cemeteries to compare yet.
+            Go to a cemetery page and click the &quot;Compare&quot; button.
           </p>
           <Link href="/">
             <Button>
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Terug naar homepage
+              Back to homepage
             </Button>
           </Link>
         </div>
@@ -110,9 +110,9 @@ export default function ComparePage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-3xl font-bold">Vergelijk Begraafplaatsen</h1>
+        <h1 className="text-3xl font-bold">Compare Cemeteries</h1>
         <Button variant="outline" onClick={clearAll}>
-          Wis alles
+          Clear all
         </Button>
       </div>
 
@@ -121,7 +121,7 @@ export default function ComparePage() {
         <table className="w-full border-collapse">
           <thead>
             <tr className="border-b">
-              <th className="text-left p-4 font-semibold">Eigenschap</th>
+              <th className="text-left p-4 font-semibold">Property</th>
               {cemeteries.map(cemetery => (
                 <th key={cemetery.slug} className="p-4 min-w-[300px]">
                   <div className="relative">
@@ -133,10 +133,10 @@ export default function ComparePage() {
                     >
                       <X className="w-4 h-4" />
                     </Button>
-                    <h3 className="font-semibold text-lg mb-2">{cemetery.naam_begraafplaats}</h3>
-                    <Link href={`/begraafplaats/${cemetery.slug}`}>
+                    <h3 className="font-semibold text-lg mb-2">{cemetery.name}</h3>
+                    <Link href={`/cemetery/${cemetery.slug}`}>
                       <Button variant="outline" size="sm">
-                        Bekijk details
+                        View details
                       </Button>
                     </Link>
                   </div>
@@ -147,21 +147,21 @@ export default function ComparePage() {
           <tbody>
             {/* Photo */}
             <tr className="border-b">
-              <td className="p-4 font-medium">Foto</td>
+              <td className="p-4 font-medium">Photo</td>
               {cemeteries.map(cemetery => (
                 <td key={cemetery.slug} className="p-4">
                   {cemetery.photo ? (
                     <div className="aspect-video relative rounded-lg overflow-hidden bg-muted">
                       <ProxiedImage
                         src={cemetery.photo}
-                        alt={cemetery.naam_begraafplaats}
+                        alt={cemetery.name}
                         fill
                         className="object-cover"
                       />
                     </div>
                   ) : (
                     <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                      <span className="text-muted-foreground">Geen foto beschikbaar</span>
+                      <span className="text-muted-foreground">No photo available</span>
                     </div>
                   )}
                 </td>
@@ -182,14 +182,14 @@ export default function ComparePage() {
 
             {/* Location */}
             <tr className="border-b">
-              <td className="p-4 font-medium">Locatie</td>
+              <td className="p-4 font-medium">Location</td>
               {cemeteries.map(cemetery => (
                 <td key={cemetery.slug} className="p-4">
                   <div className="flex items-start gap-2">
                     <MapPin className="w-4 h-4 text-muted-foreground mt-0.5" />
                     <div className="text-sm">
-                      <p>{cemetery.gemeente}</p>
-                      <p className="text-muted-foreground">{cemetery.provincie}</p>
+                      <p>{cemetery.city}{cemetery.county ? `, ${cemetery.county}` : ''}</p>
+                      <p className="text-muted-foreground">{cemetery.state}</p>
                     </div>
                   </div>
                 </td>
@@ -198,12 +198,12 @@ export default function ComparePage() {
 
             {/* Address */}
             <tr className="border-b bg-muted/30">
-              <td className="p-4 font-medium">Adres</td>
+              <td className="p-4 font-medium">Address</td>
               {cemeteries.map(cemetery => (
                 <td key={cemetery.slug} className="p-4">
                   <p className="text-sm">
-                    {cemetery.adres || '-'}<br />
-                    {cemetery.postcode && `${cemetery.postcode} ${cemetery.plaats || cemetery.gemeente}`}
+                    {cemetery.address || '-'}<br />
+                    {cemetery.city}, {cemetery.state_abbr} {cemetery.zipCode}
                   </p>
                 </td>
               ))}
@@ -211,12 +211,12 @@ export default function ComparePage() {
 
             {/* Opening hours */}
             <tr className="border-b">
-              <td className="p-4 font-medium">Openingstijden</td>
+              <td className="p-4 font-medium">Opening Hours</td>
               {cemeteries.map(cemetery => (
                 <td key={cemetery.slug} className="p-4">
                   <div className="flex items-start gap-2">
                     <Clock className="w-4 h-4 text-muted-foreground mt-0.5" />
-                    <p className="text-sm">{cemetery.openingstijden || 'Niet bekend'}</p>
+                    <p className="text-sm">{cemetery.opening_hours || 'Not available'}</p>
                   </div>
                 </td>
               ))}
@@ -224,33 +224,33 @@ export default function ComparePage() {
 
             {/* Phone */}
             <tr className="border-b bg-muted/30">
-              <td className="p-4 font-medium">Telefoon</td>
+              <td className="p-4 font-medium">Phone</td>
               {cemeteries.map(cemetery => (
                 <td key={cemetery.slug} className="p-4">
-                  <p className="text-sm">{cemetery.telefoon || 'Niet bekend'}</p>
+                  <p className="text-sm">{cemetery.phone || 'Not available'}</p>
                 </td>
               ))}
             </tr>
 
             {/* Rating */}
             <tr className="border-b">
-              <td className="p-4 font-medium">Beoordeling</td>
+              <td className="p-4 font-medium">Rating</td>
               {cemeteries.map(cemetery => (
                 <td key={cemetery.slug} className="p-4">
-                  {cemetery.rating && parseFloat(cemetery.rating) > 0 ? (
+                  {cemetery.rating && cemetery.rating > 0 ? (
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-2xl font-bold">{parseFloat(cemetery.rating).toFixed(1)}</span>
+                        <span className="text-2xl font-bold">{cemetery.rating.toFixed(1)}</span>
                         <div className="text-yellow-500">
-                          {'★'.repeat(Math.round(parseFloat(cemetery.rating)))}
+                          {'★'.repeat(Math.round(cemetery.rating))}
                         </div>
                       </div>
                       <p className="text-sm text-muted-foreground mt-1">
-                        {cemetery.reviews} reviews
+                        {cemetery.review_count || 0} reviews
                       </p>
                     </div>
                   ) : (
-                    <p className="text-sm text-muted-foreground">Nog geen beoordelingen</p>
+                    <p className="text-sm text-muted-foreground">No ratings yet</p>
                   )}
                 </td>
               ))}
@@ -258,26 +258,28 @@ export default function ComparePage() {
 
             {/* Facilities */}
             <tr className="border-b bg-muted/30">
-              <td className="p-4 font-medium">Faciliteiten</td>
+              <td className="p-4 font-medium">Facilities</td>
               {cemeteries.map(cemetery => (
                 <td key={cemetery.slug} className="p-4">
-                  <p className="text-sm">{cemetery.faciliteiten || 'Niet gespecificeerd'}</p>
+                  <p className="text-sm">
+                    {cemetery.facilities?.join(', ') || 'Not specified'}
+                  </p>
                 </td>
               ))}
             </tr>
 
             {/* Accessibility */}
             <tr className="border-b">
-              <td className="p-4 font-medium">Toegankelijkheid</td>
+              <td className="p-4 font-medium">Accessibility</td>
               {cemeteries.map(cemetery => (
                 <td key={cemetery.slug} className="p-4">
-                  {cemetery.beschrijving && cemetery.beschrijving.includes('Rolstoeltoegankelijk') ? (
+                  {cemetery.description && cemetery.description.includes('Wheelchair') ? (
                     <div className="flex items-center gap-2 text-green-600">
                       <Check className="w-4 h-4" />
-                      <span className="text-sm">Rolstoeltoegankelijk</span>
+                      <span className="text-sm">Wheelchair accessible</span>
                     </div>
                   ) : (
-                    <p className="text-sm text-muted-foreground">Niet gespecificeerd</p>
+                    <p className="text-sm text-muted-foreground">Not specified</p>
                   )}
                 </td>
               ))}
@@ -290,11 +292,11 @@ export default function ComparePage() {
       {compareList.length < 3 && (
         <div className="mt-8 p-6 bg-muted rounded-lg text-center">
           <p className="text-muted-foreground mb-4">
-            Je kunt nog {3 - compareList.length} begraafplats{3 - compareList.length > 1 ? 'en' : ''} toevoegen aan je vergelijking
+            You can add {3 - compareList.length} more cemeter{3 - compareList.length > 1 ? 'ies' : 'y'} to your comparison
           </p>
           <Link href="/">
             <Button variant="outline">
-              Zoek meer begraafplaatsen
+              Find more cemeteries
             </Button>
           </Link>
         </div>

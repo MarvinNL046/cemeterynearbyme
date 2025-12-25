@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
     const source = searchParams.get('source') || 'all'; // 'google', 'user', 'all'
 
     if (!slug) {
-      return NextResponse.json({ error: 'Slug is verplicht' }, { status: 400 });
+      return NextResponse.json({ error: 'Slug is required' }, { status: 400 });
     }
 
     let googleReviews: any[] = [];
@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
     if (source === 'all' || source === 'google') {
       try {
         // Fetch from public folder via HTTP
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || origin || 'https://www.begraafplaatsindebuurt.nl';
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || origin || 'https://www.cemeterynearbyme.com';
         const reviewsUrl = `${baseUrl}/data/reviews/${slug}.json`;
 
         const response = await fetch(reviewsUrl, {
@@ -104,7 +104,7 @@ export async function GET(request: NextRequest) {
     });
   } catch (error) {
     console.error('Get reviews error:', error);
-    return NextResponse.json({ error: 'Er is iets misgegaan' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }
 
@@ -124,16 +124,16 @@ export async function POST(request: NextRequest) {
 
     // Validation
     if (!cemeterySlug) {
-      return NextResponse.json({ error: 'Begraafplaats is verplicht' }, { status: 400 });
+      return NextResponse.json({ error: 'Cemetery is required' }, { status: 400 });
     }
     if (!authorName || authorName.trim().length < 2) {
-      return NextResponse.json({ error: 'Naam is verplicht (minimaal 2 tekens)' }, { status: 400 });
+      return NextResponse.json({ error: 'Name is required (minimum 2 characters)' }, { status: 400 });
     }
     if (!rating || rating < 1 || rating > 5) {
-      return NextResponse.json({ error: 'Beoordeling moet tussen 1 en 5 zijn' }, { status: 400 });
+      return NextResponse.json({ error: 'Rating must be between 1 and 5' }, { status: 400 });
     }
     if (!content || content.trim().length < 20) {
-      return NextResponse.json({ error: 'Review moet minimaal 20 tekens bevatten' }, { status: 400 });
+      return NextResponse.json({ error: 'Review must be at least 20 characters' }, { status: 400 });
     }
 
     // Get IP hash for spam prevention
@@ -150,7 +150,7 @@ export async function POST(request: NextRequest) {
 
     if (recentFromIp[0]?.count > 3) {
       return NextResponse.json({
-        error: 'U heeft te veel reviews geplaatst. Probeer het later opnieuw.'
+        error: 'You have submitted too many reviews. Please try again later.'
       }, { status: 429 });
     }
 
@@ -182,11 +182,11 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Bedankt voor uw review! Deze wordt na controle gepubliceerd.',
+      message: 'Thank you for your review! It will be published after moderation.',
       reviewId: result[0]?.id,
     });
   } catch (error) {
     console.error('Submit review error:', error);
-    return NextResponse.json({ error: 'Er is iets misgegaan' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }

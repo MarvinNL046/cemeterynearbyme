@@ -112,10 +112,10 @@ export default function FavoriteButton({
         )}
         <span>
           {isLoading
-            ? 'Laden...'
+            ? 'Loading...'
             : isFavorite
-            ? 'Opgeslagen'
-            : 'Bewaar locatie'}
+            ? 'Saved'
+            : 'Save location'}
         </span>
       </button>
     );
@@ -138,7 +138,7 @@ export default function FavoriteButton({
         ) : (
           <Heart className={`w-4 h-4 ${isFavorite ? 'fill-current text-red-500' : ''}`} />
         )}
-        <span>{isFavorite ? 'Opgeslagen' : 'Bewaren'}</span>
+        <span>{isFavorite ? 'Saved' : 'Save'}</span>
       </button>
     );
   }
@@ -153,7 +153,7 @@ export default function FavoriteButton({
           ? 'text-red-500 hover:bg-red-100'
           : 'text-gray-400 hover:bg-gray-100 hover:text-gray-600'
       } disabled:opacity-50 ${className}`}
-      title={isFavorite ? 'Verwijderen uit favorieten' : 'Toevoegen aan favorieten'}
+      title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
     >
       {isToggling ? (
         <Loader2 className="w-5 h-5 animate-spin" />

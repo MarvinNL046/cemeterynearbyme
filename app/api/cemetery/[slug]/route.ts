@@ -3,10 +3,11 @@ import { getCemeteryBySlug } from '@/lib/data';
 
 export async function GET(
   request: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const cemetery = await getCemeteryBySlug(params.slug);
+    const { slug } = await params;
+    const cemetery = await getCemeteryBySlug(slug);
     
     if (!cemetery) {
       return NextResponse.json({ error: 'Cemetery not found' }, { status: 404 });

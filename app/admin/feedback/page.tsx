@@ -40,7 +40,7 @@ export default function AdminFeedbackPage() {
       const data = await response.json();
       setFeedback(data.feedback || []);
     } catch (err) {
-      setError('Kon feedback niet laden');
+      setError('Could not load feedback');
       console.error(err);
     } finally {
       setLoading(false);
@@ -52,7 +52,7 @@ export default function AdminFeedbackPage() {
   }, []);
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Weet je zeker dat je deze feedback wilt verwijderen?')) return;
+    if (!confirm('Are you sure you want to delete this feedback?')) return;
 
     try {
       const response = await fetch(`/api/admin/feedback/${id}`, {
@@ -123,12 +123,12 @@ export default function AdminFeedbackPage() {
           <div>
             <h1 className="text-2xl font-bold text-foreground">Feedback</h1>
             <p className="text-muted-foreground">
-              Bekijk en beheer gebruikersfeedback
+              View and manage user feedback
             </p>
           </div>
           <Button onClick={fetchFeedback} variant="outline" disabled={loading}>
             <RefreshCw className={`w-4 h-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
-            Vernieuwen
+            Refresh
           </Button>
         </div>
 
@@ -141,7 +141,7 @@ export default function AdminFeedbackPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold">{stats.total}</p>
-                <p className="text-sm text-muted-foreground">Totaal</p>
+                <p className="text-sm text-muted-foreground">Total</p>
               </div>
             </div>
           </Card>
@@ -163,7 +163,7 @@ export default function AdminFeedbackPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold">{stats.comments}</p>
-                <p className="text-sm text-muted-foreground">Berichten</p>
+                <p className="text-sm text-muted-foreground">Comments</p>
               </div>
             </div>
           </Card>
@@ -174,7 +174,7 @@ export default function AdminFeedbackPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold">{stats.avgRating}</p>
-                <p className="text-sm text-muted-foreground">Gem. Rating</p>
+                <p className="text-sm text-muted-foreground">Avg. Rating</p>
               </div>
             </div>
           </Card>
@@ -187,7 +187,7 @@ export default function AdminFeedbackPage() {
             size="sm"
             onClick={() => setFilter('all')}
           >
-            Alles ({stats.total})
+            All ({stats.total})
           </Button>
           <Button
             variant={filter === 'rating' ? 'default' : 'outline'}
@@ -201,7 +201,7 @@ export default function AdminFeedbackPage() {
             size="sm"
             onClick={() => setFilter('comment')}
           >
-            Berichten ({stats.comments})
+            Comments ({stats.comments})
           </Button>
         </div>
 
@@ -220,7 +220,7 @@ export default function AdminFeedbackPage() {
         ) : filteredFeedback.length === 0 ? (
           <Card className="p-8 text-center">
             <MessageSquare className="w-12 h-12 mx-auto text-muted-foreground mb-4" />
-            <p className="text-muted-foreground">Nog geen feedback ontvangen</p>
+            <p className="text-muted-foreground">No feedback received yet</p>
           </Card>
         ) : (
           <div className="space-y-4">
@@ -245,7 +245,7 @@ export default function AdminFeedbackPage() {
                       {item.status === 'resolved' && (
                         <span className="inline-flex items-center px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">
                           <CheckCircle className="w-3 h-3 mr-1" />
-                          Afgehandeld
+                          Resolved
                         </span>
                       )}
                     </div>
@@ -257,23 +257,23 @@ export default function AdminFeedbackPage() {
                     <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
                       {item.page_title && (
                         <span className="truncate max-w-[200px]">
-                          Pagina: {item.page_title}
+                          Page: {item.page_title}
                         </span>
                       )}
                       {item.page_url && (
                         <a
-                          href={`https://www.begraafplaatsindebuurt.nl${item.page_url}`}
+                          href={`https://www.cemeterynearbyme.com${item.page_url}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center text-primary hover:underline"
                         >
                           <ExternalLink className="w-3 h-3 mr-1" />
-                          Bekijk pagina
+                          View page
                         </a>
                       )}
                       <span className="inline-flex items-center">
                         <Clock className="w-3 h-3 mr-1" />
-                        {new Date(item.timestamp).toLocaleString('nl-NL')}
+                        {new Date(item.timestamp).toLocaleString('en-US')}
                       </span>
                     </div>
                   </div>
@@ -284,7 +284,7 @@ export default function AdminFeedbackPage() {
                         variant="outline"
                         size="sm"
                         onClick={() => handleMarkResolved(item.id)}
-                        title="Markeer als afgehandeld"
+                        title="Mark as resolved"
                       >
                         <CheckCircle className="w-4 h-4" />
                       </Button>
@@ -294,7 +294,7 @@ export default function AdminFeedbackPage() {
                       size="sm"
                       onClick={() => handleDelete(item.id)}
                       className="text-red-600 hover:text-red-700 hover:bg-red-50"
-                      title="Verwijderen"
+                      title="Delete"
                     >
                       <Trash2 className="w-4 h-4" />
                     </Button>

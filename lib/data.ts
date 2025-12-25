@@ -1,114 +1,103 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { parse } from 'csv-parse/sync';
 
+// US Cemetery Interface
 export interface Cemetery {
-  naam_begraafplaats: string;
-  gemeente: string;
-  provincie: string;
-  type: string;
-  faciliteiten?: string;
-  gps_coordinaten?: string;
-  foto_url?: string;
-  openingstijden?: string;
-  historie?: string;
-  bijzondere_graven?: string;
-  links?: string;
+  // Core identifiers
+  id: string;
+  name: string;
   slug: string;
-  telefoon?: string;
+
+  // Location - US geography
+  address?: string;
+  city: string;
+  county?: string;
+  state: string;
+  state_abbr: string;
+  zipCode?: string;
+  country: string;
+  gps_coordinates?: string;
+  latitude?: number;
+  longitude?: number;
+
+  // Classification
+  type: string;
+  type_slug: string;
+
+  // Contact
+  phone?: string;
   email?: string;
-  adres?: string;
-  postcode?: string;
-  plaats?: string;
-  beoordeling?: number;
-  aantal_reviews?: number;
-  toegankelijkheid?: Record<string, unknown>;
-  raw_openingstijden?: Record<string, string>;
-  // Real scraped data fields
-  rating?: string;
-  reviews?: string;
+  website?: string;
+
+  // Details
+  description?: string;
+  opening_hours?: string;
+  facilities?: string[];
+  year_established?: string;
+
+  // Google data
+  rating?: number;
+  review_count?: number;
   photo?: string;
-  beschrijving?: string;
-  // Embedded Google reviews
-  embeddedReviews?: Array<{
+  photos?: string[];
+
+  // Reviews
+  reviews?: Array<{
     reviewer_name: string;
     rating: number;
     review_text: string;
     review_date: string;
     reviewer_image?: string;
   }>;
-  // New fields for cemetery statistics
-  oppervlakte?: string;
-  aantal_graven?: string;
-  aantal_personen?: string;
+
+  // Metadata
   status?: string;
-  meest_voorkomende_namen?: Array<{naam: string; aantal: number}>;
-  jaar_oprichting?: string;
-  beheerder?: string;
-  website?: string;
-  bijzondere_kenmerken?: string;
-  // Wikimedia Commons images
-  wikimedia_image?: string;
-  wikimedia_attribution?: string;
-  // OSM enriched data
-  osm_id?: string;
-  wikipedia_url?: string;
+  source?: string;
+  discovered_at?: string;
+  updated_at?: string;
 }
 
+// Generated content for SEO
 export interface GeneratedContent {
-  samenvatting: string;
-  geschiedenis: string;
-  kenmerken: string[];
-  toegankelijkheid: string;
-  voorzieningen: string[];
-  bezoekerstips: string[];
-  bijzondereGraven?: string;
-  natuurEnOmgeving?: string;
-  lokaleContext?: string;
-  statistieken?: string;
-  provincieInfo?: string;
-  typeInfo?: string;
-  praktischeInfo?: string;
-  bereikbaarheid?: string;
-  monumentStatus?: string;
-  // Pet cemetery specific fields
-  diensten?: string;
-  rouwbegeleiding?: string;
-  diersoorten?: string;
-  herdenkingsmogelijkheden?: string;
+  summary: string;
+  history: string;
+  features: string[];
+  accessibility: string;
+  amenities: string[];
+  visitor_tips: string[];
+  notable_burials?: string;
+  natural_setting?: string;
+  local_context?: string;
+  state_info?: string;
+  type_info?: string;
+  practical_info?: string;
+  directions?: string;
 }
 
+// Enriched cemetery with generated content
 export interface EnrichedCemeteryData {
-  // Scraped website data
   website_url?: string;
   website_content?: string;
   website_scraped_at?: string;
-  website_openingstijden?: string;
-  website_tarieven?: string;
-  website_contact_info?: any;
-  
-  // Google Maps data
+
   google_rating?: number;
   google_review_count?: number;
-  google_reviews?: any[];
-  google_photo?: string;  // Single local photo path from fetch script
+  google_reviews?: Array<{
+    reviewer_name: string;
+    rating: number;
+    review_text: string;
+    review_date: string;
+  }>;
+  google_photo?: string;
   google_photos?: string[];
-  google_opening_hours?: any;
-  google_phone?: string;
-  google_address?: string;
-  
-  // AI generated content
+
   generated?: GeneratedContent;
   generated_at?: string;
-  generated_by?: string;
-  
-  // Enrichment metadata
+
   enriched: boolean;
   enriched_at?: string;
-  scraped_at?: string;
   last_updated?: string;
-  
-  // SEO fields from enriched content
+
   seoTitle?: string;
   seoDescription?: string;
   enrichedContent?: string;
@@ -116,393 +105,399 @@ export interface EnrichedCemeteryData {
 
 export interface CemeteryWithContent extends Cemetery, EnrichedCemeteryData {}
 
+// State interface
+export interface State {
+  name: string;
+  abbr: string;
+  slug: string;
+  counties?: number;
+  capital?: string;
+  major_cities?: string[];
+}
+
+// Cemetery type interface
+export interface CemeteryType {
+  slug: string;
+  name: string;
+  description?: string;
+  search_terms?: string[];
+}
+
+// Cache
 let cemeteriesCache: Cemetery[] | null = null;
+let statesCache: State[] | null = null;
+let typesCache: CemeteryType[] | null = null;
+
+// ===== CORE DATA FUNCTIONS =====
 
 export async function getAllCemeteries(): Promise<Cemetery[]> {
   if (cemeteriesCache) return cemeteriesCache;
 
   try {
-    // In production, try to read from public directory first
-    const publicJsonPath = path.join(process.cwd(), 'public', 'data', 'cemeteries.json');
+    // Try public data first
+    const publicPath = path.join(process.cwd(), 'public', 'data', 'cemeteries.json');
     try {
-      const publicJsonContent = await fs.readFile(publicJsonPath, 'utf-8');
-      cemeteriesCache = JSON.parse(publicJsonContent) as Cemetery[];
+      const content = await fs.readFile(publicPath, 'utf-8');
+      cemeteriesCache = JSON.parse(content) as Cemetery[];
       return cemeteriesCache;
     } catch {
-      // Continue to other options
+      // Continue to data directory
     }
 
-    // Try to use the processed JSON file in data directory
-    const jsonPath = path.join(process.cwd(), 'data', 'cemeteries-processed.json');
-    const jsonContent = await fs.readFile(jsonPath, 'utf-8');
-    cemeteriesCache = JSON.parse(jsonContent) as Cemetery[];
+    // Try data directory
+    const dataPath = path.join(process.cwd(), 'data', 'cemeteries.json');
+    const content = await fs.readFile(dataPath, 'utf-8');
+    cemeteriesCache = JSON.parse(content) as Cemetery[];
     return cemeteriesCache;
-  } catch {
-    // Fallback to CSV if JSON doesn't exist
-    try {
-      console.log('JSON file not found, falling back to CSV');
-      const csvPath = path.join(process.cwd(), 'data', 'begraafplaats.csv');
-      const csvContent = await fs.readFile(csvPath, 'utf-8');
-      
-      const records: Cemetery[] = parse(csvContent, {
-        columns: true,
-        skip_empty_lines: true,
-      });
-
-      // Add slugs
-      cemeteriesCache = records.map(cemetery => ({
-        ...cemetery,
-        slug: createSlug(cemetery.naam_begraafplaats, cemetery.gemeente),
-      }));
-
-      return cemeteriesCache;
-    } catch (error) {
-      console.error('Error loading cemetery data:', error);
-      // Return empty array to prevent crashes in production
-      return [];
-    }
+  } catch (error) {
+    console.error('Error loading cemetery data:', error);
+    return [];
   }
 }
 
 export async function getCemeteryBySlug(slug: string): Promise<CemeteryWithContent | null> {
   try {
-    // First try to get enriched data from the main data file
     const cemeteries = await getAllCemeteries() as CemeteryWithContent[];
     const cemetery = cemeteries.find(c => c.slug === slug);
-    
-    if (cemetery) {
-      // Try to load enriched content from JSON file
-      try {
-        const enrichedPath = path.join(process.cwd(), 'data', 'enriched-content', `${slug}.json`);
-        const enrichedContent = await fs.readFile(enrichedPath, 'utf-8');
-        const enrichedData = JSON.parse(enrichedContent);
-        
-        // Transform enriched data to match the expected format
-        const generated: GeneratedContent = {
-          samenvatting: enrichedData.content.substring(0, 200) + '...',
-          geschiedenis: enrichedData.historischeInfo || '',
-          kenmerken: enrichedData.highlights || [],
-          toegankelijkheid: enrichedData.praktischeInfo?.toegankelijkheid || '',
-          voorzieningen: Object.entries(enrichedData.praktischeInfo || {})
-            .filter(([key, value]) => value && key !== 'toegankelijkheid')
-            .map(([key, value]) => `${key}: ${value}`),
-          bezoekerstips: [
-            enrichedData.praktischeInfo?.openingstijden && `Openingstijden: ${enrichedData.praktischeInfo.openingstijden}`,
-            enrichedData.praktischeInfo?.parkeren && `Parkeren: ${enrichedData.praktischeInfo.parkeren}`,
-          ].filter(Boolean),
-          bijzondereGraven: enrichedData.bijzonderheden?.join('. ') || '',
-          natuurEnOmgeving: '', // Not in enriched format
-        };
-        
-        return {
-          ...cemetery,
-          enriched: true,
-          generated,
-          enriched_at: enrichedData.enrichedAt,
-          seoTitle: enrichedData.seoTitle,
-          seoDescription: enrichedData.seoDescription,
-          enrichedContent: enrichedData.content,
-          scraped_at: enrichedData.scrapedAt,
-          last_updated: enrichedData.enrichedAt
-        };
-      } catch {
-        // No enriched content found, return basic data
-        console.log(`No enriched content found for ${slug}`);
-      }
-      
-      // If the cemetery has generated content, return it with enriched flag
-      if (cemetery.generated) {
-        return {
-          ...cemetery,
-          enriched: true
-        };
-      }
 
-      // If not enriched, return basic cemetery data
+    if (!cemetery) return null;
+
+    // Try to load enriched content
+    try {
+      const enrichedPath = path.join(process.cwd(), 'data', 'enriched-content', `${slug}.json`);
+      const enrichedContent = await fs.readFile(enrichedPath, 'utf-8');
+      const enrichedData = JSON.parse(enrichedContent);
+
+      return {
+        ...cemetery,
+        enriched: true,
+        generated: enrichedData.generated,
+        enriched_at: enrichedData.enriched_at,
+        seoTitle: enrichedData.seoTitle,
+        seoDescription: enrichedData.seoDescription,
+        enrichedContent: enrichedData.content,
+      };
+    } catch {
+      // No enriched content, return basic data
       return {
         ...cemetery,
         enriched: false
       };
     }
-    
-    return null;
   } catch (error) {
-    console.error('Error loading cemetery data:', error);
+    console.error('Error loading cemetery:', error);
     return null;
   }
 }
 
-// Get enriched cemeteries only
-export async function getEnrichedCemeteries(): Promise<CemeteryWithContent[]> {
-  const cemeteries = await getAllCemeteries() as CemeteryWithContent[];
-  return cemeteries.filter(c => c.enriched && c.generated);
+// ===== STATE FUNCTIONS =====
+
+export async function getAllStates(): Promise<State[]> {
+  if (statesCache) return statesCache;
+
+  try {
+    const statesPath = path.join(process.cwd(), 'data', 'states.json');
+    const content = await fs.readFile(statesPath, 'utf-8');
+    const data = JSON.parse(content);
+    statesCache = data.states as State[];
+    return statesCache;
+  } catch (error) {
+    console.error('Error loading states:', error);
+    return [];
+  }
 }
 
-// Get statistics about enriched content
-export async function getEnrichmentStats() {
-  const cemeteries = await getAllCemeteries() as CemeteryWithContent[];
-  const total = cemeteries.length;
-  const enriched = cemeteries.filter(c => c.enriched).length;
-  const withWebsites = cemeteries.filter(c => c.website_url).length;
-  const withReviews = cemeteries.filter(c => c.google_rating).length;
-  
-  return {
-    total,
-    enriched,
-    withWebsites,
-    withReviews,
-    enrichmentRate: total > 0 ? (enriched / total) * 100 : 0,
-    websiteRate: total > 0 ? (withWebsites / total) * 100 : 0,
-    reviewRate: total > 0 ? (withReviews / total) * 100 : 0
-  };
+export async function getStateBySlug(slug: string): Promise<State | null> {
+  const states = await getAllStates();
+  return states.find(s => s.slug === slug) || null;
 }
 
-export async function getCemeteriesByProvince(province: string): Promise<Cemetery[]> {
+export async function getStateByAbbr(abbr: string): Promise<State | null> {
+  const states = await getAllStates();
+  return states.find(s => s.abbr.toLowerCase() === abbr.toLowerCase()) || null;
+}
+
+export async function getCemeteriesByState(state: string): Promise<Cemetery[]> {
   const cemeteries = await getAllCemeteries();
-  return cemeteries.filter(c => c.provincie && c.provincie.toLowerCase() === province.toLowerCase());
+  return cemeteries.filter(c =>
+    c.state?.toLowerCase() === state.toLowerCase() ||
+    c.state_abbr?.toLowerCase() === state.toLowerCase()
+  );
 }
 
-export async function getCemeteriesByMunicipality(municipality: string): Promise<Cemetery[]> {
+// ===== COUNTY FUNCTIONS =====
+
+export async function getAllCounties(): Promise<string[]> {
   const cemeteries = await getAllCemeteries();
-  return cemeteries.filter(c => c.gemeente && c.gemeente.toLowerCase() === municipality.toLowerCase());
+  const counties = [...new Set(cemeteries
+    .map(c => c.county)
+    .filter((c): c is string => typeof c === 'string' && c.trim() !== '')
+  )];
+  return counties.sort();
+}
+
+export async function getCountiesByState(state: string): Promise<string[]> {
+  const cemeteries = await getCemeteriesByState(state);
+  const counties = [...new Set(cemeteries
+    .map(c => c.county)
+    .filter((c): c is string => typeof c === 'string' && c.trim() !== '')
+  )];
+  return counties.sort();
+}
+
+export async function getCemeteriesByCounty(county: string, state?: string): Promise<Cemetery[]> {
+  const cemeteries = await getAllCemeteries();
+  return cemeteries.filter(c => {
+    const countyMatch = c.county?.toLowerCase() === county.toLowerCase();
+    if (state) {
+      return countyMatch && (
+        c.state?.toLowerCase() === state.toLowerCase() ||
+        c.state_abbr?.toLowerCase() === state.toLowerCase()
+      );
+    }
+    return countyMatch;
+  });
+}
+
+// ===== CITY FUNCTIONS =====
+
+export async function getAllCities(): Promise<string[]> {
+  const cemeteries = await getAllCemeteries();
+  const cities = [...new Set(cemeteries
+    .map(c => c.city)
+    .filter((c): c is string => typeof c === 'string' && c.trim() !== '')
+  )];
+  return cities.sort();
+}
+
+export async function getCitiesByState(state: string): Promise<string[]> {
+  const cemeteries = await getCemeteriesByState(state);
+  const cities = [...new Set(cemeteries
+    .map(c => c.city)
+    .filter((c): c is string => typeof c === 'string' && c.trim() !== '')
+  )];
+  return cities.sort();
+}
+
+export async function getCemeteriesByCity(city: string, state?: string): Promise<Cemetery[]> {
+  const cemeteries = await getAllCemeteries();
+  return cemeteries.filter(c => {
+    const cityMatch = c.city?.toLowerCase() === city.toLowerCase();
+    if (state) {
+      return cityMatch && (
+        c.state?.toLowerCase() === state.toLowerCase() ||
+        c.state_abbr?.toLowerCase() === state.toLowerCase()
+      );
+    }
+    return cityMatch;
+  });
+}
+
+// ===== TYPE FUNCTIONS =====
+
+export async function getAllTypes(): Promise<CemeteryType[]> {
+  if (typesCache) return typesCache;
+
+  try {
+    const typesPath = path.join(process.cwd(), 'data', 'cemetery-types.json');
+    const content = await fs.readFile(typesPath, 'utf-8');
+    const data = JSON.parse(content);
+    typesCache = data.types as CemeteryType[];
+    return typesCache;
+  } catch (error) {
+    console.error('Error loading cemetery types:', error);
+    return [];
+  }
+}
+
+export async function getTypeBySlug(slug: string): Promise<CemeteryType | null> {
+  const types = await getAllTypes();
+  return types.find(t => t.slug === slug) || null;
 }
 
 export async function getCemeteriesByType(type: string): Promise<Cemetery[]> {
   const cemeteries = await getAllCemeteries();
-  return cemeteries.filter(c => c.type && c.type.toLowerCase() === type.toLowerCase());
+  return cemeteries.filter(c =>
+    c.type?.toLowerCase() === type.toLowerCase() ||
+    c.type_slug?.toLowerCase() === type.toLowerCase()
+  );
 }
 
-export async function getAllProvinces(): Promise<string[]> {
-  try {
-    const provinciesPath = path.join(process.cwd(), 'data', 'provincies.json');
-    const provinciesContent = await fs.readFile(provinciesPath, 'utf-8');
-    const provinciesData = JSON.parse(provinciesContent);
-    return Object.keys(provinciesData).map(key => provinciesData[key].naam);
-  } catch {
-    // Fallback to getting provinces from cemeteries if new structure doesn't exist
-    const cemeteries = await getAllCemeteries();
-    const provinces = [...new Set(cemeteries.map(c => c.provincie).filter(Boolean))]
-      .filter(p => p.toLowerCase() !== 'onbekend'); // Filter out "Onbekend"
-    return provinces.sort();
-  }
-}
+// ===== SLUG UTILITIES =====
 
-export async function getProvincieData(provincieSlug: string) {
-  try {
-    const provinciesPath = path.join(process.cwd(), 'data', 'provincies.json');
-    const provinciesContent = await fs.readFile(provinciesPath, 'utf-8');
-    const provinciesData = JSON.parse(provinciesContent);
-    return provinciesData[provincieSlug] || null;
-  } catch {
-    return null;
-  }
-}
+export function createSlug(name: string, city: string, state_abbr?: string): string {
+  const base = state_abbr
+    ? `${name}-${city}-${state_abbr}`
+    : `${name}-${city}`;
 
-export async function getAllMunicipalities(): Promise<string[]> {
-  const cemeteries = await getAllCemeteries();
-  const municipalities = [...new Set(cemeteries.map(c => c.gemeente).filter(Boolean))];
-  return municipalities.sort();
-}
-
-export async function getAllTypes(): Promise<string[]> {
-  const cemeteries = await getAllCemeteries();
-  const types = [...new Set(cemeteries.map(c => c.type).filter(Boolean))];
-  return types.sort();
-}
-
-export function createSlug(name: string, gemeente: string): string {
-  const combined = `${name}-${gemeente}`
+  return base
     .toLowerCase()
-    .normalize('NFD') // Decompose accented characters
-    .replace(/[\u0300-\u036f]/g, '') // Remove diacritical marks
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
-  return combined;
 }
 
-// Create municipality slug with proper handling of special characters
-export function createMunicipalitySlug(municipality: string): string {
-  return municipality
+export function createStateSlug(state: string): string {
+  return state
     .toLowerCase()
-    .normalize('NFD') // Decompose accented characters
-    .replace(/[\u0300-\u036f]/g, '') // Remove diacritical marks
-    .replace(/['']/g, '') // Remove apostrophes
-    .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric with hyphens
-    .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
 }
 
-// Create place slug with proper handling of special characters
-export function createPlaceSlug(place: string): string {
-  return place
+export function createCountySlug(county: string): string {
+  return county
     .toLowerCase()
-    .normalize('NFD') // Decompose accented characters
-    .replace(/[\u0300-\u036f]/g, '') // Remove diacritical marks
-    .replace(/['']/g, '') // Remove apostrophes
-    .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric with hyphens
-    .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
 }
 
-// Get all unique places
-export async function getAllPlaces(): Promise<string[]> {
+export function createCitySlug(city: string): string {
+  return city
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+}
+
+export function createTypeSlug(type: string): string {
+  return type
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+}
+
+// ===== STATISTICS =====
+
+export async function getStats() {
   const cemeteries = await getAllCemeteries();
-  const places = [...new Set(cemeteries
-    .map(c => c.plaats)
-    .filter((p): p is string => typeof p === 'string' && p.trim() !== '')
-  )];
-  return places.sort();
-}
+  const states = await getAllStates();
+  const types = await getAllTypes();
 
-// Get cemeteries by place
-export async function getCemeteriesByPlace(place: string): Promise<Cemetery[]> {
-  const cemeteries = await getAllCemeteries();
-  return cemeteries.filter(c => 
-    c.plaats && c.plaats.toLowerCase() === place.toLowerCase()
-  );
-}
+  const statesWithCemeteries = [...new Set(cemeteries.map(c => c.state))].length;
+  const citiesWithCemeteries = [...new Set(cemeteries.map(c => c.city))].length;
+  const withRatings = cemeteries.filter(c => c.rating).length;
+  const withPhotos = cemeteries.filter(c => c.photo || (c.photos && c.photos.length > 0)).length;
 
-// Get municipality for a place
-export async function getMunicipalityByPlace(place: string): Promise<string | null> {
-  const cemeteries = await getAllCemeteries();
-  const cemetery = cemeteries.find(c => 
-    c.plaats && c.plaats.toLowerCase() === place.toLowerCase()
-  );
-  return cemetery ? cemetery.gemeente : null;
-}
-
-// Get province for a place
-export async function getProvinceByPlace(place: string): Promise<string | null> {
-  const cemeteries = await getAllCemeteries();
-  const cemetery = cemeteries.find(c => 
-    c.plaats && c.plaats.toLowerCase() === place.toLowerCase()
-  );
-  return cemetery ? cemetery.provincie : null;
-}
-
-// Get all unique places within a municipality
-export async function getPlacesByMunicipality(municipality: string): Promise<string[]> {
-  const cemeteries = await getCemeteriesByMunicipality(municipality);
-  const places = [...new Set(cemeteries
-    .map(c => c.plaats)
-    .filter((p): p is string => typeof p === 'string' && p.trim() !== '')
-  )];
-  return places.sort();
-}
-
-// ===== OFFICIAL CBS GEMEENTE MAPPING =====
-// Uses PDOK Locatieserver data to map plaatsnamen to official CBS gemeentes
-
-interface GemeenteMapping {
-  [plaatsnaam: string]: {
-    gemeente: string;
-    provincie: string;
+  return {
+    total_cemeteries: cemeteries.length,
+    total_states: states.length,
+    states_with_cemeteries: statesWithCemeteries,
+    cities_with_cemeteries: citiesWithCemeteries,
+    total_types: types.length,
+    with_ratings: withRatings,
+    with_photos: withPhotos,
   };
 }
 
-let gemeenteMappingCache: GemeenteMapping | null = null;
+// ===== SEARCH =====
 
-// Load gemeente mapping from JSON file
-async function loadGemeenteMapping(): Promise<GemeenteMapping> {
-  if (gemeenteMappingCache) return gemeenteMappingCache;
+export async function searchCemeteries(query: string, filters?: {
+  state?: string;
+  type?: string;
+  city?: string;
+  county?: string;
+}): Promise<Cemetery[]> {
+  let cemeteries = await getAllCemeteries();
 
-  try {
-    const mappingPath = path.join(process.cwd(), 'data', 'gemeente-mapping.json');
-    const mappingContent = await fs.readFile(mappingPath, 'utf-8');
-    gemeenteMappingCache = JSON.parse(mappingContent) as GemeenteMapping;
-    return gemeenteMappingCache;
-  } catch (error) {
-    console.error('Error loading gemeente mapping:', error);
-    return {};
+  // Apply filters
+  if (filters?.state) {
+    cemeteries = cemeteries.filter(c =>
+      c.state?.toLowerCase() === filters.state!.toLowerCase() ||
+      c.state_abbr?.toLowerCase() === filters.state!.toLowerCase()
+    );
   }
+
+  if (filters?.type) {
+    cemeteries = cemeteries.filter(c =>
+      c.type?.toLowerCase().includes(filters.type!.toLowerCase()) ||
+      c.type_slug?.toLowerCase() === filters.type!.toLowerCase()
+    );
+  }
+
+  if (filters?.city) {
+    cemeteries = cemeteries.filter(c =>
+      c.city?.toLowerCase() === filters.city!.toLowerCase()
+    );
+  }
+
+  if (filters?.county) {
+    cemeteries = cemeteries.filter(c =>
+      c.county?.toLowerCase() === filters.county!.toLowerCase()
+    );
+  }
+
+  // Apply search query
+  if (query && query.trim()) {
+    const q = query.toLowerCase().trim();
+    cemeteries = cemeteries.filter(c =>
+      c.name?.toLowerCase().includes(q) ||
+      c.city?.toLowerCase().includes(q) ||
+      c.county?.toLowerCase().includes(q) ||
+      c.state?.toLowerCase().includes(q) ||
+      c.address?.toLowerCase().includes(q) ||
+      c.zipCode?.includes(q)
+    );
+  }
+
+  return cemeteries;
 }
 
-// Get official CBS gemeente for a plaatsnaam
-export async function getOfficialGemeente(plaatsnaam: string): Promise<{ gemeente: string; provincie: string } | null> {
-  const mapping = await loadGemeenteMapping();
-  return mapping[plaatsnaam] || null;
+// ===== NEARBY CEMETERIES =====
+
+function haversineDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 3959; // Earth's radius in miles
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a =
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon/2) * Math.sin(dLon/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
 }
 
-// Get all cemeteries in an official CBS gemeente
-export async function getCemeteriesByOfficialGemeente(officialGemeente: string): Promise<Cemetery[]> {
-  const mapping = await loadGemeenteMapping();
+export async function getNearbyCemeteries(
+  lat: number,
+  lon: number,
+  radiusMiles: number = 25,
+  limit: number = 20
+): Promise<Array<Cemetery & { distance: number }>> {
   const cemeteries = await getAllCemeteries();
 
-  // Find all plaatsnamen that map to this official gemeente
-  const plaatsenInGemeente = Object.entries(mapping)
-    .filter(([, info]) => info.gemeente.toLowerCase() === officialGemeente.toLowerCase())
-    .map(([plaatsnaam]) => plaatsnaam.toLowerCase());
+  const withDistance = cemeteries
+    .filter(c => c.latitude && c.longitude)
+    .map(c => ({
+      ...c,
+      distance: haversineDistance(lat, lon, c.latitude!, c.longitude!)
+    }))
+    .filter(c => c.distance <= radiusMiles)
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, limit);
 
-  // Filter cemeteries where plaats OR gemeente matches
-  return cemeteries.filter(cemetery => {
-    const plaats = cemetery.plaats?.toLowerCase() || '';
-    const gemeente = cemetery.gemeente?.toLowerCase() || '';
-
-    return plaatsenInGemeente.includes(plaats) ||
-           plaatsenInGemeente.includes(gemeente) ||
-           gemeente === officialGemeente.toLowerCase();
-  });
+  return withDistance;
 }
 
-// Get list of all official CBS gemeentes with cemetery counts
-export async function getAllOfficialGemeentes(): Promise<Array<{ gemeente: string; provincie: string; count: number }>> {
-  const mapping = await loadGemeenteMapping();
+// ===== FEATURED/POPULAR =====
+
+export async function getFeaturedCemeteries(limit: number = 10): Promise<Cemetery[]> {
   const cemeteries = await getAllCemeteries();
 
-  // Build a set of unique official gemeentes
-  const officialGemeentes = new Map<string, { gemeente: string; provincie: string }>();
-
-  for (const [, info] of Object.entries(mapping)) {
-    if (!officialGemeentes.has(info.gemeente)) {
-      officialGemeentes.set(info.gemeente, info);
-    }
-  }
-
-  // Count cemeteries per official gemeente
-  const result: Array<{ gemeente: string; provincie: string; count: number }> = [];
-
-  for (const [gemeenteName, info] of officialGemeentes) {
-    // Find all plaatsnamen that map to this gemeente
-    const plaatsenInGemeente = Object.entries(mapping)
-      .filter(([, mappingInfo]) => mappingInfo.gemeente === gemeenteName)
-      .map(([plaatsnaam]) => plaatsnaam.toLowerCase());
-
-    // Count cemeteries
-    const count = cemeteries.filter(cemetery => {
-      const plaats = cemetery.plaats?.toLowerCase() || '';
-      const gemeente = cemetery.gemeente?.toLowerCase() || '';
-
-      return plaatsenInGemeente.includes(plaats) ||
-             plaatsenInGemeente.includes(gemeente) ||
-             gemeente === gemeenteName.toLowerCase();
-    }).length;
-
-    if (count > 0) {
-      result.push({
-        gemeente: info.gemeente,
-        provincie: info.provincie,
-        count
-      });
-    }
-  }
-
-  return result.sort((a, b) => a.gemeente.localeCompare(b.gemeente, 'nl'));
+  // Sort by rating and review count
+  return cemeteries
+    .filter(c => c.rating && c.review_count)
+    .sort((a, b) => {
+      const scoreA = (a.rating || 0) * Math.log10((a.review_count || 1) + 1);
+      const scoreB = (b.rating || 0) * Math.log10((b.review_count || 1) + 1);
+      return scoreB - scoreA;
+    })
+    .slice(0, limit);
 }
 
-// Get all official gemeentes in a province
-export async function getOfficialGemeentesByProvince(province: string): Promise<Array<{ gemeente: string; count: number }>> {
-  const allGemeentes = await getAllOfficialGemeentes();
-  return allGemeentes
-    .filter(g => g.provincie.toLowerCase() === province.toLowerCase())
-    .map(({ gemeente, count }) => ({ gemeente, count }))
-    .sort((a, b) => a.gemeente.localeCompare(b.gemeente, 'nl'));
-}
+export async function getRecentlyUpdated(limit: number = 10): Promise<Cemetery[]> {
+  const cemeteries = await getAllCemeteries();
 
-// Create slug for official gemeente
-export function createOfficialGemeenteSlug(gemeente: string): string {
-  return gemeente
-    .toLowerCase()
-    .replace(/\s*\([^)]*\)\s*/g, '-') // Replace (L) with hyphen
-    .replace(/['']/g, '') // Remove apostrophes
-    .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric with hyphens
-    .replace(/^-+|-+$/g, '') // Remove leading/trailing hyphens
-    .replace(/-+/g, '-'); // Collapse multiple hyphens
+  return cemeteries
+    .filter(c => c.updated_at)
+    .sort((a, b) => new Date(b.updated_at!).getTime() - new Date(a.updated_at!).getTime())
+    .slice(0, limit);
 }

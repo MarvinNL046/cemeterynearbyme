@@ -26,9 +26,9 @@ export default function AdminSettingsPage() {
   return (
     <div className="p-6 lg:p-8">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold font-serif text-foreground">Instellingen</h1>
+        <h1 className="text-2xl font-bold font-serif text-foreground">Settings</h1>
         <p className="text-muted-foreground">
-          Beheer systeeminstellingen en configuratie
+          Manage system settings and configuration
         </p>
       </div>
 
@@ -42,7 +42,7 @@ export default function AdminSettingsPage() {
               </div>
               <div>
                 <CardTitle className="text-lg font-serif">Database</CardTitle>
-                <CardDescription>Neon PostgreSQL configuratie</CardDescription>
+                <CardDescription>Neon PostgreSQL configuration</CardDescription>
               </div>
             </div>
           </CardHeader>
@@ -60,7 +60,7 @@ export default function AdminSettingsPage() {
                 <span className="text-sm text-muted-foreground">Status</span>
                 <span className="inline-flex items-center gap-1 text-sm font-medium text-green-600">
                   <Check className="w-4 h-4" />
-                  Verbonden
+                  Connected
                 </span>
               </div>
             </div>
@@ -75,8 +75,8 @@ export default function AdminSettingsPage() {
                 <Mail className="w-5 h-5 text-purple-600" />
               </div>
               <div>
-                <CardTitle className="text-lg font-serif">E-mail</CardTitle>
-                <CardDescription>Resend e-mail configuratie</CardDescription>
+                <CardTitle className="text-lg font-serif">Email</CardTitle>
+                <CardDescription>Resend email configuration</CardDescription>
               </div>
             </div>
           </CardHeader>
@@ -87,14 +87,14 @@ export default function AdminSettingsPage() {
                 <span className="text-sm font-medium">Resend</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b">
-                <span className="text-sm text-muted-foreground">Afzender</span>
-                <span className="text-sm font-medium">noreply@begraafplaatsindebuurt.nl</span>
+                <span className="text-sm text-muted-foreground">Sender</span>
+                <span className="text-sm font-medium">noreply@cemeterynearbyme.com</span>
               </div>
               <div className="flex justify-between items-center py-2">
                 <span className="text-sm text-muted-foreground">Status</span>
                 <span className="inline-flex items-center gap-1 text-sm font-medium text-green-600">
                   <Check className="w-4 h-4" />
-                  Geconfigureerd
+                  Configured
                 </span>
               </div>
               <div className="pt-4">
@@ -107,15 +107,15 @@ export default function AdminSettingsPage() {
                   {testingEmail ? (
                     <>
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Test e-mail versturen...
+                      Sending test email...
                     </>
                   ) : emailTestResult === 'success' ? (
                     <>
                       <Check className="w-4 h-4 mr-2 text-green-600" />
-                      Test succesvol!
+                      Test successful!
                     </>
                   ) : (
-                    'Test e-mail versturen'
+                    'Send test email'
                   )}
                 </Button>
               </div>
@@ -131,28 +131,28 @@ export default function AdminSettingsPage() {
                 <Shield className="w-5 h-5 text-green-600" />
               </div>
               <div>
-                <CardTitle className="text-lg font-serif">Beveiliging</CardTitle>
-                <CardDescription>Authenticatie en sessie instellingen</CardDescription>
+                <CardTitle className="text-lg font-serif">Security</CardTitle>
+                <CardDescription>Authentication and session settings</CardDescription>
               </div>
             </div>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
               <div className="flex justify-between items-center py-2 border-b">
-                <span className="text-sm text-muted-foreground">Authenticatie</span>
+                <span className="text-sm text-muted-foreground">Authentication</span>
                 <span className="text-sm font-medium">JWT + Cookies</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b">
-                <span className="text-sm text-muted-foreground">Sessie duur</span>
-                <span className="text-sm font-medium">7 dagen</span>
+                <span className="text-sm text-muted-foreground">Session duration</span>
+                <span className="text-sm font-medium">7 days</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b">
-                <span className="text-sm text-muted-foreground">Wachtwoord hashing</span>
+                <span className="text-sm text-muted-foreground">Password hashing</span>
                 <span className="text-sm font-medium">bcrypt (12 rounds)</span>
               </div>
               <div className="flex justify-between items-center py-2">
-                <span className="text-sm text-muted-foreground">Verificatie codes</span>
-                <span className="text-sm font-medium">15 minuten geldig</span>
+                <span className="text-sm text-muted-foreground">Verification codes</span>
+                <span className="text-sm font-medium">Valid for 15 minutes</span>
               </div>
             </div>
           </CardContent>
@@ -166,8 +166,8 @@ export default function AdminSettingsPage() {
                 <Settings className="w-5 h-5 text-yellow-600" />
               </div>
               <div>
-                <CardTitle className="text-lg font-serif">Systeem</CardTitle>
-                <CardDescription>Framework en versie informatie</CardDescription>
+                <CardTitle className="text-lg font-serif">System</CardTitle>
+                <CardDescription>Framework and version information</CardDescription>
               </div>
             </div>
           </CardHeader>
@@ -182,7 +182,7 @@ export default function AdminSettingsPage() {
                 <span className="text-sm font-medium">Tailwind CSS + shadcn/ui</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b">
-                <span className="text-sm text-muted-foreground">Taal</span>
+                <span className="text-sm text-muted-foreground">Language</span>
                 <span className="text-sm font-medium">TypeScript</span>
               </div>
               <div className="flex justify-between items-center py-2">

@@ -7,12 +7,12 @@ export default function NotFound() {
     <div className="container mx-auto px-4 py-16 text-center">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-6xl font-bold text-gray-200 mb-4">404</h1>
-        <h2 className="text-3xl font-semibold mb-4">Pagina niet gevonden</h2>
+        <h2 className="text-3xl font-semibold mb-4">Page Not Found</h2>
         <p className="text-lg text-muted-foreground mb-8">
-          De pagina die u zoekt bestaat niet of is mogelijk verplaatst. 
-          Geen zorgen, we helpen u graag verder!
+          The page you&apos;re looking for doesn&apos;t exist or has been moved.
+          Don&apos;t worry, we&apos;ll help you find what you need!
         </p>
-        
+
         <div className="grid gap-4 sm:grid-cols-3 mb-12">
           <Link href="/">
             <Button variant="outline" className="w-full">
@@ -20,39 +20,39 @@ export default function NotFound() {
               Homepage
             </Button>
           </Link>
-          <Link href="/zoeken">
+          <Link href="/search">
             <Button variant="default" className="w-full">
               <Search className="mr-2 h-4 w-4" />
-              Zoek begraafplaats
+              Find Cemetery
             </Button>
           </Link>
-          <Link href="/provincie/limburg">
+          <Link href="/state/california">
             <Button variant="outline" className="w-full">
               <MapPin className="mr-2 h-4 w-4" />
-              Bekijk provincies
+              Browse States
             </Button>
           </Link>
         </div>
-        
+
         <div className="bg-muted rounded-lg p-6">
-          <h3 className="font-semibold mb-3">Populaire begraafplaatsen</h3>
+          <h3 className="font-semibold mb-3">Popular Locations</h3>
           <div className="grid gap-2 text-sm">
-            <Link href="/gemeente/beek" className="text-primary hover:underline">
-              Begraafplaatsen in Beek
+            <Link href="/state/california" className="text-primary hover:underline">
+              Cemeteries in California
             </Link>
-            <Link href="/gemeente/beekdaelen" className="text-primary hover:underline">
-              Begraafplaatsen in Beekdaelen
+            <Link href="/state/texas" className="text-primary hover:underline">
+              Cemeteries in Texas
             </Link>
-            <Link href="/gemeente/brunssum" className="text-primary hover:underline">
-              Begraafplaatsen in Brunssum
+            <Link href="/state/florida" className="text-primary hover:underline">
+              Cemeteries in Florida
             </Link>
           </div>
         </div>
-        
+
         <div className="mt-8 text-sm text-muted-foreground">
-          <p>Kwam u hier via een oude link? Laat het ons weten via</p>
-          <a href="mailto:info@begraafplaatsindebuurt.nl" className="text-primary hover:underline">
-            info@begraafplaatsindebuurt.nl
+          <p>Found a broken link? Let us know at</p>
+          <a href="mailto:info@cemeterynearbyme.com" className="text-primary hover:underline">
+            info@cemeterynearbyme.com
           </a>
         </div>
       </div>

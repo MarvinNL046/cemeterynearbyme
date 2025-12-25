@@ -14,7 +14,7 @@ export default function InlineAd({
   return (
     <div className={`my-8 ${className}`}>
       <div className="max-w-full mx-auto">
-        <p className="text-xs text-center text-muted-foreground mb-2">Advertentie</p>
+        <p className="text-xs text-center text-muted-foreground mb-2">Advertisement</p>
         
         {/* Responsive horizontal ad */}
         <AdBanner

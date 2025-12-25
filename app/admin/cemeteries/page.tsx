@@ -141,7 +141,7 @@ export default function AdminCemeteriesPage() {
   };
 
   const handleDelete = async (cemeteryId: number) => {
-    if (!confirm('Weet je zeker dat je deze begraafplaats wilt verwijderen?')) return;
+    if (!confirm('Are you sure you want to delete this cemetery?')) return;
     try {
       const response = await fetch(`/api/admin/cemeteries/${cemeteryId}`, {
         method: 'DELETE',
@@ -166,21 +166,21 @@ export default function AdminCemeteriesPage() {
         return (
           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
             <CheckCircle className="w-3 h-3" />
-            Goedgekeurd
+            Approved
           </span>
         );
       case 'pending':
         return (
           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-700">
             <Clock className="w-3 h-3" />
-            In afwachting
+            Pending
           </span>
         );
       case 'rejected':
         return (
           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-700">
             <AlertCircle className="w-3 h-3" />
-            Afgewezen
+            Rejected
           </span>
         );
       default:
@@ -191,9 +191,9 @@ export default function AdminCemeteriesPage() {
   return (
     <div className="p-6 lg:p-8">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold font-serif text-foreground">Ingezonden Begraafplaatsen</h1>
+        <h1 className="text-2xl font-bold font-serif text-foreground">Submitted Cemeteries</h1>
         <p className="text-muted-foreground">
-          Bekijk en keur door gebruikers ingezonden begraafplaatsen ({pagination?.total || 0} totaal)
+          Review and approve user-submitted cemeteries ({pagination?.total || 0} total)
         </p>
       </div>
 
@@ -206,7 +206,7 @@ export default function AdminCemeteriesPage() {
               <Input
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Zoek op naam, gemeente of plaats..."
+                placeholder="Search by name, county or city..."
                 className="pl-10"
               />
             </div>
@@ -215,12 +215,12 @@ export default function AdminCemeteriesPage() {
               onChange={(e) => setStatusFilter(e.target.value)}
               className="h-10 px-3 rounded-md border border-input bg-background text-sm"
             >
-              <option value="">Alle statussen</option>
-              <option value="pending">In afwachting</option>
-              <option value="approved">Goedgekeurd</option>
-              <option value="rejected">Afgewezen</option>
+              <option value="">All statuses</option>
+              <option value="pending">Pending</option>
+              <option value="approved">Approved</option>
+              <option value="rejected">Rejected</option>
             </select>
-            <Button type="submit">Zoeken</Button>
+            <Button type="submit">Search</Button>
           </form>
         </CardContent>
       </Card>
@@ -234,18 +234,18 @@ export default function AdminCemeteriesPage() {
             </div>
           ) : cemeteries.length === 0 ? (
             <div className="p-12 text-center text-muted-foreground">
-              Geen ingezonden begraafplaatsen gevonden
+              No submitted cemeteries found
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-muted/50">
                   <tr>
-                    <th className="text-left p-4 text-sm font-medium">Begraafplaats</th>
-                    <th className="text-left p-4 text-sm font-medium hidden md:table-cell">Locatie</th>
-                    <th className="text-left p-4 text-sm font-medium hidden lg:table-cell">Ingezonden door</th>
+                    <th className="text-left p-4 text-sm font-medium">Cemetery</th>
+                    <th className="text-left p-4 text-sm font-medium hidden md:table-cell">Location</th>
+                    <th className="text-left p-4 text-sm font-medium hidden lg:table-cell">Submitted by</th>
                     <th className="text-left p-4 text-sm font-medium">Status</th>
-                    <th className="text-right p-4 text-sm font-medium">Acties</th>
+                    <th className="text-right p-4 text-sm font-medium">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y">
@@ -296,7 +296,7 @@ export default function AdminCemeteriesPage() {
                                   className="w-full flex items-center gap-2 px-4 py-2 text-sm hover:bg-muted transition-colors"
                                 >
                                   <Eye className="w-4 h-4" />
-                                  Details bekijken
+                                  View details
                                 </button>
                                 {cemetery.status === 'pending' && (
                                   <>
@@ -306,7 +306,7 @@ export default function AdminCemeteriesPage() {
                                       className="w-full flex items-center gap-2 px-4 py-2 text-sm text-green-600 hover:bg-green-50 transition-colors"
                                     >
                                       <CheckCircle className="w-4 h-4" />
-                                      Goedkeuren
+                                      Approve
                                     </button>
                                     <button
                                       onClick={() => {
@@ -316,7 +316,7 @@ export default function AdminCemeteriesPage() {
                                       className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
                                     >
                                       <XCircle className="w-4 h-4" />
-                                      Afwijzen
+                                      Reject
                                     </button>
                                   </>
                                 )}
@@ -325,7 +325,7 @@ export default function AdminCemeteriesPage() {
                                   className="w-full flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
                                 >
                                   <Trash2 className="w-4 h-4" />
-                                  Verwijderen
+                                  Delete
                                 </button>
                               </div>
                             </>
@@ -343,7 +343,7 @@ export default function AdminCemeteriesPage() {
           {pagination && pagination.totalPages > 1 && (
             <div className="p-4 border-t flex items-center justify-between">
               <span className="text-sm text-muted-foreground">
-                Pagina {pagination.page} van {pagination.totalPages}
+                Page {pagination.page} of {pagination.totalPages}
               </span>
               <div className="flex gap-2">
                 <Button
@@ -373,12 +373,12 @@ export default function AdminCemeteriesPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-y-auto">
           <Card className="w-full max-w-2xl my-8">
             <CardHeader>
-              <CardTitle className="text-lg font-serif">Begraafplaats Details</CardTitle>
+              <CardTitle className="text-lg font-serif">Cemetery Details</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="col-span-2">
-                  <p className="text-sm text-muted-foreground">Naam</p>
+                  <p className="text-sm text-muted-foreground">Name</p>
                   <p className="font-medium text-lg">{showDetails.naam}</p>
                 </div>
                 <div>
@@ -390,27 +390,27 @@ export default function AdminCemeteriesPage() {
                   <div className="mt-1">{getStatusBadge(showDetails.status)}</div>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Adres</p>
+                  <p className="text-sm text-muted-foreground">Address</p>
                   <p className="font-medium">{showDetails.adres || '-'}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Postcode</p>
+                  <p className="text-sm text-muted-foreground">Zip Code</p>
                   <p className="font-medium">{showDetails.postcode || '-'}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Plaats</p>
+                  <p className="text-sm text-muted-foreground">City</p>
                   <p className="font-medium">{showDetails.plaats}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Gemeente</p>
+                  <p className="text-sm text-muted-foreground">County</p>
                   <p className="font-medium">{showDetails.gemeente}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Provincie</p>
+                  <p className="text-sm text-muted-foreground">State</p>
                   <p className="font-medium">{showDetails.provincie}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Ingezonden door</p>
+                  <p className="text-sm text-muted-foreground">Submitted by</p>
                   <p className="font-medium">{showDetails.userName}</p>
                   <p className="text-sm text-muted-foreground">{showDetails.userEmail}</p>
                 </div>
@@ -418,7 +418,7 @@ export default function AdminCemeteriesPage() {
 
               {showDetails.rejectionReason && (
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Afwijzingsreden</p>
+                  <p className="text-sm text-muted-foreground mb-1">Rejection reason</p>
                   <p className="text-sm bg-red-50 text-red-700 p-3 rounded-lg">{showDetails.rejectionReason}</p>
                 </div>
               )}
@@ -429,7 +429,7 @@ export default function AdminCemeteriesPage() {
                   onClick={() => setShowDetails(null)}
                   className="flex-1"
                 >
-                  Sluiten
+                  Close
                 </Button>
                 {showDetails.status === 'pending' && (
                   <>
@@ -441,7 +441,7 @@ export default function AdminCemeteriesPage() {
                       className="flex-1 bg-green-600 hover:bg-green-700"
                     >
                       <CheckCircle className="w-4 h-4 mr-2" />
-                      Goedkeuren
+                      Approve
                     </Button>
                     <Button
                       variant="destructive"
@@ -452,7 +452,7 @@ export default function AdminCemeteriesPage() {
                       className="flex-1"
                     >
                       <XCircle className="w-4 h-4 mr-2" />
-                      Afwijzen
+                      Reject
                     </Button>
                   </>
                 )}
@@ -467,19 +467,19 @@ export default function AdminCemeteriesPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <Card className="w-full max-w-md">
             <CardHeader>
-              <CardTitle className="text-lg font-serif">Begraafplaats afwijzen</CardTitle>
+              <CardTitle className="text-lg font-serif">Reject cemetery</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Reden voor afwijzing *
+                    Reason for rejection *
                   </label>
                   <textarea
                     value={rejectionReason}
                     onChange={(e) => setRejectionReason(e.target.value)}
                     className="w-full h-32 px-3 py-2 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Leg uit waarom deze begraafplaats wordt afgewezen..."
+                    placeholder="Explain why this cemetery is being rejected..."
                     required
                   />
                 </div>
@@ -493,7 +493,7 @@ export default function AdminCemeteriesPage() {
                     className="flex-1"
                     disabled={actionLoading}
                   >
-                    Annuleren
+                    Cancel
                   </Button>
                   <Button
                     variant="destructive"
@@ -504,7 +504,7 @@ export default function AdminCemeteriesPage() {
                     {actionLoading ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
                     ) : (
-                      'Afwijzen'
+                      'Reject'
                     )}
                   </Button>
                 </div>

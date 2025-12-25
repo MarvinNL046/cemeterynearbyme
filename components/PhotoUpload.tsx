@@ -29,13 +29,13 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
     // Validate file type
     const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'];
     if (!allowedTypes.includes(file.type)) {
-      setError('Alleen JPG, PNG, WebP en HEIC bestanden zijn toegestaan');
+      setError('Only JPG, PNG, WebP and HEIC files are allowed');
       return;
     }
 
     // Validate file size (10MB max)
     if (file.size > 10 * 1024 * 1024) {
-      setError('Bestand is te groot (max 10MB)');
+      setError('File is too large (max 10MB)');
       return;
     }
 
@@ -52,7 +52,7 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
 
   const handleUpload = async () => {
     if (!selectedFile || !uploaderName.trim()) {
-      setError('Selecteer een foto en vul uw naam in');
+      setError('Please select a photo and enter your name');
       return;
     }
 
@@ -74,7 +74,7 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Upload mislukt');
+        throw new Error(data.error || 'Upload failed');
       }
 
       setSuccess(true);
@@ -88,7 +88,7 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
         onUploadSuccess?.();
       }, 2000);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Er ging iets mis');
+      setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setIsUploading(false);
     }
@@ -110,7 +110,7 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
         className="gap-2"
       >
         <Camera className="w-4 h-4" />
-        Foto toevoegen
+        Add Photo
       </Button>
     );
   }
@@ -119,7 +119,7 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-xl shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between p-4 border-b">
-          <h3 className="text-lg font-semibold">Foto toevoegen</h3>
+          <h3 className="text-lg font-semibold">Add Photo</h3>
           <button
             onClick={handleClose}
             className="text-muted-foreground hover:text-foreground"
@@ -135,10 +135,10 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
                 <Check className="w-8 h-8 text-green-600" />
               </div>
               <h4 className="text-lg font-semibold text-green-700">
-                Foto succesvol geüpload!
+                Photo uploaded successfully!
               </h4>
               <p className="text-muted-foreground mt-2">
-                Bedankt voor uw bijdrage.
+                Thank you for your contribution.
               </p>
             </div>
           ) : (
@@ -151,10 +151,10 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
                 >
                   <Upload className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">
-                    Klik om een foto te selecteren
+                    Click to select a photo
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    JPG, PNG, WebP of HEIC (max 10MB)
+                    JPG, PNG, WebP or HEIC (max 10MB)
                   </p>
                   <input
                     ref={fileInputRef}
@@ -183,7 +183,7 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
                     <X className="w-4 h-4" />
                   </button>
                   <p className="text-xs text-muted-foreground mt-2 text-center">
-                    Wordt automatisch geconverteerd naar WebP
+                    Will be automatically converted to WebP
                   </p>
                 </div>
               )}
@@ -191,12 +191,12 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
               {/* Name input */}
               <div>
                 <label className="block text-sm font-medium mb-1">
-                  Uw naam *
+                  Your name *
                 </label>
                 <Input
                   value={uploaderName}
                   onChange={(e) => setUploaderName(e.target.value)}
-                  placeholder="Bijv. Jan de Vries"
+                  placeholder="E.g. John Smith"
                   maxLength={100}
                 />
               </div>
@@ -204,12 +204,12 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
               {/* Caption input */}
               <div>
                 <label className="block text-sm font-medium mb-1">
-                  Beschrijving (optioneel)
+                  Description (optional)
                 </label>
                 <Input
                   value={caption}
                   onChange={(e) => setCaption(e.target.value)}
-                  placeholder="Bijv. Ingang van de begraafplaats"
+                  placeholder="E.g. Entrance to the cemetery"
                   maxLength={200}
                 />
               </div>
@@ -230,19 +230,19 @@ export default function PhotoUpload({ cemeterySlug, onUploadSuccess }: PhotoUplo
                 {isUploading ? (
                   <>
                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    Uploaden...
+                    Uploading...
                   </>
                 ) : (
                   <>
                     <Upload className="w-4 h-4 mr-2" />
-                    Foto uploaden
+                    Upload Photo
                   </>
                 )}
               </Button>
 
               <p className="text-xs text-muted-foreground text-center">
-                Door een foto te uploaden gaat u akkoord met onze voorwaarden.
-                Maximaal 3 foto&apos;s per dag per begraafplaats.
+                By uploading a photo you agree to our terms.
+                Maximum 3 photos per day per cemetery.
               </p>
             </>
           )}

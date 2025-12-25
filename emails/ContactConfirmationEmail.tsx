@@ -30,39 +30,39 @@ export const ContactConfirmationEmail = ({
   message,
 }: ContactConfirmationEmailProps) => {
   return (
-    <BaseTemplate preview="Bedankt voor uw bericht - Begraafplaats in de Buurt">
-      <Heading style={heading}>Bedankt voor uw bericht!</Heading>
+    <BaseTemplate preview="Thank you for your message - Cemetery Near Me">
+      <Heading style={heading}>Thank you for your message!</Heading>
 
-      <Text style={greeting}>Beste {name},</Text>
+      <Text style={greeting}>Dear {name},</Text>
 
       <Text style={paragraph}>
-        Wij hebben uw bericht goed ontvangen. Ons team bekijkt uw vraag en streeft
-        ernaar binnen <strong>1-2 werkdagen</strong> te reageren.
+        We have received your message. Our team will review your inquiry and
+        aims to respond within <strong>1-2 business days</strong>.
       </Text>
 
       <Section style={summaryBox}>
-        <Text style={summaryTitle}>Samenvatting van uw bericht</Text>
+        <Text style={summaryTitle}>Summary of your message</Text>
 
-        <Text style={summaryLabel}>Onderwerp</Text>
+        <Text style={summaryLabel}>Subject</Text>
         <Text style={summaryValue}>{subjectLabel}</Text>
 
         <Hr style={divider} />
 
-        <Text style={summaryLabel}>Uw bericht</Text>
+        <Text style={summaryLabel}>Your message</Text>
         <Text style={summaryMessage}>{message}</Text>
       </Section>
 
       <Hr style={hr} />
 
       <Text style={paragraph}>
-        Heeft u in de tussentijd nog vragen? Bekijk onze website voor meer informatie
-        over begraafplaatsen in Nederland.
+        Have any questions in the meantime? Visit our website for more information
+        about cemeteries in the USA.
       </Text>
 
       <Text style={signature}>
-        Met vriendelijke groet,
+        Best regards,
         <br />
-        <strong>Team Begraafplaats in de Buurt</strong>
+        <strong>Team Cemetery Near Me</strong>
       </Text>
     </BaseTemplate>
   );

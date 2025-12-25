@@ -77,7 +77,7 @@ export const googleReviews = pgTable("google_reviews", {
   rating: integer().notNull(),
   content: text(),
   reviewDate: timestamp("review_date", { mode: 'string' }),
-  language: varchar({ length: 10 }).default('nl'),
+  language: varchar({ length: 10 }).default('en'),
   importedAt: timestamp("imported_at", { mode: 'string' }).defaultNow().notNull(),
 }, (table) => [
   index("google_reviews_cemetery_slug_idx").using("btree", table.cemeterySlug.asc().nullsLast().op("text_ops")),
@@ -142,28 +142,28 @@ export const userCemeteries = pgTable("user_cemeteries", {
   userId: integer("user_id").notNull(),
 
   // Basic info
-  naam: varchar({ length: 255 }).notNull(),
+  name: varchar({ length: 255 }).notNull(),
   slug: varchar({ length: 255 }).notNull(),
-  type: varchar({ length: 100 }).default('algemene begraafplaats').notNull(),
+  type: varchar({ length: 100 }).default('public cemetery').notNull(),
 
   // Location
-  adres: varchar({ length: 255 }),
-  postcode: varchar({ length: 10 }),
-  plaats: varchar({ length: 100 }).notNull(),
-  gemeente: varchar({ length: 100 }).notNull(),
-  provincie: varchar({ length: 50 }).notNull(),
-  gpsCoordinaten: varchar("gps_coordinaten", { length: 50 }),
+  address: varchar({ length: 255 }),
+  zipCode: varchar("zip_code", { length: 10 }),
+  city: varchar({ length: 100 }).notNull(),
+  county: varchar({ length: 100 }).notNull(),
+  state: varchar({ length: 50 }).notNull(),
+  gpsCoordinates: varchar("gps_coordinates", { length: 50 }),
 
   // Contact
-  telefoon: varchar({ length: 50 }),
+  phone: varchar({ length: 50 }),
   email: varchar({ length: 255 }),
   website: varchar({ length: 500 }),
 
   // Details
-  beschrijving: text(),
-  openingstijden: text(),
-  faciliteiten: text(), // comma separated
-  jaarOprichting: varchar("jaar_oprichting", { length: 10 }),
+  description: text(),
+  openingHours: text("opening_hours"),
+  facilities: text(), // comma separated
+  yearEstablished: varchar("year_established", { length: 10 }),
 
   // Photos (JSON array of URLs)
   photos: text(), // JSON array
@@ -180,7 +180,7 @@ export const userCemeteries = pgTable("user_cemeteries", {
 }, (table) => [
   index("user_cemeteries_user_id_idx").using("btree", table.userId.asc().nullsLast().op("int4_ops")),
   index("user_cemeteries_status_idx").using("btree", table.status.asc().nullsLast().op("text_ops")),
-  index("user_cemeteries_gemeente_idx").using("btree", table.gemeente.asc().nullsLast().op("text_ops")),
+  index("user_cemeteries_county_idx").using("btree", table.county.asc().nullsLast().op("text_ops")),
   uniqueIndex("user_cemeteries_slug_unique").using("btree", table.slug.asc().nullsLast()),
 ])
 

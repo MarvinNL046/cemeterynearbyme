@@ -31,7 +31,7 @@ export const businessClaims = pgTable('business_claims', {
   cemeterySlug: varchar('cemetery_slug', { length: 255 }).notNull(),
   cemeteryName: varchar('cemetery_name', { length: 255 }).notNull(),
   status: varchar('status', { length: 50 }).notNull().default('pending'), // pending, approved, rejected
-  jobTitle: varchar('job_title', { length: 255 }), // beheerder, eigenaar, medewerker
+  jobTitle: varchar('job_title', { length: 255 }), // manager, owner, employee
   companyName: varchar('company_name', { length: 255 }),
   message: text('message'), // Why they're claiming
   verificationMethod: varchar('verification_method', { length: 50 }), // email, phone, document
@@ -70,28 +70,28 @@ export const userCemeteries = pgTable('user_cemeteries', {
   userId: integer('user_id').notNull().references(() => users.id),
 
   // Basic info
-  naam: varchar('naam', { length: 255 }).notNull(),
+  name: varchar('name', { length: 255 }).notNull(),
   slug: varchar('slug', { length: 255 }).notNull().unique(),
-  type: varchar('type', { length: 100 }).notNull().default('algemene begraafplaats'),
+  type: varchar('type', { length: 100 }).notNull().default('public cemetery'),
 
   // Location
-  adres: varchar('adres', { length: 255 }),
-  postcode: varchar('postcode', { length: 10 }),
-  plaats: varchar('plaats', { length: 100 }).notNull(),
-  gemeente: varchar('gemeente', { length: 100 }).notNull(),
-  provincie: varchar('provincie', { length: 50 }).notNull(),
-  gpsCoordinaten: varchar('gps_coordinaten', { length: 50 }),
+  address: varchar('address', { length: 255 }),
+  zipCode: varchar('zip_code', { length: 10 }),
+  city: varchar('city', { length: 100 }).notNull(),
+  county: varchar('county', { length: 100 }).notNull(),
+  state: varchar('state', { length: 50 }).notNull(),
+  gpsCoordinates: varchar('gps_coordinates', { length: 50 }),
 
   // Contact
-  telefoon: varchar('telefoon', { length: 50 }),
+  phone: varchar('phone', { length: 50 }),
   email: varchar('email', { length: 255 }),
   website: varchar('website', { length: 500 }),
 
   // Details
-  beschrijving: text('beschrijving'),
-  openingstijden: text('openingstijden'),
-  faciliteiten: text('faciliteiten'), // comma separated
-  jaarOprichting: varchar('jaar_oprichting', { length: 10 }),
+  description: text('description'),
+  openingHours: text('opening_hours'),
+  facilities: text('facilities'), // comma separated
+  yearEstablished: varchar('year_established', { length: 10 }),
 
   // Photos (JSON array of URLs)
   photos: text('photos'), // JSON array

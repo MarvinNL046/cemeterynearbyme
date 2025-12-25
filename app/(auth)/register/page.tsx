@@ -33,13 +33,13 @@ export default function RegisterPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Er is iets misgegaan');
+        throw new Error(data.error || 'Something went wrong');
       }
 
       setCodeHash(data.codeHash);
       setStep('code');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Er is iets misgegaan');
+      setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setLoading(false);
     }
@@ -60,7 +60,7 @@ export default function RegisterPage() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Er is iets misgegaan');
+        throw new Error(data.error || 'Something went wrong');
       }
 
       setStep('success');
@@ -69,7 +69,7 @@ export default function RegisterPage() {
         router.push('/dashboard');
       }, 2000);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Er is iets misgegaan');
+      setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setLoading(false);
     }
@@ -82,7 +82,7 @@ export default function RegisterPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/hero-cemetery.jpg"
-            alt="Serene begraafplaats"
+            alt="Serene cemetery"
             fill
             className="object-cover opacity-30"
           />
@@ -93,17 +93,17 @@ export default function RegisterPage() {
               <Trees className="w-6 h-6 text-gold-400" />
             </div>
             <div>
-              <span className="text-2xl font-serif font-bold text-white">Begraafplaats</span>
-              <span className="text-2xl font-serif font-bold text-gold-400">indebuurt</span>
+              <span className="text-2xl font-serif font-bold text-white">Cemetery</span>
+              <span className="text-2xl font-serif font-bold text-gold-400">NearMe</span>
             </div>
           </Link>
           <h2 className="font-serif text-4xl xl:text-5xl font-bold text-white leading-tight mb-6">
-            Vind rust, historie
+            Find peace, history
             <br />
-            <span className="text-gold-300">en herinnering.</span>
+            <span className="text-gold-300">and remembrance.</span>
           </h2>
           <p className="text-white/70 text-lg max-w-md">
-            Maak een account aan en beheer uw begraafplaats vermeldingen. Help bezoekers de juiste informatie te vinden.
+            Create an account and manage your cemetery listings. Help visitors find the right information.
           </p>
 
           {/* Benefits on desktop */}
@@ -112,19 +112,19 @@ export default function RegisterPage() {
               <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center">
                 <CheckCircle className="w-4 h-4 text-gold-400" />
               </div>
-              <span className="text-white/80">Begraafplaats vermeldingen claimen</span>
+              <span className="text-white/80">Claim cemetery listings</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center">
                 <CheckCircle className="w-4 h-4 text-gold-400" />
               </div>
-              <span className="text-white/80">Gegevens van uw locaties beheren</span>
+              <span className="text-white/80">Manage your location information</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center">
                 <CheckCircle className="w-4 h-4 text-gold-400" />
               </div>
-              <span className="text-white/80">Statistieken en berichten inzien</span>
+              <span className="text-white/80">View statistics and messages</span>
             </div>
           </div>
         </div>
@@ -138,8 +138,8 @@ export default function RegisterPage() {
             <Link href="/" className="inline-flex items-center gap-2">
               <Trees className="w-8 h-8 text-primary" />
               <div>
-                <span className="text-xl font-serif font-bold text-primary">Begraafplaats</span>
-                <span className="text-xl font-serif font-bold text-accent">indebuurt</span>
+                <span className="text-xl font-serif font-bold text-primary">Cemetery</span>
+                <span className="text-xl font-serif font-bold text-accent">NearMe</span>
               </div>
             </Link>
           </div>
@@ -148,12 +148,12 @@ export default function RegisterPage() {
             {/* Header */}
             <div className="text-center mb-8">
               <h1 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-2">
-                {step === 'success' ? 'Account aangemaakt!' : 'Account aanmaken'}
+                {step === 'success' ? 'Account created!' : 'Create account'}
               </h1>
               <p className="text-muted-foreground">
-                {step === 'details' && 'Maak een account om vermeldingen te claimen'}
-                {step === 'code' && 'Voer de verificatiecode in'}
-                {step === 'success' && 'U wordt doorgestuurd naar uw dashboard'}
+                {step === 'details' && 'Create an account to claim listings'}
+                {step === 'code' && 'Enter the verification code'}
+                {step === 'success' && 'You will be redirected to your dashboard'}
               </p>
             </div>
 
@@ -168,7 +168,7 @@ export default function RegisterPage() {
               <form onSubmit={handleSendCode} className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Naam
+                    Name
                   </label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -177,7 +177,7 @@ export default function RegisterPage() {
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder="Jan Jansen"
+                      placeholder="John Smith"
                       required
                       className="w-full pl-10 pr-4 py-3 border border-input rounded-lg bg-background focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
                     />
@@ -186,7 +186,7 @@ export default function RegisterPage() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    E-mailadres
+                    Email address
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -195,7 +195,7 @@ export default function RegisterPage() {
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="naam@voorbeeld.nl"
+                      placeholder="name@example.com"
                       required
                       className="w-full pl-10 pr-4 py-3 border border-input rounded-lg bg-background focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
                     />
@@ -213,7 +213,7 @@ export default function RegisterPage() {
                     <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
                     <>
-                      Account aanmaken
+                      Create account
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </>
                   )}
@@ -225,10 +225,10 @@ export default function RegisterPage() {
               <form onSubmit={handleVerifyCode} className="space-y-6">
                 <div>
                   <label htmlFor="code" className="block text-sm font-medium text-foreground mb-2">
-                    Verificatiecode
+                    Verification code
                   </label>
                   <p className="text-sm text-muted-foreground mb-3">
-                    We hebben een 6-cijferige code gestuurd naar <strong className="text-foreground">{email}</strong>
+                    We sent a 6-digit code to <strong className="text-foreground">{email}</strong>
                   </p>
                   <div className="relative">
                     <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -257,7 +257,7 @@ export default function RegisterPage() {
                     <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
                     <>
-                      Verifiëren
+                      Verify
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </>
                   )}
@@ -272,7 +272,7 @@ export default function RegisterPage() {
                   }}
                   className="w-full text-muted-foreground hover:text-foreground text-sm py-2 transition-colors"
                 >
-                  Terug naar gegevens
+                  Back to details
                 </button>
               </form>
             )}
@@ -282,9 +282,9 @@ export default function RegisterPage() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                   <CheckCircle className="w-8 h-8 text-primary" />
                 </div>
-                <h2 className="text-xl font-semibold text-foreground mb-2">Welkom, {name}!</h2>
+                <h2 className="text-xl font-semibold text-foreground mb-2">Welcome, {name}!</h2>
                 <p className="text-muted-foreground mb-4">
-                  Uw account is succesvol aangemaakt. U wordt nu doorgestuurd naar uw dashboard.
+                  Your account has been successfully created. You will now be redirected to your dashboard.
                 </p>
                 <Loader2 className="w-6 h-6 animate-spin text-accent mx-auto" />
               </div>
@@ -294,9 +294,9 @@ export default function RegisterPage() {
             {step !== 'success' && (
               <div className="mt-8 pt-6 border-t border-border text-center">
                 <p className="text-muted-foreground">
-                  Al een account?{' '}
+                  Already have an account?{' '}
                   <Link href="/login" className="text-accent hover:text-accent/80 font-semibold transition-colors">
-                    Inloggen
+                    Log in
                   </Link>
                 </p>
               </div>
@@ -307,26 +307,26 @@ export default function RegisterPage() {
           {step === 'details' && (
             <div className="lg:hidden mt-8 space-y-3">
               <h3 className="text-sm font-semibold text-foreground text-center mb-4">
-                Met een account kunt u:
+                With an account you can:
               </h3>
               <div className="grid gap-3">
                 <div className="flex items-center gap-3 bg-card rounded-lg p-3 shadow-sm border border-border">
                   <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="text-sm text-foreground">Begraafplaats vermeldingen claimen</span>
+                  <span className="text-sm text-foreground">Claim cemetery listings</span>
                 </div>
                 <div className="flex items-center gap-3 bg-card rounded-lg p-3 shadow-sm border border-border">
                   <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="text-sm text-foreground">Gegevens van uw locaties beheren</span>
+                  <span className="text-sm text-foreground">Manage your location information</span>
                 </div>
                 <div className="flex items-center gap-3 bg-card rounded-lg p-3 shadow-sm border border-border">
                   <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="text-sm text-foreground">Statistieken en berichten inzien</span>
+                  <span className="text-sm text-foreground">View statistics and messages</span>
                 </div>
               </div>
             </div>
@@ -334,9 +334,9 @@ export default function RegisterPage() {
 
           {/* Privacy note */}
           <p className="text-center text-muted-foreground text-sm mt-6">
-            Door te registreren gaat u akkoord met onze{' '}
+            By registering you agree to our{' '}
             <Link href="/privacy" className="text-accent hover:underline">
-              privacyverklaring
+              privacy policy
             </Link>
           </p>
         </div>

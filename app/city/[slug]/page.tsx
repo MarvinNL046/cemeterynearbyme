@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getCemeteriesByPlace, createPlaceSlug, getAllPlaces, getMunicipalityByPlace, getProvinceByPlace, createMunicipalitySlug } from '@/lib/data';
+import { getAllCities, getCemeteriesByCity, createCitySlug, createCountySlug, createStateSlug } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import { Building, Info } from 'lucide-react';
 import CemeteryCard from '@/components/CemeteryCard';
@@ -15,66 +15,67 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const places = await getAllPlaces();
-  return places.map((place) => ({
-    slug: createPlaceSlug(place),
+  const cities = await getAllCities();
+  return cities.map((city) => ({
+    slug: createCitySlug(city),
   }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  // Find the place name from slug
-  const places = await getAllPlaces();
-  const place = places.find(p => createPlaceSlug(p) === params.slug);
-  
-  if (!place) {
+  const cities = await getAllCities();
+  const city = cities.find(c => createCitySlug(c) === params.slug);
+
+  if (!city) {
     return {
-      title: 'Plaats niet gevonden',
+      title: 'City not found',
     };
   }
 
-  const municipality = await getMunicipalityByPlace(place);
-  const province = await getProvinceByPlace(place);
-  const cemeteries = await getCemeteriesByPlace(place);
-  
+  const cemeteries = await getCemeteriesByCity(city);
+  const county = cemeteries[0]?.county || '';
+  const state = cemeteries[0]?.state || '';
+
   return {
-    title: `Begraafplaatsen in ${place} | Begraafplaats in de Buurt`,
-    description: `Overzicht van alle ${cemeteries.length} begraafplaatsen in ${place}, gemeente ${municipality}, ${province}. Vind informatie over begraafplaatsen, kerkhoven en laatste rustplaatsen.`,
+    title: `Cemeteries in ${city} | Cemetery Near Me`,
+    description: `Find all ${cemeteries.length} cemeteries in ${city}, ${county ? `${county} County, ` : ''}${state}. View locations, hours, and directions for local cemeteries.`,
     openGraph: {
-      title: `Begraafplaatsen in ${place}`,
-      description: `Alle begraafplaatsen in ${place}, ${municipality}`,
+      title: `Cemeteries in ${city}`,
+      description: `All cemeteries in ${city}${county ? `, ${county} County` : ''}`,
       type: 'website',
     },
   };
 }
 
-export default async function PlacePage({ params }: PageProps) {
-  // Find the place name from slug
-  const places = await getAllPlaces();
-  const place = places.find(p => createPlaceSlug(p) === params.slug);
-  
-  if (!place) {
+export default async function CityPage({ params }: PageProps) {
+  const cities = await getAllCities();
+  const city = cities.find(c => createCitySlug(c) === params.slug);
+
+  if (!city) {
     notFound();
   }
 
-  const cemeteries = await getCemeteriesByPlace(place);
-  const municipality = await getMunicipalityByPlace(place);
-  const province = await getProvinceByPlace(place);
+  const cemeteries = await getCemeteriesByCity(city);
 
-  if (!municipality || !province) {
+  if (cemeteries.length === 0) {
     notFound();
   }
+
+  const county = cemeteries[0]?.county || '';
+  const state = cemeteries[0]?.state || '';
+  const stateAbbr = cemeteries[0]?.state_abbr || '';
 
   // Count cemetery types
   const typeCount = cemeteries.reduce((acc, cemetery) => {
-    acc[cemetery.type] = (acc[cemetery.type] || 0) + 1;
+    const typeName = cemetery.type || 'Cemetery';
+    acc[typeName] = (acc[typeName] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `Begraafplaatsen in ${place}`,
-    description: `Overzicht van alle begraafplaatsen in ${place}, ${municipality}`,
+    name: `Cemeteries in ${city}`,
+    description: `Directory of all cemeteries in ${city}${county ? `, ${county} County` : ''}`,
     breadcrumb: {
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -82,25 +83,25 @@ export default async function PlacePage({ params }: PageProps) {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://www.begraafplaatsindebuurt.nl'
+          item: 'https://www.cemeterynearbyme.com'
         },
         {
           '@type': 'ListItem',
           position: 2,
-          name: province,
-          item: `https://www.begraafplaatsindebuurt.nl/provincie/${province.toLowerCase().replace(/\s+/g, '-')}`
+          name: state,
+          item: `https://www.cemeterynearbyme.com/state/${createStateSlug(state)}`
         },
-        {
+        ...(county ? [{
           '@type': 'ListItem',
           position: 3,
-          name: municipality,
-          item: `https://www.begraafplaatsindebuurt.nl/gemeente/${createMunicipalitySlug(municipality)}`
-        },
+          name: `${county} County`,
+          item: `https://www.cemeterynearbyme.com/county/${createCountySlug(county)}`
+        }] : []),
         {
           '@type': 'ListItem',
-          position: 4,
-          name: place,
-          item: `https://www.begraafplaatsindebuurt.nl/plaats/${params.slug}`
+          position: county ? 4 : 3,
+          name: city,
+          item: `https://www.cemeterynearbyme.com/city/${params.slug}`
         }
       ]
     },
@@ -110,7 +111,7 @@ export default async function PlacePage({ params }: PageProps) {
       itemListElement: cemeteries.map((cemetery, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        url: `https://www.begraafplaatsindebuurt.nl/begraafplaats/${cemetery.slug}`
+        url: `https://www.cemeterynearbyme.com/cemetery/${cemetery.slug}`
       }))
     }
   };
@@ -121,10 +122,10 @@ export default async function PlacePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
+
       {/* Leaderboard Ad at top */}
       <LeaderboardAd />
-      
+
       <div className="container mx-auto px-4 py-8">
         {/* Breadcrumb Navigation */}
         <nav className="mb-8">
@@ -132,34 +133,38 @@ export default async function PlacePage({ params }: PageProps) {
             <li><Link href="/" className="hover:text-foreground">Home</Link></li>
             <li>/</li>
             <li>
-              <Link 
-                href={`/provincie/${province.toLowerCase().replace(/\s+/g, '-')}`}
+              <Link
+                href={`/state/${createStateSlug(state)}`}
                 className="hover:text-foreground"
               >
-                {province}
+                {state}
               </Link>
             </li>
+            {county && (
+              <>
+                <li>/</li>
+                <li>
+                  <Link
+                    href={`/county/${createCountySlug(county)}`}
+                    className="hover:text-foreground"
+                  >
+                    {county} County
+                  </Link>
+                </li>
+              </>
+            )}
             <li>/</li>
-            <li>
-              <Link 
-                href={`/gemeente/${createMunicipalitySlug(municipality)}`}
-                className="hover:text-foreground"
-              >
-                {municipality}
-              </Link>
-            </li>
-            <li>/</li>
-            <li className="text-foreground">{place}</li>
+            <li className="text-foreground">{city}</li>
           </ol>
         </nav>
 
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-4">
-            Begraafplaatsen in {place}
+            Cemeteries in {city}
           </h1>
           <p className="text-lg text-muted-foreground">
-            Er zijn {cemeteries.length} begraafplaatsen in {place}, gemeente {municipality}, provincie {province}.
+            There {cemeteries.length === 1 ? 'is' : 'are'} {cemeteries.length} {cemeteries.length === 1 ? 'cemetery' : 'cemeteries'} in {city}{county ? `, ${county} County` : ''}, {state}.
           </p>
         </div>
 
@@ -170,11 +175,11 @@ export default async function PlacePage({ params }: PageProps) {
               <Building className="w-5 h-5 text-muted-foreground" />
               <div>
                 <p className="text-2xl font-bold">{cemeteries.length}</p>
-                <p className="text-sm text-muted-foreground">Totaal aantal</p>
+                <p className="text-sm text-muted-foreground">Total</p>
               </div>
             </div>
           </div>
-          {Object.entries(typeCount).map(([type, count]) => (
+          {Object.entries(typeCount).slice(0, 3).map(([type, count]) => (
             <div key={type} className="bg-card rounded-lg p-6 shadow-sm border">
               <div className="flex items-center gap-3">
                 <Info className="w-5 h-5 text-muted-foreground" />
@@ -213,25 +218,27 @@ export default async function PlacePage({ params }: PageProps) {
           <div className="lg:col-span-1">
             <div className="sticky top-4 space-y-6">
               <SidebarAd sticky={false} />
-              
+
               {/* Related Links */}
               <div className="bg-card rounded-lg p-6 shadow-sm border">
-                <h3 className="text-lg font-semibold mb-4">Gerelateerde Pagina&apos;s</h3>
+                <h3 className="text-lg font-semibold mb-4">Related Pages</h3>
                 <ul className="space-y-2">
+                  {county && (
+                    <li>
+                      <Link
+                        href={`/county/${createCountySlug(county)}`}
+                        className="text-sm text-muted-foreground hover:text-foreground"
+                      >
+                        All cemeteries in {county} County
+                      </Link>
+                    </li>
+                  )}
                   <li>
-                    <Link 
-                      href={`/gemeente/${createMunicipalitySlug(municipality)}`}
+                    <Link
+                      href={`/state/${createStateSlug(state)}`}
                       className="text-sm text-muted-foreground hover:text-foreground"
                     >
-                      Alle begraafplaatsen in {municipality}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link 
-                      href={`/provincie/${province.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-sm text-muted-foreground hover:text-foreground"
-                    >
-                      Alle begraafplaatsen in {province}
+                      All cemeteries in {state}
                     </Link>
                   </li>
                 </ul>
@@ -239,10 +246,10 @@ export default async function PlacePage({ params }: PageProps) {
 
               {/* Info Box */}
               <div className="bg-muted rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-2">Over {place}</h3>
+                <h3 className="text-lg font-semibold mb-2">About {city}</h3>
                 <p className="text-sm text-muted-foreground">
-                  {place} is een plaats in de gemeente {municipality}, provincie {province}. 
-                  Op deze pagina vindt u een overzicht van alle begraafplaatsen in deze plaats.
+                  {city} is located in {county ? `${county} County, ` : ''}{state}.
+                  This page provides an overview of all cemeteries in this area.
                 </p>
               </div>
             </div>
@@ -251,37 +258,36 @@ export default async function PlacePage({ params }: PageProps) {
 
         {/* SEO Content */}
         <div className="mt-12 prose prose-lg max-w-none">
-          <h2>Begraafplaatsen en Kerkhoven in {place}</h2>
+          <h2>Cemeteries and Memorial Parks in {city}</h2>
           <p>
-            In {place} vindt u verschillende typen begraafplaatsen, van historische kerkhoven bij kerken tot 
-            moderne algemene begraafplaatsen. Elke begraafplaats heeft zijn eigen karakter en geschiedenis.
+            In {city} you&apos;ll find various types of cemeteries, from historic churchyards to
+            modern memorial parks. Each cemetery has its own character and history.
           </p>
-          
-          {typeCount['algemene begraafplaats'] > 0 && (
+
+          {typeCount['Public Cemetery'] > 0 && (
             <>
-              <h3>Algemene Begraafplaatsen</h3>
+              <h3>Public Cemeteries</h3>
               <p>
-                {place} heeft {typeCount['algemene begraafplaats']} algemene begraafplaats{typeCount['algemene begraafplaats'] > 1 ? 'en' : ''}. 
-                Deze zijn toegankelijk voor iedereen, ongeacht geloof of levensovertuiging.
+                {city} has {typeCount['Public Cemetery']} public {typeCount['Public Cemetery'] > 1 ? 'cemeteries' : 'cemetery'}.
+                These are open to everyone, regardless of religious affiliation.
               </p>
             </>
           )}
-          
-          {typeCount['bijzondere begraafplaats'] > 0 && (
+
+          {typeCount['National Cemetery'] > 0 && (
             <>
-              <h3>Bijzondere Begraafplaatsen</h3>
+              <h3>National Cemeteries</h3>
               <p>
-                Er {typeCount['bijzondere begraafplaats'] > 1 ? 'zijn' : 'is'} {typeCount['bijzondere begraafplaats']} bijzondere 
-                begraafplaats{typeCount['bijzondere begraafplaats'] > 1 ? 'en' : ''} in {place}. Dit zijn vaak kerkhoven bij kerken 
-                of begraafplaatsen van specifieke geloofsgemeenschappen.
+                There {typeCount['National Cemetery'] > 1 ? 'are' : 'is'} {typeCount['National Cemetery']} national
+                {typeCount['National Cemetery'] > 1 ? ' cemeteries' : ' cemetery'} in {city}, honoring those who served our country.
               </p>
             </>
           )}
-          
-          <h3>Informatie en Contact</h3>
+
+          <h3>Visiting Information</h3>
           <p>
-            Voor meer informatie over een specifieke begraafplaats in {place}, klik op de gewenste begraafplaats 
-            hierboven. Daar vindt u contactgegevens, openingstijden en routebeschrijvingen.
+            For more information about a specific cemetery in {city}, click on the cemetery
+            above. There you will find contact details, visiting hours, and directions.
           </p>
         </div>
       </div>

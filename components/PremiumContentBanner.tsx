@@ -11,45 +11,45 @@ export default function PremiumContentBanner() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <BookOpen className="w-6 h-6 text-primary" />
-              <span className="text-sm font-medium text-primary">GRATIS GIDS</span>
+              <span className="text-sm font-medium text-primary">FREE GUIDE</span>
             </div>
-            
+
             <h3 className="text-2xl font-bold mb-3">
-              De Complete Gids voor Nabestaanden
+              The Complete Guide for Family Members
             </h3>
-            
+
             <p className="text-gray-700 mb-4">
-              Download onze uitgebreide gids met alles wat u moet weten over:
+              Download our comprehensive guide with everything you need to know about:
             </p>
-            
+
             <ul className="space-y-2 mb-6">
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                <span className="text-sm">Stap-voor-stap uitvaartplanning</span>
+                <span className="text-sm">Step-by-step funeral planning</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                <span className="text-sm">Kostenoverzicht en besparingstips</span>
+                <span className="text-sm">Cost overview and money-saving tips</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                <span className="text-sm">Juridische zaken en formaliteiten</span>
+                <span className="text-sm">Legal matters and formalities</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                <span className="text-sm">Emotionele ondersteuning en rouwverwerking</span>
+                <span className="text-sm">Emotional support and grief processing</span>
               </li>
             </ul>
-            
+
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/download-gids">
+              <Link href="/download-guide">
                 <Button size="lg" className="group">
                   <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                  Download gratis (PDF)
+                  Download free (PDF)
                 </Button>
               </Link>
               <p className="text-xs text-gray-500 self-center">
-                Geen registratie vereist • Direct downloaden
+                No registration required • Instant download
               </p>
             </div>
           </div>

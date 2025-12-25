@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
     const { email, code, codeHash } = body;
 
     if (!email || !code || !codeHash) {
-      return NextResponse.json({ error: 'Email, code en codeHash zijn verplicht' }, { status: 400 });
+      return NextResponse.json({ error: 'Email, code and codeHash are required' }, { status: 400 });
     }
 
     // Decode and verify the code hash
@@ -20,28 +20,28 @@ export async function POST(request: NextRequest) {
 
       // Verify email matches
       if (storedEmail.toLowerCase() !== email.toLowerCase()) {
-        return NextResponse.json({ error: 'Ongeldige verificatie' }, { status: 400 });
+        return NextResponse.json({ error: 'Invalid verification' }, { status: 400 });
       }
 
       // Verify code matches
       if (storedCode !== code) {
-        return NextResponse.json({ error: 'Onjuiste code' }, { status: 400 });
+        return NextResponse.json({ error: 'Incorrect code' }, { status: 400 });
       }
 
       // Verify not expired
       const expiresAt = parseInt(expiresAtStr, 10);
       if (Date.now() > expiresAt) {
-        return NextResponse.json({ error: 'Code is verlopen' }, { status: 400 });
+        return NextResponse.json({ error: 'Code has expired' }, { status: 400 });
       }
     } catch {
-      return NextResponse.json({ error: 'Ongeldige verificatie' }, { status: 400 });
+      return NextResponse.json({ error: 'Invalid verification' }, { status: 400 });
     }
 
     // Get or create user
     const user = await findUserByEmail(email);
 
     if (!user) {
-      return NextResponse.json({ error: 'Gebruiker niet gevonden' }, { status: 404 });
+      return NextResponse.json({ error: 'User not found' }, { status: 404 });
     }
 
     // Check if this is first time verification (for welcome email)
@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
     // Create response with cookie
     const response = NextResponse.json({
       success: true,
-      message: 'Succesvol ingelogd',
+      message: 'Successfully logged in',
       user: {
         id: user.id,
         email: user.email,
@@ -91,6 +91,6 @@ export async function POST(request: NextRequest) {
     return response;
   } catch (error) {
     console.error('Verify code error:', error);
-    return NextResponse.json({ error: 'Er is iets misgegaan' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }

@@ -4,6 +4,7 @@ import { MapPin, ChevronRight, Building2, ArrowRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import statesData from '@/data/states.json';
 import cemeteriesData from '@/data/cemeteries.json';
+import { getStatesComingSoonText } from '@/lib/stats-config';
 
 export const metadata: Metadata = {
   title: 'All States | Cemetery Near Me',
@@ -197,7 +198,7 @@ export default function StatesPage() {
                   <div>
                     <h2 className="font-serif text-lg font-semibold mb-2">More States Coming Soon</h2>
                     <p className="text-muted-foreground mb-3">
-                      We&apos;re actively adding cemetery data for all 50 states. Check back soon for updates!
+                      {getStatesComingSoonText()}
                     </p>
                     <p className="text-sm text-muted-foreground">
                       Currently adding data for {pendingStates.length} more states including {pendingStates.slice(0, 3).map(s => s.name).join(', ')}, and more.

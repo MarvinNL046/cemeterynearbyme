@@ -24,9 +24,9 @@ export async function GET(request: NextRequest) {
     if (search) {
       whereConditions.push(
         or(
-          like(userCemeteries.naam, `%${search}%`),
-          like(userCemeteries.gemeente, `%${search}%`),
-          like(userCemeteries.plaats, `%${search}%`)
+          like(userCemeteries.name, `%${search}%`),
+          like(userCemeteries.county, `%${search}%`),
+          like(userCemeteries.city, `%${search}%`)
         )
       );
     }
@@ -52,14 +52,14 @@ export async function GET(request: NextRequest) {
       .select({
         id: userCemeteries.id,
         userId: userCemeteries.userId,
-        naam: userCemeteries.naam,
+        name: userCemeteries.name,
         slug: userCemeteries.slug,
         type: userCemeteries.type,
-        adres: userCemeteries.adres,
-        postcode: userCemeteries.postcode,
-        plaats: userCemeteries.plaats,
-        gemeente: userCemeteries.gemeente,
-        provincie: userCemeteries.provincie,
+        address: userCemeteries.address,
+        zipCode: userCemeteries.zipCode,
+        city: userCemeteries.city,
+        county: userCemeteries.county,
+        state: userCemeteries.state,
         status: userCemeteries.status,
         rejectionReason: userCemeteries.rejectionReason,
         createdAt: userCemeteries.createdAt,

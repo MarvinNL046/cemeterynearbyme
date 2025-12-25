@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getAllProvinces, getAllMunicipalities, getAllTypes } from '@/lib/data';
+import { getAllStates, getAllCounties, getAllTypes } from '@/lib/data';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -7,20 +7,20 @@ export async function GET(request: Request) {
 
   try {
     switch (type) {
-      case 'provinces':
-        const provinces = await getAllProvinces();
-        return NextResponse.json(provinces);
-      
-      case 'municipalities':
-        const municipalities = await getAllMunicipalities();
-        return NextResponse.json(municipalities);
-      
+      case 'states':
+        const states = await getAllStates();
+        return NextResponse.json(states);
+
+      case 'counties':
+        const counties = await getAllCounties();
+        return NextResponse.json(counties);
+
       case 'types':
         const types = await getAllTypes();
         return NextResponse.json(types);
-      
+
       default:
-        return NextResponse.json({ error: 'Invalid type parameter' }, { status: 400 });
+        return NextResponse.json({ error: 'Invalid type parameter. Use: states, counties, or types' }, { status: 400 });
     }
   } catch (error) {
     console.error('API Error:', error);

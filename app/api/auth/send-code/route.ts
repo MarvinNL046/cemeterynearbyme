@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     const { email, name, type = 'login' } = body;
 
     if (!email) {
-      return NextResponse.json({ error: 'Email is verplicht' }, { status: 400 });
+      return NextResponse.json({ error: 'Email is required' }, { status: 400 });
     }
 
     const normalizedEmail = email.toLowerCase().trim();
@@ -19,14 +19,14 @@ export async function POST(request: NextRequest) {
     // For registration, create user if doesn't exist
     if (type === 'register' && !user) {
       if (!name) {
-        return NextResponse.json({ error: 'Naam is verplicht voor registratie' }, { status: 400 });
+        return NextResponse.json({ error: 'Name is required for registration' }, { status: 400 });
       }
       user = await createUser({ email: normalizedEmail, name });
     }
 
     // For login, user must exist
     if (type === 'login' && !user) {
-      return NextResponse.json({ error: 'Geen account gevonden met dit e-mailadres' }, { status: 404 });
+      return NextResponse.json({ error: 'No account found with this email address' }, { status: 404 });
     }
 
     // Generate 6-digit code
@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
     const emailResult = await sendVerificationEmail(normalizedEmail, code, type as 'register' | 'login' | 'claim');
 
     if (!emailResult.success) {
-      return NextResponse.json({ error: 'Kon email niet verzenden' }, { status: 500 });
+      return NextResponse.json({ error: 'Could not send email' }, { status: 500 });
     }
 
     // Store code securely - we'll use a simple hash in the response that client must send back
@@ -55,12 +55,12 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Verificatiecode verzonden naar uw e-mail',
+      message: 'Verification code sent to your email',
       codeHash, // Client must send this back with the code
       expiresAt: expiresAt.toISOString(),
     });
   } catch (error) {
     console.error('Send code error:', error);
-    return NextResponse.json({ error: 'Er is iets misgegaan' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }

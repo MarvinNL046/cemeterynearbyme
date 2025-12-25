@@ -39,34 +39,31 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Begraafplaats in de Buurt - Vind een Begraafplaats bij u in de Buurt",
-  description: "Zoek eenvoudig naar begraafplaatsen in uw omgeving. Vind contactgegevens, openingstijden en routebeschrijvingen van begraafplaatsen in heel Nederland.",
-  keywords: "begraafplaats, begraafplaatsen, Nederland, kerkhof, uitvaart, laatste rustplaats, graf, crematorium",
-  authors: [{ name: "Begraafplaats in de Buurt" }],
+  title: "Cemetery Near Me - Find Cemeteries & Memorial Parks in the USA",
+  description: "Find cemeteries, memorial parks, and burial grounds near you. Search by state, city, or zip code. Get directions, contact info, and reviews for cemeteries across the United States.",
+  keywords: "cemetery near me, cemeteries, memorial park, burial ground, graveyard, funeral, crematorium, national cemetery, veterans cemetery, USA",
+  authors: [{ name: "Cemetery Near Me" }],
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Begraafplaats",
+    title: "Cemetery Near Me",
   },
   formatDetection: {
     telephone: true,
   },
-  verification: {
-    google: "6gIM1Pu7N2Z1xioNHH17jYaaTPE-5Cx9SWWi-I02YKI",
-  },
   openGraph: {
     type: "website",
-    locale: "nl_NL",
-    url: "https://www.begraafplaatsindebuurt.nl",
-    title: "Begraafplaats in de Buurt",
-    description: "Vind eenvoudig een begraafplaats bij u in de buurt",
-    siteName: "Begraafplaats in de Buurt",
+    locale: "en_US",
+    url: "https://www.cemeterynearbyme.com",
+    title: "Cemetery Near Me - Find Cemeteries in the USA",
+    description: "Find cemeteries, memorial parks, and burial grounds near you across the United States.",
+    siteName: "Cemetery Near Me",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Begraafplaats in de Buurt",
-    description: "Vind eenvoudig een begraafplaats bij u in de buurt",
+    title: "Cemetery Near Me - Find Cemeteries in the USA",
+    description: "Find cemeteries, memorial parks, and burial grounds near you across the United States.",
   },
   robots: {
     index: true,
@@ -80,7 +77,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.begraafplaatsindebuurt.nl",
+    canonical: "https://www.cemeterynearbyme.com",
   },
 };
 
@@ -90,7 +87,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl">
+    <html lang="en">
       <head>
         {/* PWA Icons */}
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />

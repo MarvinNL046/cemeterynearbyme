@@ -6,6 +6,9 @@ import LeaderboardAd from '@/components/ads/LeaderboardAd';
 import InlineAd from '@/components/ads/InlineAd';
 import PremiumContentBanner from '@/components/PremiumContentBanner';
 import { blogPosts, categories } from '@/lib/blog-data';
+import { getCtaStatsText } from '@/lib/stats-config';
+
+const ctaStatsText = getCtaStatsText();
 
 // Array of real cemetery images from our dataset
 const cemeteryImages = [
@@ -32,21 +35,21 @@ function getCemeteryImage(index: number): string {
 }
 
 export const metadata: Metadata = {
-  title: 'Blog | Begraafplaats in de Buurt - Artikelen over Begraafplaatsen',
-  description: 'Lees interessante artikelen over begraafplaatsen in Nederland, funeraire cultuur, geschiedenis, kosten, etiquette en praktische tips voor nabestaanden.',
-  keywords: 'begraafplaats blog, funeraire cultuur, uitvaart nederland, begraafplaats geschiedenis, grafmonumenten, natuurbegraafplaats, crematie versus begraven',
-  authors: [{ name: 'Marvin Smit' }],
+  title: 'Blog | Cemetery Near Me - Articles about Cemeteries',
+  description: 'Read interesting articles about cemeteries in the USA, funeral culture, history, costs, etiquette and practical tips for families.',
+  keywords: 'cemetery blog, funeral culture, cemetery usa, cemetery history, headstones, green burial, cremation versus burial',
+  authors: [{ name: 'Cemetery Near Me' }],
   openGraph: {
-    title: 'Blog - Begraafplaats in de Buurt',
-    description: 'Interessante artikelen over begraafplaatsen, uitvaarten en funeraire cultuur in Nederland',
+    title: 'Blog - Cemetery Near Me',
+    description: 'Interesting articles about cemeteries, funerals and memorial culture in the USA',
     type: 'website',
-    siteName: 'Begraafplaats in de Buurt',
-    locale: 'nl_NL',
+    siteName: 'Cemetery Near Me',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog - Begraafplaats in de Buurt',
-    description: 'Interessante artikelen over begraafplaatsen en funeraire cultuur in Nederland',
+    title: 'Blog - Cemetery Near Me',
+    description: 'Interesting articles about cemeteries and memorial culture in the USA',
   },
   robots: {
     index: true,
@@ -81,19 +84,19 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl">
-            Ontdek interessante verhalen, praktische tips en historische achtergronden
-            over begraafplaatsen in Nederland.
+            Discover interesting stories, practical tips and historical backgrounds
+            about cemeteries in the USA.
           </p>
 
           {/* Stats */}
           <div className="flex flex-wrap gap-8 mt-8">
             <div>
               <div className="text-3xl font-bold text-gold-300">{blogPosts.length}</div>
-              <div className="text-primary-foreground/70 text-sm">Artikelen</div>
+              <div className="text-primary-foreground/70 text-sm">Articles</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-gold-300">{categories.length}</div>
-              <div className="text-primary-foreground/70 text-sm">Categorieën</div>
+              <div className="text-primary-foreground/70 text-sm">Categories</div>
             </div>
           </div>
         </div>
@@ -107,7 +110,7 @@ export default function BlogPage() {
               <Card className="p-6 shadow-soft sticky top-4">
                 <div className="flex items-center gap-2 mb-4">
                   <Tag className="w-5 h-5 text-accent" />
-                  <h3 className="font-serif font-semibold">Categorieën</h3>
+                  <h3 className="font-serif font-semibold">Categories</h3>
                 </div>
                 <ul className="space-y-3">
                   {categories.map((category) => (
@@ -138,7 +141,7 @@ export default function BlogPage() {
                     />
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-semibold rounded-full">
-                        UITGELICHT
+                        FEATURED
                       </span>
                     </div>
                   </div>
@@ -153,7 +156,7 @@ export default function BlogPage() {
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
-                        {new Date(blogPosts[0].date).toLocaleDateString('nl-NL')}
+                        {new Date(blogPosts[0].date).toLocaleDateString('en-US')}
                       </span>
                       <span className="flex items-center gap-1">
                         <Clock className="w-4 h-4" />
@@ -164,7 +167,7 @@ export default function BlogPage() {
                       href={`/blog/${blogPosts[0].slug}`}
                       className="mt-6 inline-flex items-center gap-2 text-accent font-medium hover:underline"
                     >
-                      Lees artikel
+                      Read article
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -202,7 +205,7 @@ export default function BlogPage() {
                         <div className="flex items-center gap-3 text-sm text-muted-foreground">
                           <span className="flex items-center gap-1">
                             <Calendar className="w-3 h-3" />
-                            {new Date(post.date).toLocaleDateString('nl-NL')}
+                            {new Date(post.date).toLocaleDateString('en-US')}
                           </span>
                           <span className="flex items-center gap-1">
                             <Clock className="w-3 h-3" />
@@ -213,7 +216,7 @@ export default function BlogPage() {
                           href={`/blog/${post.slug}`}
                           className="text-accent hover:underline text-sm flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
                         >
-                          Lees meer
+                          Read more
                           <ArrowRight className="w-3 h-3" />
                         </Link>
                       </div>
@@ -232,22 +235,22 @@ export default function BlogPage() {
                 <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="font-serif text-2xl font-semibold mb-3">Blijf op de hoogte</h3>
+                <h3 className="font-serif text-2xl font-semibold mb-3">Stay informed</h3>
                 <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-                  Ontvang maandelijks interessante artikelen over begraafplaatsen,
-                  geschiedenis en cultuur in uw inbox.
+                  Receive monthly interesting articles about cemeteries,
+                  history and culture in your inbox.
                 </p>
                 <form className="max-w-md mx-auto flex gap-2">
                   <input
                     type="email"
-                    placeholder="Uw e-mailadres"
+                    placeholder="Your email address"
                     className="flex-1 px-4 py-2 border-2 rounded-lg focus:outline-none focus:border-accent bg-background"
                   />
                   <button
                     type="submit"
                     className="px-6 py-2 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/90 transition-colors"
                   >
-                    Aanmelden
+                    Subscribe
                   </button>
                 </form>
               </Card>
@@ -257,16 +260,16 @@ export default function BlogPage() {
           {/* CTA Section */}
           <div className="mt-16 text-center">
             <h2 className="font-serif text-2xl font-semibold mb-4">
-              Op zoek naar een begraafplaats?
+              Looking for a cemetery?
             </h2>
             <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-              Zoek direct naar begraafplaatsen in onze uitgebreide database met meer dan 3.800 locaties.
+              {ctaStatsText}
             </p>
             <Link
-              href="/zoeken"
+              href="/search"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
             >
-              Zoek begraafplaatsen
+              Search cemeteries
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

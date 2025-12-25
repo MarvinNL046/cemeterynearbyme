@@ -11,7 +11,7 @@ export async function requireAdmin(): Promise<AdminCheckResult> {
   if (!user) {
     return {
       authorized: false,
-      response: NextResponse.json({ error: 'Niet ingelogd' }, { status: 401 }),
+      response: NextResponse.json({ error: 'Not logged in' }, { status: 401 }),
       user: null,
     };
   }
@@ -19,7 +19,7 @@ export async function requireAdmin(): Promise<AdminCheckResult> {
   if (user.role !== 'admin') {
     return {
       authorized: false,
-      response: NextResponse.json({ error: 'Geen toegang - admin rechten vereist' }, { status: 403 }),
+      response: NextResponse.json({ error: 'Access denied - admin rights required' }, { status: 403 }),
       user: null,
     };
   }

@@ -31,10 +31,10 @@ function domainsMatch(emailDomain: string, websiteDomain: string): boolean {
   if (emailDomain.endsWith(`.${websiteDomain}`)) return true;
   if (websiteDomain.endsWith(`.${emailDomain}`)) return true;
 
-  // Also check for gemeente.nl domains (common for Dutch municipalities)
-  // gemeente emails often use @gemeente-[name].nl while website is gemeente[name].nl
-  const emailClean = emailDomain.replace(/^gemeente-?/, '').replace(/\.nl$/, '');
-  const websiteClean = websiteDomain.replace(/^gemeente-?/, '').replace(/\.nl$/, '');
+  // Check for common US government domains
+  // e.g., email@county.gov and www.county.gov
+  const emailClean = emailDomain.replace(/\.(gov|org|com)$/, '');
+  const websiteClean = websiteDomain.replace(/\.(gov|org|com)$/, '');
   if (emailClean === websiteClean) return true;
 
   return false;
@@ -46,7 +46,7 @@ export async function GET() {
     const user = await getCurrentUser();
 
     if (!user) {
-      return NextResponse.json({ error: 'Niet ingelogd' }, { status: 401 });
+      return NextResponse.json({ error: 'Not logged in' }, { status: 401 });
     }
 
     const claims = await db
@@ -58,7 +58,7 @@ export async function GET() {
     return NextResponse.json({ claims });
   } catch (error) {
     console.error('Get claims error:', error);
-    return NextResponse.json({ error: 'Er is iets misgegaan' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }
 
@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
     const user = await getCurrentUser();
 
     if (!user) {
-      return NextResponse.json({ error: 'Niet ingelogd' }, { status: 401 });
+      return NextResponse.json({ error: 'Not logged in' }, { status: 401 });
     }
 
     const body = await request.json();
@@ -82,28 +82,28 @@ export async function POST(request: NextRequest) {
     } = body;
 
     if (!cemeterySlug) {
-      return NextResponse.json({ error: 'Begraafplaats is verplicht' }, { status: 400 });
+      return NextResponse.json({ error: 'Cemetery is required' }, { status: 400 });
     }
 
     if (!verificationEmail) {
-      return NextResponse.json({ error: 'Verificatie e-mail is verplicht' }, { status: 400 });
+      return NextResponse.json({ error: 'Verification email is required' }, { status: 400 });
     }
 
     // Get cemetery data to check website
     const cemetery = await getCemeteryBySlug(cemeterySlug);
     if (!cemetery) {
-      return NextResponse.json({ error: 'Begraafplaats niet gevonden' }, { status: 404 });
+      return NextResponse.json({ error: 'Cemetery not found' }, { status: 404 });
     }
 
     // Get website URL from cemetery data
-    const websiteUrl = cemetery.website || cemetery.links || cemetery.website_url;
+    const websiteUrl = cemetery.website;
 
     // Extract domains
     const emailDomain = extractEmailDomain(verificationEmail);
     const websiteDomain = websiteUrl ? extractDomain(websiteUrl) : null;
 
     if (!emailDomain) {
-      return NextResponse.json({ error: 'Ongeldig e-mailadres' }, { status: 400 });
+      return NextResponse.json({ error: 'Invalid email address' }, { status: 400 });
     }
 
     // Check domain matching
@@ -130,7 +130,7 @@ export async function POST(request: NextRequest) {
 
     if (hasExistingClaim) {
       return NextResponse.json({
-        error: 'U heeft al een claim ingediend voor deze begraafplaats'
+        error: 'You have already submitted a claim for this cemetery'
       }, { status: 400 });
     }
 
@@ -146,7 +146,7 @@ export async function POST(request: NextRequest) {
 
     if (alreadyClaimed) {
       return NextResponse.json({
-        error: 'Deze begraafplaats is al geclaimd door een andere gebruiker'
+        error: 'This cemetery has already been claimed by another user'
       }, { status: 400 });
     }
 
@@ -171,7 +171,7 @@ export async function POST(request: NextRequest) {
         businessRole,
         claimantName: claimantName || user.name,
         claimantPhone,
-        notes: `slug:${cemeterySlug}\nwebsite:${websiteUrl || 'geen'}\nauto_verify:${canAutoVerify}${notes ? `\n${notes}` : ''}`,
+        notes: `slug:${cemeterySlug}\nwebsite:${websiteUrl || 'none'}\nauto_verify:${canAutoVerify}${notes ? `\n${notes}` : ''}`,
       })
       .returning();
 
@@ -185,13 +185,13 @@ export async function POST(request: NextRequest) {
     if (!emailResult.success) {
       // Delete the claim if email fails
       await db.delete(placeClaims).where(eq(placeClaims.id, claim.id));
-      return NextResponse.json({ error: 'Kon verificatie email niet verzenden' }, { status: 500 });
+      return NextResponse.json({ error: 'Could not send verification email' }, { status: 500 });
     }
 
     // Build response message based on verification method
-    let message = 'Claim ingediend. Controleer uw e-mail voor de verificatiecode.';
+    let message = 'Claim submitted. Check your email for the verification code.';
     if (!canAutoVerify) {
-      message += ' Let op: uw e-maildomein komt niet overeen met de website van de begraafplaats. Na verificatie wordt uw claim handmatig beoordeeld.';
+      message += ' Note: your email domain does not match the cemetery website. After verification, your claim will be manually reviewed.';
     }
 
     return NextResponse.json({
@@ -202,6 +202,6 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error('Create claim error:', error);
-    return NextResponse.json({ error: 'Er is iets misgegaan' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }

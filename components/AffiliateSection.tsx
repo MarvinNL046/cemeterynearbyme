@@ -14,26 +14,26 @@ interface AffiliatePartner {
 
 const partners: AffiliatePartner[] = [
   {
-    name: 'Uitvaartverzekeringen vergelijken',
-    description: 'Vergelijk eenvoudig uitvaartverzekeringen en bespaar op uw premie',
+    name: 'Compare Funeral Insurance',
+    description: 'Easily compare funeral insurance plans and save on your premium',
     icon: <FileText className="w-6 h-6" />,
-    ctaText: 'Vergelijk verzekeringen',
+    ctaText: 'Compare plans',
     href: '#',
     tag: 'Partner'
   },
   {
-    name: 'Lokale uitvaartondernemers',
-    description: 'Vind betrouwbare uitvaartondernemers in uw regio',
+    name: 'Local Funeral Homes',
+    description: 'Find trusted funeral homes in your area',
     icon: <Phone className="w-6 h-6" />,
-    ctaText: 'Vraag offerte aan',
+    ctaText: 'Request quote',
     href: '#',
-    tag: 'Aanbevolen'
+    tag: 'Recommended'
   },
   {
-    name: 'Online bloemen bestellen',
-    description: 'Bestel rouwbloemen en kransen voor de uitvaart',
+    name: 'Order Flowers Online',
+    description: 'Order sympathy flowers and wreaths for memorial services',
     icon: <Flower2 className="w-6 h-6" />,
-    ctaText: 'Bekijk assortiment',
+    ctaText: 'Browse selection',
     href: '#',
   }
 ];
@@ -43,13 +43,13 @@ export default function AffiliateSection() {
     <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold mb-3">Nuttige diensten voor nabestaanden</h2>
+          <h2 className="text-2xl font-bold mb-3">Helpful Services for Families</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Wij werken samen met betrouwbare partners om u te helpen in moeilijke tijden. 
-            Ontdek diensten die u kunnen ondersteunen bij het regelen van een uitvaart.
+            We partner with trusted providers to help you during difficult times.
+            Discover services that can support you in planning a memorial service.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {partners.map((partner, index) => (
             <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
@@ -66,13 +66,13 @@ export default function AffiliateSection() {
                   )}
                 </div>
               </div>
-              
+
               <p className="text-sm text-gray-600 mb-4">
                 {partner.description}
               </p>
-              
-              <Button 
-                variant="outline" 
+
+              <Button
+                variant="outline"
                 className="w-full group"
                 asChild
               >
@@ -84,10 +84,10 @@ export default function AffiliateSection() {
             </Card>
           ))}
         </div>
-        
+
         <div className="text-center mt-8">
           <p className="text-xs text-gray-500">
-            * Sommige links zijn partnerlinks. Bij aankoop via deze links ontvangen wij mogelijk een kleine vergoeding.
+            * Some links are affiliate links. We may receive a small commission for purchases made through these links.
           </p>
         </div>
       </div>

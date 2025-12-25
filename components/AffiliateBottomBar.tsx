@@ -53,27 +53,25 @@ export default function AffiliateBottomBar() {
         <div className="flex items-center gap-3">
           <div className="flex-1 min-w-0">
             <p className="text-sm font-medium truncate">
-              Vergelijk uitvaartverzekeringen
+              Compare funeral insurance
             </p>
             <p className="text-xs text-primary-foreground/70">
-              Bespaar tot 40% op uw premie
+              Save up to 40% on your premium
             </p>
           </div>
           <a
-            href="https://www.independer.nl/uitvaartverzekering/vergelijken"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
+            href="/funeral-planning"
             className="flex-shrink-0"
           >
             <Button variant="gold" size="sm" className="gap-1">
-              Vergelijk
+              Compare
               <ArrowRight className="w-3 h-3" />
             </Button>
           </a>
           <button
             onClick={handleDismiss}
             className="p-1 text-primary-foreground/70 hover:text-white transition-colors flex-shrink-0"
-            aria-label="Sluiten"
+            aria-label="Close"
           >
             <X className="w-5 h-5" />
           </button>
@@ -90,28 +88,26 @@ export default function AffiliateBottomBar() {
               </div>
               <div>
                 <p className="font-semibold">
-                  Denkt u na over een uitvaartverzekering?
+                  Thinking about funeral pre-planning?
                 </p>
                 <p className="text-sm text-primary-foreground/80">
-                  Vergelijk uitvaartverzekeringen en bespaar tot 40% op uw premie. Binnen 2 minuten geregeld.
+                  Compare funeral insurance options and save up to 40% on your premium. Takes just 2 minutes.
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               <a
-                href="https://www.independer.nl/uitvaartverzekering/vergelijken"
-                target="_blank"
-                rel="noopener noreferrer sponsored"
+                href="/funeral-planning"
               >
                 <Button variant="gold" className="gap-2">
-                  Vergelijk nu
+                  Compare now
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </a>
               <button
                 onClick={handleDismiss}
                 className="p-2 text-primary-foreground/70 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                aria-label="Sluiten"
+                aria-label="Close"
               >
                 <X className="w-5 h-5" />
               </button>

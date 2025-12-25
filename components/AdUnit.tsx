@@ -93,7 +93,7 @@ export default function AdUnit({
 export function InArticleAd({ className = '' }: { className?: string }) {
   return (
     <div className={`my-8 ${className}`}>
-      <p className="text-xs text-muted-foreground/50 text-center mb-2">Advertentie</p>
+      <p className="text-xs text-muted-foreground/50 text-center mb-2">Advertisement</p>
       <AdUnit format="in-article" layout="horizontal" style="in-article" />
     </div>
   );
@@ -102,7 +102,7 @@ export function InArticleAd({ className = '' }: { className?: string }) {
 export function SidebarAd({ className = '' }: { className?: string }) {
   return (
     <div className={`sticky top-4 ${className}`}>
-      <p className="text-xs text-muted-foreground/50 text-center mb-2">Advertentie</p>
+      <p className="text-xs text-muted-foreground/50 text-center mb-2">Advertisement</p>
       <AdUnit format="display" layout="rectangle" />
     </div>
   );

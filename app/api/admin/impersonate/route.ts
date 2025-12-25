@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     // Can't impersonate yourself
     if (adminUser && adminUser.id === userId) {
       return NextResponse.json(
-        { error: 'Je kunt jezelf niet impersoneren' },
+        { error: 'You cannot impersonate yourself' },
         { status: 400 }
       );
     }
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
 
     if (!targetUser) {
       return NextResponse.json(
-        { error: 'Gebruiker niet gevonden' },
+        { error: 'User not found' },
         { status: 404 }
       );
     }
@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: `Je bent nu ingelogd als ${targetUser.email}`,
+      message: `You are now logged in as ${targetUser.email}`,
     });
   } catch (error) {
     console.error('Error impersonating user:', error);
@@ -109,7 +109,7 @@ export async function DELETE() {
 
     if (!originalToken) {
       return NextResponse.json(
-        { error: 'Geen originele sessie gevonden' },
+        { error: 'No original session found' },
         { status: 400 }
       );
     }
@@ -129,7 +129,7 @@ export async function DELETE() {
 
     return NextResponse.json({
       success: true,
-      message: 'Terug naar admin account',
+      message: 'Back to admin account',
     });
   } catch (error) {
     console.error('Error stopping impersonation:', error);

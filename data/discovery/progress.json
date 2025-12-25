@@ -1,0 +1,267 @@
+{
+  "total_locations": 3212,
+  "pending": 3048,
+  "in_progress": 0,
+  "completed": 163,
+  "failed": 1,
+  "total_cemeteries_found": 8529,
+  "unique_cids": 8529,
+  "per_state": {
+    "New York": {
+      "total": 64,
+      "completed": 2,
+      "cemeteries": 243
+    },
+    "California": {
+      "total": 68,
+      "completed": 16,
+      "cemeteries": 822
+    },
+    "Illinois": {
+      "total": 103,
+      "completed": 1,
+      "cemeteries": 82
+    },
+    "Texas": {
+      "total": 262,
+      "completed": 13,
+      "cemeteries": 741
+    },
+    "Arizona": {
+      "total": 22,
+      "completed": 7,
+      "cemeteries": 271
+    },
+    "Pennsylvania": {
+      "total": 68,
+      "completed": 2,
+      "cemeteries": 188
+    },
+    "Florida": {
+      "total": 73,
+      "completed": 6,
+      "cemeteries": 376
+    },
+    "Ohio": {
+      "total": 92,
+      "completed": 4,
+      "cemeteries": 357
+    },
+    "North Carolina": {
+      "total": 104,
+      "completed": 5,
+      "cemeteries": 358
+    },
+    "Indiana": {
+      "total": 94,
+      "completed": 2,
+      "cemeteries": 139
+    },
+    "Washington": {
+      "total": 40,
+      "completed": 1,
+      "cemeteries": 63
+    },
+    "Colorado": {
+      "total": 66,
+      "completed": 3,
+      "cemeteries": 120
+    },
+    "District of Columbia": {
+      "total": 2,
+      "completed": 1,
+      "cemeteries": 111
+    },
+    "Massachusetts": {
+      "total": 15,
+      "completed": 1,
+      "cemeteries": 70
+    },
+    "Tennessee": {
+      "total": 97,
+      "completed": 2,
+      "cemeteries": 154
+    },
+    "Michigan": {
+      "total": 84,
+      "completed": 1,
+      "cemeteries": 80
+    },
+    "Oklahoma": {
+      "total": 78,
+      "completed": 2,
+      "cemeteries": 144
+    },
+    "Oregon": {
+      "total": 37,
+      "completed": 1,
+      "cemeteries": 68
+    },
+    "Nevada": {
+      "total": 21,
+      "completed": 4,
+      "cemeteries": 168
+    },
+    "Kentucky": {
+      "total": 122,
+      "completed": 2,
+      "cemeteries": 114
+    },
+    "Maryland": {
+      "total": 23,
+      "completed": 1,
+      "cemeteries": 98
+    },
+    "Wisconsin": {
+      "total": 73,
+      "completed": 2,
+      "cemeteries": 145
+    },
+    "New Mexico": {
+      "total": 34,
+      "completed": 1,
+      "cemeteries": 75
+    },
+    "Missouri": {
+      "total": 115,
+      "completed": 2,
+      "cemeteries": 162
+    },
+    "Georgia": {
+      "total": 160,
+      "completed": 1,
+      "cemeteries": 82
+    },
+    "Virginia": {
+      "total": 133,
+      "completed": 4,
+      "cemeteries": 228
+    },
+    "Nebraska": {
+      "total": 94,
+      "completed": 2,
+      "cemeteries": 80
+    },
+    "Minnesota": {
+      "total": 89,
+      "completed": 2,
+      "cemeteries": 138
+    },
+    "Louisiana": {
+      "total": 66,
+      "completed": 2,
+      "cemeteries": 132
+    },
+    "Kansas": {
+      "total": 105,
+      "completed": 1,
+      "cemeteries": 56
+    },
+    "Hawaii": {
+      "total": 5,
+      "completed": 1,
+      "cemeteries": 49
+    },
+    "Alaska": {
+      "total": 29,
+      "completed": 1,
+      "cemeteries": 50
+    },
+    "New Jersey": {
+      "total": 23,
+      "completed": 2,
+      "cemeteries": 118
+    },
+    "Idaho": {
+      "total": 44,
+      "completed": 1,
+      "cemeteries": 39
+    },
+    "Alabama": {
+      "total": 67,
+      "completed": 64,
+      "cemeteries": 2408
+    },
+    "Arkansas": {
+      "total": 75,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "Connecticut": {
+      "total": 8,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "Delaware": {
+      "total": 3,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "Iowa": {
+      "total": 99,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "Maine": {
+      "total": 16,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "Mississippi": {
+      "total": 82,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "Montana": {
+      "total": 56,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "New Hampshire": {
+      "total": 10,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "North Dakota": {
+      "total": 53,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "Rhode Island": {
+      "total": 5,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "South Carolina": {
+      "total": 46,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "South Dakota": {
+      "total": 66,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "Utah": {
+      "total": 29,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "Vermont": {
+      "total": 14,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "West Virginia": {
+      "total": 55,
+      "completed": 0,
+      "cemeteries": 0
+    },
+    "Wyoming": {
+      "total": 23,
+      "completed": 0,
+      "cemeteries": 0
+    }
+  },
+  "last_run_at": "2025-12-25T11:26:53.324Z"
+}

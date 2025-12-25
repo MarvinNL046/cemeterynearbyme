@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllMunicipalities, getCemeteriesByMunicipality, createMunicipalitySlug, getPlacesByMunicipality, createPlaceSlug } from '@/lib/data';
+import { getAllCounties, getCemeteriesByCounty, createCountySlug, createCitySlug, createStateSlug } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import { MapPin, Building2, Trees, Users, Calendar, ChevronRight, ArrowRight, Lightbulb } from 'lucide-react';
 import CemeteryCard from '@/components/CemeteryCard';
@@ -9,81 +9,74 @@ import { Card } from '@/components/ui/card';
 
 interface PageProps {
   params: {
-    gemeentenaam: string;
+    county: string;
   };
 }
 
 export async function generateStaticParams() {
-  const municipalities = await getAllMunicipalities();
-
-  // Only generate params for municipalities that have cemeteries
-  const municipalitiesWithData = [];
-  for (const municipality of municipalities) {
-    if (!municipality) continue; // Skip null/undefined values
-    const cemeteries = await getCemeteriesByMunicipality(municipality);
-    if (cemeteries.length > 0) {
-      municipalitiesWithData.push({
-        gemeentenaam: createMunicipalitySlug(municipality),
-      });
-    }
-  }
-
-  return municipalitiesWithData;
+  const counties = await getAllCounties();
+  return counties.map(county => ({
+    county: createCountySlug(county),
+  }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const municipalities = await getAllMunicipalities();
-
-  // Find the actual municipality name by comparing slugs
-  const matchedMunicipality = municipalities.find(
-    m => createMunicipalitySlug(m) === params.gemeentenaam
+  const counties = await getAllCounties();
+  const matchedCounty = counties.find(
+    c => createCountySlug(c) === params.county
   );
 
-  if (!matchedMunicipality) {
+  if (!matchedCounty) {
     return {
-      title: 'Gemeente niet gevonden',
-      description: 'De opgevraagde gemeente kon niet worden gevonden.',
+      title: 'County not found',
+      description: 'The requested county could not be found.',
     };
   }
 
   return {
-    title: `Begraafplaatsen in ${matchedMunicipality} | Begraafplaats in de Buurt`,
-    description: `Alle begraafplaatsen in ${matchedMunicipality}. Vind informatie over openingstijden, locaties, faciliteiten en routebeschrijvingen.`,
+    title: `Cemeteries in ${matchedCounty} County | Cemetery Near Me`,
+    description: `Find all cemeteries in ${matchedCounty} County. View visiting hours, locations, facilities, and directions.`,
     openGraph: {
-      title: `Begraafplaatsen in ${matchedMunicipality}`,
-      description: `Overzicht van alle begraafplaatsen in de gemeente ${matchedMunicipality}`,
+      title: `Cemeteries in ${matchedCounty} County`,
+      description: `Directory of all cemeteries in ${matchedCounty} County`,
       type: 'website',
     },
   };
 }
 
-export default async function MunicipalityPage({ params }: PageProps) {
-  const municipalities = await getAllMunicipalities();
-
-  // Find the municipality by comparing slugs
-  const matchedMunicipality = municipalities.find(
-    m => createMunicipalitySlug(m) === params.gemeentenaam
+export default async function CountyPage({ params }: PageProps) {
+  const counties = await getAllCounties();
+  const matchedCounty = counties.find(
+    c => createCountySlug(c) === params.county
   );
 
-  if (!matchedMunicipality) {
+  if (!matchedCounty) {
     notFound();
   }
 
-  const cemeteries = await getCemeteriesByMunicipality(matchedMunicipality);
-  const province = cemeteries[0]?.provincie || '';
-  const places = await getPlacesByMunicipality(matchedMunicipality);
+  const cemeteries = await getCemeteriesByCounty(matchedCounty);
+
+  if (cemeteries.length === 0) {
+    notFound();
+  }
+
+  const state = cemeteries[0]?.state || '';
+  const stateAbbr = cemeteries[0]?.state_abbr || '';
+
+  // Get unique cities
+  const cities = [...new Set(cemeteries.map(c => c.city).filter(Boolean))].sort();
 
   // Calculate statistics
   const stats = {
     total: cemeteries.length,
-    algemeen: cemeteries.filter(c => c.type?.toLowerCase().includes('algemene')).length,
-    natuur: cemeteries.filter(c => c.type?.toLowerCase().includes('natuur')).length,
-    joods: cemeteries.filter(c => c.type?.toLowerCase().includes('jood')).length,
-    islamitisch: cemeteries.filter(c => c.type?.toLowerCase().includes('islam')).length,
-    bijzonder: cemeteries.filter(c => c.type?.toLowerCase().includes('bijzonder')).length,
+    public: cemeteries.filter(c => c.type?.toLowerCase().includes('public') || c.type?.toLowerCase().includes('cemetery')).length,
+    memorial: cemeteries.filter(c => c.type?.toLowerCase().includes('memorial')).length,
+    veterans: cemeteries.filter(c => c.type?.toLowerCase().includes('veteran') || c.type?.toLowerCase().includes('national')).length,
+    religious: cemeteries.filter(c => c.type?.toLowerCase().includes('church') || c.type?.toLowerCase().includes('religious') || c.type?.toLowerCase().includes('catholic') || c.type?.toLowerCase().includes('jewish')).length,
+    natural: cemeteries.filter(c => c.type?.toLowerCase().includes('natural') || c.type?.toLowerCase().includes('green')).length,
   };
 
-  // Breadcrumb structured data for SEO
+  // Breadcrumb structured data
   const breadcrumbLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -92,19 +85,19 @@ export default async function MunicipalityPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.begraafplaatsindebuurt.nl'
+        item: 'https://www.cemeterynearbyme.com'
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: province,
-        item: `https://www.begraafplaatsindebuurt.nl/provincie/${province.toLowerCase().replace(/\s+/g, '-')}`
+        name: state,
+        item: `https://www.cemeterynearbyme.com/state/${createStateSlug(state)}`
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: matchedMunicipality,
-        item: `https://www.begraafplaatsindebuurt.nl/gemeente/${params.gemeentenaam}`
+        name: `${matchedCounty} County`,
+        item: `https://www.cemeterynearbyme.com/county/${params.county}`
       }
     ]
   };
@@ -127,33 +120,33 @@ export default async function MunicipalityPage({ params }: PageProps) {
                 <li>/</li>
                 <li>
                   <Link
-                    href={`/provincie/${province.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={`/state/${createStateSlug(state)}`}
                     className="hover:text-white transition-colors"
                   >
-                    {province}
+                    {state}
                   </Link>
                 </li>
                 <li>/</li>
-                <li className="text-white">{matchedMunicipality}</li>
+                <li className="text-white">{matchedCounty} County</li>
               </ol>
             </nav>
 
             <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4">
-              Begraafplaatsen in {matchedMunicipality}
+              Cemeteries in {matchedCounty} County
             </h1>
 
             {/* Author byline */}
             <div className="flex items-center gap-4 text-sm text-primary-foreground/70 mb-8">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
-                  <span className="text-xs font-semibold">M</span>
+                  <span className="text-xs font-semibold">CM</span>
                 </div>
-                <span>Door Marvin</span>
+                <span>By Cemetery Near Me</span>
               </div>
               <span>•</span>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <span>Laatst bijgewerkt: {new Date().toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                <span>Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
               </div>
             </div>
 
@@ -161,20 +154,18 @@ export default async function MunicipalityPage({ params }: PageProps) {
             <div className="flex flex-wrap gap-8">
               <div>
                 <div className="text-3xl font-bold text-gold-300">{stats.total}</div>
-                <div className="text-primary-foreground/70 text-sm">Begraafplaatsen</div>
+                <div className="text-primary-foreground/70 text-sm">Cemeteries</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-gold-300">{stats.algemeen}</div>
-                <div className="text-primary-foreground/70 text-sm">Algemene</div>
+                <div className="text-3xl font-bold text-gold-300">{cities.length}</div>
+                <div className="text-primary-foreground/70 text-sm">Cities</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-gold-300">{stats.natuur}</div>
-                <div className="text-primary-foreground/70 text-sm">Natuur</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-gold-300">{stats.joods + stats.islamitisch + stats.bijzonder}</div>
-                <div className="text-primary-foreground/70 text-sm">Bijzondere</div>
-              </div>
+              {stats.veterans > 0 && (
+                <div>
+                  <div className="text-3xl font-bold text-gold-300">{stats.veterans}</div>
+                  <div className="text-primary-foreground/70 text-sm">Veterans</div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -187,57 +178,57 @@ export default async function MunicipalityPage({ params }: PageProps) {
               <Card className="p-6 bg-gradient-to-r from-forest-50 to-gold-50/30 dark:from-forest-900/20 dark:to-gold-900/10 border-forest-100 dark:border-forest-800">
                 <h2 className="font-serif text-xl font-semibold mb-4 flex items-center gap-2">
                   <Lightbulb className="w-5 h-5 text-accent" />
-                  Tips voor het vinden van een begraafplaats
+                  Tips for Finding a Cemetery
                 </h2>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
                     <ChevronRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                    <span>Bezoek meerdere begraafplaatsen om sfeer en omgeving te vergelijken</span>
+                    <span>Visit multiple cemeteries to compare atmosphere and surroundings</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <ChevronRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                    <span>Let op openingstijden - de meeste begraafplaatsen zijn overdag geopend</span>
+                    <span>Check visiting hours - most cemeteries are open during daylight hours</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <ChevronRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                    <span>Vraag naar mogelijkheden voor natuurbegraven als duurzaamheid belangrijk is</span>
+                    <span>Ask about green burial options if environmental sustainability is important</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <ChevronRight className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                    <span>Informeer bij de beheerder over grafrechten en onderhoudskosten</span>
+                    <span>Inquire with the office about plot costs and maintenance fees</span>
                   </li>
                 </ul>
               </Card>
 
               {/* Cemetery Type Cards */}
               <div>
-                <h2 className="font-serif text-2xl font-semibold mb-6">Soorten begraafplaatsen</h2>
+                <h2 className="font-serif text-2xl font-semibold mb-6">Types of Cemeteries</h2>
                 <div className="grid md:grid-cols-3 gap-4">
                   <Card className="p-5 hover:shadow-hover transition-all duration-300 border-2 border-transparent hover:border-accent/30">
                     <div className="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center mb-3">
                       <Building2 className="w-5 h-5 text-forest-700" />
                     </div>
-                    <h3 className="font-semibold mb-2">Algemene begraafplaats</h3>
+                    <h3 className="font-semibold mb-2">Public Cemetery</h3>
                     <p className="text-sm text-muted-foreground">
-                      Openbaar toegankelijk voor alle gezindten. Vaak gemeentelijk beheerd met diverse grafvormen.
+                      Open to all residents regardless of religious affiliation. Often municipally managed with various burial options.
                     </p>
                   </Card>
                   <Card className="p-5 hover:shadow-hover transition-all duration-300 border-2 border-transparent hover:border-accent/30">
                     <div className="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center mb-3">
                       <Trees className="w-5 h-5 text-forest-700" />
                     </div>
-                    <h3 className="font-semibold mb-2">Natuurbegraafplaats</h3>
+                    <h3 className="font-semibold mb-2">Green Cemetery</h3>
                     <p className="text-sm text-muted-foreground">
-                      Ecologisch begraven in natuurlijke omgeving. Afbreekbare materialen en minimale grafsteen.
+                      Eco-friendly burial in natural surroundings. Biodegradable materials and minimal headstones.
                     </p>
                   </Card>
                   <Card className="p-5 hover:shadow-hover transition-all duration-300 border-2 border-transparent hover:border-accent/30">
                     <div className="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center mb-3">
                       <Users className="w-5 h-5 text-forest-700" />
                     </div>
-                    <h3 className="font-semibold mb-2">Bijzondere begraafplaats</h3>
+                    <h3 className="font-semibold mb-2">Memorial Park</h3>
                     <p className="text-sm text-muted-foreground">
-                      Religieuze of historische begraafplaatsen met specifieke tradities en rituelen.
+                      Modern cemetery with flat markers. Landscaped grounds with designated sections and memorials.
                     </p>
                   </Card>
                 </div>
@@ -246,7 +237,7 @@ export default async function MunicipalityPage({ params }: PageProps) {
               {/* All Cemeteries */}
               <div>
                 <h2 className="font-serif text-2xl font-semibold mb-6">
-                  Alle {cemeteries.length} begraafplaats{cemeteries.length !== 1 ? 'en' : ''}
+                  All {cemeteries.length} {cemeteries.length !== 1 ? 'Cemeteries' : 'Cemetery'}
                 </h2>
                 <div className="grid gap-6 md:grid-cols-2">
                   {cemeteries.map((cemetery) => (
@@ -255,17 +246,17 @@ export default async function MunicipalityPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Places Grid */}
-              {places.length > 0 && (
+              {/* Cities Grid */}
+              {cities.length > 1 && (
                 <div>
-                  <h2 className="font-serif text-2xl font-semibold mb-6">Begraafplaatsen per plaats</h2>
+                  <h2 className="font-serif text-2xl font-semibold mb-6">Cemeteries by City</h2>
                   <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
-                    {places.map((place) => {
-                      const placeCemeteries = cemeteries.filter(c => c.plaats === place);
+                    {cities.map((city) => {
+                      const cityCemeteries = cemeteries.filter(c => c.city === city);
                       return (
                         <Link
-                          key={place}
-                          href={`/plaats/${createPlaceSlug(place)}`}
+                          key={city}
+                          href={`/city/${createCitySlug(city)}`}
                           className="group"
                         >
                           <Card className="h-full p-4 border-2 border-transparent hover:border-accent/30 transition-all duration-300">
@@ -275,10 +266,10 @@ export default async function MunicipalityPage({ params }: PageProps) {
                               </div>
                               <div>
                                 <h3 className="font-semibold group-hover:text-accent transition-colors">
-                                  {place}
+                                  {city}
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                  {placeCemeteries.length} begraafplaats{placeCemeteries.length !== 1 ? 'en' : ''}
+                                  {cityCemeteries.length} {cityCemeteries.length !== 1 ? 'cemeteries' : 'cemetery'}
                                 </p>
                               </div>
                             </div>
@@ -292,29 +283,28 @@ export default async function MunicipalityPage({ params }: PageProps) {
 
               {/* Informational Content */}
               <Card className="p-6">
-                <h2 className="font-serif text-2xl font-semibold mb-4">Begraafplaatsen kiezen in {matchedMunicipality}</h2>
+                <h2 className="font-serif text-2xl font-semibold mb-4">Choosing a Cemetery in {matchedCounty} County</h2>
                 <div className="prose prose-lg max-w-none text-muted-foreground">
                   <p>
-                    In de gemeente {matchedMunicipality} vindt u {stats.total} begraafplaats{stats.total !== 1 ? 'en' : ''},
-                    variërend van {stats.algemeen > 0 ? 'algemene gemeentelijke begraafplaatsen' : ''}
-                    {stats.natuur > 0 ? ' tot natuurbegraafplaatsen' : ''}.
-                    Elke begraafplaats heeft zijn eigen karakter en mogelijkheden.
+                    In {matchedCounty} County, {state} you&apos;ll find {stats.total} {stats.total !== 1 ? 'cemeteries' : 'cemetery'},
+                    ranging from {stats.public > 0 ? 'public municipal cemeteries' : ''}
+                    {stats.memorial > 0 ? ' to memorial parks' : ''}.
+                    Each cemetery has its own character and options.
                   </p>
 
-                  <h3 className="font-serif text-xl font-semibold text-foreground mt-6 mb-3">Praktische informatie</h3>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mt-6 mb-3">Practical Information</h3>
                   <p>
-                    Bij het kiezen van een begraafplaats zijn verschillende factoren belangrijk:
-                    de locatie en bereikbaarheid, de sfeer en uitstraling, de beschikbare grafvormen,
-                    en uiteraard de kosten voor grafrechten en onderhoud. Veel begraafplaatsen in {matchedMunicipality} bieden
-                    mogelijkheden voor zowel begraven als crematie-urnen bijzettingen.
+                    When choosing a cemetery, several factors are important:
+                    location and accessibility, atmosphere and appearance, available burial options,
+                    and of course the costs for plots and maintenance. Many cemeteries in {matchedCounty} County offer
+                    options for both traditional burial and cremation urn interment.
                   </p>
 
-                  <h3 className="font-serif text-xl font-semibold text-foreground mt-6 mb-3">Bezoekersregels</h3>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mt-6 mb-3">Visitor Guidelines</h3>
                   <p>
-                    Bij het bezoeken van een begraafplaats is het belangrijk om rekening te houden met
-                    de rust en sereniteit van de plek. Houd honden aangelijnd, parkeer fietsen bij de ingang,
-                    en respecteer andere bezoekers die een graf bezoeken. De meeste begraafplaatsen zijn
-                    dagelijks geopend tijdens daglichturen.
+                    When visiting a cemetery, it&apos;s important to respect the peace and serenity of the space.
+                    Keep dogs on leash, and be considerate of other visitors
+                    paying their respects. Most cemeteries are open daily during daylight hours.
                   </p>
                 </div>
               </Card>
@@ -324,51 +314,51 @@ export default async function MunicipalityPage({ params }: PageProps) {
             <div className="lg:col-span-1 space-y-6">
               {/* Quick Links */}
               <Card className="p-6 shadow-soft">
-                <h3 className="font-serif text-lg font-semibold mb-4">Gerelateerde pagina&apos;s</h3>
+                <h3 className="font-serif text-lg font-semibold mb-4">Related Pages</h3>
                 <ul className="space-y-3">
                   <li>
                     <Link
-                      href={`/provincie/${province.toLowerCase().replace(/\s+/g, '-')}`}
+                      href={`/state/${createStateSlug(state)}`}
                       className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
                     >
                       <ChevronRight className="w-4 h-4" />
-                      Alle begraafplaatsen in {province}
+                      All cemeteries in {state}
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/type/natuurbegraafplaats"
+                      href="/type/natural-burial"
                       className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
                     >
                       <ChevronRight className="w-4 h-4" />
-                      Natuurbegraafplaatsen
+                      Natural Burial Grounds
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/type/algemene-begraafplaats"
+                      href="/type/memorial-park"
                       className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
                     >
                       <ChevronRight className="w-4 h-4" />
-                      Algemene begraafplaatsen
+                      Memorial Parks
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/zoeken"
+                      href="/search"
                       className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
                     >
                       <ChevronRight className="w-4 h-4" />
-                      Zoek een begraafplaats
+                      Search for a Cemetery
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/uitvaartverzekering"
+                      href="/funeral-planning"
                       className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
                     >
                       <ChevronRight className="w-4 h-4" />
-                      Uitvaartverzekering vergelijken
+                      Funeral Planning Guide
                     </Link>
                   </li>
                 </ul>
@@ -376,15 +366,15 @@ export default async function MunicipalityPage({ params }: PageProps) {
 
               {/* Contact Info */}
               <Card className="p-6 shadow-soft bg-gradient-to-br from-forest-50 to-gold-50/50 dark:from-forest-900/20 dark:to-gold-900/10 border-forest-200 dark:border-forest-800">
-                <h3 className="font-serif text-lg font-semibold mb-3">Hulp nodig?</h3>
+                <h3 className="font-serif text-lg font-semibold mb-3">Need Help?</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Wij helpen u graag bij het vinden van de juiste begraafplaats in {matchedMunicipality}.
+                  We&apos;re happy to help you find the right cemetery in {matchedCounty} County.
                 </p>
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors text-sm font-medium"
                 >
-                  Neem contact op
+                  Contact Us
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </Card>
@@ -392,18 +382,18 @@ export default async function MunicipalityPage({ params }: PageProps) {
               {/* Sidebar Ad */}
               <SidebarAd />
 
-              {/* Province Stats */}
+              {/* State Stats */}
               <Card className="p-6 shadow-soft">
-                <h3 className="font-serif text-lg font-semibold mb-4">Over {province}</h3>
+                <h3 className="font-serif text-lg font-semibold mb-4">About {state}</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  {matchedMunicipality} ligt in de provincie {province}. Bekijk alle begraafplaatsen
-                  in deze regio voor meer opties.
+                  {matchedCounty} County is located in {state}. View all cemeteries
+                  in this state for more options.
                 </p>
                 <Link
-                  href={`/provincie/${province.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={`/state/${createStateSlug(state)}`}
                   className="text-accent hover:text-accent/80 text-sm font-medium flex items-center gap-1"
                 >
-                  Bekijk {province}
+                  View {state}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </Card>

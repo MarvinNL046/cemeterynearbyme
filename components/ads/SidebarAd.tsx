@@ -15,7 +15,7 @@ export default function SidebarAd({
     <div className={`${sticky ? 'sticky top-4' : ''}`}>
       <div className="bg-white rounded-lg border shadow-sm overflow-hidden">
         <div className="p-2 bg-gray-50 border-b">
-          <p className="text-xs text-center text-muted-foreground">Advertentie</p>
+          <p className="text-xs text-center text-muted-foreground">Advertisement</p>
         </div>
         
         {/* Sidebar Rectangle Ad - 300x250 or 336x280 */}
@@ -28,7 +28,7 @@ export default function SidebarAd({
         
         {/* Optional second ad for longer sidebars */}
         <div className="mt-4 p-2 bg-gray-50 border-t border-b">
-          <p className="text-xs text-center text-muted-foreground">Advertentie</p>
+          <p className="text-xs text-center text-muted-foreground">Advertisement</p>
         </div>
         
         {/* Vertical ad - 300x600 */}

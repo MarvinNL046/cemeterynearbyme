@@ -4,7 +4,7 @@ export async function POST() {
   try {
     const response = NextResponse.json({
       success: true,
-      message: 'Succesvol uitgelogd',
+      message: 'Successfully logged out',
     });
 
     // Clear auth cookie via response header
@@ -19,6 +19,6 @@ export async function POST() {
     return response;
   } catch (error) {
     console.error('Logout error:', error);
-    return NextResponse.json({ error: 'Er is iets misgegaan' }, { status: 500 });
+    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }

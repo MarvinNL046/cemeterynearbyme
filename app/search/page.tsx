@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, Suspense } from 'react';
+import { useState, useEffect, useCallback, Suspense, Fragment } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Search, MapPin, ChevronRight, Loader2, X, Star, Trees, Building2, SlidersHorizontal, Plus } from 'lucide-react';
@@ -18,16 +18,17 @@ import InFeedAd from '@/components/ads/InFeedAd';
 import LeaderboardAd from '@/components/ads/LeaderboardAd';
 
 interface Cemetery {
-  naam_begraafplaats: string;
-  gemeente: string;
-  provincie: string;
+  name: string;
+  city: string;
+  county?: string;
+  state: string;
+  state_abbr: string;
   type: string;
   slug: string;
-  adres?: string;
-  postcode?: string;
-  plaats?: string;
-  rating?: string;
-  reviews?: string;
+  address?: string;
+  zipCode?: string;
+  rating?: number;
+  review_count?: number;
   photo?: string;
 }
 
@@ -41,33 +42,33 @@ function SearchResults() {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState(query || locationParam);
   const [selectedType, setSelectedType] = useState(typeFilter);
-  const [selectedProvince, setSelectedProvince] = useState('all');
-  const [provinces, setProvinces] = useState<string[]>([]);
+  const [selectedState, setSelectedState] = useState('all');
+  const [states, setStates] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
   const [visibleResults, setVisibleResults] = useState(12);
 
   const cemeteryTypes = [
-    { value: 'all', label: 'Alle types', icon: Building2 },
-    { value: 'algemene-begraafplaats', label: 'Algemene Begraafplaats', icon: Building2 },
-    { value: 'natuurbegraafplaats', label: 'Natuurbegraafplaats', icon: Trees },
-    { value: 'islamitische-begraafplaats', label: 'Islamitische Begraafplaats', icon: Building2 },
-    { value: 'joodse-begraafplaats', label: 'Joodse Begraafplaats', icon: Building2 },
+    { value: 'all', label: 'All Types', icon: Building2 },
+    { value: 'cemetery', label: 'Cemetery', icon: Building2 },
+    { value: 'memorial-park', label: 'Memorial Park', icon: Trees },
+    { value: 'national-cemetery', label: 'National Cemetery', icon: Building2 },
+    { value: 'historic-cemetery', label: 'Historic Cemetery', icon: Building2 },
   ];
 
   useEffect(() => {
-    fetch('/api/data?type=provinces')
+    fetch('/api/data?type=states')
       .then(res => res.json())
-      .then(data => setProvinces(data || []));
+      .then(data => setStates(data || []));
   }, []);
 
-  const performSearch = useCallback(async (currentQuery: string, currentType: string, currentProvince: string) => {
+  const performSearch = useCallback(async (currentQuery: string, currentType: string, currentState: string) => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
       const trimmedQuery = currentQuery?.trim() || '';
       if (trimmedQuery) params.append('q', trimmedQuery);
       if (currentType && currentType !== 'all') params.append('type', currentType);
-      if (currentProvince && currentProvince !== 'all') params.append('province', currentProvince);
+      if (currentState && currentState !== 'all') params.append('state', currentState);
 
       const response = await fetch(`/api/search?${params.toString()}`);
       const data = await response.json();
@@ -84,25 +85,25 @@ function SearchResults() {
   useEffect(() => {
     setSearchQuery(query || locationParam);
     setSelectedType(typeFilter);
-    performSearch(query || locationParam, typeFilter, selectedProvince);
-  }, [query, locationParam, typeFilter, selectedProvince, performSearch]);
+    performSearch(query || locationParam, typeFilter, selectedState);
+  }, [query, locationParam, typeFilter, selectedState, performSearch]);
 
   const handleSearch = () => {
     const params = new URLSearchParams();
     if (searchQuery) params.append('q', searchQuery);
     if (selectedType !== 'all') params.append('type', selectedType);
 
-    window.location.href = `/zoeken?${params.toString()}`;
+    window.location.href = `/search?${params.toString()}`;
   };
 
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedType('all');
-    setSelectedProvince('all');
+    setSelectedState('all');
     performSearch('', 'all', 'all');
   };
 
-  const hasActiveFilters = selectedType !== 'all' || selectedProvince !== 'all' || searchQuery;
+  const hasActiveFilters = selectedType !== 'all' || selectedState !== 'all' || searchQuery;
 
   return (
     <div className="min-h-screen bg-background">
@@ -110,10 +111,10 @@ function SearchResults() {
       <div className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">
           <h1 className="font-serif text-3xl sm:text-4xl font-semibold mb-4 text-center">
-            {searchQuery ? `Zoekresultaten voor "${searchQuery}"` : 'Zoek Begraafplaatsen'}
+            {searchQuery ? `Search Results for "${searchQuery}"` : 'Find Cemeteries'}
           </h1>
           <p className="text-primary-foreground/70 text-center max-w-2xl mx-auto">
-            Doorzoek onze database van meer dan 5.600 begraafplaatsen in heel Nederland
+            Search our database of cemeteries and memorial parks across the United States
           </p>
         </div>
       </div>
@@ -128,7 +129,7 @@ function SearchResults() {
                 <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-accent w-5 h-5" />
                 <Input
                   type="text"
-                  placeholder="Zoek op naam, plaats of postcode..."
+                  placeholder="Search by name, city, or zip code..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
@@ -140,10 +141,10 @@ function SearchResults() {
               <div className="hidden lg:flex items-center gap-3">
                 <Select value={selectedType} onValueChange={(val) => {
                   setSelectedType(val);
-                  performSearch(searchQuery, val, selectedProvince);
+                  performSearch(searchQuery, val, selectedState);
                 }}>
                   <SelectTrigger className="w-[200px] h-12">
-                    <SelectValue placeholder="Type begraafplaats" />
+                    <SelectValue placeholder="Cemetery Type" />
                   </SelectTrigger>
                   <SelectContent>
                     {cemeteryTypes.map(type => (
@@ -154,18 +155,18 @@ function SearchResults() {
                   </SelectContent>
                 </Select>
 
-                <Select value={selectedProvince} onValueChange={(val) => {
-                  setSelectedProvince(val);
+                <Select value={selectedState} onValueChange={(val) => {
+                  setSelectedState(val);
                   performSearch(searchQuery, selectedType, val);
                 }}>
                   <SelectTrigger className="w-[180px] h-12">
-                    <SelectValue placeholder="Provincie" />
+                    <SelectValue placeholder="State" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">Alle provincies</SelectItem>
-                    {provinces.map(province => (
-                      <SelectItem key={province} value={province}>
-                        {province}
+                    <SelectItem value="all">All States</SelectItem>
+                    {states.map(state => (
+                      <SelectItem key={state} value={state}>
+                        {state}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -173,7 +174,7 @@ function SearchResults() {
 
                 <Button onClick={handleSearch} variant="gold" size="lg" className="h-12 px-6">
                   <Search className="w-5 h-5 mr-2" />
-                  Zoeken
+                  Search
                 </Button>
               </div>
 
@@ -202,10 +203,10 @@ function SearchResults() {
             {showFilters && (
               <div className="lg:hidden mt-4 pt-4 border-t space-y-4">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Type begraafplaats</label>
+                  <label className="text-sm font-medium mb-2 block">Cemetery Type</label>
                   <Select value={selectedType} onValueChange={setSelectedType}>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Selecteer type" />
+                      <SelectValue placeholder="Select type" />
                     </SelectTrigger>
                     <SelectContent>
                       {cemeteryTypes.map(type => (
@@ -218,16 +219,16 @@ function SearchResults() {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Provincie</label>
-                  <Select value={selectedProvince} onValueChange={setSelectedProvince}>
+                  <label className="text-sm font-medium mb-2 block">State</label>
+                  <Select value={selectedState} onValueChange={setSelectedState}>
                     <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Alle provincies" />
+                      <SelectValue placeholder="All States" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">Alle provincies</SelectItem>
-                      {provinces.map(province => (
-                        <SelectItem key={province} value={province}>
-                          {province}
+                      <SelectItem value="all">All States</SelectItem>
+                      {states.map(state => (
+                        <SelectItem key={state} value={state}>
+                          {state}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -236,17 +237,17 @@ function SearchResults() {
 
                 <div className="flex gap-3">
                   <Button variant="outline" onClick={clearFilters} className="flex-1">
-                    Wissen
+                    Clear
                   </Button>
                   <Button
                     variant="gold"
                     onClick={() => {
-                      performSearch(searchQuery, selectedType, selectedProvince);
+                      performSearch(searchQuery, selectedType, selectedState);
                       setShowFilters(false);
                     }}
                     className="flex-1"
                   >
-                    Toepassen
+                    Apply
                   </Button>
                 </div>
               </div>
@@ -256,14 +257,14 @@ function SearchResults() {
           {/* Active Filters */}
           {hasActiveFilters && (
             <div className="flex flex-wrap items-center gap-2 mb-6">
-              <span className="text-sm text-muted-foreground">Actieve filters:</span>
+              <span className="text-sm text-muted-foreground">Active filters:</span>
               {searchQuery && (
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-secondary rounded-full text-sm">
                   <Search className="w-3 h-3" />
                   {searchQuery}
                   <button onClick={() => {
                     setSearchQuery('');
-                    performSearch('', selectedType, selectedProvince);
+                    performSearch('', selectedType, selectedState);
                   }} className="ml-1 hover:text-destructive">
                     <X className="w-3 h-3" />
                   </button>
@@ -274,17 +275,17 @@ function SearchResults() {
                   {cemeteryTypes.find(t => t.value === selectedType)?.label}
                   <button onClick={() => {
                     setSelectedType('all');
-                    performSearch(searchQuery, 'all', selectedProvince);
+                    performSearch(searchQuery, 'all', selectedState);
                   }} className="ml-1 hover:text-destructive">
                     <X className="w-3 h-3" />
                   </button>
                 </span>
               )}
-              {selectedProvince !== 'all' && (
+              {selectedState !== 'all' && (
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-secondary rounded-full text-sm">
-                  {selectedProvince}
+                  {selectedState}
                   <button onClick={() => {
-                    setSelectedProvince('all');
+                    setSelectedState('all');
                     performSearch(searchQuery, selectedType, 'all');
                   }} className="ml-1 hover:text-destructive">
                     <X className="w-3 h-3" />
@@ -295,7 +296,7 @@ function SearchResults() {
                 onClick={clearFilters}
                 className="text-sm text-accent hover:underline"
               >
-                Alle filters wissen
+                Clear all filters
               </button>
             </div>
           )}
@@ -305,11 +306,11 @@ function SearchResults() {
             {loading ? (
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Loader2 className="w-4 h-4 animate-spin" />
-                <span>Zoeken...</span>
+                <span>Searching...</span>
               </div>
             ) : (
               <p className="text-muted-foreground">
-                <span className="font-semibold text-foreground">{results.length}</span> begraafplaatsen gevonden
+                <span className="font-semibold text-foreground">{results.length}</span> cemeteries found
               </p>
             )}
           </div>
@@ -319,7 +320,7 @@ function SearchResults() {
             <div className="flex justify-center py-20">
               <div className="text-center">
                 <Loader2 className="w-10 h-10 animate-spin text-accent mx-auto mb-4" />
-                <p className="text-muted-foreground">Begraafplaatsen zoeken...</p>
+                <p className="text-muted-foreground">Finding cemeteries...</p>
               </div>
             </div>
           ) : results.length === 0 ? (
@@ -327,32 +328,15 @@ function SearchResults() {
               <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Search className="w-8 h-8 text-muted-foreground" />
               </div>
-              <h3 className="font-serif text-xl font-semibold mb-2">Geen resultaten gevonden</h3>
+              <h3 className="font-serif text-xl font-semibold mb-2">No Results Found</h3>
               <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-                We konden geen begraafplaatsen vinden die overeenkomen met uw zoekopdracht.
-                Probeer andere zoektermen of pas de filters aan.
+                We couldn&apos;t find any cemeteries matching your search.
+                Try different search terms or adjust the filters.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button variant="outline" onClick={clearFilters}>
-                  Filters wissen
+                  Clear Filters
                 </Button>
-                <Link href="/begraafplaats-toevoegen">
-                  <Button variant="gold" className="w-full sm:w-auto">
-                    <Plus className="w-4 h-4 mr-2" />
-                    Begraafplaats toevoegen
-                  </Button>
-                </Link>
-              </div>
-
-              {/* Helpful suggestions */}
-              <div className="mt-8 pt-8 border-t">
-                <p className="text-sm text-muted-foreground mb-4">
-                  Kent u een begraafplaats die ontbreekt in onze database?
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Help ons onze database compleet te maken door een nieuwe begraafplaats toe te voegen.
-                  Dit is gratis en helpt andere bezoekers.
-                </p>
               </div>
             </Card>
           ) : (
@@ -362,22 +346,21 @@ function SearchResults() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {results.slice(0, visibleResults).map((cemetery, index) => (
-                  <>
+                  <Fragment key={cemetery.slug}>
                     <Link
-                      key={cemetery.slug}
-                      href={`/begraafplaats/${cemetery.slug}`}
+                      href={`/cemetery/${cemetery.slug}`}
                       className="group"
                     >
                       <Card className="h-full overflow-hidden border-2 border-transparent hover:border-accent/30 transition-all duration-300">
                         <div className="p-6">
                           <div className="flex items-start justify-between mb-3">
                             <h3 className="font-serif text-lg font-semibold text-foreground group-hover:text-accent transition-colors line-clamp-2">
-                              {cemetery.naam_begraafplaats}
+                              {cemetery.name}
                             </h3>
-                            {cemetery.rating && parseFloat(cemetery.rating) > 0 && (
+                            {cemetery.rating && cemetery.rating > 0 && (
                               <div className="flex items-center gap-1 text-sm bg-gold-100 text-gold-700 px-2 py-0.5 rounded-full shrink-0 ml-2">
                                 <Star className="w-3 h-3 fill-gold-500 text-gold-500" />
-                                {parseFloat(cemetery.rating).toFixed(1)}
+                                {cemetery.rating.toFixed(1)}
                               </div>
                             )}
                           </div>
@@ -385,23 +368,23 @@ function SearchResults() {
                           <div className="space-y-2 text-sm text-muted-foreground mb-4">
                             <div className="flex items-center gap-2">
                               <MapPin className="w-4 h-4 text-accent shrink-0" />
-                              <span>{cemetery.plaats || cemetery.gemeente}, {cemetery.provincie}</span>
+                              <span>{cemetery.city}, {cemetery.state_abbr || cemetery.state}</span>
                             </div>
 
-                            {cemetery.adres && (
+                            {cemetery.address && (
                               <p className="text-xs pl-6 line-clamp-1">
-                                {cemetery.adres}
+                                {cemetery.address}
                               </p>
                             )}
                           </div>
 
                           <div className="flex items-center justify-between pt-3 border-t">
                             <span className="text-xs font-medium bg-forest-100 text-forest-700 px-2.5 py-1 rounded-full capitalize">
-                              {cemetery.type.replace(/-/g, ' ')}
+                              {cemetery.type?.replace(/-/g, ' ') || 'Cemetery'}
                             </span>
 
                             <span className="text-sm font-medium text-accent flex items-center gap-1 group-hover:gap-2 transition-all">
-                              Bekijk
+                              View
                               <ChevronRight className="w-4 h-4" />
                             </span>
                           </div>
@@ -414,7 +397,7 @@ function SearchResults() {
                         <InFeedAd />
                       </div>
                     )}
-                  </>
+                  </Fragment>
                 ))}
               </div>
 
@@ -422,14 +405,14 @@ function SearchResults() {
               {results.length > visibleResults && (
                 <div className="text-center py-8">
                   <p className="text-muted-foreground mb-4">
-                    {visibleResults} van {results.length} resultaten getoond
+                    Showing {visibleResults} of {results.length} results
                   </p>
                   <Button
                     variant="outline"
                     size="lg"
                     onClick={() => setVisibleResults(prev => prev + 12)}
                   >
-                    Meer resultaten laden
+                    Load More Results
                   </Button>
                 </div>
               )}
@@ -439,7 +422,7 @@ function SearchResults() {
           {/* Browse by Type */}
           <section className="mt-16 pt-8 border-t">
             <h2 className="font-serif text-2xl font-semibold mb-6 text-center">
-              Zoek op type begraafplaats
+              Browse by Cemetery Type
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {cemeteryTypes.slice(1).map((type) => (
@@ -453,7 +436,7 @@ function SearchResults() {
                     </div>
                     <h3 className="font-medium text-sm mb-1">{type.label}</h3>
                     <p className="text-xs text-accent">
-                      Bekijk alle →
+                      View all →
                     </p>
                   </Card>
                 </Link>

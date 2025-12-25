@@ -121,15 +121,15 @@ export default function ReviewSection({
     setError('');
 
     if (rating === 0) {
-      setError('Selecteer een beoordeling (1-5 sterren)');
+      setError('Please select a rating (1-5 stars)');
       return;
     }
     if (authorName.trim().length < 2) {
-      setError('Vul uw naam in (minimaal 2 tekens)');
+      setError('Please enter your name (at least 2 characters)');
       return;
     }
     if (reviewContent.trim().length < 20) {
-      setError('Uw review moet minimaal 20 tekens bevatten');
+      setError('Your review must be at least 20 characters');
       return;
     }
 
@@ -152,7 +152,7 @@ export default function ReviewSection({
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.error || 'Er is iets misgegaan');
+        setError(data.error || 'Something went wrong');
         return;
       }
 
@@ -164,7 +164,7 @@ export default function ReviewSection({
       setReviewTitle('');
       setReviewContent('');
     } catch {
-      setError('Er is iets misgegaan. Probeer het later opnieuw.');
+      setError('Something went wrong. Please try again later.');
     } finally {
       setSubmitting(false);
     }
@@ -175,7 +175,7 @@ export default function ReviewSection({
     if (!dateStr) return '';
     try {
       const date = new Date(dateStr);
-      return date.toLocaleDateString('nl-NL', {
+      return date.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
@@ -193,7 +193,7 @@ export default function ReviewSection({
     <section className="mb-8">
       <Card className="p-6">
         <div className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">Beoordelingen & Ervaringen</h2>
+          <h2 className="text-2xl font-semibold mb-4">Reviews & Experiences</h2>
 
           {/* Rating Summary */}
           {totalReviews > 0 ? (
@@ -212,7 +212,7 @@ export default function ReviewSection({
                 <span className="text-lg font-semibold">{averageRating.toFixed(1)}</span>
               </div>
               <span className="text-muted-foreground">
-                ({totalReviews} beoordeling{totalReviews !== 1 ? 'en' : ''})
+                ({totalReviews} {totalReviews !== 1 ? 'reviews' : 'review'})
               </span>
               {stats && stats.googleReviews > 0 && (
                 <span className="text-xs text-muted-foreground bg-gray-100 px-2 py-1 rounded">
@@ -222,7 +222,7 @@ export default function ReviewSection({
             </div>
           ) : (
             <p className="text-muted-foreground mb-4">
-              Er zijn nog geen beoordelingen voor deze begraafplaats. Wees de eerste om uw ervaring te delen!
+              There are no reviews for this cemetery yet. Be the first to share your experience!
             </p>
           )}
 
@@ -233,7 +233,7 @@ export default function ReviewSection({
               className="mb-6 inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
             >
               <Star className="w-4 h-4" />
-              Schrijf een beoordeling
+              Write a Review
             </button>
           )}
 
@@ -242,8 +242,8 @@ export default function ReviewSection({
             <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
               <CheckCircle className="w-5 h-5 text-green-600" />
               <div>
-                <p className="font-medium text-green-800">Bedankt voor uw beoordeling!</p>
-                <p className="text-sm text-green-700">Uw review wordt na controle gepubliceerd.</p>
+                <p className="font-medium text-green-800">Thank you for your review!</p>
+                <p className="text-sm text-green-700">Your review will be published after moderation.</p>
               </div>
             </div>
           )}
@@ -251,12 +251,12 @@ export default function ReviewSection({
           {/* Review Form */}
           {showReviewForm && !submitted && (
             <Card className="p-4 mb-6 bg-muted/50">
-              <h3 className="font-semibold mb-4">Deel uw ervaring met {cemeteryName}</h3>
+              <h3 className="font-semibold mb-4">Share your experience with {cemeteryName}</h3>
 
               <form onSubmit={handleSubmit}>
                 {/* Star Rating */}
                 <div className="mb-4">
-                  <p className="text-sm text-muted-foreground mb-2">Uw beoordeling *</p>
+                  <p className="text-sm text-muted-foreground mb-2">Your rating *</p>
                   <div className="flex gap-1">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <button
@@ -281,51 +281,51 @@ export default function ReviewSection({
                 <div className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium mb-1">Naam *</label>
+                      <label className="block text-sm font-medium mb-1">Name *</label>
                       <input
                         type="text"
                         value={authorName}
                         onChange={(e) => setAuthorName(e.target.value)}
-                        placeholder="Uw naam"
+                        placeholder="Your name"
                         className="w-full px-3 py-2 border rounded-md"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-1">E-mail (optioneel)</label>
+                      <label className="block text-sm font-medium mb-1">Email (optional)</label>
                       <input
                         type="email"
                         value={authorEmail}
                         onChange={(e) => setAuthorEmail(e.target.value)}
-                        placeholder="uw@email.nl"
+                        placeholder="your@email.com"
                         className="w-full px-3 py-2 border rounded-md"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-1">Titel (optioneel)</label>
+                    <label className="block text-sm font-medium mb-1">Title (optional)</label>
                     <input
                       type="text"
                       value={reviewTitle}
                       onChange={(e) => setReviewTitle(e.target.value)}
-                      placeholder="Korte samenvatting van uw ervaring"
+                      placeholder="Brief summary of your experience"
                       className="w-full px-3 py-2 border rounded-md"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-1">Uw ervaring *</label>
+                    <label className="block text-sm font-medium mb-1">Your experience *</label>
                     <textarea
                       value={reviewContent}
                       onChange={(e) => setReviewContent(e.target.value)}
-                      placeholder="Vertel over uw ervaring met deze begraafplaats. Wat vond u goed? Wat kan beter?"
+                      placeholder="Tell us about your experience with this cemetery. What did you like? What could be improved?"
                       rows={4}
                       className="w-full px-3 py-2 border rounded-md resize-none"
                       required
                     />
                     <p className="text-xs text-muted-foreground mt-1">
-                      Minimaal 20 tekens ({reviewContent.length}/20)
+                      Minimum 20 characters ({reviewContent.length}/20)
                     </p>
                   </div>
 
@@ -344,14 +344,14 @@ export default function ReviewSection({
                       ) : (
                         <Send className="w-4 h-4" />
                       )}
-                      Plaats beoordeling
+                      Submit Review
                     </button>
                     <button
                       type="button"
                       onClick={() => setShowReviewForm(false)}
                       className="text-muted-foreground hover:text-foreground"
                     >
-                      Annuleren
+                      Cancel
                     </button>
                   </div>
                 </div>

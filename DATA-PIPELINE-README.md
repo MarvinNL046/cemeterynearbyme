@@ -1,570 +1,406 @@
-# Data Pipeline - BegraafplaatsInDeBuurt.nl
+# CemeteryNearMe.com - Data Pipeline Documentation
 
-Complete workflow voor het verzamelen en verrijken van begraafplaatsdata.
+This document describes the complete data pipeline for gathering, enriching, and publishing cemetery data.
+
+## Pipeline Overview
+
+```
++-------------------------------------------------------------------------+
+|                           DATA PIPELINE                                  |
++-------------------------------------------------------------------------+
+|                                                                          |
+|  Stage 1: DISCOVERY (Bright Data SERP API)                              |
+|  - Google Maps scraping                                                  |
+|  - Base data: name, address, GPS, ratings, phone, hours                 |
+|  - Output: /data/discovery/discovered-cemeteries.json                   |
+|                                                                          |
+|  Stage 2: ENRICHMENT (Jina.ai Reader API)                               |
+|  - Scrape additional cemetery websites                                   |
+|  - Historical info, descriptions, burial counts                          |
+|  - Output: /data/scraped-cemeteries/                                     |
+|                                                                          |
+|  Stage 3: CONTENT GENERATION (OpenAI GPT-4o-mini)                       |
+|  - Generate unique "About" sections (400+ words)                         |
+|  - SEO-optimized content                                                 |
+|  - Output: /data/enriched-content/                                       |
+|                                                                          |
+|  Stage 4: BUILD (Next.js)                                               |
+|  - Merge all data sources                                                |
+|  - Generate static pages                                                 |
+|  - Output: /public/data/cemeteries.json                                  |
+|                                                                          |
+|  BONUS: Famous Deaths (Wikidata)                                         |
+|  - Scrape famous American deaths                                         |
+|  - Output: /data/famous-deaths.json                                      |
+|                                                                          |
++-------------------------------------------------------------------------+
+```
+
+## Stage 1: Discovery (Bright Data)
+
+### Purpose
+Discover all cemeteries across the United States using Google Maps via Bright Data's SERP API.
+
+### Script
+```bash
+# Test mode (3 states)
+npm run discover:test
+
+# Full discovery
+npm run discover:full
+
+# Resume interrupted discovery
+npm run discover:resume
+
+# Dry run (no API calls)
+npm run discover:dry-run
+
+# Single state
+npx tsx scripts/discovery/discover-cemeteries.ts --state TX
+```
+
+### Data Collected
+- Cemetery name
+- Full address (street, city, state, zip)
+- GPS coordinates
+- Phone number
+- Website
+- Opening hours
+- Google rating
+- Photo URLs
+- Place ID
+
+### Output Files
+- `/data/discovery/discovered-cemeteries.json` - All discovered cemeteries
+- `/data/discovery/progress.json` - Progress tracking for resume capability
+- `/data/discovery/locations.json` - Location list for discovery
+
+### Environment Variables
+```env
+BRIGHTDATA_CUSTOMER_ID=your_customer_id
+BRIGHTDATA_API_KEY=your_api_key
+BRIGHTDATA_ZONE=mcp_unlocker
+BRIGHTDATA_SERP_ZONE=your_serp_zone
+BRIGHTDATA_SERP_API_KEY=your_serp_api_key
+```
 
 ---
 
-## Overzicht Pipeline
+## Stage 2: Enrichment (Jina.ai)
 
+### Purpose
+Scrape additional content from cemetery websites (like interment.net) to gather:
+- Historical information
+- Cemetery descriptions
+- Burial counts
+- Year established
+- Cemetery type
+
+### Script
+```bash
+# Test mode (3 states)
+npx tsx scripts/scraping/scrape-us-cemeteries.ts --test
+
+# Full scraping
+npx tsx scripts/scraping/scrape-us-cemeteries.ts
+
+# Single state
+npx tsx scripts/scraping/scrape-us-cemeteries.ts --state CA
+
+# Help
+npx tsx scripts/scraping/scrape-us-cemeteries.ts --help
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│  1. DISCOVERY   │ → │    2. MERGE     │ → │  3. OSM ENRICH  │ → │   4. PHOTOS     │ → │  5. CONTENT     │ → │   6. DEPLOY     │
-│  (SERP API)     │    │  (Match & Add)  │    │  (Oppervlakte)  │    │  (SERP Photos)  │    │  (GPT-4o-mini)  │    │  (Sync & Push)  │
-└─────────────────┘    └─────────────────┘    └─────────────────┘    └─────────────────┘    └─────────────────┘    └─────────────────┘
+
+### Data Sources
+1. **interment.net** - Cemetery records and burial data
+2. More sources can be added
+
+### Output Files
+- `/data/scraped-cemeteries/{state}-interment-net.json` - Per-state data
+- `/data/scraped-cemeteries/all-cemeteries.json` - Combined data
+- `/data/scraped-cemeteries/summary.json` - Statistics
+
+### Environment Variables
+```env
+JINA_API_KEY=your_jina_api_key
 ```
 
 ---
 
-## Stap 1: Discovery (Bright Data SERP API)
+## Stage 3: Content Generation (OpenAI)
 
-### Wat het doet
-Zoekt naar begraafplaatsen in alle Nederlandse gemeenten via Google Maps.
+### Purpose
+Generate unique, SEO-optimized "About" sections for each cemetery using GPT-4o-mini.
 
-### Wat het SCRAPED (per begraafplaats):
-| Veld | Beschrijving | Voorbeeld |
-|------|--------------|-----------|
-| `google_cid` | Unieke Google ID | `0x47c6...` |
-| `google_place_id` | Google Place ID | `ChIJ...` |
-| `name` | Naam begraafplaats | `Algemene Begraafplaats` |
-| `address` | Volledig adres | `Kerkstraat 1, 1234 AB` |
-| `latitude/longitude` | GPS coördinaten | `52.123, 4.567` |
-| `phone` | Telefoonnummer | `+31 20 123 4567` |
-| `website` | Website URL | `https://...` |
-| `rating` | Google rating | `4.5` |
-| `review_count` | Aantal reviews | `23` |
-| `opening_hours` | Openingstijden | `Ma-Vr 9:00-17:00` |
-| `photo_url` | Hoofdfoto URL | `https://lh3...` |
-| `facilities` | Faciliteiten | `["Rolstoel", "Parking"]` |
-| `business_type` | Type locatie | `cemetery` |
+### Data Used
+- Base cemetery data from Stage 1 (Bright Data)
+- Enriched content from Stage 2 (Jina.ai)
 
-### Wat het NIET scraped:
-- ❌ Oppervlakte (komt van OSM)
-- ❌ Aantal graven (komt van Jina search)
-- ❌ Aantal personen begraven (komt van Jina search)
-- ❌ Beschrijvingen/teksten (komt van GPT enrichment)
-- ❌ Historische informatie
-- ❌ Wikipedia links (komt van OSM)
+### Generated Content
+- 400+ words per cemetery
+- Unique descriptions
+- Historical context
+- Location information
+- SEO keywords
+
+### Output Files
+- `/data/enriched-content/{cemetery-slug}.json` - Per-cemetery content
+
+### Environment Variables
+```env
+OPENAI_API_KEY=your_openai_api_key
+```
+
+---
+
+## Stage 4: Build Process
+
+### Purpose
+Merge all data and generate the production website.
 
 ### Commands
 ```bash
-# 1. Genereer locatielijst (eenmalig)
-npx tsx scripts/discovery/seed-locations.ts
+# Full build (includes data merge)
+npm run build
 
-# 2. Start discovery (kan hervatten)
-npx tsx scripts/discovery/discover-cemeteries.ts
+# Just data build
+npm run build-data
 
-# Met opties:
-npx tsx scripts/discovery/discover-cemeteries.ts --provincie "Utrecht"
-npx tsx scripts/discovery/discover-cemeteries.ts --batch 50
-npx tsx scripts/discovery/discover-cemeteries.ts --dry-run
+# Generate sitemaps
+npm run generate-sitemaps
 ```
 
-### Output bestanden
+### Merge Process
+1. Load discovery data
+2. Load enriched content
+3. Match by slug/name
+4. Generate final cemetery objects
+5. Write to `/public/data/cemeteries.json`
+
+---
+
+## Bonus: Famous Deaths (Wikidata)
+
+### Purpose
+Fetch famous American deaths for the "This Day in History" feature.
+
+### Script
+```bash
+npm run fetch-deaths
 ```
-data/discovery/
-├── locations.json              # Alle locaties + status
-├── progress.json               # Voortgang statistieken
-├── discovered-cemeteries.json  # Gevonden data (RAW)
-└── rate-limits.json            # API rate limiting
+
+### Data Source
+Wikidata SPARQL endpoint - queries for:
+- Notable Americans
+- Death dates
+- Professions
+- Wikipedia links
+- Burial locations
+
+### Output File
+- `/data/famous-deaths.json`
+
+### Data Structure
+```json
+{
+  "lastUpdated": "2025-01-15T...",
+  "source": "Wikidata",
+  "count": 1234,
+  "deaths": [
+    {
+      "name": "John Doe",
+      "profession": "Actor",
+      "birth_date": "1920-01-15",
+      "death_date": "2005-12-24",
+      "death_day": 24,
+      "death_month": 12,
+      "wikipedia": "https://en.wikipedia.org/wiki/John_Doe",
+      "cemetery": "Hollywood Forever Cemetery",
+      "city": "Los Angeles",
+      "state": "CA"
+    }
+  ]
+}
 ```
 
 ---
 
-## Stap 2: Merge Discovery Data
+## Complete Pipeline Execution
 
-### Wat het doet
-Matched gevonden begraafplaatsen met bestaande data en voegt nieuwe info toe.
-
-### Matching strategieën (in volgorde):
-1. **Exact slug match** - Zelfde slug
-2. **CID match** - Zelfde Google CID
-3. **GPS proximity** - Binnen 100m van elkaar
-4. **Postcode + naam** - Zelfde postcode, vergelijkbare naam
-5. **Gemeente + fuzzy** - Zelfde gemeente, fuzzy naam match
-
-### Wat wordt GEMERGED:
-| Veld | Actie |
-|------|-------|
-| `google_rating` | Altijd updaten |
-| `google_review_count` | Altijd updaten |
-| `google_place_id` | Toevoegen indien leeg |
-| `google_cid` | Toevoegen indien leeg |
-| `openingstijden` | Toevoegen indien leeg |
-| `telefoon` | Toevoegen indien leeg |
-| `gps_coordinaten` | Toevoegen indien leeg |
-| `foto_url` | Toevoegen indien leeg |
-| `website` | Toevoegen indien leeg |
-| `faciliteiten` | Toevoegen indien leeg |
-
-### Command
+### First Time Setup
 ```bash
-npx tsx scripts/merge-discovery-data.ts
+# 1. Install dependencies
+npm install
+
+# 2. Set environment variables
+cp .env.example .env.local
+# Edit .env.local with your API keys
+
+# 3. Run full discovery (takes hours)
+npm run discover:full
+
+# 4. Run enrichment (takes hours)
+npx tsx scripts/scraping/scrape-us-cemeteries.ts
+
+# 5. Generate famous deaths
+npm run fetch-deaths
+
+# 6. Build site
+npm run build
 ```
 
-### Output
-- Updates `data/begraafplaatsen.json`
-- Log in `data/merge-log.json`
-
----
-
-## Stap 3: OSM Enrichment
-
-### Wat het doet
-Haalt extra data op van OpenStreetMap + Jina AI search.
-
-### Wat het TOEVOEGT:
-| Veld | Bron | Beschrijving |
-|------|------|--------------|
-| `oppervlakte` | OSM | Oppervlakte in m² |
-| `osm_id` | OSM | Link naar OSM |
-| `wikipedia_url` | OSM | Wikipedia artikel |
-| `wikidata_id` | OSM | Wikidata ID |
-| `aantal_graven` | Jina Search | Geschat aantal graven |
-| `aantal_personen` | Jina Search | Aantal begraven personen |
-
-### Command
+### Regular Updates
 ```bash
-npx tsx scripts/enrich-osm-data.ts
-```
+# Resume discovery if interrupted
+npm run discover:resume
 
-### Features
-- ✅ Auto-resume (skipt entries met oppervlakte)
-- ✅ Rate limiting (1 req/sec OSM, 0.5 sec Jina)
-- ✅ Saves elke 50 entries
-
----
-
-## Stap 4: Photo Fetching (Bright Data SERP API)
-
-### Wat het doet
-Haalt Google Photos op voor begraafplaatsen die een `google_place_id` hebben maar nog geen foto.
-
-### Hoe het werkt
-1. Zoekt locaties zonder foto maar mét `google_place_id`
-2. Maakt batch requests naar Bright Data SERP API
-3. Vraagt Google Photos op via Place ID
-4. Slaat eerste bruikbare foto op in `foto_url`
-
-### Wat het TOEVOEGT:
-| Veld | Bron | Beschrijving |
-|------|------|--------------|
-| `foto_url` | Google Photos | Hoofdfoto van de begraafplaats |
-
-### Command
-```bash
-# Start photo fetching (hervat automatisch)
-npx tsx scripts/fetch-missing-photos.ts
-
-# Dry run (alleen tellen)
-npx tsx scripts/fetch-missing-photos.ts --dry-run
-```
-
-### Features
-- ✅ Auto-resume via `data/missing-photos-progress.json`
-- ✅ Batch processing (5 locaties per batch)
-- ✅ Rate limiting (15s - 60s tussen batches)
-- ✅ Retry logic bij timeouts
-- ✅ Saves progress regelmatig
-
-### Output bestanden
-```
-data/
-├── missing-photos-progress.json  # Voortgang tracking
-└── begraafplaatsen.json          # Foto URLs toegevoegd
-```
-
-### Kosten
-- Bright Data SERP API: ~$5 per 1000 requests
-- ~2000 locaties = ~$10
-
----
-
-## Stap 5: Content Enrichment (GPT-4o-mini)
-
-### Wat het doet
-Genereert unieke, kwalitatieve beschrijvingen voor elke begraafplaats.
-**Essentieel voor Google AdSense goedkeuring** - voorkomt "thin content" afwijzingen.
-
-### Waarom dit nodig is
-- Google AdSense wijst sites af met "thin content" (<100 woorden)
-- Template-achtige content wordt ook afgewezen
-- Dit script genereert **400+ woorden unieke content** per pagina
-
-### Wat het GENEREERT:
-| Veld | Beschrijving |
-|------|--------------|
-| `generated.samenvatting` | Uitgebreide beschrijving (400+ woorden) |
-| `generated.geschiedenis` | Historische context |
-| `generated.sfeer_en_omgeving` | Sfeer beschrijving |
-| `generated.praktische_informatie` | Praktische info |
-| `generated.bijzonderheden` | Unieke kenmerken |
-| `generated.bezoekerstips` | Tips voor bezoekers |
-
-### Features
-- ✅ **Type-specifieke prompts** - Unieke prompts voor:
-  - Joodse begraafplaatsen (tradities, Hebreeuwse inscripties)
-  - Natuurbegraafplaatsen (ecologie, duurzaamheid)
-  - Islamitische begraafplaatsen (rituelen, Qibla)
-  - Rooms-katholieke begraafplaatsen (sacramenten)
-  - Protestantse begraafplaatsen (soberheid)
-  - Oorlogsbegraafplaatsen (WOII, herdenking)
-- ✅ **Variatie in openingen** - 10+ verschillende openingszinnen
-- ✅ **Quality checks** - Retry als content te kort of te template-achtig
-- ✅ **Auto-resume** - Hervat waar gestopt
-- ✅ **Progress tracking** - Realtime statistieken
-
-### Commands
-```bash
-# Volledige run (6883 entries, ~2-3 uur)
-npx tsx scripts/enrich-content-quality.ts
-
-# Dry run (preview zonder API calls)
-npx tsx scripts/enrich-content-quality.ts --dry-run
-
-# Eerste X entries
-npx tsx scripts/enrich-content-quality.ts --batch 100
-
-# Reset progress en start opnieuw
-npx tsx scripts/enrich-content-quality.ts --reset
-
-# Achtergrond draaien
-npx tsx scripts/enrich-content-quality.ts &
-```
-
-### Kosten
-- Model: GPT-4o-mini
-- ~500 tokens output per entry
-- 6883 entries × 500 tokens = ~3.4M tokens
-- **Geschatte kosten: ~$2.50-3.00**
-
-### Tijd
-- ~5-8 seconden per entry
-- 5 concurrent requests
-- **Totale tijd: ~2-3 uur**
-
-### Environment
-```env
-# .env.openai
-OPENAI_API_KEY=sk-...
-```
-
-### Output bestanden
-```
-data/
-├── begraafplaatsen.json                    # Content toegevoegd aan 'generated'
-├── enrichment-quality-progress.json        # Voortgang tracking
-└── begraafplaatsen-pre-enrichment.json     # Backup voor enrichment
-```
-
-### Voorbeeld gegenereerde content
-```
-Een waardig monument in Drenthe is de Algemene Begraafplaats gelegen
-aan de Oude Groningerweg 19 in Gieten. Deze begraafplaats, opgericht
-in 1830, dient als een eerbetoon aan de overledenen en speelt een
-belangrijke rol in de lokale gemeenschap...
-
-[400+ woorden unieke content]
-```
-
-### Troubleshooting
-```bash
-# Check voortgang
-cat data/enrichment-quality-progress.json
-
-# Check gemiddelde woordenaantal
-node -e "const d=require('./data/begraafplaatsen.json'); const g=d.filter(c=>c.generated?.samenvatting); console.log('Verrijkt:', g.length); console.log('Gem. woorden:', Math.round(g.reduce((a,c)=>a+c.generated.samenvatting.split(' ').length,0)/g.length));"
+# Rebuild with new data
+npm run build
 ```
 
 ---
 
-## Stap 6: Deploy
+## API Rate Limits
 
-### Sync data naar public folder
-```bash
-cp data/begraafplaatsen.json public/data/cemeteries.json
-```
-
-### Herstart dev server
-```bash
-pkill -f "next dev" && npm run dev
-```
-
-### Deploy naar productie
-```bash
-git add data/ public/data/
-git commit -m "Update cemetery data"
-git push
-```
+| Service | Rate Limit | Delay in Code |
+|---------|------------|---------------|
+| Bright Data SERP | ~5 req/sec | 500-1000ms |
+| Jina.ai Reader | ~10 req/sec | 800ms |
+| OpenAI GPT | 500 req/min | 200ms |
+| Wikidata | 100 req/min | 1000ms |
 
 ---
 
-## Complete Workflow (Copy-Paste Ready)
+## Data Flow Diagram
 
-```bash
-# === STAP 1: Discovery (alleen als je nieuwe data wilt) ===
-npx tsx scripts/discovery/seed-locations.ts
-npx tsx scripts/discovery/discover-cemeteries.ts
-
-# === STAP 2: Merge naar bestaande data ===
-npx tsx scripts/merge-discovery-data.ts
-
-# === STAP 3: OSM verrijking (oppervlakte + graven) ===
-npx tsx scripts/enrich-osm-data.ts
-
-# === STAP 4: Photo fetching (Google Photos via SERP) ===
-npx tsx scripts/fetch-missing-photos.ts
-
-# === STAP 5: Content enrichment (400+ woorden per pagina) ===
-npx tsx scripts/enrich-content-quality.ts
-
-# === STAP 6: Sync naar public ===
-cp data/begraafplaatsen.json public/data/cemeteries.json
-
-# === STAP 7: Herstart server ===
-pkill -f "next dev" && npm run dev
 ```
-
-### Parallel uitvoeren (voor snelheid)
-Stap 3, 4, en 5 kunnen parallel draaien omdat ze verschillende APIs gebruiken:
-```bash
-# In aparte terminals of met &:
-npx tsx scripts/enrich-osm-data.ts &           # OSM API
-npx tsx scripts/fetch-missing-photos.ts &       # Bright Data SERP
-npx tsx scripts/enrich-content-quality.ts &     # OpenAI API
-```
-
----
-
-## Data Statistieken Checken
-
-```bash
-# Hoeveel data hebben we?
-node -e "
-const data = require('./public/data/cemeteries.json');
-console.log('Totaal:', data.length);
-console.log('Met foto:', data.filter(b => b.foto_url).length);
-console.log('Met GPS:', data.filter(b => b.gps_coordinaten).length);
-console.log('Met oppervlakte:', data.filter(b => b.oppervlakte).length);
-console.log('Met graven:', data.filter(b => b.aantal_graven).length);
-console.log('Met faciliteiten:', data.filter(b => b.faciliteiten).length);
-console.log('Met beschrijving:', data.filter(b => b.generated?.samenvatting).length);
-"
-```
-
----
-
-## Environment Variables
-
-```env
-# .env.local
-BRIGHTDATA_API_KEY=xxx        # Voor discovery
-DATABASE_URL=xxx              # Voor user photos/reviews
+                    +---------------+
+                    |  Google Maps  |
+                    |  (via Bright  |
+                    |    Data)      |
+                    +-------+-------+
+                            |
+                            v
+                  +-----------------+
+                  |   Discovery     |
+                  |    Script       |
+                  +--------+--------+
+                           |
+                           v
+            +--------------------------+
+            | /data/discovery/         |
+            | discovered-cemeteries.json|
+            +-------------+------------+
+                          |
+        +-----------------+------------------+
+        |                 |                  |
+        v                 v                  v
++---------------+  +---------------+  +---------------+
+| interment.net |  | Other sources |  |   Wikidata    |
+|  (via Jina)   |  |  (via Jina)   |  |   (direct)    |
++-------+-------+  +-------+-------+  +-------+-------+
+        |                  |                  |
+        v                  v                  v
++---------------------------+        +---------------+
+| /data/scraped-cemeteries/ |        | /data/famous- |
+| all-cemeteries.json       |        | deaths.json   |
++-------------+-------------+        +-------+-------+
+              |                              |
+              v                              |
+        +---------------+                    |
+        |  OpenAI GPT   |                    |
+        |  (Enrichment) |                    |
+        +-------+-------+                    |
+                |                            |
+                v                            |
++---------------------------+                |
+| /data/enriched-content/   |                |
++-------------+-------------+                |
+              |                              |
+              +---------------+--------------+
+                              |
+                              v
+                    +------------------+
+                    |   Build Script   |
+                    |  (merge & gen)   |
+                    +--------+---------+
+                             |
+                             v
+                  +----------------------+
+                  | /public/data/        |
+                  | cemeteries.json      |
+                  +----------------------+
+                             |
+                             v
+                  +----------------------+
+                  |   Next.js Build      |
+                  |  (static pages)      |
+                  +----------------------+
 ```
 
 ---
 
 ## Troubleshooting
 
-### Discovery script stopt
-```bash
-# Gewoon opnieuw starten - hervat automatisch
-npx tsx scripts/discovery/discover-cemeteries.ts
+### Discovery Stops
+1. Check Bright Data credits
+2. Run `npm run discover:resume` to continue
+3. Check `/data/discovery/progress.json` for last state
+
+### Jina Errors
+1. Check JINA_API_KEY in .env.local
+2. Some sites block scraping - these are skipped
+3. Check rate limits
+
+### Build Fails
+1. Run `npm run typecheck` to find TypeScript errors
+2. Check `/data/discovery/discovered-cemeteries.json` exists
+3. Ensure all required JSON files exist
+
+---
+
+## File Structure
+
 ```
+/data/
+  discovery/
+    discovered-cemeteries.json   # Raw discovery data
+    progress.json                # Resume state
+    locations.json               # Location list
+  scraped-cemeteries/
+    {state}-interment-net.json  # Per-state Jina data
+    all-cemeteries.json         # Combined data
+    summary.json                # Statistics
+  enriched-content/
+    {cemetery-slug}.json        # GPT-generated content
+  famous-deaths.json            # Wikidata deaths
+  cemetery-types.json           # Cemetery type definitions
 
-### OSM script stopt
-```bash
-# Gewoon opnieuw starten - skipt entries met oppervlakte
-npx tsx scripts/enrich-osm-data.ts
-```
+/public/data/
+  cemeteries.json               # Final merged data
 
-### Data niet zichtbaar op website
-```bash
-# Sync naar public folder
-cp data/begraafplaatsen.json public/data/cemeteries.json
-
-# Herstart server om cache te clearen
-pkill -f "next dev" && npm run dev
+/scripts/
+  discovery/
+    discover-cemeteries.ts      # Bright Data discovery
+  scraping/
+    scrape-us-cemeteries.ts     # Jina.ai scraping
+  scrape-wikidata-deaths.ts     # Famous deaths fetcher
+  build-data.ts                 # Data build/merge
+  generate-sitemaps.ts          # Sitemap generator
 ```
 
 ---
 
-## Optioneel: Google Reviews Ophalen
+## NPM Scripts Reference
 
-### Wat het doet
-Haalt volledige Google reviews op via **Bright Data Google Maps Dataset API**.
-
-### Flow
-```
-┌─────────────────────┐    ┌─────────────────────┐
-│  fetch-reviews-     │ → │   embed-reviews.ts  │
-│  by-cid.ts          │    │   (embed in JSON)   │
-│  (ophalen via API)  │    │                     │
-└─────────────────────┘    └─────────────────────┘
-```
-
-### Stap 1: Reviews ophalen (`fetch-reviews-by-cid.ts`)
-
-Gebruikt de **Google CID** (uit discovery) om reviews op te halen.
-
-**API Details:**
-```typescript
-const DATASET_ID = 'gd_m8ebnr0q2qlklc02fz'; // Google Maps Full Info
-```
-
-**Wat het ophaalt per review:**
-| Veld | Beschrijving |
-|------|--------------|
-| `reviewer_name` | Naam van reviewer |
-| `rating` | 1-5 sterren |
-| `review_text` | Volledige review tekst |
-| `review_date` | Datum van review |
-| `reviewer_image` | Profielfoto URL |
-
-**Commands:**
-```bash
-# Alle begraafplaatsen met CID
-npx tsx scripts/fetch-reviews-by-cid.ts
-
-# Alleen bepaalde provincie
-npx tsx scripts/fetch-reviews-by-cid.ts --provincie "Utrecht"
-
-# Eerste 100
-npx tsx scripts/fetch-reviews-by-cid.ts --batch 100
-
-# Test run (1 locatie)
-npx tsx scripts/fetch-reviews-by-cid.ts --dry-run
-```
-
-**Output:**
-```
-data/reviews/
-├── algemene-begraafplaats-amsterdam.json
-├── begraafplaats-zorgvlied.json
-└── ... (per begraafplaats een JSON bestand)
-```
-
-### Stap 2: Reviews embedden (`embed-reviews.ts`)
-
-Embed de opgehaalde reviews in `begraafplaatsen.json` zodat ze direct beschikbaar zijn.
-
-**Command:**
-```bash
-npx tsx scripts/embed-reviews.ts
-```
-
-**Resultaat:**
-Reviews worden toegevoegd als `embeddedReviews` array in elk cemetery object.
-
-### Complete Reviews Workflow
-```bash
-# 1. Reviews ophalen (vereist google_cid uit discovery)
-npx tsx scripts/fetch-reviews-by-cid.ts
-
-# 2. Embedden in main data
-npx tsx scripts/embed-reviews.ts
-
-# 3. Sync naar public
-cp data/begraafplaatsen.json public/data/cemeteries.json
-```
-
----
-
-## Optionele Extra Scripts
-
-| Script | Doel |
-|--------|------|
-| `enrich-with-gpt.ts` | Oude AI beschrijvingen (vervangen door `enrich-content-quality.ts`) |
-| `fetch-google-photos-serp.ts` | Extra foto's ophalen (alternatief) |
-| `translate-reviews.ts` | Reviews vertalen |
-| `check-404s.ts` | Controleer dode links |
-
----
-
-## Monitoring Lopende Processen
-
-Als je processen op de achtergrond draait, kun je ze monitoren:
-
-```bash
-# Check alle lopende processes
-ps aux | grep "tsx scripts"
-
-# Tail output van content enrichment
-tail -f /tmp/claude/tasks/*.output
-
-# Check enrichment progress
-watch -n 10 'node -e "const d=require(\"./data/begraafplaatsen.json\"); const g=d.filter(c=>c.generated?.samenvatting?.length>200); console.log(\"Verrijkt:\", g.length, \"/\", d.length);"'
-
-# Check photo progress
-watch -n 10 'cat data/missing-photos-progress.json | jq .stats'
-```
-
----
-
----
-
-## 🇧🇪 België Uitbreiding
-
-De data pipeline ondersteunt nu ook België met ondersteuning voor drie gewesten:
-- **Vlaanderen**: 5 provincies, Nederlandse zoektermen
-- **Wallonië**: 5 provincies, Franse zoektermen ("cimetière", "crématorium")
-- **Brussel-Hoofdstad**: Tweetalig (NL/FR)
-
-### België Workflow
-
-```bash
-# === STAP 1: Seed Belgische locaties ===
-npx tsx scripts/discovery/seed-locations-belgium.ts
-
-# Check: ~641 locaties over 11 provincies
-npx tsx scripts/discovery/seed-locations-belgium.ts --dry-run
-
-# === STAP 2: Discovery België ===
-npx tsx scripts/discovery/discover-cemeteries-belgium.ts
-
-# Per regio:
-npx tsx scripts/discovery/discover-cemeteries-belgium.ts --regio Vlaanderen
-npx tsx scripts/discovery/discover-cemeteries-belgium.ts --regio Wallonië
-npx tsx scripts/discovery/discover-cemeteries-belgium.ts --regio Brussel
-
-# === STAP 3: Merge België data ===
-npx tsx scripts/merge-discovery-data-belgium.ts
-
-# === STAP 4: Enrich België ===
-# TODO: Add --land België support to enrichment scripts
-```
-
-### België Bestanden
-
-```
-data/
-├── discovery/
-│   ├── locations-belgium.json           # Belgische locaties + status
-│   ├── progress-belgium.json            # Voortgang België
-│   ├── discovered-cemeteries-belgium.json  # Gevonden data België
-│   └── rate-limits-belgium.json         # Rate limiting België
-├── begraafplaatsen-belgie.json          # Belgische begraafplaatsen
-└── merge-log-belgium.json               # Merge log België
-
-public/data/
-└── cemeteries-belgium.json              # Public België data
-```
-
-### Zoektermen per Taal
-
-| Taal | Zoektermen |
-|------|------------|
-| NL (Vlaanderen) | begraafplaats, kerkhof, natuurbegraafplaats, joodse/islamitische begraafplaats |
-| FR (Wallonië) | cimetière, cimetière naturel, cimetière juif/islamique/catholique/militaire |
-| NL/FR (Brussel) | Beide sets gecombineerd |
-
-### België Data Structuur
-
-Extra velden voor België:
-- `regio`: Vlaanderen \| Wallonië \| Brussel
-- `land`: België
-- `taal`: nl \| fr \| nl/fr
-- `naam_fr`: Franse naam (voor Wallonië/Brussel)
-
----
-
-*Laatst bijgewerkt: December 2024*
+| Script | Description |
+|--------|-------------|
+| discover:test | Test discovery (3 states) |
+| discover:full | Full US discovery |
+| discover:resume | Resume interrupted discovery |
+| discover:dry-run | Test without API calls |
+| fetch-deaths | Fetch famous deaths from Wikidata |
+| build-data | Build/merge data files |
+| generate-sitemaps | Generate XML sitemaps |
+| build | Full Next.js build (includes data) |
+| typecheck | TypeScript type checking |

@@ -14,7 +14,7 @@ export default function LeaderboardAd({
   return (
     <div className={`w-full bg-gray-50 py-4 ${className}`}>
       <div className="container mx-auto px-4">
-        <p className="text-xs text-center text-muted-foreground mb-2">Advertentie</p>
+        <p className="text-xs text-center text-muted-foreground mb-2">Advertisement</p>
         
         {/* Leaderboard 728x90 on desktop, 320x50 on mobile */}
         <AdBanner
