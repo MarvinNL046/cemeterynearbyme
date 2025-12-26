@@ -1,27 +1,41 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Facebook, Twitter, Linkedin, ChevronDown } from 'lucide-react';
 import Logo from '@/components/Logo';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import type { FooterState, FooterType, FooterGuide } from '@/lib/footer-data';
 
-const popularStates = [
-  { href: '/state/california', label: 'California' },
-  { href: '/state/texas', label: 'Texas' },
-  { href: '/state/florida', label: 'Florida' },
-  { href: '/state/new-york', label: 'New York' },
-  { href: '/state/pennsylvania', label: 'Pennsylvania' },
-  { href: '/state/ohio', label: 'Ohio' },
+// Fallback data for client-side rendering
+const fallbackStates = [
+  { name: 'California', slug: 'california', count: 0 },
+  { name: 'Texas', slug: 'texas', count: 0 },
+  { name: 'Florida', slug: 'florida', count: 0 },
+  { name: 'New York', slug: 'new-york', count: 0 },
+  { name: 'Pennsylvania', slug: 'pennsylvania', count: 0 },
+  { name: 'Ohio', slug: 'ohio', count: 0 },
+  { name: 'Illinois', slug: 'illinois', count: 0 },
+  { name: 'Georgia', slug: 'georgia', count: 0 },
 ];
 
-const cemeteryTypes = [
-  { href: '/type/cemetery', label: 'Public Cemeteries' },
-  { href: '/type/memorial-park', label: 'Memorial Parks' },
-  { href: '/type/national-cemetery', label: 'National Cemeteries' },
-  { href: '/type/natural-burial', label: 'Natural Burial Grounds' },
-  { href: '/type/jewish-cemetery', label: 'Jewish Cemeteries' },
-  { href: '/type/catholic-cemetery', label: 'Catholic Cemeteries' },
+const fallbackTypes = [
+  { name: 'Public Cemetery', slug: 'public-cemetery', count: 0 },
+  { name: 'Memorial Park', slug: 'memorial-park', count: 0 },
+  { name: 'National Cemetery', slug: 'national-cemetery', count: 0 },
+  { name: 'Veterans Cemetery', slug: 'veterans-cemetery', count: 0 },
+  { name: 'Natural Burial', slug: 'natural-burial', count: 0 },
+  { name: 'Green Cemetery', slug: 'green-cemetery', count: 0 },
+  { name: 'Catholic Cemetery', slug: 'catholic-cemetery', count: 0 },
+  { name: 'Jewish Cemetery', slug: 'jewish-cemetery', count: 0 },
+];
+
+const guides: FooterGuide[] = [
+  { href: '/guides/cemetery-types', label: 'Types of Cemeteries' },
+  { href: '/guides/famous-cemeteries', label: 'Famous Cemeteries' },
+  { href: '/guides/funeral-planning', label: 'Funeral Planning' },
+  { href: '/guides/veterans-burial', label: 'Veterans Burial' },
+  { href: '/guides/green-burial', label: 'Green Burial' },
 ];
 
 const information = [
@@ -29,12 +43,88 @@ const information = [
   { href: '/contact', label: 'Contact' },
   { href: '/blog', label: 'Blog' },
   { href: '/deaths', label: 'Deaths Calendar' },
-  { href: '/funeral-planning', label: 'Funeral Planning' },
+  { href: '/faq', label: 'FAQ' },
 ];
+
+interface FooterSectionProps {
+  title: string;
+  children: React.ReactNode;
+  isOpen?: boolean;
+  onToggle?: () => void;
+  isMobile?: boolean;
+}
+
+function FooterSection({ title, children, isOpen, onToggle, isMobile }: FooterSectionProps) {
+  if (isMobile) {
+    return (
+      <div className="border-b border-white/10">
+        <button
+          onClick={onToggle}
+          className="w-full flex items-center justify-between py-4 text-left"
+          aria-expanded={isOpen}
+        >
+          <h4 className="font-semibold text-gold-300">{title}</h4>
+          <ChevronDown
+            className={`w-5 h-5 text-gold-300 transition-transform duration-200 ${
+              isOpen ? 'rotate-180' : ''
+            }`}
+          />
+        </button>
+        <div
+          className={`overflow-hidden transition-all duration-300 ${
+            isOpen ? 'max-h-96 pb-4' : 'max-h-0'
+          }`}
+        >
+          {children}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <h4 className="font-semibold mb-4 text-gold-300">{title}</h4>
+      {children}
+    </div>
+  );
+}
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [topStates, setTopStates] = useState<FooterState[]>(fallbackStates);
+  const [topTypes, setTopTypes] = useState<FooterType[]>(fallbackTypes);
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Fetch dynamic data on mount
+  useEffect(() => {
+    async function fetchFooterData() {
+      try {
+        const response = await fetch('/api/footer-data');
+        if (response.ok) {
+          const data = await response.json();
+          if (data.states?.length > 0) setTopStates(data.states);
+          if (data.types?.length > 0) setTopTypes(data.types);
+        }
+      } catch (error) {
+        console.error('Error fetching footer data:', error);
+        // Keep fallback data on error
+      }
+    }
+    fetchFooterData();
+  }, []);
+
+  // Handle responsive behavior
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,6 +132,41 @@ export default function Footer() {
     setSubscribed(true);
     setEmail('');
   };
+
+  const toggleSection = (section: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
+  const renderLinks = (items: Array<{ href: string; label: string }>, type: 'state' | 'type' | 'guide' | 'info') => (
+    <ul className="space-y-1">
+      {items.map((item) => (
+        <li key={item.href}>
+          <Link
+            href={item.href}
+            className="block py-1.5 text-primary-foreground/70 hover:text-white transition-colors text-sm sm:text-base"
+          >
+            {item.label}
+          </Link>
+        </li>
+      ))}
+      {(type === 'state' || type === 'type') && (
+        <li>
+          <Link
+            href={type === 'state' ? '/states' : '/types'}
+            className="block py-1.5 text-gold-300 hover:text-white transition-colors text-sm sm:text-base font-medium"
+          >
+            View All &rarr;
+          </Link>
+        </li>
+      )}
+    </ul>
+  );
+
+  const stateLinks = topStates.map(s => ({ href: `/state/${s.slug}`, label: s.name }));
+  const typeLinks = topTypes.map(t => ({ href: `/type/${t.slug}`, label: t.name }));
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -80,15 +205,16 @@ export default function Footer() {
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        {/* Desktop Layout - 5 columns */}
+        <div className="hidden md:grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Logo & Description */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <Logo variant="light" size="md" className="mb-4" />
-            <p className="text-primary-foreground/70 mb-6 max-w-sm">
+            <p className="text-primary-foreground/70 mb-6 text-sm">
               Your complete guide to finding cemeteries across the United States.
               Current information, hours, and directions for thousands of locations nationwide.
             </p>
-            {/* Social icons - min 44x44px touch targets */}
+            {/* Social icons */}
             <div className="flex items-center gap-3">
               <a
                 href="https://facebook.com"
@@ -120,68 +246,125 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Popular States */}
+          {/* Guides Column */}
+          <div>
+            <h4 className="font-semibold mb-4 text-gold-300">Guides</h4>
+            {renderLinks(guides, 'guide')}
+          </div>
+
+          {/* Popular States Column */}
           <div>
             <h4 className="font-semibold mb-4 text-gold-300">Popular States</h4>
-            <ul className="space-y-1">
-              {popularStates.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="block py-1.5 text-primary-foreground/70 hover:text-white transition-colors text-sm sm:text-base"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {renderLinks(stateLinks, 'state')}
           </div>
 
-          {/* Cemetery Types */}
+          {/* Cemetery Types Column */}
           <div>
             <h4 className="font-semibold mb-4 text-gold-300">Cemetery Types</h4>
-            <ul className="space-y-1">
-              {cemeteryTypes.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="block py-1.5 text-primary-foreground/70 hover:text-white transition-colors text-sm sm:text-base"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {renderLinks(typeLinks, 'type')}
           </div>
 
-          {/* Information & Contact */}
+          {/* Information Column */}
           <div>
             <h4 className="font-semibold mb-4 text-gold-300">Information</h4>
-            <ul className="space-y-1 mb-6">
-              {information.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="block py-1.5 text-primary-foreground/70 hover:text-white transition-colors text-sm sm:text-base"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <h4 className="font-semibold mb-3 text-gold-300">Contact</h4>
-            <ul className="space-y-1">
-              <li>
-                <a
-                  href="mailto:info@cemeterynearbyme.com"
-                  className="flex items-center gap-2 py-1.5 text-primary-foreground/70 hover:text-white transition-colors text-sm sm:text-base"
-                >
-                  <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span className="break-all">info@cemeterynearbyme.com</span>
-                </a>
-              </li>
-            </ul>
+            {renderLinks(information, 'info')}
+            <h4 className="font-semibold mt-6 mb-3 text-gold-300">Contact</h4>
+            <a
+              href="mailto:info@cemeterynearbyme.com"
+              className="flex items-center gap-2 py-1.5 text-primary-foreground/70 hover:text-white transition-colors text-sm"
+            >
+              <Mail className="w-4 h-4 flex-shrink-0" />
+              <span className="break-all">info@cemeterynearbyme.com</span>
+            </a>
           </div>
+        </div>
+
+        {/* Mobile Layout - Accordion */}
+        <div className="md:hidden">
+          {/* Logo & Description - Always visible */}
+          <div className="pb-6 mb-6 border-b border-white/10">
+            <Logo variant="light" size="md" className="mb-4" />
+            <p className="text-primary-foreground/70 mb-6 text-sm">
+              Your complete guide to finding cemeteries across the United States.
+            </p>
+            {/* Social icons */}
+            <div className="flex items-center gap-3">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Accordion Sections */}
+          <FooterSection
+            title="Guides"
+            isOpen={openSections['guides']}
+            onToggle={() => toggleSection('guides')}
+            isMobile={true}
+          >
+            {renderLinks(guides, 'guide')}
+          </FooterSection>
+
+          <FooterSection
+            title="Popular States"
+            isOpen={openSections['states']}
+            onToggle={() => toggleSection('states')}
+            isMobile={true}
+          >
+            {renderLinks(stateLinks, 'state')}
+          </FooterSection>
+
+          <FooterSection
+            title="Cemetery Types"
+            isOpen={openSections['types']}
+            onToggle={() => toggleSection('types')}
+            isMobile={true}
+          >
+            {renderLinks(typeLinks, 'type')}
+          </FooterSection>
+
+          <FooterSection
+            title="Information"
+            isOpen={openSections['info']}
+            onToggle={() => toggleSection('info')}
+            isMobile={true}
+          >
+            {renderLinks(information, 'info')}
+            <div className="mt-4 pt-4 border-t border-white/10">
+              <span className="text-sm font-medium text-gold-300">Contact:</span>
+              <a
+                href="mailto:info@cemeterynearbyme.com"
+                className="flex items-center gap-2 py-1.5 text-primary-foreground/70 hover:text-white transition-colors text-sm"
+              >
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span className="break-all">info@cemeterynearbyme.com</span>
+              </a>
+            </div>
+          </FooterSection>
         </div>
       </div>
 

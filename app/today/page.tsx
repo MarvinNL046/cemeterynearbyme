@@ -56,6 +56,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description: deaths.length > 0
       ? `On ${today.monthName} ${today.day}: ${deaths.slice(0, 3).map((d: any) => d.name).join(', ')}${deaths.length > 3 ? ' and more' : ''} passed away.`
       : `Discover famous Americans who passed away on ${today.monthName} ${today.day} throughout history.`,
+    robots: {
+      index: false,
+      follow: true,
+    },
     openGraph: {
       title: `This Day in History - ${today.fullDate}`,
       description: `Famous Americans who passed away on ${today.monthName} ${today.day}.`,

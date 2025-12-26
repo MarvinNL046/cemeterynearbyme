@@ -28,19 +28,58 @@ const cemeteryTypes = [
 ]
 
 // Static pages that don't change often
+// Note: /search, /compare, /deaths/*, /calendar, /today are excluded (noindex utility pages)
 const staticPages = [
   { path: '', priority: 1, changeFreq: 'daily' as const },
-  { path: '/search', priority: 0.9, changeFreq: 'daily' as const },
   { path: '/state', priority: 0.9, changeFreq: 'weekly' as const },
   { path: '/type', priority: 0.8, changeFreq: 'weekly' as const },
-  { path: '/compare', priority: 0.7, changeFreq: 'weekly' as const },
   { path: '/blog', priority: 0.8, changeFreq: 'daily' as const },
   { path: '/about', priority: 0.5, changeFreq: 'monthly' as const },
   { path: '/contact', priority: 0.5, changeFreq: 'monthly' as const },
   { path: '/privacy', priority: 0.3, changeFreq: 'yearly' as const },
   { path: '/terms', priority: 0.3, changeFreq: 'yearly' as const },
   { path: '/funeral-planning', priority: 0.6, changeFreq: 'monthly' as const },
-  { path: '/today', priority: 0.7, changeFreq: 'daily' as const },
+  // Guide pages
+  { path: '/guide', priority: 0.9, changeFreq: 'weekly' as const },
+  { path: '/guide/types', priority: 0.9, changeFreq: 'weekly' as const },
+  { path: '/guide/famous-graves', priority: 0.9, changeFreq: 'weekly' as const },
+  { path: '/guide/funeral-planning', priority: 0.9, changeFreq: 'weekly' as const },
+  { path: '/guide/veterans', priority: 0.9, changeFreq: 'weekly' as const },
+  { path: '/guide/green-burial', priority: 0.9, changeFreq: 'weekly' as const },
+]
+
+// Guide type pages
+const guideTypes = [
+  'public-cemetery',
+  'private-cemetery',
+  'national-cemetery',
+  'veterans-cemetery',
+  'memorial-park',
+  'historic-cemetery',
+  'natural-burial',
+]
+
+// Guide state pages (top 10 states by population)
+const guideStates = [
+  'california',
+  'texas',
+  'florida',
+  'new-york',
+  'pennsylvania',
+  'illinois',
+  'ohio',
+  'georgia',
+  'north-carolina',
+  'michigan',
+]
+
+// Guide topic pages
+const guideTopics = [
+  'choosing-cemetery',
+  'burial-costs',
+  'memorial-options',
+  'cemetery-etiquette',
+  'grave-maintenance',
 ]
 
 interface SitemapEntry {
@@ -77,6 +116,36 @@ async function getAllSitemapEntries(): Promise<SitemapEntry[]> {
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.6,
+    })
+  })
+
+  // Guide type pages
+  guideTypes.forEach(type => {
+    entries.push({
+      url: `${baseUrl}/guide/types/${type}`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    })
+  })
+
+  // Guide state pages
+  guideStates.forEach(state => {
+    entries.push({
+      url: `${baseUrl}/guide/state/${state}`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    })
+  })
+
+  // Guide topic pages
+  guideTopics.forEach(topic => {
+    entries.push({
+      url: `${baseUrl}/guide/topics/${topic}`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
     })
   })
 

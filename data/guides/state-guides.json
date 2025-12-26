@@ -1,0 +1,1057 @@
+{
+  "stateGuides": [
+    {
+      "slug": "california",
+      "name": "California",
+      "abbr": "CA",
+      "totalCemeteries": 820,
+      "title": "Cemeteries in California: Complete Guide",
+      "metaDescription": "Comprehensive guide to California cemeteries. Find burial options, state laws, famous cemeteries, and historic burial grounds across the Golden State.",
+      "heroSubtitle": "Discover burial options across the Golden State, from historic missions to modern memorial parks",
+      "overview": "California, the most populous state in the nation, offers an incredibly diverse range of burial options reflecting its multicultural heritage and innovative spirit. From the historic mission cemeteries dating back to the Spanish colonial era to cutting-edge green burial sites, California cemeteries tell the story of the state's rich history and forward-thinking culture. The state is home to over 820 cemeteries, including numerous national cemeteries honoring veterans, beautiful memorial parks with ocean views, and the famous Hollywood Forever Cemetery where entertainment legends rest eternally.",
+      "burialLaws": {
+        "title": "California Burial Laws and Regulations",
+        "content": "California has comprehensive burial regulations governed by the California Cemetery and Funeral Bureau. The state allows home burial on private property with proper permits, though local zoning laws must be consulted. California was one of the first states to legalize alkaline hydrolysis (water cremation) and natural organic reduction (human composting), reflecting its environmentally progressive approach. Cremated remains can be scattered at sea under federal regulations (at least 3 nautical miles from shore) or over land with property owner permission. The state requires a 24-hour waiting period before cremation and does not mandate embalming. California also permits conservation cemeteries and has specific regulations for green burials.",
+        "keyPoints": [
+          "Home burial permitted with proper zoning approval and permits",
+          "Alkaline hydrolysis and natural organic reduction legalized",
+          "24-hour waiting period before cremation required",
+          "Sea scattering permitted 3+ nautical miles offshore",
+          "No embalming requirement in state law",
+          "Conservation cemeteries and green burials permitted"
+        ]
+      },
+      "typeDistribution": [
+        { "type": "Public Cemetery", "count": 251 },
+        { "type": "Memorial Park", "count": 145 },
+        { "type": "Crematorium", "count": 97 },
+        { "type": "Green Cemetery", "count": 82 },
+        { "type": "Muslim Cemetery", "count": 60 },
+        { "type": "Jewish Cemetery", "count": 51 },
+        { "type": "Veterans Cemetery", "count": 28 },
+        { "type": "Catholic Cemetery", "count": 27 },
+        { "type": "National Cemetery", "count": 25 }
+      ],
+      "topCities": ["Fresno", "San Diego", "Los Angeles", "Riverside", "Sacramento", "Oakland", "Stockton", "Long Beach", "San Jose", "Bakersfield"],
+      "notableCemeteries": [
+        {
+          "name": "Hollywood Forever Cemetery",
+          "city": "Los Angeles",
+          "description": "Final resting place of Hollywood legends including Rudolph Valentino, Cecil B. DeMille, Douglas Fairbanks, and many other entertainment icons. Known for its movie screenings and cultural events."
+        },
+        {
+          "name": "Forest Lawn Memorial Park",
+          "city": "Glendale",
+          "description": "One of America's most famous memorial parks, featuring magnificent art and architecture. Burial site of Walt Disney, Michael Jackson, and Elizabeth Taylor."
+        },
+        {
+          "name": "Mountain View Cemetery",
+          "city": "Oakland",
+          "description": "Historic Victorian-era garden cemetery designed by Frederick Law Olmsted. Features stunning views of San Francisco Bay and notable burials including chocolate magnate Domingo Ghirardelli."
+        },
+        {
+          "name": "San Francisco National Cemetery",
+          "city": "San Francisco",
+          "description": "Located within the Presidio, this historic military cemetery overlooks the Golden Gate Bridge and honors veterans from the Civil War to the present."
+        }
+      ],
+      "historicCemeteries": [
+        {
+          "name": "Mission San Carlos Borromeo Cemetery",
+          "city": "Carmel",
+          "description": "One of California's oldest cemeteries, located at the historic Carmel Mission founded in 1770. Burial site of Father Junipero Serra."
+        },
+        {
+          "name": "Old Mission Santa Barbara Cemetery",
+          "city": "Santa Barbara",
+          "description": "Dating to 1786, this mission cemetery contains graves of early Spanish settlers and Native Americans."
+        },
+        {
+          "name": "Boot Hill Cemetery",
+          "city": "Coloma",
+          "description": "Historic Gold Rush era cemetery near Sutter's Mill where gold was first discovered in California."
+        }
+      ],
+      "nationalCemeteries": [
+        { "name": "Los Angeles National Cemetery", "city": "Los Angeles" },
+        { "name": "San Francisco National Cemetery", "city": "San Francisco" },
+        { "name": "Fort Rosecrans National Cemetery", "city": "San Diego" },
+        { "name": "Golden Gate National Cemetery", "city": "San Bruno" },
+        { "name": "Riverside National Cemetery", "city": "Riverside" },
+        { "name": "Sacramento Valley National Cemetery", "city": "Dixon" },
+        { "name": "Miramar National Cemetery", "city": "San Diego" }
+      ],
+      "burialCosts": {
+        "average": "$8,500-$15,000",
+        "cremation": "$1,500-$4,000",
+        "notes": "California burial costs are among the highest in the nation due to high land values, particularly in coastal areas. Cremation rates exceed 70%, one of the highest in the country."
+      },
+      "faqs": [
+        {
+          "question": "What are the most popular burial options in California?",
+          "answer": "Cremation is the most popular choice in California, with over 70% of deaths resulting in cremation. This is followed by traditional burial in memorial parks, green burial, and increasingly, natural organic reduction (human composting). Many Californians also choose ocean scattering of cremated remains."
+        },
+        {
+          "question": "Can I be buried on my own property in California?",
+          "answer": "Yes, California permits home burial on private property, but you must obtain proper permits and comply with local zoning regulations. The burial must be at least 150 feet from any water source, and you should file a permanent record of the burial location with the county."
+        },
+        {
+          "question": "Are green burials legal in California?",
+          "answer": "Yes, California is one of the most progressive states for green burial options. The state has certified natural burial grounds and also legalized human composting (natural organic reduction) in 2022. Green cemeteries can be found throughout the state, particularly in the Bay Area and Southern California."
+        },
+        {
+          "question": "How do I find a veteran's cemetery in California?",
+          "answer": "California has multiple national cemeteries operated by the VA and several state veterans cemeteries. Major national cemeteries include Los Angeles, Fort Rosecrans (San Diego), and Golden Gate (San Bruno). Eligibility is based on honorable military service. Veterans and their spouses can receive free burial at these locations."
+        },
+        {
+          "question": "What famous people are buried in California?",
+          "answer": "California cemeteries hold many celebrities including Marilyn Monroe at Westwood Village Memorial Park, Walt Disney and Michael Jackson at Forest Lawn Glendale, and numerous Hollywood stars at Hollywood Forever Cemetery. Other notable burials include Richard Nixon at his presidential library in Yorba Linda."
+        }
+      ]
+    },
+    {
+      "slug": "texas",
+      "name": "Texas",
+      "abbr": "TX",
+      "totalCemeteries": 724,
+      "title": "Cemeteries in Texas: Complete Guide",
+      "metaDescription": "Complete guide to Texas cemeteries covering burial laws, famous burial grounds, historic cemeteries, and all burial options across the Lone Star State.",
+      "heroSubtitle": "From historic missions to modern memorial parks across the Lone Star State",
+      "overview": "Texas, the second-largest state by both area and population, has a cemetery heritage as vast and diverse as its landscape. With over 724 cemeteries, the state offers everything from historic pioneer burial grounds on the frontier to grand memorial parks in its major metropolitan areas. Texas cemeteries reflect the state's unique blend of Mexican, German, Czech, and Southern influences. The state is home to the Texas State Cemetery in Austin, where Texas legends like Stephen F. Austin and Barbara Jordan rest, as well as numerous small family cemeteries scattered across ranches and farms that tell the stories of frontier settlement.",
+      "burialLaws": {
+        "title": "Texas Burial Laws and Regulations",
+        "content": "Texas has relatively permissive burial regulations, reflecting its tradition of individual property rights. Home burial is legal in Texas without requiring specific permits in most counties, though larger metropolitan areas may have zoning restrictions. The state does not require embalming by law, and there is no mandatory waiting period before burial or cremation (though 48 hours is recommended). Texas law protects family cemeteries and historic burial grounds, and the Texas Historical Commission maintains records of historic cemeteries. Cremation requires a medical examiner's authorization, and scattering of cremated remains is permitted on private land with owner consent.",
+        "keyPoints": [
+          "Home burial generally permitted without special permits",
+          "No state embalming requirement",
+          "No mandatory waiting period before burial",
+          "48-hour waiting period recommended before cremation",
+          "Strong protection for family and historic cemeteries",
+          "Scattering ashes permitted on private land with consent"
+        ]
+      },
+      "typeDistribution": [
+        { "type": "Public Cemetery", "count": 231 },
+        { "type": "Memorial Park", "count": 90 },
+        { "type": "Crematorium", "count": 89 },
+        { "type": "Green Cemetery", "count": 60 },
+        { "type": "Muslim Cemetery", "count": 47 },
+        { "type": "Jewish Cemetery", "count": 38 },
+        { "type": "Veterans Cemetery", "count": 35 },
+        { "type": "National Cemetery", "count": 18 }
+      ],
+      "topCities": ["Houston", "San Antonio", "Austin", "Dallas", "Fort Worth", "El Paso", "Arlington", "Plano", "Corpus Christi", "Lubbock"],
+      "notableCemeteries": [
+        {
+          "name": "Texas State Cemetery",
+          "city": "Austin",
+          "description": "The burial ground for Texas heroes and statesmen, including Stephen F. Austin, Barbara Jordan, and numerous Texas governors and veterans. Often called the Arlington of Texas."
+        },
+        {
+          "name": "Houston National Cemetery",
+          "city": "Houston",
+          "description": "One of the largest national cemeteries in the country, honoring over 100,000 veterans in the heart of Houston."
+        },
+        {
+          "name": "Glenwood Cemetery",
+          "city": "Houston",
+          "description": "Historic Victorian cemetery established in 1871, featuring ornate monuments and the graves of Howard Hughes, Gene Tierney, and many Texas pioneers."
+        },
+        {
+          "name": "San Fernando Cemetery",
+          "city": "San Antonio",
+          "description": "The largest Catholic cemetery in the Southwest, dating to 1853, reflecting San Antonio's rich Hispanic heritage."
+        }
+      ],
+      "historicCemeteries": [
+        {
+          "name": "Alamo Defenders' Gravesites",
+          "city": "San Antonio",
+          "description": "Various sites honoring those who fell at the Battle of the Alamo in 1836, including markers at the Alamo and San Fernando Cathedral."
+        },
+        {
+          "name": "Pioneer Cemetery at The Grove",
+          "city": "Jefferson",
+          "description": "Historic cemetery in one of Texas's oldest towns, dating to the 1850s when Jefferson was a major river port."
+        },
+        {
+          "name": "Oakwood Cemetery",
+          "city": "Austin",
+          "description": "Austin's oldest public cemetery, established in 1839, containing graves of Texas Republic era figures."
+        }
+      ],
+      "nationalCemeteries": [
+        { "name": "Houston National Cemetery", "city": "Houston" },
+        { "name": "Fort Sam Houston National Cemetery", "city": "San Antonio" },
+        { "name": "Dallas-Fort Worth National Cemetery", "city": "Dallas" },
+        { "name": "Fort Bliss National Cemetery", "city": "El Paso" },
+        { "name": "Kerrville National Cemetery", "city": "Kerrville" }
+      ],
+      "burialCosts": {
+        "average": "$6,000-$11,000",
+        "cremation": "$1,200-$3,500",
+        "notes": "Texas burial costs are generally moderate compared to coastal states. Rural areas and small towns offer more affordable options. Cremation rates have increased but remain below the national average."
+      },
+      "faqs": [
+        {
+          "question": "Can I establish a family cemetery on my ranch in Texas?",
+          "answer": "Yes, Texas has strong traditions protecting family cemeteries. You can establish a family cemetery on private property without special permits in most areas. Texas law provides perpetual access rights to family cemeteries even if the land is sold, and these sites are protected from development."
+        },
+        {
+          "question": "What are the requirements for burial in the Texas State Cemetery?",
+          "answer": "The Texas State Cemetery is reserved for Texas governors, elected state officials, state legislators, judges, members of the Texas military, and other notable Texans who have made significant contributions to the state. Applications go through the State Cemetery Committee."
+        },
+        {
+          "question": "Are there green burial options in Texas?",
+          "answer": "Yes, Texas has several certified green burial grounds, particularly near Austin, Houston, and San Antonio. These sites allow natural burial without embalming or concrete vaults. Popular options include Eloise Woods Natural Burial Park near Austin."
+        },
+        {
+          "question": "How do I research old Texas cemetery records?",
+          "answer": "The Texas Historical Commission maintains a Historic Texas Cemetery database. County clerks often have burial records, and organizations like the Texas State Genealogical Society can assist. Many pioneer cemeteries are documented through the Texas Cemetery Association."
+        },
+        {
+          "question": "What famous Texans are buried in the state?",
+          "answer": "Notable burials include President Lyndon B. Johnson at his family ranch near Stonewall, Barbara Jordan at Texas State Cemetery, Howard Hughes at Glenwood Cemetery in Houston, and numerous Alamo defenders at various San Antonio sites."
+        }
+      ]
+    },
+    {
+      "slug": "florida",
+      "name": "Florida",
+      "abbr": "FL",
+      "totalCemeteries": 373,
+      "title": "Cemeteries in Florida: Complete Guide",
+      "metaDescription": "Explore Florida cemeteries from historic burial grounds to modern memorial parks. Learn about Florida burial laws, veteran cemeteries, and famous burial sites.",
+      "heroSubtitle": "From historic St. Augustine to modern memorial parks in the Sunshine State",
+      "overview": "Florida's cemeteries tell the story of America's oldest continuously occupied European-established settlement and the state's transformation into a modern retirement and tourism destination. With over 373 cemeteries, Florida offers unique burial options including beautiful memorial parks with tropical landscaping, historic Spanish colonial cemeteries in St. Augustine, and numerous veteran memorials honoring the state's large military retiree population. The state's diverse communities have created Catholic, Jewish, and Orthodox cemeteries reflecting its multicultural population. Florida's warm climate has also made it a leader in green burial and cremation options.",
+      "burialLaws": {
+        "title": "Florida Burial Laws and Regulations",
+        "content": "Florida's burial laws are regulated by the Florida Department of Financial Services. The state requires a 24-hour waiting period before cremation, and a medical examiner must sign off before cremation can proceed. Florida allows burial on private property in most counties, subject to local zoning ordinances, with bodies typically required to be buried at least 2 feet deep. While not required by state law, many Florida cemeteries require burial vaults to prevent ground settling. Florida permits the scattering of cremated remains at sea (at least 3 nautical miles offshore) and on private property with permission.",
+        "keyPoints": [
+          "24-hour waiting period before cremation",
+          "Medical examiner approval required for cremation",
+          "Private property burial allowed with local zoning compliance",
+          "Minimum 2-foot burial depth typical requirement",
+          "Sea scattering permitted 3+ nautical miles offshore",
+          "No state embalming requirement"
+        ]
+      },
+      "typeDistribution": [
+        { "type": "Public Cemetery", "count": 108 },
+        { "type": "Memorial Park", "count": 72 },
+        { "type": "Green Cemetery", "count": 49 },
+        { "type": "Crematorium", "count": 36 },
+        { "type": "Church Cemetery", "count": 23 },
+        { "type": "Veterans Cemetery", "count": 18 },
+        { "type": "National Cemetery", "count": 12 }
+      ],
+      "topCities": ["Tampa", "Jacksonville", "Orlando", "Miami", "St. Petersburg", "Fort Lauderdale", "Tallahassee", "Sarasota", "Palm Beach", "Pensacola"],
+      "notableCemeteries": [
+        {
+          "name": "Woodlawn Park Cemetery",
+          "city": "Miami",
+          "description": "Historic Miami cemetery and final resting place of many notable figures including Marjory Stoneman Douglas, the environmentalist who saved the Everglades."
+        },
+        {
+          "name": "Greenwood Cemetery",
+          "city": "Orlando",
+          "description": "Orlando's oldest cemetery, established in 1880, featuring beautiful Victorian monuments and the graves of early Central Florida pioneers."
+        },
+        {
+          "name": "Evergreen Cemetery",
+          "city": "Jacksonville",
+          "description": "Historic African American cemetery established in 1879, recognized as one of the oldest Black cemeteries in Florida."
+        },
+        {
+          "name": "Miami City Cemetery",
+          "city": "Miami",
+          "description": "Miami's oldest cemetery, dating to 1897, containing the graves of Miami's founding pioneers including Julia Tuttle."
+        }
+      ],
+      "historicCemeteries": [
+        {
+          "name": "Huguenot Cemetery",
+          "city": "St. Augustine",
+          "description": "One of America's oldest Protestant cemeteries, dating to 1821, located in the historic district of the nation's oldest city."
+        },
+        {
+          "name": "Tolomato Cemetery",
+          "city": "St. Augustine",
+          "description": "Historic Catholic cemetery with graves dating to the Spanish colonial period, including many colonial-era priests and citizens."
+        },
+        {
+          "name": "Old City Cemetery",
+          "city": "Tallahassee",
+          "description": "Tallahassee's first cemetery, established in 1829, containing graves of early Florida statesmen and Civil War soldiers."
+        }
+      ],
+      "nationalCemeteries": [
+        { "name": "Florida National Cemetery", "city": "Bushnell" },
+        { "name": "Barrancas National Cemetery", "city": "Pensacola" },
+        { "name": "Bay Pines National Cemetery", "city": "Bay Pines" },
+        { "name": "St. Augustine National Cemetery", "city": "St. Augustine" },
+        { "name": "South Florida National Cemetery", "city": "Lake Worth" },
+        { "name": "Cape Canaveral National Cemetery", "city": "Mims" },
+        { "name": "Jacksonville National Cemetery", "city": "Jacksonville" },
+        { "name": "Sarasota National Cemetery", "city": "Sarasota" }
+      ],
+      "burialCosts": {
+        "average": "$6,500-$12,000",
+        "cremation": "$1,000-$3,500",
+        "notes": "Florida has one of the highest cremation rates in the nation (over 70%), partly due to its large retiree population and transient nature. Costs vary significantly between urban and rural areas."
+      },
+      "faqs": [
+        {
+          "question": "Why does Florida have such a high cremation rate?",
+          "answer": "Florida has one of the highest cremation rates in the nation (over 70%) due to several factors: a large retiree population who may have family in other states, lower cremation costs, environmental awareness, and many residents being transplants who may choose to have their remains transported to their original home state."
+        },
+        {
+          "question": "Can I scatter ashes at sea in Florida?",
+          "answer": "Yes, scattering cremated remains at sea is legal in Florida as long as it occurs at least 3 nautical miles from shore in accordance with EPA regulations. Many Florida funeral homes offer sea scattering services, and the state's extensive coastline makes this a popular option."
+        },
+        {
+          "question": "What are the veteran cemetery options in Florida?",
+          "answer": "Florida has extensive veteran burial options including multiple national cemeteries (Florida National in Bushnell, Barrancas in Pensacola, and several others) and state veteran cemeteries. With the largest veteran population in the country, Florida continues to expand veteran burial facilities."
+        },
+        {
+          "question": "Are there historic Spanish colonial cemeteries in Florida?",
+          "answer": "Yes, St. Augustine, founded in 1565, has several historic cemeteries including Tolomato Cemetery and Huguenot Cemetery dating to the colonial era. These cemeteries contain graves from Spanish, British, and early American periods."
+        },
+        {
+          "question": "What famous people are buried in Florida?",
+          "answer": "Notable Florida burials include Henry Flagler at Memorial Presbyterian Church in St. Augustine, Marjory Stoneman Douglas in Miami, and numerous pioneers who built the state. Many celebrities have also chosen Florida as their final resting place."
+        }
+      ]
+    },
+    {
+      "slug": "north-carolina",
+      "name": "North Carolina",
+      "abbr": "NC",
+      "totalCemeteries": 358,
+      "title": "Cemeteries in North Carolina: Complete Guide",
+      "metaDescription": "Guide to North Carolina cemeteries including burial laws, historic graveyards, national cemeteries, and burial options from the mountains to the coast.",
+      "heroSubtitle": "From Blue Ridge mountain cemeteries to coastal burial grounds in the Tar Heel State",
+      "overview": "North Carolina's cemeteries reflect the state's rich history spanning from Colonial America through the Civil War and into the modern era. With over 358 cemeteries, the state offers diverse burial options from the misty mountain cemeteries of the Blue Ridge to historic coastal graveyards. The state is particularly notable for its preservation of African American cemeteries, church cemeteries that have served communities for centuries, and its numerous Civil War burial sites. North Carolina has also embraced green burial options, with several conservation cemeteries operating in the state. The Old Salem area in Winston-Salem features historic Moravian burial grounds with their distinctive flat stones.",
+      "burialLaws": {
+        "title": "North Carolina Burial Laws and Regulations",
+        "content": "North Carolina burial laws are governed by the North Carolina Cemetery Commission. The state allows burial on private property with county approval, and bodies must be buried at least 3 feet deep. There is no state requirement for embalming, and the state has a 24-hour waiting period before cremation. North Carolina permits green burial without vaults or embalming. The state has strong laws protecting abandoned and historic cemeteries, and it's a felony to knowingly damage or desecrate graves. Cremated remains may be scattered on private property with permission or at sea following EPA guidelines.",
+        "keyPoints": [
+          "Private property burial permitted with county approval",
+          "Minimum 3-foot burial depth required",
+          "No state embalming requirement",
+          "24-hour waiting period before cremation",
+          "Green burial without vault permitted",
+          "Strong protections for historic cemeteries"
+        ]
+      },
+      "typeDistribution": [
+        { "type": "Public Cemetery", "count": 105 },
+        { "type": "Crematorium", "count": 46 },
+        { "type": "Memorial Park", "count": 44 },
+        { "type": "Green Cemetery", "count": 30 },
+        { "type": "Church Cemetery", "count": 26 },
+        { "type": "Veterans Cemetery", "count": 22 },
+        { "type": "National Cemetery", "count": 8 }
+      ],
+      "topCities": ["Durham", "Raleigh", "Greensboro", "Charlotte", "Winston-Salem", "Fayetteville", "Asheville", "Wilmington", "High Point", "Cary"],
+      "notableCemeteries": [
+        {
+          "name": "Historic Oakwood Cemetery",
+          "city": "Raleigh",
+          "description": "Raleigh's premier historic cemetery, established in 1869, containing Confederate graves, notable North Carolinians, and beautiful Victorian funerary art."
+        },
+        {
+          "name": "Riverside Cemetery",
+          "city": "Asheville",
+          "description": "Historic mountain cemetery with stunning Blue Ridge views, final resting place of authors Thomas Wolfe and O. Henry (William Sydney Porter)."
+        },
+        {
+          "name": "God's Acre",
+          "city": "Winston-Salem",
+          "description": "Historic Moravian cemetery in Old Salem with distinctive flat grave stones, one of the most unique burial grounds in America."
+        },
+        {
+          "name": "Oakdale Cemetery",
+          "city": "Wilmington",
+          "description": "Historic garden cemetery established in 1855, featuring beautiful live oaks and notable Civil War era graves."
+        }
+      ],
+      "historicCemeteries": [
+        {
+          "name": "St. Paul's Churchyard",
+          "city": "Edenton",
+          "description": "One of North Carolina's oldest cemeteries, dating to the colonial era, in one of the state's earliest towns."
+        },
+        {
+          "name": "Old English Cemetery",
+          "city": "Salisbury",
+          "description": "Historic burial ground adjacent to Salisbury National Cemetery, containing Revolutionary and Civil War era graves."
+        },
+        {
+          "name": "Cross Creek Cemetery",
+          "city": "Fayetteville",
+          "description": "Colonial-era cemetery containing graves of Scottish settlers and Revolutionary War patriots."
+        }
+      ],
+      "nationalCemeteries": [
+        { "name": "Raleigh National Cemetery", "city": "Raleigh" },
+        { "name": "Salisbury National Cemetery", "city": "Salisbury" },
+        { "name": "New Bern National Cemetery", "city": "New Bern" },
+        { "name": "Wilmington National Cemetery", "city": "Wilmington" },
+        { "name": "Coastal Carolina State Veterans Cemetery", "city": "Jacksonville" },
+        { "name": "Western Carolina State Veterans Cemetery", "city": "Black Mountain" }
+      ],
+      "burialCosts": {
+        "average": "$5,500-$10,000",
+        "cremation": "$1,000-$3,000",
+        "notes": "North Carolina burial costs are moderate compared to national averages. Rural mountain and coastal communities often offer more affordable options. The state's many church cemeteries may offer reduced rates for members."
+      },
+      "faqs": [
+        {
+          "question": "What makes North Carolina unique for burial options?",
+          "answer": "North Carolina offers exceptional diversity, from mountain cemeteries with stunning Blue Ridge views to historic coastal burial grounds. The state has pioneered green burial options and maintains unique historic cemeteries like the Moravian God's Acre in Old Salem with its distinctive flat grave markers."
+        },
+        {
+          "question": "Are there green burial options in North Carolina?",
+          "answer": "Yes, North Carolina has several certified green burial grounds including Carolina Memorial Sanctuary in Mills River, one of the state's first conservation cemeteries. The state permits natural burial without embalming or vaults, making it accessible for those seeking environmentally friendly options."
+        },
+        {
+          "question": "How can I find historic African American cemeteries in North Carolina?",
+          "answer": "North Carolina has made significant efforts to document and preserve historic African American cemeteries. Resources include the NC African American Heritage Commission and university research projects. Many communities have local preservation societies dedicated to maintaining these important historic sites."
+        },
+        {
+          "question": "What famous authors are buried in North Carolina?",
+          "answer": "Riverside Cemetery in Asheville is notable for literary burials, including Thomas Wolfe (Look Homeward, Angel) and O. Henry (William Sydney Porter), the short story master. The cemetery's mountain setting makes it a destination for literary tourists."
+        },
+        {
+          "question": "What are the veteran cemetery options in North Carolina?",
+          "answer": "North Carolina has four national cemeteries (Raleigh, Salisbury, New Bern, and Wilmington) and two state veterans cemeteries (Coastal Carolina in Jacksonville and Western Carolina in Black Mountain). These facilities serve the state's significant veteran population."
+        }
+      ]
+    },
+    {
+      "slug": "ohio",
+      "name": "Ohio",
+      "abbr": "OH",
+      "totalCemeteries": 355,
+      "title": "Cemeteries in Ohio: Complete Guide",
+      "metaDescription": "Complete guide to Ohio cemeteries including historic burial grounds, veteran cemeteries, burial laws, and famous burial sites across the Buckeye State.",
+      "heroSubtitle": "Discover burial options from lakeside Cleveland to the rolling hills of the Ohio Valley",
+      "overview": "Ohio, with its rich industrial heritage and role as a gateway to the American West, has over 355 cemeteries that reflect its diverse history. The state is home to stunning Victorian-era garden cemeteries in its major cities, simple Amish burial grounds in Holmes County, and numerous Civil War era cemeteries. Ohio's cemetery heritage includes the final resting places of eight U.S. presidents, making it one of the most significant states for presidential burial sites. From the elaborate mausoleums of Cleveland's Lake View Cemetery to the humble farm cemeteries of rural Ohio, the state offers a window into American burial traditions spanning two centuries.",
+      "burialLaws": {
+        "title": "Ohio Burial Laws and Regulations",
+        "content": "Ohio burial regulations are administered by the Ohio Division of Real Estate and Professional Licensing. The state permits burial on private property, with bodies required to be buried at least 18 inches below surface. Ohio does not require embalming by law, though funeral homes may have their own policies. There is a 24-hour waiting period before cremation, which requires authorization from a medical examiner. Ohio permits green burial without vaults in designated cemeteries. Cremated remains may be scattered on private property with permission or on public land following local regulations. The state has specific protections for pioneer cemeteries and Native American burial sites.",
+        "keyPoints": [
+          "Private property burial permitted (18-inch minimum depth)",
+          "No state embalming requirement",
+          "24-hour waiting period before cremation",
+          "Medical examiner authorization required for cremation",
+          "Green burial permitted in designated cemeteries",
+          "Strong protections for pioneer and Native American sites"
+        ]
+      },
+      "typeDistribution": [
+        { "type": "Public Cemetery", "count": 115 },
+        { "type": "Crematorium", "count": 55 },
+        { "type": "Memorial Park", "count": 43 },
+        { "type": "Veterans Cemetery", "count": 24 },
+        { "type": "Green Cemetery", "count": 22 },
+        { "type": "Church Cemetery", "count": 20 },
+        { "type": "National Cemetery", "count": 8 }
+      ],
+      "topCities": ["Cincinnati", "Columbus", "Cleveland", "Toledo", "Akron", "Dayton", "Youngstown", "Canton", "Parma", "Springfield"],
+      "notableCemeteries": [
+        {
+          "name": "Lake View Cemetery",
+          "city": "Cleveland",
+          "description": "Stunning garden cemetery featuring the Garfield Monument (President James A. Garfield's memorial) and graves of John D. Rockefeller, Eliot Ness, and other notable figures."
+        },
+        {
+          "name": "Spring Grove Cemetery",
+          "city": "Cincinnati",
+          "description": "One of the largest and most beautiful cemeteries in the nation, a National Historic Landmark with 733 acres of gardens and lakes."
+        },
+        {
+          "name": "Green Lawn Cemetery",
+          "city": "Columbus",
+          "description": "Historic Columbus cemetery established in 1848, featuring Victorian monuments and notable Ohio politicians and pioneers."
+        },
+        {
+          "name": "Woodland Cemetery",
+          "city": "Dayton",
+          "description": "Historic arboretum cemetery containing the graves of the Wright Brothers (Orville and Wilbur) and poet Paul Laurence Dunbar."
+        }
+      ],
+      "historicCemeteries": [
+        {
+          "name": "Mound Cemetery",
+          "city": "Marietta",
+          "description": "Ohio's oldest organized cemetery, built around a prehistoric Native American burial mound. Contains Revolutionary War veterans."
+        },
+        {
+          "name": "Old Stone Church Cemetery",
+          "city": "Cleveland",
+          "description": "One of Cleveland's oldest burial grounds, dating to the city's founding era on Public Square."
+        },
+        {
+          "name": "Camp Chase Confederate Cemetery",
+          "city": "Columbus",
+          "description": "Civil War cemetery containing over 2,000 Confederate prisoners of war who died while imprisoned at Camp Chase."
+        }
+      ],
+      "nationalCemeteries": [
+        { "name": "Dayton National Cemetery", "city": "Dayton" },
+        { "name": "Ohio Western Reserve National Cemetery", "city": "Rittman" }
+      ],
+      "burialCosts": {
+        "average": "$5,000-$9,500",
+        "cremation": "$900-$2,800",
+        "notes": "Ohio burial costs are moderate, generally below national averages. Rural areas and smaller communities offer more affordable options. The state has many church and community cemeteries with reasonable rates."
+      },
+      "faqs": [
+        {
+          "question": "Which U.S. presidents are buried in Ohio?",
+          "answer": "Ohio has more presidential burial sites than any other state: William Henry Harrison (North Bend), Rutherford B. Hayes (Fremont), James A. Garfield (Cleveland's Lake View Cemetery), William McKinley (Canton), William Howard Taft (Arlington National Cemetery, but born in Ohio), and Warren G. Harding (Marion). Ulysses S. Grant was born in Ohio but is buried in New York."
+        },
+        {
+          "question": "What makes Spring Grove Cemetery special?",
+          "answer": "Spring Grove Cemetery in Cincinnati is one of the nation's largest cemeteries at 733 acres and is designated a National Historic Landmark. It pioneered the 'lawn park' style of cemetery design and features stunning landscapes, lakes, and gardens. It's an internationally recognized arboretum with over 1,300 tree varieties."
+        },
+        {
+          "question": "Are there Amish cemeteries in Ohio?",
+          "answer": "Yes, Holmes County and surrounding areas in northeastern Ohio have the world's largest Amish population and numerous traditional Amish cemeteries. These cemeteries feature simple, uniform headstones reflecting Amish values of humility and equality in death."
+        },
+        {
+          "question": "Where are the Wright Brothers buried?",
+          "answer": "Orville and Wilbur Wright, inventors of the airplane, are buried in Woodland Cemetery in Dayton, Ohio. Their family plot also includes their father Milton and sister Katharine. The cemetery is a National Historic Landmark."
+        },
+        {
+          "question": "What Civil War cemeteries are in Ohio?",
+          "answer": "Ohio has several significant Civil War sites including Camp Chase Confederate Cemetery in Columbus (holding over 2,000 Confederate POWs), Johnson's Island Confederate Cemetery near Sandusky, and numerous Union veterans buried in historic cemeteries across the state."
+        }
+      ]
+    },
+    {
+      "slug": "arizona",
+      "name": "Arizona",
+      "abbr": "AZ",
+      "totalCemeteries": 267,
+      "title": "Cemeteries in Arizona: Complete Guide",
+      "metaDescription": "Guide to Arizona cemeteries from desert burial grounds to modern memorial parks. Learn about Arizona burial laws, pioneer cemeteries, and veteran burial options.",
+      "heroSubtitle": "From Wild West pioneer graves to modern desert memorial parks in the Grand Canyon State",
+      "overview": "Arizona's cemeteries tell the dramatic story of the American Southwest, from frontier lawmen and outlaws to Native American traditions and modern memorial parks. With over 267 cemeteries, the state offers unique desert burial options found nowhere else in the country. Arizona's dry climate has preserved historic pioneer cemeteries in remarkable condition, including the famous Boot Hills where gunslingers rest. The state is also home to significant Native American burial traditions and numerous military cemeteries honoring veterans in the desert Southwest. Modern Arizona offers innovative options including green burial in the Sonoran Desert.",
+      "burialLaws": {
+        "title": "Arizona Burial Laws and Regulations",
+        "content": "Arizona has relatively permissive burial laws managed by the State Board of Funeral Directors and Embalmers. The state allows burial on private property with county approval, though bodies must be buried deep enough to prevent disturbance. Arizona does not require embalming by state law, and there is no mandatory waiting period for burial (though 24-48 hours is common practice). Cremation requires a 48-hour waiting period and medical examiner authorization. The state permits scattering of cremated remains on public land under BLM regulations and on private property with permission. Arizona has specific protections for Native American burial sites under both state and federal law.",
+        "keyPoints": [
+          "Private property burial permitted with county approval",
+          "No state embalming requirement",
+          "No mandatory waiting period for burial",
+          "48-hour waiting period before cremation",
+          "Scattering permitted on BLM land following regulations",
+          "Strong protections for Native American burial sites"
+        ]
+      },
+      "typeDistribution": [
+        { "type": "Public Cemetery", "count": 92 },
+        { "type": "Memorial Park", "count": 36 },
+        { "type": "Green Cemetery", "count": 28 },
+        { "type": "Jewish Cemetery", "count": 26 },
+        { "type": "Crematorium", "count": 26 },
+        { "type": "Veterans Cemetery", "count": 16 },
+        { "type": "National Cemetery", "count": 8 }
+      ],
+      "topCities": ["Tucson", "Phoenix", "Scottsdale", "Mesa", "Chandler", "Glendale", "Gilbert", "Tempe", "Peoria", "Surprise"],
+      "notableCemeteries": [
+        {
+          "name": "Boot Hill Graveyard",
+          "city": "Tombstone",
+          "description": "Famous Wild West cemetery containing gunfighters from the O.K. Corral era, including Billy Clanton and the McLaury brothers who faced the Earps."
+        },
+        {
+          "name": "National Memorial Cemetery of Arizona",
+          "city": "Phoenix",
+          "description": "Arizona's national cemetery honoring veterans with stunning desert mountain views, serving over 50,000 veterans and their families."
+        },
+        {
+          "name": "Desert Memorial Park",
+          "city": "Phoenix",
+          "description": "Historic Phoenix cemetery established in the 1920s, featuring Southwest architecture and desert landscaping."
+        },
+        {
+          "name": "Evergreen Cemetery",
+          "city": "Tucson",
+          "description": "Tucson's historic cemetery dating to 1907, with significant Mexican-American heritage and beautiful desert gardens."
+        }
+      ],
+      "historicCemeteries": [
+        {
+          "name": "Pioneer and Military Memorial Park",
+          "city": "Phoenix",
+          "description": "Seven historic cemeteries dating from the 1880s, including the original Phoenix burial ground and graves of early Arizona pioneers."
+        },
+        {
+          "name": "Yuma Territorial Prison Cemetery",
+          "city": "Yuma",
+          "description": "Historic cemetery at the infamous territorial prison containing graves of inmates from 1876-1909."
+        },
+        {
+          "name": "Prescott Pioneer Cemetery",
+          "city": "Prescott",
+          "description": "Arizona's territorial capital cemetery dating to the 1860s, containing early settlers and Native American scouts."
+        }
+      ],
+      "nationalCemeteries": [
+        { "name": "National Memorial Cemetery of Arizona", "city": "Phoenix" },
+        { "name": "Prescott National Cemetery", "city": "Prescott" },
+        { "name": "Fort Huachuca Post Cemetery", "city": "Sierra Vista" }
+      ],
+      "burialCosts": {
+        "average": "$5,500-$10,000",
+        "cremation": "$900-$2,500",
+        "notes": "Arizona has high cremation rates (over 70%) due to climate and demographics. The Phoenix metropolitan area has competitive pricing due to multiple providers. Rural areas and smaller communities offer more affordable options."
+      },
+      "faqs": [
+        {
+          "question": "What is Arizona's Boot Hill cemetery?",
+          "answer": "Boot Hill Graveyard in Tombstone is Arizona's most famous historic cemetery, containing graves of gunfighters from the Wild West era, including those killed at the O.K. Corral shootout in 1881. The cemetery features colorful epitaphs and has become a major tourist attraction."
+        },
+        {
+          "question": "Are there Native American cemeteries in Arizona?",
+          "answer": "Yes, Arizona is home to numerous Native American burial sites, many of which are protected under federal NAGPRA (Native American Graves Protection and Repatriation Act) laws. Many tribal burial grounds are not open to the public out of respect for traditional practices."
+        },
+        {
+          "question": "Can I scatter ashes in the Arizona desert?",
+          "answer": "Yes, scattering cremated remains is permitted on Bureau of Land Management (BLM) land, which covers much of Arizona, following regulations. Scattering is also permitted in national forests with a permit and on private land with owner permission. Popular scattering sites include the Sonoran Desert and mountain regions."
+        },
+        {
+          "question": "What are the veteran cemetery options in Arizona?",
+          "answer": "Arizona has the National Memorial Cemetery of Arizona in Phoenix, one of the newest national cemeteries, plus Prescott National Cemetery. The state also has a veterans memorial cemetery in Sierra Vista. Arizona's large veteran population has driven expansion of burial options."
+        },
+        {
+          "question": "Why does Arizona have such high cremation rates?",
+          "answer": "Arizona has one of the highest cremation rates in the nation (over 70%) due to several factors: the transient population with family elsewhere, environmental awareness, cost considerations, and the large retiree population. The dry climate also makes cremation a practical choice."
+        }
+      ]
+    },
+    {
+      "slug": "virginia",
+      "name": "Virginia",
+      "abbr": "VA",
+      "totalCemeteries": 226,
+      "title": "Cemeteries in Virginia: Complete Guide",
+      "metaDescription": "Explore Virginia cemeteries from historic Colonial burial grounds to Arlington National Cemetery. Learn about Virginia burial laws and famous burial sites.",
+      "heroSubtitle": "From Colonial Williamsburg to Arlington National Cemetery in the Commonwealth",
+      "overview": "Virginia, the birthplace of the nation, has over 226 cemeteries that span the entire history of the United States. The Commonwealth is home to Arlington National Cemetery, the nation's most sacred burial ground, as well as colonial-era churchyards where Founding Fathers rest. Virginia's Civil War heritage is evident in numerous battlefield cemeteries and the final resting places of Confederate and Union soldiers alike. From the tidewater colonial cemeteries to the mountain burial grounds of the Shenandoah Valley, Virginia offers an unparalleled window into American burial traditions.",
+      "burialLaws": {
+        "title": "Virginia Burial Laws and Regulations",
+        "content": "Virginia burial laws are administered by the Virginia Board of Funeral Directors and Embalmers. The Commonwealth permits burial on private property with county approval, and bodies must be buried deep enough to prevent disturbance by animals. Virginia does not require embalming by state law, though many funeral homes have policies requiring it for viewings. There is no mandatory waiting period before burial, but a 24-hour waiting period is required before cremation. Virginia permits green burial and has several conservation cemeteries. The state has strong protections for historic cemeteries under Virginia law, including mandatory preservation of family cemeteries.",
+        "keyPoints": [
+          "Private property burial permitted with county approval",
+          "No state embalming requirement",
+          "No mandatory waiting period before burial",
+          "24-hour waiting period before cremation",
+          "Green burial and conservation cemeteries permitted",
+          "Strong historic cemetery preservation laws"
+        ]
+      },
+      "typeDistribution": [
+        { "type": "Public Cemetery", "count": 74 },
+        { "type": "Memorial Park", "count": 28 },
+        { "type": "Crematorium", "count": 27 },
+        { "type": "Green Cemetery", "count": 20 },
+        { "type": "National Cemetery", "count": 18 },
+        { "type": "Church Cemetery", "count": 16 },
+        { "type": "Veterans Cemetery", "count": 12 }
+      ],
+      "topCities": ["Richmond", "Norfolk", "Virginia Beach", "Chesapeake", "Alexandria", "Arlington", "Newport News", "Roanoke", "Hampton", "Lynchburg"],
+      "notableCemeteries": [
+        {
+          "name": "Arlington National Cemetery",
+          "city": "Arlington",
+          "description": "America's most hallowed ground, honoring over 400,000 veterans and their families. Site of the Tomb of the Unknown Soldier and eternal flame at JFK's grave."
+        },
+        {
+          "name": "Hollywood Cemetery",
+          "city": "Richmond",
+          "description": "Historic garden cemetery overlooking the James River, burial site of Presidents James Monroe and John Tyler, and Jefferson Davis."
+        },
+        {
+          "name": "Monticello",
+          "city": "Charlottesville",
+          "description": "The family cemetery of Thomas Jefferson, with the Declaration author's grave marked by the obelisk he designed."
+        },
+        {
+          "name": "Bruton Parish Church Cemetery",
+          "city": "Williamsburg",
+          "description": "Colonial-era churchyard dating to 1674, one of the oldest continually used cemeteries in America."
+        }
+      ],
+      "historicCemeteries": [
+        {
+          "name": "Christ Church Cemetery",
+          "city": "Alexandria",
+          "description": "Historic Episcopal churchyard where George Washington worshipped, dating to the colonial era."
+        },
+        {
+          "name": "Stonewall Jackson Memorial Cemetery",
+          "city": "Lexington",
+          "description": "Final resting place of Confederate General Stonewall Jackson in the Shenandoah Valley."
+        },
+        {
+          "name": "Jamestown Cemetery",
+          "city": "Jamestown",
+          "description": "Historic burial ground at America's first permanent English settlement, dating to 1607."
+        }
+      ],
+      "nationalCemeteries": [
+        { "name": "Arlington National Cemetery", "city": "Arlington" },
+        { "name": "Alexandria National Cemetery", "city": "Alexandria" },
+        { "name": "Hampton National Cemetery", "city": "Hampton" },
+        { "name": "Richmond National Cemetery", "city": "Richmond" },
+        { "name": "Culpeper National Cemetery", "city": "Culpeper" },
+        { "name": "Winchester National Cemetery", "city": "Winchester" },
+        { "name": "Quantico National Cemetery", "city": "Quantico" }
+      ],
+      "burialCosts": {
+        "average": "$6,000-$12,000",
+        "cremation": "$1,200-$3,500",
+        "notes": "Virginia burial costs vary significantly by region. Northern Virginia (near DC) has higher costs due to land values, while rural areas are more affordable. Arlington National Cemetery burial is free for eligible veterans."
+      },
+      "faqs": [
+        {
+          "question": "Who is eligible for burial at Arlington National Cemetery?",
+          "answer": "Eligibility includes active duty service members, veterans who served on active duty and were honorably discharged, retired members of the Armed Forces, and certain civilian government officials. Spouses and dependent children of eligible members may also be interred. Space is limited and eligibility requirements are strictly enforced."
+        },
+        {
+          "question": "Which U.S. presidents are buried in Virginia?",
+          "answer": "Virginia is the final resting place of more presidents than any other state: George Washington (Mount Vernon), Thomas Jefferson (Monticello), James Madison (Montpelier), James Monroe (Hollywood Cemetery, Richmond), John Tyler (Hollywood Cemetery), William Howard Taft, and John F. Kennedy (Arlington National Cemetery)."
+        },
+        {
+          "question": "Are there Civil War cemeteries in Virginia?",
+          "answer": "Virginia has more Civil War burial sites than any other state, including numerous battlefield cemeteries. Major sites include Petersburg National Cemetery, Fredericksburg National Cemetery, and Hollywood Cemetery in Richmond where many Confederate leaders rest."
+        },
+        {
+          "question": "What are Virginia's green burial options?",
+          "answer": "Virginia permits green burial and has several conservation cemeteries, including one of the nation's first conservation burial grounds. The state allows natural burial without embalming or vaults, and there are certified green cemeteries in the Shenandoah Valley and central Virginia."
+        },
+        {
+          "question": "Can I visit Thomas Jefferson's grave?",
+          "answer": "Yes, Thomas Jefferson's grave at Monticello is open to visitors as part of the Monticello tour. Jefferson designed his own tombstone, which lists three achievements he wanted to be remembered for: writing the Declaration of Independence, the Virginia Statute for Religious Freedom, and founding the University of Virginia."
+        }
+      ]
+    },
+    {
+      "slug": "new-york",
+      "name": "New York",
+      "abbr": "NY",
+      "totalCemeteries": 220,
+      "title": "Cemeteries in New York: Complete Guide",
+      "metaDescription": "Comprehensive guide to New York cemeteries from Manhattan historic sites to upstate rural graveyards. Learn about burial laws, famous cemeteries, and burial options.",
+      "heroSubtitle": "From Manhattan's historic churchyards to the grand garden cemeteries of the Empire State",
+      "overview": "New York's cemeteries reflect the state's extraordinary diversity and historical significance. With over 220 cemeteries, the state offers everything from the crowded historic churchyards of Manhattan to the sprawling rural cemeteries of upstate New York. The state pioneered the garden cemetery movement with Green-Wood Cemetery in Brooklyn, which inspired the nation's public park movement. New York is home to some of America's most significant burial sites, including the African Burial Ground National Monument, the final resting places of numerous presidents, and the graves of countless immigrants who shaped American culture.",
+      "burialLaws": {
+        "title": "New York Burial Laws and Regulations",
+        "content": "New York burial laws are governed by the New York State Cemetery Board and Department of Health. The state has traditionally had stricter requirements than many others, including mandatory involvement of a licensed funeral director for most burial arrangements. However, New York now permits home funerals with proper planning. The state requires a 24-hour waiting period before cremation and 48 hours before burial of unembalmed remains (with exceptions). Green burial is permitted, and New York recently legalized natural organic reduction (human composting). Burial on private property requires local approval and health department permits.",
+        "keyPoints": [
+          "Licensed funeral director traditionally required (home funerals now permitted)",
+          "24-hour waiting period before cremation",
+          "48-hour waiting period before burial of unembalmed remains",
+          "Green burial and natural organic reduction legalized",
+          "Private property burial requires health department permits",
+          "Strong cemetery consumer protection laws"
+        ]
+      },
+      "typeDistribution": [
+        { "type": "Public Cemetery", "count": 74 },
+        { "type": "Memorial Park", "count": 31 },
+        { "type": "Crematorium", "count": 20 },
+        { "type": "National Cemetery", "count": 18 },
+        { "type": "Catholic Cemetery", "count": 17 },
+        { "type": "Jewish Cemetery", "count": 15 },
+        { "type": "Church Cemetery", "count": 12 }
+      ],
+      "topCities": ["Buffalo", "New York", "Brooklyn", "New York City", "Flushing", "Bronx", "Staten Island", "Rochester", "Syracuse", "Albany"],
+      "notableCemeteries": [
+        {
+          "name": "Green-Wood Cemetery",
+          "city": "Brooklyn",
+          "description": "National Historic Landmark and one of America's most beautiful cemeteries. Final resting place of Leonard Bernstein, Jean-Michel Basquiat, and hundreds of notable figures."
+        },
+        {
+          "name": "Woodlawn Cemetery",
+          "city": "Bronx",
+          "description": "Grand garden cemetery containing Duke Ellington, Miles Davis, Irving Berlin, and numerous other legendary musicians and artists."
+        },
+        {
+          "name": "Trinity Church Cemetery",
+          "city": "New York",
+          "description": "Manhattan's only active cemetery, dating to 1697. Contains Alexander Hamilton, Robert Fulton, and numerous Colonial-era notables."
+        },
+        {
+          "name": "African Burial Ground National Monument",
+          "city": "New York",
+          "description": "Sacred memorial honoring an estimated 15,000 African Americans buried during the Colonial period, rediscovered in 1991."
+        }
+      ],
+      "historicCemeteries": [
+        {
+          "name": "Sleepy Hollow Cemetery",
+          "city": "Sleepy Hollow",
+          "description": "Historic cemetery in the town that inspired Washington Irving, who is buried here along with Andrew Carnegie and other notables."
+        },
+        {
+          "name": "Old Dutch Burying Ground",
+          "city": "Sleepy Hollow",
+          "description": "17th-century cemetery adjacent to the Old Dutch Church, setting for 'The Legend of Sleepy Hollow'."
+        },
+        {
+          "name": "New York City Marble Cemetery",
+          "city": "New York",
+          "description": "One of Manhattan's earliest non-sectarian cemeteries, featuring unique underground marble vaults."
+        }
+      ],
+      "nationalCemeteries": [
+        { "name": "Long Island National Cemetery", "city": "Farmingdale" },
+        { "name": "Calverton National Cemetery", "city": "Calverton" },
+        { "name": "Saratoga National Cemetery", "city": "Schuylerville" },
+        { "name": "Cypress Hills National Cemetery", "city": "Brooklyn" },
+        { "name": "Bath National Cemetery", "city": "Bath" },
+        { "name": "Woodlawn National Cemetery", "city": "Elmira" },
+        { "name": "Gerald B.H. Solomon Saratoga National Cemetery", "city": "Schuylerville" }
+      ],
+      "burialCosts": {
+        "average": "$8,000-$15,000",
+        "cremation": "$1,500-$4,500",
+        "notes": "New York burial costs, especially in the New York City metropolitan area, are among the highest in the nation due to land scarcity. Upstate New York offers more affordable options. Jewish and Catholic cemeteries often have established pricing for their communities."
+      },
+      "faqs": [
+        {
+          "question": "Why is Green-Wood Cemetery so famous?",
+          "answer": "Green-Wood Cemetery in Brooklyn, founded in 1838, is considered the birthplace of the American garden cemetery movement and a National Historic Landmark. Its 478 acres of rolling hills and ponds inspired Central Park and the urban parks movement. Over 560,000 people are interred here, including artists, politicians, and Civil War veterans."
+        },
+        {
+          "question": "What is the African Burial Ground National Monument?",
+          "answer": "Discovered in 1991 during construction in lower Manhattan, the African Burial Ground is the oldest and largest known excavated burial ground for Africans and African Americans in the country. An estimated 15,000 people were buried here during the Colonial period. It was designated a National Monument in 2006."
+        },
+        {
+          "question": "Can I visit Alexander Hamilton's grave?",
+          "answer": "Yes, Alexander Hamilton is buried at Trinity Church Cemetery at the corner of Broadway and Wall Street in Manhattan. The historic cemetery, dating to 1697, also contains other Founding Fathers and is open to visitors."
+        },
+        {
+          "question": "What famous musicians are buried in New York?",
+          "answer": "Woodlawn Cemetery in the Bronx holds a remarkable collection of jazz legends including Duke Ellington, Miles Davis, Lionel Hampton, and Max Roach. Irving Berlin is also buried there. In Brooklyn, Green-Wood Cemetery contains Leonard Bernstein and Louis Moreau Gottschalk."
+        },
+        {
+          "question": "Is human composting legal in New York?",
+          "answer": "Yes, New York legalized natural organic reduction (human composting) in 2023, becoming the sixth state to do so. This eco-friendly option transforms human remains into nutrient-rich soil over several weeks. Several facilities are now offering this service in the state."
+        }
+      ]
+    },
+    {
+      "slug": "pennsylvania",
+      "name": "Pennsylvania",
+      "abbr": "PA",
+      "totalCemeteries": 188,
+      "title": "Cemeteries in Pennsylvania: Complete Guide",
+      "metaDescription": "Explore Pennsylvania cemeteries from Philadelphia's historic burial grounds to Pittsburgh's grand Victorian cemeteries. Learn about burial laws and famous burial sites.",
+      "heroSubtitle": "From Independence Hall's churchyards to the steel city's grand memorials in the Keystone State",
+      "overview": "Pennsylvania's cemeteries trace the story of America from its founding to its industrial might. With over 188 cemeteries, the Commonwealth offers historic churchyards where Benjamin Franklin and other Founding Fathers rest, grand Victorian-era garden cemeteries in Pittsburgh, and simple Quaker burial grounds reflecting the state's peaceful heritage. Pennsylvania was the site of some of the Civil War's most significant battles, and the state is home to Gettysburg National Cemetery where Lincoln delivered his famous address. From Philadelphia's Society Hill to the Amish country of Lancaster, Pennsylvania cemeteries tell the American story.",
+      "burialLaws": {
+        "title": "Pennsylvania Burial Laws and Regulations",
+        "content": "Pennsylvania burial laws are overseen by the State Real Estate Commission. The Commonwealth permits burial on private property with proper permits and typically requires bodies to be buried in a manner that prevents disturbance. Pennsylvania does not require embalming by state law, though individual funeral homes may have policies. There is a 24-hour waiting period before cremation, and a medical examiner must authorize cremation. Green burial is permitted, and Pennsylvania has several natural burial grounds. The state has specific laws protecting historic cemeteries and provides for cemetery company regulation.",
+        "keyPoints": [
+          "Private property burial permitted with proper permits",
+          "No state embalming requirement",
+          "24-hour waiting period before cremation",
+          "Medical examiner authorization required for cremation",
+          "Green burial permitted at designated sites",
+          "Historic cemetery protection laws in place"
+        ]
+      },
+      "typeDistribution": [
+        { "type": "Public Cemetery", "count": 60 },
+        { "type": "Memorial Park", "count": 30 },
+        { "type": "Muslim Cemetery", "count": 21 },
+        { "type": "Crematorium", "count": 21 },
+        { "type": "Catholic Cemetery", "count": 16 },
+        { "type": "Jewish Cemetery", "count": 12 },
+        { "type": "National Cemetery", "count": 8 }
+      ],
+      "topCities": ["Pittsburgh", "Philadelphia", "Bensalem", "Bala Cynwyd", "Harrisburg", "Allentown", "Reading", "Erie", "Lancaster", "Scranton"],
+      "notableCemeteries": [
+        {
+          "name": "Laurel Hill Cemetery",
+          "city": "Philadelphia",
+          "description": "National Historic Landmark and America's second rural cemetery. Features ornate Victorian monuments and overlooks the Schuylkill River. Contains numerous notable Philadelphia figures."
+        },
+        {
+          "name": "Christ Church Burial Ground",
+          "city": "Philadelphia",
+          "description": "Final resting place of Benjamin Franklin and four other signers of the Declaration of Independence in the heart of historic Philadelphia."
+        },
+        {
+          "name": "Allegheny Cemetery",
+          "city": "Pittsburgh",
+          "description": "Historic garden cemetery featuring industrialists and Pittsburgh luminaries, with stunning Victorian monuments overlooking the city."
+        },
+        {
+          "name": "Gettysburg National Cemetery",
+          "city": "Gettysburg",
+          "description": "Sacred Civil War burial ground where Lincoln delivered the Gettysburg Address, honoring over 3,500 Union soldiers."
+        }
+      ],
+      "historicCemeteries": [
+        {
+          "name": "Independence Hall Churchyards",
+          "city": "Philadelphia",
+          "description": "Several historic burial grounds around Independence Hall, including those at Christ Church and St. Peter's, containing Colonial-era notables."
+        },
+        {
+          "name": "Friends Burial Ground",
+          "city": "Philadelphia",
+          "description": "Historic Quaker cemetery reflecting Pennsylvania's founding religious heritage, featuring simple markers in keeping with Quaker beliefs."
+        },
+        {
+          "name": "Soldiers' National Cemetery",
+          "city": "Gettysburg",
+          "description": "The original section of Gettysburg National Cemetery, dedicated in 1863, designed with soldiers arranged by state in a semicircle."
+        }
+      ],
+      "nationalCemeteries": [
+        { "name": "Indiantown Gap National Cemetery", "city": "Annville" },
+        { "name": "Philadelphia National Cemetery", "city": "Philadelphia" },
+        { "name": "Gettysburg National Cemetery", "city": "Gettysburg" }
+      ],
+      "burialCosts": {
+        "average": "$6,000-$11,000",
+        "cremation": "$1,100-$3,200",
+        "notes": "Pennsylvania burial costs are moderate, with Philadelphia and Pittsburgh commanding higher prices due to urban land values. Rural areas and smaller communities offer more affordable options. Many ethnic and religious cemeteries serve their specific communities."
+      },
+      "faqs": [
+        {
+          "question": "Which Founding Fathers are buried in Pennsylvania?",
+          "answer": "Benjamin Franklin is buried at Christ Church Burial Ground in Philadelphia, along with four other signers of the Declaration of Independence. Other notable Colonial-era figures are buried in various Philadelphia churchyards around Independence Hall, making the area a pilgrimage site for American history enthusiasts."
+        },
+        {
+          "question": "What happened at Gettysburg National Cemetery?",
+          "answer": "Gettysburg National Cemetery was established in 1863 to honor Union soldiers who died at the Battle of Gettysburg. It was dedicated on November 19, 1863, when President Abraham Lincoln delivered his famous Gettysburg Address. The cemetery contains over 3,500 Civil War burials and continues to inter veterans today."
+        },
+        {
+          "question": "Are there Amish cemeteries in Pennsylvania?",
+          "answer": "Yes, Lancaster County and other areas with significant Amish populations have traditional Amish burial grounds. These cemeteries feature simple, uniform headstones in keeping with Amish values. Many are private family or church cemeteries not open to tourists."
+        },
+        {
+          "question": "What makes Laurel Hill Cemetery special?",
+          "answer": "Laurel Hill Cemetery was America's second rural cemetery (after Mount Auburn in Boston) and is a National Historic Landmark. Overlooking the Schuylkill River, it features stunning Victorian monuments, rare trees, and the graves of Civil War generals, artists, and industrialists. It offers tours and cultural events."
+        },
+        {
+          "question": "What are the green burial options in Pennsylvania?",
+          "answer": "Pennsylvania has several natural burial grounds, including Foxfield Preserve in Chester County and White Eagle Memorial Preserve in Monroe County. These conservation cemeteries allow burial without embalming or vaults and focus on environmental preservation."
+        }
+      ]
+    },
+    {
+      "slug": "nevada",
+      "name": "Nevada",
+      "abbr": "NV",
+      "totalCemeteries": 166,
+      "title": "Cemeteries in Nevada: Complete Guide",
+      "metaDescription": "Guide to Nevada cemeteries from Las Vegas memorial parks to historic mining town graveyards. Learn about Nevada burial laws and burial options in the Silver State.",
+      "heroSubtitle": "From historic mining town graveyards to modern Las Vegas memorial parks in the Silver State",
+      "overview": "Nevada's cemeteries tell the story of the Old West, from boomtown mining camps to the modern entertainment capital of Las Vegas. With over 166 cemeteries, the state offers unique burial options shaped by its desert climate and frontier heritage. Nevada's historic cemeteries include those from legendary mining towns like Virginia City, where silver barons and miners rest side by side. Modern Nevada features contemporary memorial parks in the Las Vegas valley, serving one of America's fastest-growing metropolitan areas. The state's dry climate has remarkably preserved many historic burial grounds.",
+      "burialLaws": {
+        "title": "Nevada Burial Laws and Regulations",
+        "content": "Nevada burial laws are administered by the Nevada State Board of Health and the Division of Health. The state permits burial on private property with county approval and health department permits. Nevada does not require embalming by state law. There is typically a 24-hour waiting period before cremation, and a medical examiner must authorize cremation. Nevada permits green burial and the scattering of cremated remains on public land (including BLM land) with certain restrictions. The state has specific protections for historic cemeteries and Native American burial sites.",
+        "keyPoints": [
+          "Private property burial permitted with county approval",
+          "No state embalming requirement",
+          "24-hour waiting period typically required before cremation",
+          "Medical examiner authorization required for cremation",
+          "Scattering permitted on BLM land with restrictions",
+          "Historic cemetery and Native American site protections"
+        ]
+      },
+      "typeDistribution": [
+        { "type": "Public Cemetery", "count": 64 },
+        { "type": "Memorial Park", "count": 27 },
+        { "type": "Crematorium", "count": 18 },
+        { "type": "Veterans Cemetery", "count": 15 },
+        { "type": "Jewish Cemetery", "count": 15 },
+        { "type": "Church Cemetery", "count": 10 },
+        { "type": "National Cemetery", "count": 4 }
+      ],
+      "topCities": ["Las Vegas", "Reno", "Henderson", "North Las Vegas", "Boulder City", "Sparks", "Carson City", "Elko", "Mesquite", "Fernley"],
+      "notableCemeteries": [
+        {
+          "name": "Palm Memorial Park",
+          "city": "Las Vegas",
+          "description": "One of Las Vegas's oldest and most historic cemeteries, dating to 1906. Contains early Las Vegas pioneers and mob figures."
+        },
+        {
+          "name": "Southern Nevada Veterans Memorial Cemetery",
+          "city": "Boulder City",
+          "description": "State veterans cemetery serving the Las Vegas area, offering burial for Nevada veterans with beautiful desert mountain views."
+        },
+        {
+          "name": "Silver Terrace Cemetery",
+          "city": "Virginia City",
+          "description": "Historic cemetery from the Comstock Lode silver mining era, containing miners, pioneers, and wealthy silver barons from the 1860s."
+        },
+        {
+          "name": "Mountain View Cemetery",
+          "city": "Reno",
+          "description": "Reno's historic cemetery established in 1872, featuring ornate Victorian monuments and notable Nevada pioneers."
+        }
+      ],
+      "historicCemeteries": [
+        {
+          "name": "Virginia City Cemetery Complex",
+          "city": "Virginia City",
+          "description": "Multiple historic cemeteries from the Comstock era, including separate sections for different ethnic groups and lodges."
+        },
+        {
+          "name": "Goldfield Cemetery",
+          "city": "Goldfield",
+          "description": "Ghost town cemetery from Nevada's last great gold rush, featuring weathered wooden markers from the early 1900s."
+        },
+        {
+          "name": "Rhyolite Cemetery",
+          "city": "Rhyolite",
+          "description": "Haunting cemetery at the famous ghost town near Death Valley, abandoned when the mining boom ended."
+        }
+      ],
+      "nationalCemeteries": [
+        { "name": "Northern Nevada Veterans Memorial Cemetery", "city": "Fernley" },
+        { "name": "Southern Nevada Veterans Memorial Cemetery", "city": "Boulder City" }
+      ],
+      "burialCosts": {
+        "average": "$5,000-$10,000",
+        "cremation": "$800-$2,500",
+        "notes": "Nevada has very high cremation rates (over 75%), among the highest in the nation. The Las Vegas area has competitive pricing due to the large population. Rural areas and smaller communities offer more affordable options."
+      },
+      "faqs": [
+        {
+          "question": "Why does Nevada have such high cremation rates?",
+          "answer": "Nevada consistently ranks among states with the highest cremation rates (over 75%) due to several factors: the transient population with family elsewhere, the desert climate, cost considerations, limited cemetery space in urban areas, and the large senior population that relocates to Nevada."
+        },
+        {
+          "question": "Can I visit ghost town cemeteries in Nevada?",
+          "answer": "Yes, Nevada has numerous ghost town cemeteries open to visitors, including those at Virginia City, Rhyolite, Goldfield, and Pioche. These sites offer a glimpse into the state's mining heritage. Always be respectful and follow any posted guidelines when visiting."
+        },
+        {
+          "question": "What historic mining town cemeteries are in Nevada?",
+          "answer": "Nevada's most famous mining era cemeteries include Silver Terrace in Virginia City (Comstock Lode era), Goldfield Cemetery from the last great gold rush, and numerous smaller ghost town burial grounds throughout the state. These cemeteries contain silver barons, miners, and frontier pioneers."
+        },
+        {
+          "question": "What are the veteran cemetery options in Nevada?",
+          "answer": "Nevada has two state veterans cemeteries: the Southern Nevada Veterans Memorial Cemetery in Boulder City (serving Las Vegas area) and the Northern Nevada Veterans Memorial Cemetery in Fernley (serving Reno area). These provide free burial for eligible veterans and their dependents."
+        },
+        {
+          "question": "Can I scatter ashes in the Nevada desert?",
+          "answer": "Yes, scattering cremated remains is generally permitted on Bureau of Land Management (BLM) land, which covers much of Nevada, following regulations. Scattering is also permitted on private land with owner permission. Popular areas include the desert outside Las Vegas and mountain regions near Reno."
+        }
+      ]
+    }
+  ]
+}

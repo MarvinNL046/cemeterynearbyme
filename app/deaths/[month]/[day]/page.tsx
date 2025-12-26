@@ -92,6 +92,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: deaths.length > 0
       ? `${deaths.length} notable Americans passed away on ${dateStr}: ${deaths.slice(0, 3).map(d => d.name).join(', ')}${deaths.length > 3 ? ' and more' : ''}.`
       : `Discover notable Americans who passed away on ${dateStr}.`,
+    robots: {
+      index: false,
+      follow: true,
+    },
     openGraph: {
       title: `Deaths on ${dateStr}`,
       description: `Notable Americans who passed away on ${dateStr}.`,
@@ -276,7 +280,16 @@ export default async function DeathsDayPage({ params }: PageProps) {
                       <div className="flex items-start gap-2 mt-3 pt-3 border-t text-sm text-muted-foreground">
                         <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="font-medium text-foreground">{person.cemetery}</p>
+                          {person.cemetery_slug ? (
+                            <Link
+                              href={`/cemetery/${person.cemetery_slug}`}
+                              className="font-medium text-accent hover:underline"
+                            >
+                              {person.cemetery}
+                            </Link>
+                          ) : (
+                            <p className="font-medium text-foreground">{person.cemetery}</p>
+                          )}
                           {person.city && person.state && (
                             <p>{person.city}, {person.state}</p>
                           )}

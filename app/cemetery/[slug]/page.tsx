@@ -12,6 +12,7 @@ import ReviewSection from '@/components/ReviewSection';
 import PhotoGallery from '@/components/PhotoGallery';
 import FavoriteButton from '@/components/FavoriteButton';
 import ReadMore from '@/components/ReadMore';
+import NotableBurials from '@/components/NotableBurials';
 import { Card } from '@/components/ui/card';
 
 interface PageProps {
@@ -431,6 +432,12 @@ export default async function CemeteryPage({ params }: PageProps) {
 
               {/* Inline Ad */}
               <InlineAd />
+
+              {/* Notable Burials */}
+              <NotableBurials
+                cemeterySlug={slug}
+                cemeteryName={cemetery.name}
+              />
 
               {/* Photo Gallery */}
               <PhotoGallery

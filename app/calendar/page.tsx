@@ -6,6 +6,10 @@ import { Card } from '@/components/ui/card';
 export const metadata: Metadata = {
   title: 'Death Calendar - Famous Americans by Date | CemeteryNearMe.com',
   description: 'Discover which famous Americans passed away on any day of the year. Browse our complete death calendar to explore history.',
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: 'Death Calendar - Famous Americans by Date',
     description: 'Explore which notable Americans died on each day of the year.',
