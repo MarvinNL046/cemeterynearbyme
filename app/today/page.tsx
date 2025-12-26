@@ -1,9 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Calendar, MapPin, ExternalLink, User, ChevronRight } from 'lucide-react';
-
-// Placeholder data - will be populated by wikidata script
-const famousDeathsData = { deaths: [] as any[] };
+import { getFamousDeathsByDate, calculateAge, getYear, type FamousDeath } from '@/lib/deaths-data';
 
 // Get today's date
 function getToday() {
@@ -20,41 +18,15 @@ function getToday() {
   };
 }
 
-// Get deaths for a specific day/month
-function getDeathsForDate(day: number, month: number) {
-  return famousDeathsData.deaths.filter(
-    (person: any) => person.death_day === day && person.death_month === month && person.death_date
-  ).sort((a: any, b: any) => {
-    const yearA = a.death_date ? parseInt(a.death_date.split('-')[0]) : 0;
-    const yearB = b.death_date ? parseInt(b.death_date.split('-')[0]) : 0;
-    return yearB - yearA;
-  });
-}
-
-// Calculate age at death
-function calculateAge(birthDate: string, deathDate: string): number {
-  const birth = new Date(birthDate);
-  const death = new Date(deathDate);
-  let age = death.getFullYear() - birth.getFullYear();
-  const monthDiff = death.getMonth() - birth.getMonth();
-  if (monthDiff < 0 || (monthDiff === 0 && death.getDate() < birth.getDate())) {
-    age--;
-  }
-  return age;
-}
-
-function getYear(dateString: string): string {
-  return dateString.split('-')[0];
-}
 
 export async function generateMetadata(): Promise<Metadata> {
   const today = getToday();
-  const deaths = getDeathsForDate(today.day, today.month);
+  const deaths = getFamousDeathsByDate(today.day, today.month);
 
   return {
     title: `This Day in History - ${today.fullDate} | CemeteryNearMe.com`,
     description: deaths.length > 0
-      ? `On ${today.monthName} ${today.day}: ${deaths.slice(0, 3).map((d: any) => d.name).join(', ')}${deaths.length > 3 ? ' and more' : ''} passed away.`
+      ? `On ${today.monthName} ${today.day}: ${deaths.slice(0, 3).map((d) => d.name).join(', ')}${deaths.length > 3 ? ' and more' : ''} passed away.`
       : `Discover famous Americans who passed away on ${today.monthName} ${today.day} throughout history.`,
     robots: {
       index: false,
@@ -69,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function TodayPage() {
   const today = getToday();
-  const todayDeaths = getDeathsForDate(today.day, today.month);
+  const todayDeaths = getFamousDeathsByDate(today.day, today.month);
 
   const monthSlug = today.monthName.toLowerCase();
 
@@ -119,7 +91,7 @@ export default function TodayPage() {
       <div className="container mx-auto px-4 py-8">
         {todayDeaths.length > 0 ? (
           <div className="grid gap-6">
-            {todayDeaths.map((person: any, index: number) => (
+            {todayDeaths.map((person, index) => (
               <article
                 key={index}
                 className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden border border-slate-100"
@@ -153,7 +125,7 @@ export default function TodayPage() {
                         <div className="flex items-center gap-1">
                           <User className="w-4 h-4" />
                           <span>
-                            {person.birth_date ? getYear(person.birth_date) : '?'} - {getYear(person.death_date!)}
+                            {person.birth_date ? getYear(person.birth_date) : '?'} - {getYear(person.death_date)}
                           </span>
                           {person.birth_date && person.death_date && (
                             <span className="text-muted-foreground/60">

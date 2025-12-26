@@ -43,7 +43,7 @@ function SearchResults() {
   const [searchQuery, setSearchQuery] = useState(query || locationParam);
   const [selectedType, setSelectedType] = useState(typeFilter);
   const [selectedState, setSelectedState] = useState('all');
-  const [states, setStates] = useState<string[]>([]);
+  const [states, setStates] = useState<{ name: string; abbr: string }[]>([]);
   const [showFilters, setShowFilters] = useState(false);
   const [visibleResults, setVisibleResults] = useState(12);
 
@@ -165,8 +165,8 @@ function SearchResults() {
                   <SelectContent>
                     <SelectItem value="all">All States</SelectItem>
                     {states.map(state => (
-                      <SelectItem key={state} value={state}>
-                        {state}
+                      <SelectItem key={state.abbr} value={state.name}>
+                        {state.name}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -227,8 +227,8 @@ function SearchResults() {
                     <SelectContent>
                       <SelectItem value="all">All States</SelectItem>
                       {states.map(state => (
-                        <SelectItem key={state} value={state}>
-                          {state}
+                        <SelectItem key={state.abbr} value={state.name}>
+                          {state.name}
                         </SelectItem>
                       ))}
                     </SelectContent>

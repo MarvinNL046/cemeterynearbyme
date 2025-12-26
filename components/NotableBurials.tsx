@@ -1,13 +1,18 @@
 'use client';
 
-import { ExternalLink, User } from 'lucide-react';
+import { useState } from 'react';
+import { ExternalLink, User, ChevronDown } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import {
   getNotableBurialsAtCemetery,
   calculateAge,
   formatLifespan,
   type FamousDeath
 } from '@/lib/deaths-data';
+
+const INITIAL_COUNT = 12;
+const LOAD_MORE_COUNT = 12;
 
 interface NotableBurialsProps {
   cemeterySlug: string;
@@ -16,10 +21,19 @@ interface NotableBurialsProps {
 
 export default function NotableBurials({ cemeterySlug, cemeteryName }: NotableBurialsProps) {
   const burials = getNotableBurialsAtCemetery(cemeterySlug);
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
   if (burials.length === 0) {
     return null;
   }
+
+  const visibleBurials = burials.slice(0, visibleCount);
+  const hasMore = visibleCount < burials.length;
+  const remainingCount = burials.length - visibleCount;
+
+  const handleLoadMore = () => {
+    setVisibleCount(prev => Math.min(prev + LOAD_MORE_COUNT, burials.length));
+  };
 
   return (
     <Card className="p-6 shadow-soft">
@@ -35,10 +49,24 @@ export default function NotableBurials({ cemeterySlug, cemeteryName }: NotableBu
       </p>
 
       <div className="grid gap-4">
-        {burials.map((burial, index) => (
+        {visibleBurials.map((burial, index) => (
           <BurialCard key={`${burial.wikidata_id}-${index}`} burial={burial} />
         ))}
       </div>
+
+      {hasMore && (
+        <div className="mt-6 text-center">
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={handleLoadMore}
+            className="gap-2"
+          >
+            <ChevronDown className="w-4 h-4" />
+            Load More ({remainingCount} remaining)
+          </Button>
+        </div>
+      )}
     </Card>
   );
 }
