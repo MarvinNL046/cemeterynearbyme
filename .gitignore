@@ -3,3 +3,21 @@ node_modules/
 .env
 .env.local
 *.log
+
+# Image cache (fetched dynamically via proxy)
+public/cache/
+public/images/google/
+
+# Playwright MCP screenshots
+.playwright-mcp/
+
+# Script progress files
+data/*-progress.json
+data/*-backup-*.json
+data/backup-*.json
+data/brightdata-urls.json
+data/discovery/
+
+# IDE
+.vscode/
+.idea/

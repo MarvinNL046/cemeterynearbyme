@@ -15,9 +15,9 @@ import ReadMore from '@/components/ReadMore';
 import { Card } from '@/components/ui/card';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -28,7 +28,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const cemetery = await getCemeteryBySlug(params.slug);
+  const { slug } = await params;
+  const cemetery = await getCemeteryBySlug(slug);
 
   if (!cemetery) {
     return {
@@ -106,7 +107,8 @@ function generateFAQs(cemetery: any) {
 }
 
 export default async function CemeteryPage({ params }: PageProps) {
-  const cemetery = await getCemeteryBySlug(params.slug);
+  const { slug } = await params;
+  const cemetery = await getCemeteryBySlug(slug);
 
   if (!cemetery) {
     notFound();
@@ -192,7 +194,7 @@ export default async function CemeteryPage({ params }: PageProps) {
     openingHours: cemetery.opening_hours,
     telephone: phone || '',
     url: `https://www.cemeterynearbyme.com/cemetery/${cemetery.slug}`,
-    ...(cemetery.photo && { image: cemetery.photo }),
+    ...((cemetery.photo_url || cemetery.photo) && { image: cemetery.photo_url || cemetery.photo }),
     ...(rating && {
       aggregateRating: {
         '@type': 'AggregateRating',
@@ -354,9 +356,9 @@ export default async function CemeteryPage({ params }: PageProps) {
             <div className="flex-1 min-w-0 space-y-6 sm:space-y-8 lg:max-w-2xl xl:max-w-3xl">
               {/* Image */}
               <Card className="aspect-video overflow-hidden relative shadow-soft">
-                {cemetery.photo ? (
+                {(cemetery.photo_url || cemetery.photo) ? (
                   <ProxiedImage
-                    src={cemetery.photo}
+                    src={cemetery.photo_url || cemetery.photo}
                     alt={cemetery.name}
                     fill
                     className="object-cover"

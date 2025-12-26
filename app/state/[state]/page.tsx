@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllStates, getStateBySlug, getCemeteriesByState, createCountySlug } from '@/lib/data';
+import { getAllStates, getStateBySlug, getCemeteriesByState, createCountySlug, createCitySlug } from '@/lib/data';
 import { notFound } from 'next/navigation';
-import { ChevronRight, Building2, ArrowRight, Trees } from 'lucide-react';
+import { ChevronRight, Building2, ArrowRight, Trees, MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     state: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -19,7 +19,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const state = await getStateBySlug(params.state);
+  const { state: stateSlug } = await params;
+  const state = await getStateBySlug(stateSlug);
 
   if (!state) {
     return { title: 'State Not Found' };
@@ -37,7 +38,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function StatePage({ params }: PageProps) {
-  const state = await getStateBySlug(params.state);
+  const { state: stateSlug } = await params;
+  const state = await getStateBySlug(stateSlug);
 
   if (!state) {
     notFound();
@@ -57,8 +59,19 @@ export default async function StatePage({ params }: PageProps) {
     .map(([county, count]) => ({ county, count }))
     .sort((a, b) => a.county.localeCompare(b.county));
 
-  // Get unique cities
-  const cities = [...new Set(cemeteries.map(c => c.city).filter(Boolean))];
+  // Get unique cities with counts
+  const cityCounts = cemeteries.reduce((acc, c) => {
+    if (c.city) {
+      acc[c.city] = (acc[c.city] || 0) + 1;
+    }
+    return acc;
+  }, {} as Record<string, number>);
+
+  const cities = Object.entries(cityCounts)
+    .map(([city, count]) => ({ city, count }))
+    .sort((a, b) => a.city.localeCompare(b.city));
+
+  const stateAbbr = cemeteries[0]?.state_abbr || '';
 
   // Breadcrumb structured data
   const breadcrumbLd = {
@@ -75,7 +88,7 @@ export default async function StatePage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 2,
         name: state.name,
-        item: `https://www.cemeterynearbyme.com/state/${params.state}`
+        item: `https://www.cemeterynearbyme.com/state/${stateSlug}`
       }
     ]
   };
@@ -89,6 +102,19 @@ export default async function StatePage({ params }: PageProps) {
     acc[firstLetter].push({ county, count });
     return acc;
   }, {} as Record<string, Array<{ county: string; count: number }>>);
+
+  // Group cities by first letter (fallback when no county data)
+  const citiesByLetter = cities.reduce((acc, { city, count }) => {
+    const firstLetter = city[0].toUpperCase();
+    if (!acc[firstLetter]) {
+      acc[firstLetter] = [];
+    }
+    acc[firstLetter].push({ city, count });
+    return acc;
+  }, {} as Record<string, Array<{ city: string; count: number }>>);
+
+  // Determine if we should show cities instead of counties
+  const showCities = counties.length === 0 && cities.length > 0;
 
   return (
     <>
@@ -141,9 +167,13 @@ export default async function StatePage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="mb-8">
-              <h2 className="font-serif text-2xl font-bold mb-2">Counties in {state.name}</h2>
+              <h2 className="font-serif text-2xl font-bold mb-2">
+                {showCities ? `Cities in ${state.name}` : `Counties in ${state.name}`}
+              </h2>
               <p className="text-muted-foreground">
-                Click on a county to view all cemeteries in that area.
+                {showCities
+                  ? 'Click on a city to view all cemeteries in that area.'
+                  : 'Click on a county to view all cemeteries in that area.'}
               </p>
             </div>
 
@@ -173,6 +203,47 @@ export default async function StatePage({ params }: PageProps) {
                               </div>
                               <span className="font-medium group-hover:text-accent transition-colors">
                                 {county}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <span className="text-sm font-semibold text-accent">
+                                {count}
+                              </span>
+                              <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors" />
+                            </div>
+                          </Card>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : showCities ? (
+              <div className="space-y-10">
+                {Object.entries(citiesByLetter).map(([letter, citiesInLetter]) => (
+                  <div key={letter}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="w-10 h-10 rounded-lg bg-accent text-accent-foreground flex items-center justify-center font-serif font-bold text-xl">
+                        {letter}
+                      </span>
+                      <span className="text-sm text-muted-foreground">
+                        {citiesInLetter.length} cit{citiesInLetter.length !== 1 ? 'ies' : 'y'}
+                      </span>
+                    </div>
+                    <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                      {citiesInLetter.map(({ city, count }) => (
+                        <Link
+                          key={city}
+                          href={`/city/${createCitySlug(city)}`}
+                          className="group"
+                        >
+                          <Card className="h-full p-4 flex items-center justify-between border-2 border-transparent hover:border-accent/30 transition-all duration-300">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-lg bg-forest-100 flex items-center justify-center group-hover:bg-accent transition-colors">
+                                <MapPin className="w-5 h-5 text-forest-700 group-hover:text-white transition-colors" />
+                              </div>
+                              <span className="font-medium group-hover:text-accent transition-colors">
+                                {city}
                               </span>
                             </div>
                             <div className="flex items-center gap-2">

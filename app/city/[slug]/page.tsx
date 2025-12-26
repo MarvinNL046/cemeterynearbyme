@@ -9,9 +9,9 @@ import SidebarAd from '@/components/ads/SidebarAd';
 import InlineAd from '@/components/ads/InlineAd';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -22,8 +22,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
   const cities = await getAllCities();
-  const city = cities.find(c => createCitySlug(c) === params.slug);
+  const city = cities.find(c => createCitySlug(c) === slug);
 
   if (!city) {
     return {
@@ -47,8 +48,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function CityPage({ params }: PageProps) {
+  const { slug } = await params;
   const cities = await getAllCities();
-  const city = cities.find(c => createCitySlug(c) === params.slug);
+  const city = cities.find(c => createCitySlug(c) === slug);
 
   if (!city) {
     notFound();

@@ -1,0 +1,88 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky-jew" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#B3E5FC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E3F2FD;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="800" height="450" fill="url(#sky-jew)"/>
+
+  <!-- Clouds -->
+  <ellipse cx="200" cy="70" rx="90" ry="40" fill="white" opacity="0.7"/>
+  <ellipse cx="600" cy="90" rx="80" ry="35" fill="white" opacity="0.6"/>
+
+  <!-- Ground -->
+  <rect x="0" y="280" width="800" height="170" fill="#558B2F"/>
+
+  <!-- Stone wall in background -->
+  <rect x="0" y="200" width="800" height="80" fill="#9E9E9E" opacity="0.3"/>
+
+  <!-- Traditional Jewish gravestones (matsevot) - flat horizontal style -->
+  <g>
+    <!-- Row 1 - characteristic rounded/arched tops -->
+    <g fill="#78909C">
+      <path d="M130,280 L130,220 Q150,200 170,220 L170,280 Z"/>
+      <path d="M220,280 L220,225 Q245,205 270,225 L270,280 Z"/>
+      <path d="M320,280 L320,215 L360,215 L360,280 Z"/>
+      <path d="M410,280 L410,220 Q435,195 460,220 L460,280 Z"/>
+      <path d="M510,280 L510,225 Q535,210 560,225 L560,280 Z"/>
+      <path d="M610,280 L610,218 L660,218 L660,280 Z"/>
+    </g>
+
+    <!-- Row 2 -->
+    <g fill="#90A4AE" transform="translate(30, 50)">
+      <path d="M130,280 L130,225 Q150,210 170,225 L170,280 Z"/>
+      <path d="M230,280 L230,220 L280,220 L280,280 Z"/>
+      <path d="M340,280 L340,222 Q365,205 390,222 L390,280 Z"/>
+      <path d="M450,280 L450,225 Q470,208 490,225 L490,280 Z"/>
+      <path d="M550,280 L550,218 L600,218 L600,280 Z"/>
+    </g>
+  </g>
+
+  <!-- Star of David symbols on some stones -->
+  <g stroke="#546E7A" stroke-width="2" fill="none">
+    <!-- Star 1 -->
+    <g transform="translate(150, 240)">
+      <polygon points="0,-10 8.66,5 -8.66,5"/>
+      <polygon points="0,10 8.66,-5 -8.66,-5"/>
+    </g>
+    <!-- Star 2 -->
+    <g transform="translate(435, 245)">
+      <polygon points="0,-10 8.66,5 -8.66,5"/>
+      <polygon points="0,10 8.66,-5 -8.66,-5"/>
+    </g>
+    <!-- Star 3 -->
+    <g transform="translate(535, 248)">
+      <polygon points="0,-8 6.93,4 -6.93,4"/>
+      <polygon points="0,8 6.93,-4 -6.93,-4"/>
+    </g>
+  </g>
+
+  <!-- Small pebbles on graves (Jewish tradition) -->
+  <g fill="#BDBDBD">
+    <ellipse cx="150" cy="277" rx="4" ry="2"/>
+    <ellipse cx="245" cy="275" rx="3" ry="2"/>
+    <ellipse cx="340" cy="278" rx="4" ry="2"/>
+    <ellipse cx="435" cy="276" rx="3" ry="2"/>
+    <ellipse cx="535" cy="277" rx="4" ry="2"/>
+    <ellipse cx="635" cy="275" rx="3" ry="2"/>
+  </g>
+
+  <!-- Cypress trees (traditional) -->
+  <g>
+    <g transform="translate(30, 120)">
+      <rect x="18" y="130" width="14" height="40" fill="#5D4037"/>
+      <ellipse cx="25" cy="80" rx="18" ry="60" fill="#2E7D32"/>
+    </g>
+    <g transform="translate(720, 130)">
+      <rect x="18" y="120" width="12" height="35" fill="#5D4037"/>
+      <ellipse cx="24" cy="70" rx="16" ry="55" fill="#388E3C"/>
+    </g>
+  </g>
+
+  <!-- Type label -->
+  <rect x="0" y="380" width="800" height="70" fill="black" opacity="0.5"/>
+  <text x="400" y="425" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">Joodse Begraafplaats</text>
+</svg>

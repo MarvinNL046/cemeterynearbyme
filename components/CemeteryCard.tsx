@@ -15,10 +15,10 @@ export default function CemeteryCard({ cemetery }: CemeteryCardProps) {
     >
       <div className="flex gap-6 p-6">
         {/* Image */}
-        {cemetery.photo && (
+        {(cemetery.photo_url || cemetery.photo) && (
           <div className="flex-shrink-0 w-48 h-32 bg-muted rounded-md overflow-hidden relative">
             <ProxiedImage
-              src={cemetery.photo}
+              src={cemetery.photo_url || cemetery.photo}
               alt={cemetery.name}
               fill
               className="object-cover"

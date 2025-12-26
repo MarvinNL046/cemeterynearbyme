@@ -39,6 +39,7 @@ export interface Cemetery {
   rating?: number;
   review_count?: number;
   photo?: string;
+  photo_url?: string;
   photos?: string[];
 
   // Reviews

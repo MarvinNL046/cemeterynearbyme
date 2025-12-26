@@ -1,0 +1,123 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky-pet" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#B3E5FC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E1F5FE;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grass-pet" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#81C784;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#388E3C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="800" height="450" fill="url(#sky-pet)"/>
+
+  <!-- Sun -->
+  <circle cx="680" cy="80" r="45" fill="#FFE082" opacity="0.9"/>
+
+  <!-- Soft clouds -->
+  <ellipse cx="150" cy="70" rx="60" ry="25" fill="white" opacity="0.7"/>
+  <ellipse cx="200" cy="60" rx="50" ry="20" fill="white" opacity="0.6"/>
+  <ellipse cx="500" cy="90" rx="55" ry="22" fill="white" opacity="0.65"/>
+
+  <!-- Background trees -->
+  <ellipse cx="50" cy="280" rx="80" ry="60" fill="#66BB6A" opacity="0.5"/>
+  <ellipse cx="200" cy="260" rx="100" ry="70" fill="#4CAF50" opacity="0.5"/>
+  <ellipse cx="600" cy="270" rx="120" ry="65" fill="#66BB6A" opacity="0.5"/>
+  <ellipse cx="750" cy="280" rx="70" ry="55" fill="#4CAF50" opacity="0.5"/>
+
+  <!-- Ground - peaceful meadow -->
+  <rect x="0" y="290" width="800" height="160" fill="url(#grass-pet)"/>
+
+  <!-- Decorative flowers -->
+  <g fill="#F48FB1" opacity="0.8">
+    <circle cx="60" cy="320" r="5"/>
+    <circle cx="150" cy="340" r="4"/>
+    <circle cx="280" cy="325" r="5"/>
+    <circle cx="520" cy="335" r="4"/>
+    <circle cx="650" cy="320" r="5"/>
+    <circle cx="740" cy="345" r="4"/>
+  </g>
+  <g fill="#FFF176" opacity="0.7">
+    <circle cx="100" cy="350" r="4"/>
+    <circle cx="200" cy="330" r="3"/>
+    <circle cx="380" cy="345" r="4"/>
+    <circle cx="580" cy="325" r="3"/>
+    <circle cx="700" cy="355" r="4"/>
+  </g>
+
+  <!-- Pet memorial stone (center) -->
+  <g transform="translate(350, 280)">
+    <ellipse cx="50" cy="60" rx="60" ry="10" fill="#795548" opacity="0.3"/>
+    <rect x="15" y="0" width="70" height="60" rx="8" fill="#9E9E9E"/>
+    <rect x="20" y="5" width="60" height="50" rx="5" fill="#BDBDBD"/>
+    <!-- Paw print on stone -->
+    <g fill="#616161" transform="translate(35, 20)">
+      <ellipse cx="15" cy="20" rx="10" ry="8"/>
+      <circle cx="5" cy="8" r="4"/>
+      <circle cx="15" cy="5" r="4"/>
+      <circle cx="25" cy="8" r="4"/>
+    </g>
+  </g>
+
+  <!-- Smaller memorial stones -->
+  <g transform="translate(150, 300)">
+    <rect x="0" y="0" width="40" height="35" rx="5" fill="#A1887F"/>
+    <rect x="3" y="3" width="34" height="29" rx="3" fill="#BCAAA4"/>
+  </g>
+  <g transform="translate(550, 295)">
+    <rect x="0" y="0" width="45" height="40" rx="5" fill="#8D6E63"/>
+    <rect x="3" y="3" width="39" height="34" rx="3" fill="#A1887F"/>
+  </g>
+
+  <!-- Tree with heart carved -->
+  <g transform="translate(680, 180)">
+    <rect x="25" y="70" width="25" height="55" fill="#6D4C41"/>
+    <ellipse cx="37" cy="40" rx="45" ry="55" fill="#43A047"/>
+    <ellipse cx="30" cy="55" rx="35" ry="40" fill="#66BB6A"/>
+    <!-- Heart on tree -->
+    <path d="M30,90 L37,100 L44,90 A6,6 0 0,0 37,82 A6,6 0 0,0 30,90" fill="#E57373"/>
+  </g>
+
+  <!-- Paw print path -->
+  <g fill="#795548" opacity="0.4">
+    <!-- Paw 1 -->
+    <g transform="translate(470, 340) scale(0.5)">
+      <ellipse cx="15" cy="20" rx="10" ry="8"/>
+      <circle cx="5" cy="8" r="4"/>
+      <circle cx="15" cy="5" r="4"/>
+      <circle cx="25" cy="8" r="4"/>
+    </g>
+    <!-- Paw 2 -->
+    <g transform="translate(500, 355) scale(0.5) rotate(-15)">
+      <ellipse cx="15" cy="20" rx="10" ry="8"/>
+      <circle cx="5" cy="8" r="4"/>
+      <circle cx="15" cy="5" r="4"/>
+      <circle cx="25" cy="8" r="4"/>
+    </g>
+    <!-- Paw 3 -->
+    <g transform="translate(250, 345) scale(0.5) rotate(10)">
+      <ellipse cx="15" cy="20" rx="10" ry="8"/>
+      <circle cx="5" cy="8" r="4"/>
+      <circle cx="15" cy="5" r="4"/>
+      <circle cx="25" cy="8" r="4"/>
+    </g>
+  </g>
+
+  <!-- Butterfly near flowers -->
+  <g transform="translate(300, 300)">
+    <ellipse cx="0" cy="0" rx="6" ry="4" fill="#CE93D8" opacity="0.8"/>
+    <ellipse cx="0" cy="0" rx="4" ry="6" fill="#E1BEE7" opacity="0.8" transform="rotate(45)"/>
+  </g>
+
+  <!-- Bird silhouettes -->
+  <g fill="#546E7A" opacity="0.5">
+    <path d="M120,100 Q130,90 140,100 Q130,95 120,100"/>
+    <path d="M160,85 Q170,75 180,85 Q170,80 160,85"/>
+  </g>
+
+  <!-- Type label -->
+  <rect x="0" y="380" width="800" height="70" fill="black" opacity="0.5"/>
+  <text x="400" y="425" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">Dierenbegraafplaats</text>
+</svg>

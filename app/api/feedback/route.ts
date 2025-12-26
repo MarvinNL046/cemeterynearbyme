@@ -75,7 +75,7 @@ This is an automatic notification from cemeterynearbyme.com
 
         await resendClient.emails.send({
         from: 'Cemetery Near Me <noreply@cemeterynearbyme.com>',
-        to: ['info@cemeterynearbyme.com'],
+        to: ['info@begraafplaatsindebuurt.nl'],
         subject: `[Feedback] ${type === 'rating' ? `Rating: ${rating}/5` : 'New feedback'} - ${page_title || 'Website'}`,
         html: `
 <!DOCTYPE html>

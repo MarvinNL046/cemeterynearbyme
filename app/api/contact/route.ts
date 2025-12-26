@@ -95,7 +95,7 @@ This message was sent via the contact form on cemeterynearbyme.com
     // Send email to site owner with tags
     const { error } = await resend.emails.send({
       from: 'Cemetery Near Me <noreply@cemeterynearbyme.com>',
-      to: ['info@cemeterynearbyme.com'],
+      to: ['info@begraafplaatsindebuurt.nl'],
       replyTo: email,
       subject: `[Contact] ${subjectLabel} - ${name}`,
       html: adminEmailHtml,

@@ -8,9 +8,9 @@ import SidebarAd from '@/components/ads/SidebarAd';
 import { Card } from '@/components/ui/card';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     county: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -21,9 +21,10 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { county: countySlug } = await params;
   const counties = await getAllCounties();
   const matchedCounty = counties.find(
-    c => createCountySlug(c) === params.county
+    c => createCountySlug(c) === countySlug
   );
 
   if (!matchedCounty) {
@@ -45,9 +46,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function CountyPage({ params }: PageProps) {
+  const { county: countySlug } = await params;
   const counties = await getAllCounties();
   const matchedCounty = counties.find(
-    c => createCountySlug(c) === params.county
+    c => createCountySlug(c) === countySlug
   );
 
   if (!matchedCounty) {

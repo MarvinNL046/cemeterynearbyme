@@ -6,9 +6,9 @@ import { Building, MapPin, ChevronRight, ArrowRight, Clock, Shield, Info } from 
 import { Card } from '@/components/ui/card';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     type: string;
-  };
+  }>;
 }
 
 const typeDescriptions: Record<string, string> = {
@@ -34,7 +34,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const type = await getTypeBySlug(params.type);
+  const { type: typeSlug } = await params;
+  const type = await getTypeBySlug(typeSlug);
 
   if (!type) {
     return { title: 'Cemetery Type Not Found' };
@@ -52,14 +53,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function TypePage({ params }: PageProps) {
-  const type = await getTypeBySlug(params.type);
+  const { type: typeSlug } = await params;
+  const type = await getTypeBySlug(typeSlug);
 
   if (!type) {
     notFound();
   }
 
   const cemeteries = await getCemeteriesByType(type.slug);
-  const description = typeDescriptions[params.type] || type.description;
+  const description = typeDescriptions[typeSlug] || type.description;
 
   // Group by state
   const cemeteriesByState = cemeteries.reduce((acc, cemetery) => {

@@ -1,5 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Exclude large data files from serverless function bundles
+  outputFileTracingExcludes: {
+    '*': [
+      './data/discovery/**',
+      './data/*-backup-*.json',
+      './data/*-progress.json',
+      './scripts/**',
+      './public/cache/**',
+      './public/images/google/**',
+    ],
+  },
   images: {
     domains: ['lh3.googleusercontent.com', 'maps.googleapis.com', 'images.unsplash.com'],
   },
