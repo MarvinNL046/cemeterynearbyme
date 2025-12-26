@@ -22,4 +22,10 @@ data/discovery/
 .vscode/
 .idea/
 .vercel
+
+# Environment files
 .env.openai
+.env.*
+
+# Build cache
+tsconfig.tsbuildinfo
