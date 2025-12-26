@@ -13,12 +13,16 @@ interface PageProps {
   }>;
 }
 
+// Limit static generation to top 200 counties to stay under Vercel's 75MB limit
 export async function generateStaticParams() {
   const counties = await getAllCounties();
-  return counties.map(county => ({
+  return counties.slice(0, 200).map(county => ({
     county: createCountySlug(county),
   }));
 }
+
+// Allow dynamic params for counties not in static params
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { county: countySlug } = await params;

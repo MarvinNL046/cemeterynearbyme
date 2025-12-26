@@ -14,12 +14,17 @@ interface PageProps {
   }>;
 }
 
+// Limit static generation to top 200 cities to stay under Vercel's 75MB limit
 export async function generateStaticParams() {
   const cities = await getAllCities();
-  return cities.map((city) => ({
+  // Take first 200 cities (sorted by cemetery count would be better but this is simpler)
+  return cities.slice(0, 200).map((city) => ({
     slug: createCitySlug(city),
   }));
 }
+
+// Allow dynamic params for cities not in static params
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;

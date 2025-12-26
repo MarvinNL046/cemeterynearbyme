@@ -20,12 +20,21 @@ interface PageProps {
   }>;
 }
 
+// Limit static generation to top 500 cemeteries to stay under Vercel's 75MB limit
+// Other pages will be generated on-demand with ISR
 export async function generateStaticParams() {
   const cemeteries = await getAllCemeteries();
-  return cemeteries.map((cemetery) => ({
+  // Sort by rating (highest first) and take top 500
+  const topCemeteries = cemeteries
+    .sort((a, b) => (parseFloat(b.rating || '0') - parseFloat(a.rating || '0')))
+    .slice(0, 500);
+  return topCemeteries.map((cemetery) => ({
     slug: cemetery.slug,
   }));
 }
+
+// Allow dynamic params for cemeteries not in static params
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
