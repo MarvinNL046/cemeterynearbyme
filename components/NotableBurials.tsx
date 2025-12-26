@@ -12,7 +12,7 @@ import {
 } from '@/lib/deaths-data';
 
 const INITIAL_COUNT = 3;
-const LOAD_MORE_COUNT = 12;
+const LOAD_MORE_COUNT = 6;
 
 interface NotableBurialsProps {
   cemeterySlug: string;
@@ -76,34 +76,32 @@ function BurialCard({ burial }: { burial: FamousDeath }) {
   const age = calculateAge(burial.birth_date, burial.death_date);
 
   return (
-    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 p-4 bg-secondary/50 rounded-xl border">
-      <div className="flex-1">
-        <h3 className="text-lg font-semibold text-foreground">
-          {burial.name}
-        </h3>
-        <p className="text-muted-foreground">
+    <div className="flex items-center justify-between gap-2 p-3 bg-secondary/50 rounded-lg border">
+      <div className="flex-1 min-w-0">
+        <div className="flex items-baseline gap-2 flex-wrap">
+          <h3 className="font-semibold text-foreground truncate">
+            {burial.name}
+          </h3>
+          {lifespan && (
+            <span className="text-xs text-muted-foreground whitespace-nowrap">
+              {lifespan}
+              {age !== null && ` (${age})`}
+            </span>
+          )}
+        </div>
+        <p className="text-sm text-muted-foreground truncate">
           {burial.profession}
         </p>
-        {lifespan && (
-          <p className="text-sm text-muted-foreground mt-1">
-            {lifespan}
-            {age !== null && (
-              <span className="text-muted-foreground/60 ml-1">
-                (aged {age})
-              </span>
-            )}
-          </p>
-        )}
       </div>
       {burial.wikipedia && (
         <a
           href={burial.wikipedia}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-sm text-accent hover:underline shrink-0"
+          className="text-accent hover:underline shrink-0 p-1"
+          aria-label={`Wikipedia article about ${burial.name}`}
         >
           <ExternalLink className="w-4 h-4" />
-          Wikipedia
         </a>
       )}
     </div>
