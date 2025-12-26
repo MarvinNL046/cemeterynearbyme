@@ -16,27 +16,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Redirect oude sitemap URLs naar nieuwe dynamische sitemap
-      {
-        source: '/sitemaps/sitemap-static.xml',
-        destination: '/sitemap.xml',
-        permanent: true,
-      },
-      {
-        source: '/sitemaps/sitemap-municipalities.xml',
-        destination: '/sitemap.xml',
-        permanent: true,
-      },
-      {
-        source: '/sitemaps/sitemap-municipalities-:num.xml',
-        destination: '/sitemap.xml',
-        permanent: true,
-      },
-      {
-        source: '/sitemaps/sitemap-cemeteries-:num.xml',
-        destination: '/sitemap.xml',
-        permanent: true,
-      },
+      // Only redirect legacy Dutch sitemap URLs to the main sitemap
+      // The /sitemaps/*.xml files are served from /public/sitemaps/ folder
       {
         source: '/sitemap-main.xml',
         destination: '/sitemap.xml',
@@ -52,8 +33,6 @@ const nextConfig = {
         destination: '/sitemap.xml',
         permanent: true,
       },
-      // Voeg hier eventuele andere oude URLs toe die zijn veranderd
-      // Bijvoorbeeld als jullie oude URL structuur hadden
     ]
   },
   async headers() {
