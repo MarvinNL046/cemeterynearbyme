@@ -26,7 +26,7 @@ export async function generateStaticParams() {
   const cemeteries = await getAllCemeteries();
   // Sort by rating (highest first) and take top 500
   const topCemeteries = cemeteries
-    .sort((a, b) => (parseFloat(b.rating || '0') - parseFloat(a.rating || '0')))
+    .sort((a, b) => (parseFloat(String(b.rating || '0')) - parseFloat(String(a.rating || '0'))))
     .slice(0, 500);
   return topCemeteries.map((cemetery) => ({
     slug: cemetery.slug,
