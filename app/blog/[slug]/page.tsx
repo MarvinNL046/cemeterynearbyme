@@ -96,7 +96,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://www.cemeterynearbyme.com/blog/${params.slug}`,
+      '@id': `https://www.cemeterynearbyme.com/blog/${slug}`,
     },
   };
 
@@ -219,7 +219,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 {/* Feedback form */}
                 <FeedbackForm
                   pageTitle={post.title}
-                  pageUrl={`/blog/${params.slug}`}
+                  pageUrl={`/blog/${slug}`}
                 />
               </article>
 

@@ -99,7 +99,7 @@ export default async function CountyPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 3,
         name: `${matchedCounty} County`,
-        item: `https://www.cemeterynearbyme.com/county/${params.county}`
+        item: `https://www.cemeterynearbyme.com/county/${countySlug}`
       }
     ]
   };

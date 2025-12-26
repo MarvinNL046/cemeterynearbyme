@@ -103,7 +103,7 @@ export default async function CityPage({ params }: PageProps) {
           '@type': 'ListItem',
           position: county ? 4 : 3,
           name: city,
-          item: `https://www.cemeterynearbyme.com/city/${params.slug}`
+          item: `https://www.cemeterynearbyme.com/city/${slug}`
         }
       ]
     },

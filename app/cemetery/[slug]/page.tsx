@@ -339,7 +339,7 @@ export default async function CemeteryPage({ params }: PageProps) {
                 </a>
               )}
               <FavoriteButton
-                cemeterySlug={params.slug}
+                cemeterySlug={slug}
                 cemeteryName={cemetery.name}
                 variant="hero"
               />
@@ -425,13 +425,13 @@ export default async function CemeteryPage({ params }: PageProps) {
 
               {/* Photo Gallery */}
               <PhotoGallery
-                cemeterySlug={params.slug}
+                cemeterySlug={slug}
                 cemeteryName={cemetery.name}
               />
 
               {/* Reviews Section */}
               <ReviewSection
-                cemeterySlug={params.slug}
+                cemeterySlug={slug}
                 cemeteryName={cemetery.name}
                 initialRating={rating || 0}
                 initialReviewCount={reviewCount}
@@ -479,7 +479,7 @@ export default async function CemeteryPage({ params }: PageProps) {
                 </p>
                 <FeedbackForm
                   pageTitle={cemetery.name}
-                  pageUrl={`/cemetery/${params.slug}`}
+                  pageUrl={`/cemetery/${slug}`}
                 />
               </Card>
             </div>
