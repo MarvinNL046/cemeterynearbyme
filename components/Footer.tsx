@@ -31,11 +31,11 @@ const fallbackTypes = [
 ];
 
 const guides: FooterGuide[] = [
-  { href: '/guides/cemetery-types', label: 'Types of Cemeteries' },
-  { href: '/guides/famous-cemeteries', label: 'Famous Cemeteries' },
-  { href: '/guides/funeral-planning', label: 'Funeral Planning' },
-  { href: '/guides/veterans-burial', label: 'Veterans Burial' },
-  { href: '/guides/green-burial', label: 'Green Burial' },
+  { href: '/guide/types', label: 'Types of Cemeteries' },
+  { href: '/guide/famous-graves', label: 'Famous Graves' },
+  { href: '/guide/funeral-planning', label: 'Funeral Planning' },
+  { href: '/guide/veterans', label: 'Veterans Benefits' },
+  { href: '/guide/green-burial', label: 'Green Burial' },
 ];
 
 const information = [

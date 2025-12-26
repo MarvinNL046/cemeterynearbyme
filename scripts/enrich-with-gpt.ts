@@ -13,11 +13,12 @@ config({ path: path.join(__dirname, '..', '.env.openai') });
 // Configuration
 const CONFIG = {
   OPENAI_API_KEY: process.env.OPENAI_API_KEY || '',
-  MODEL: 'gpt-4o-mini', // Cost-effective model
+  MODEL: 'gpt-5-nano', // OpenAI's fastest, cheapest GPT-5 model ($0.05/1M in, $0.40/1M out)
   MAX_TOKENS: 1200, // Increased to ensure 350-400 words
   TEMPERATURE: 0.7,
-  CONCURRENCY: 10, // Process 10 at a time (increased for better throughput)
+  CONCURRENCY: 15, // Higher concurrency due to fast model (500 tok/s throughput)
   INPUT_DIR: path.join(__dirname, '..', 'data', 'scraped-brightdata'),
+  JINA_SCRAPED_DIR: path.join(__dirname, '..', 'data', 'scraped-cemeteries'),
   OUTPUT_DIR: path.join(__dirname, '..', 'data', 'enriched-content'),
   PROGRESS_FILE: path.join(__dirname, '..', 'data', 'enriched-content', 'progress.json'),
 };
@@ -65,11 +66,41 @@ let progress = {
   failedSlugs: [] as string[],
 };
 
+// Load Jina-scraped content for a cemetery
+async function loadJinaContent(slug: string): Promise<string | null> {
+  try {
+    // Try to find matching Jina-scraped file
+    const files = await fs.readdir(CONFIG.JINA_SCRAPED_DIR);
+    const matchingFile = files.find(f =>
+      f.toLowerCase().includes(slug.toLowerCase().split('-')[0]) &&
+      f.endsWith('.json')
+    );
+
+    if (matchingFile) {
+      const jinaPath = path.join(CONFIG.JINA_SCRAPED_DIR, matchingFile);
+      const data = JSON.parse(await fs.readFile(jinaPath, 'utf-8'));
+
+      if (data.rawContent || data.history) {
+        // Return combined content from Jina scrape
+        const content = [data.rawContent, data.history].filter(Boolean).join('\n\n');
+        return content.substring(0, 3000);
+      }
+    }
+    return null;
+  } catch {
+    // No Jina content available
+    return null;
+  }
+}
+
 // Create the perfect SEO prompt
-function createEnrichmentPrompt(data: ScrapedData): string {
+function createEnrichmentPrompt(data: ScrapedData, jinaContent: string | null): string {
   const websiteContent = data.websiteData?.rawContent || '';
   const googleContent = data.googleData?.results || '';
-  
+  const jinaSection = jinaContent
+    ? `\n\nEXTRA INFORMATIE VAN EXTERNE BRONNEN:\n${jinaContent}\n`
+    : '';
+
   return `Je bent een SEO-specialist en contentschrijver voor Nederlandse begraafplaatsen. 
 
 Schrijf een rijke, informatieve en SEO-geoptimaliseerde beschrijving voor deze begraafplaats:
@@ -82,7 +113,7 @@ BEGRAAFPLAATS INFORMATIE:
 
 BESCHIKBARE INFORMATIE:
 ${websiteContent.substring(0, 2000)}
-${googleContent.substring(0, 2000)}
+${googleContent.substring(0, 2000)}${jinaSection}
 
 INSTRUCTIES:
 1. Schrijf een aantrekkelijke, informatieve tekst van MINIMAAL 350 en MAXIMAAL 400 woorden
@@ -150,7 +181,9 @@ async function enrichBegraafplaats(
   scrapedData: ScrapedData
 ): Promise<EnrichedContent | null> {
   try {
-    const prompt = createEnrichmentPrompt(scrapedData);
+    // Load Jina-scraped content if available
+    const jinaContent = await loadJinaContent(scrapedData.slug);
+    const prompt = createEnrichmentPrompt(scrapedData, jinaContent);
     
     const response = await openai.chat.completions.create({
       model: CONFIG.MODEL,
@@ -240,7 +273,7 @@ async function saveProgress(): Promise<void> {
 
 // Main enrichment function
 async function main() {
-  console.log(chalk.bold.blue('\n🤖 GPT-4o-mini Enrichment Pipeline\n'));
+  console.log(chalk.bold.blue('\n🤖 GPT-5 nano Enrichment Pipeline\n'));
   
   // Initialize OpenAI
   const openai = initOpenAI();

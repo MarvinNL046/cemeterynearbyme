@@ -12,35 +12,35 @@ interface GuideLink {
 // All available guides/pillar pages with their metadata
 const allGuides: GuideLink[] = [
   {
-    href: '/guides/cemetery-types',
+    href: '/guide/types',
     label: 'Types of Cemeteries',
     description: 'Learn about different cemetery types, from traditional to natural burial grounds.',
     icon: BookOpen,
     keywords: ['type', 'types', 'category', 'kind', 'classification']
   },
   {
-    href: '/guides/famous-cemeteries',
-    label: 'Famous Cemeteries in America',
+    href: '/guide/famous-graves',
+    label: 'Famous Graves in America',
     description: 'Explore historically significant and notable cemeteries across the United States.',
     icon: Landmark,
     keywords: ['famous', 'historic', 'notable', 'landmark', 'tourist', 'attraction']
   },
   {
-    href: '/guides/funeral-planning',
+    href: '/guide/funeral-planning',
     label: 'Funeral Planning Guide',
     description: 'Comprehensive guide to planning a meaningful funeral service.',
     icon: BookOpen,
     keywords: ['funeral', 'planning', 'service', 'memorial', 'ceremony']
   },
   {
-    href: '/guides/veterans-burial',
+    href: '/guide/veterans',
     label: 'Veterans Burial Benefits',
     description: 'Information about military burial benefits and national cemeteries.',
     icon: Flag,
     keywords: ['veteran', 'veterans', 'military', 'national', 'va', 'armed forces', 'service']
   },
   {
-    href: '/guides/green-burial',
+    href: '/guide/green-burial',
     label: 'Green Burial Options',
     description: 'Eco-friendly burial alternatives and natural cemetery options.',
     icon: Leaf,
@@ -52,7 +52,7 @@ const allGuides: GuideLink[] = [
 const typeSubGuides: Record<string, GuideLink[]> = {
   'public-cemetery': [
     {
-      href: '/guides/cemetery-types#public',
+      href: '/guide/types#public',
       label: 'Understanding Public Cemeteries',
       description: 'What makes public cemeteries different and how they operate.',
       icon: BookOpen,
@@ -61,7 +61,7 @@ const typeSubGuides: Record<string, GuideLink[]> = {
   ],
   'memorial-park': [
     {
-      href: '/guides/cemetery-types#memorial-park',
+      href: '/guide/types/memorial-parks',
       label: 'Memorial Park vs Cemetery',
       description: 'The differences between memorial parks and traditional cemeteries.',
       icon: Landmark,
@@ -70,7 +70,7 @@ const typeSubGuides: Record<string, GuideLink[]> = {
   ],
   'national-cemetery': [
     {
-      href: '/guides/veterans-burial',
+      href: '/guide/types/national-cemeteries',
       label: 'National Cemetery Eligibility',
       description: 'Who qualifies for burial in a national cemetery.',
       icon: Flag,
@@ -79,7 +79,7 @@ const typeSubGuides: Record<string, GuideLink[]> = {
   ],
   'veterans-cemetery': [
     {
-      href: '/guides/veterans-burial',
+      href: '/guide/veterans',
       label: 'State Veterans Cemeteries',
       description: 'State-run veteran cemeteries and their benefits.',
       icon: Flag,
@@ -88,7 +88,7 @@ const typeSubGuides: Record<string, GuideLink[]> = {
   ],
   'natural-burial': [
     {
-      href: '/guides/green-burial',
+      href: '/guide/green-burial',
       label: 'Natural Burial Guide',
       description: 'Everything you need to know about natural burial options.',
       icon: Leaf,
@@ -97,7 +97,7 @@ const typeSubGuides: Record<string, GuideLink[]> = {
   ],
   'green-cemetery': [
     {
-      href: '/guides/green-burial',
+      href: '/guide/green-burial',
       label: 'Green Cemetery Standards',
       description: 'What defines a certified green cemetery.',
       icon: Trees,
@@ -149,7 +149,7 @@ export default function RelatedGuides({
     }
 
     // Always include the types guide at minimum score
-    if (guide.href === '/guides/cemetery-types') {
+    if (guide.href === '/guide/types') {
       score = Math.max(score, 1);
     }
 

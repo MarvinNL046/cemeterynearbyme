@@ -13,6 +13,7 @@ import PhotoGallery from '@/components/PhotoGallery';
 import FavoriteButton from '@/components/FavoriteButton';
 import ReadMore from '@/components/ReadMore';
 import NotableBurials from '@/components/NotableBurials';
+import RelatedGuides from '@/components/RelatedGuides';
 import { Card } from '@/components/ui/card';
 
 interface PageProps {
@@ -720,6 +721,17 @@ export default async function CemeteryPage({ params }: PageProps) {
                 </Card>
               </Link>
             </div>
+          </section>
+
+          {/* Related Guides */}
+          <section className="mt-12 max-w-6xl mx-auto">
+            <RelatedGuides
+              currentType={cemetery.type_slug || cemetery.type?.toLowerCase().replace(/\s+/g, '-')}
+              currentState={createStateSlug(cemetery.state)}
+              maxGuides={3}
+              variant="card"
+              showDescription={true}
+            />
           </section>
 
           {/* Disclaimer */}

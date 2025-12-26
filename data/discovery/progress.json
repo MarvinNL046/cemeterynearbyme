@@ -1,11 +1,11 @@
 {
   "total_locations": 3212,
-  "pending": 2940,
-  "in_progress": 2,
-  "completed": 268,
-  "failed": 2,
-  "total_cemeteries_found": 10739,
-  "unique_cids": 10739,
+  "pending": 2898,
+  "in_progress": 0,
+  "completed": 313,
+  "failed": 1,
+  "total_cemeteries_found": 11856,
+  "unique_cids": 11856,
   "per_state": {
     "New York": {
       "total": 64,
@@ -14,8 +14,8 @@
     },
     "California": {
       "total": 68,
-      "completed": 16,
-      "cemeteries": 822
+      "completed": 46,
+      "cemeteries": 1732
     },
     "Illinois": {
       "total": 103,
@@ -29,8 +29,8 @@
     },
     "Arizona": {
       "total": 22,
-      "completed": 21,
-      "cemeteries": 653
+      "completed": 22,
+      "cemeteries": 678
     },
     "Pennsylvania": {
       "total": 68,
@@ -165,7 +165,7 @@
     "Alaska": {
       "total": 29,
       "completed": 28,
-      "cemeteries": 570
+      "cemeteries": 605
     },
     "New Jersey": {
       "total": 23,
@@ -179,13 +179,13 @@
     },
     "Alabama": {
       "total": 67,
-      "completed": 65,
-      "cemeteries": 2424
+      "completed": 67,
+      "cemeteries": 2434
     },
     "Arkansas": {
       "total": 75,
-      "completed": 63,
-      "cemeteries": 1292
+      "completed": 75,
+      "cemeteries": 1429
     },
     "Connecticut": {
       "total": 8,
@@ -263,5 +263,5 @@
       "cemeteries": 0
     }
   },
-  "last_run_at": "2025-12-26T16:55:42.867Z"
+  "last_run_at": "2025-12-26T19:37:56.984Z"
 }
