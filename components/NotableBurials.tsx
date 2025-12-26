@@ -11,7 +11,7 @@ import {
   type FamousDeath
 } from '@/lib/deaths-data';
 
-const INITIAL_COUNT = 12;
+const INITIAL_COUNT = 3;
 const LOAD_MORE_COUNT = 12;
 
 interface NotableBurialsProps {
