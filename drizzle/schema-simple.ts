@@ -1,4 +1,4 @@
-import { pgTable, serial, varchar, text, integer, boolean, timestamp, index, pgEnum, uniqueIndex } from "drizzle-orm/pg-core"
+import { pgTable, serial, varchar, text, integer, boolean, timestamp, index, pgEnum, uniqueIndex, decimal } from "drizzle-orm/pg-core"
 
 // Enums
 export const claimStatus = pgEnum("claim_status", ['pending', 'verification_sent', 'verified', 'approved', 'rejected', 'expired'])
@@ -201,3 +201,79 @@ export const websiteFeedback = pgTable("website_feedback", {
   index("website_feedback_type_idx").using("btree", table.type.asc().nullsLast().op("text_ops")),
   index("website_feedback_created_at_idx").using("btree", table.createdAt.desc().nullsLast()),
 ])
+
+// Main cemeteries table - migrated from JSON to database
+export const cemeteries = pgTable("cemeteries", {
+  id: serial().primaryKey().notNull(),
+  slug: varchar({ length: 255 }).notNull(),
+
+  // Basic info
+  name: varchar({ length: 500 }).notNull(),
+  type: varchar({ length: 100 }).notNull().default('public-cemetery'),
+  typeSlug: varchar("type_slug", { length: 100 }),
+
+  // Location (US)
+  address: varchar({ length: 500 }),
+  city: varchar({ length: 100 }).notNull(),
+  county: varchar({ length: 100 }),
+  state: varchar({ length: 100 }).notNull(),
+  stateAbbr: varchar("state_abbr", { length: 5 }).notNull(),
+  zipCode: varchar("zip_code", { length: 10 }),
+  country: varchar({ length: 50 }).notNull().default('USA'),
+
+  // Geospatial
+  latitude: decimal({ precision: 10, scale: 7 }),
+  longitude: decimal({ precision: 10, scale: 7 }),
+
+  // Contact
+  phone: varchar({ length: 50 }),
+  email: varchar({ length: 255 }),
+  website: varchar({ length: 500 }),
+
+  // Google data
+  googlePlaceId: varchar("google_place_id", { length: 255 }),
+  googleCid: varchar("google_cid", { length: 255 }),
+  rating: decimal({ precision: 2, scale: 1 }),
+  reviewCount: integer("review_count").default(0),
+  photoUrl: text("photo_url"),
+  photos: text().array(),
+
+  // Details
+  openingHours: text("opening_hours"),
+  facilities: text().array(),
+  categories: text().array(),
+  yearEstablished: varchar("year_established", { length: 10 }),
+
+  // Enriched SEO content
+  description: text(),
+  seoTitle: varchar("seo_title", { length: 255 }),
+  seoDescription: text("seo_description"),
+  enrichedContent: text("enriched_content"),
+  generatedSummary: text("generated_summary"),
+  generatedHistory: text("generated_history"),
+  generatedFeatures: text("generated_features").array(),
+  generatedAmenities: text("generated_amenities").array(),
+  generatedVisitorTips: text("generated_visitor_tips").array(),
+  generatedDirections: text("generated_directions"),
+  generatedLocalContext: text("generated_local_context"),
+  enrichedAt: timestamp("enriched_at", { mode: 'string' }),
+
+  // Metadata
+  source: varchar({ length: 50 }).default('google_maps'),
+  status: varchar({ length: 20 }).default('active'),
+  discoveredAt: timestamp("discovered_at", { mode: 'string' }).defaultNow(),
+  createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { mode: 'string' }).defaultNow().notNull(),
+}, (table) => [
+  uniqueIndex("cemeteries_slug_unique").using("btree", table.slug.asc().nullsLast()),
+  index("cemeteries_state_idx").using("btree", table.state.asc().nullsLast().op("text_ops")),
+  index("cemeteries_state_abbr_idx").using("btree", table.stateAbbr.asc().nullsLast().op("text_ops")),
+  index("cemeteries_county_idx").using("btree", table.county.asc().nullsLast().op("text_ops")),
+  index("cemeteries_city_idx").using("btree", table.city.asc().nullsLast().op("text_ops")),
+  index("cemeteries_type_slug_idx").using("btree", table.typeSlug.asc().nullsLast().op("text_ops")),
+  index("cemeteries_rating_idx").using("btree", table.rating.desc().nullsLast()),
+])
+
+// Type exports for TypeScript
+export type Cemetery = typeof cemeteries.$inferSelect
+export type NewCemetery = typeof cemeteries.$inferInsert

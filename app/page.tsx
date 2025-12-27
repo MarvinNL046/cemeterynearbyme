@@ -38,6 +38,7 @@ interface Stats {
   totalCemeteries: number;
   totalStates: number;
   totalCities: number;
+  totalCounties: number;
 }
 
 // Featured states (largest by population)
@@ -128,8 +129,9 @@ const userTestimonials = [
 export default function HomePage() {
   const [stats, setStats] = useState<Stats>({
     totalCemeteries: 0,
-    totalStates: SITE_STATS.totalStatesWithDC,
-    totalCities: 0
+    totalStates: 0,
+    totalCities: 0,
+    totalCounties: 0
   });
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -251,19 +253,19 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto text-center">
             <div>
               <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
-                {stats.totalStates}
+                {stats.totalStates > 0 ? stats.totalStates : '--'}
               </div>
               <div className="text-sm md:text-base text-muted-foreground">States</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
-                {stats.totalCemeteries > 0 ? stats.totalCemeteries.toLocaleString('en-US') : SITE_STATS.cemeteriesPlaceholder}
+                {stats.totalCemeteries > 0 ? stats.totalCemeteries.toLocaleString('en-US') : '--'}
               </div>
               <div className="text-sm md:text-base text-muted-foreground">Cemeteries</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
-                {SITE_STATS.totalCounties.toLocaleString('en-US')}
+                {stats.totalCounties > 0 ? stats.totalCounties.toLocaleString('en-US') : '--'}
               </div>
               <div className="text-sm md:text-base text-muted-foreground">Counties</div>
             </div>

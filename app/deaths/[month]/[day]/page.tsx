@@ -118,6 +118,9 @@ export async function generateStaticParams() {
   return params;
 }
 
+// Revalidate pages every week (historical data rarely changes)
+export const revalidate = 604800;
+
 export default async function DeathsDayPage({ params }: PageProps) {
   const { month, day } = await params;
   const monthData = getMonthBySlug(month);

@@ -79,6 +79,9 @@ async function getTypeGuide(slug: string): Promise<TypeGuide | null> {
 }
 
 // Generate static params for all type guides
+// Revalidate pages every week (static guide content)
+export const revalidate = 604800;
+
 export async function generateStaticParams() {
   const slugs = [
     'national-cemeteries',

@@ -76,6 +76,9 @@ export async function generateStaticParams() {
   }));
 }
 
+// Revalidate pages every week (static guide content)
+export const revalidate = 604800;
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { state: stateSlug } = await params;
   const guide = await getStateGuide(stateSlug);

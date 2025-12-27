@@ -1,5 +1,10 @@
+// Load environment variables first
+import * as dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
+
 import fs from 'fs';
 import path from 'path';
+import { neon } from '@neondatabase/serverless';
 
 const baseUrl = 'https://www.cemeterynearbyme.com';
 const URLS_PER_SITEMAP = 1000;
@@ -43,24 +48,23 @@ function createSitemapXML(urls: SitemapUrl[]): string {
 async function generateSitemaps() {
   console.log('🗺️  Generating sitemaps for cemeterynearbyme.com...');
 
+  // Initialize database connection
+  const sql = neon(process.env.DATABASE_URL!);
+
   // Create sitemaps directory
   const sitemapsDir = path.join(process.cwd(), 'public/sitemaps');
   if (!fs.existsSync(sitemapsDir)) {
     fs.mkdirSync(sitemapsDir, { recursive: true });
   }
 
-  // Read data files
-  const cemeteriesPath = path.join(process.cwd(), 'public/data/cemeteries.json');
-  const summaryPath = path.join(process.cwd(), 'public/data/summary.json');
+  // Fetch data from database
+  console.log('📊 Fetching data from database...');
+  const cemeteriesData = await sql`SELECT slug FROM cemeteries WHERE status = 'active' ORDER BY slug`;
+  const countiesData = await sql`SELECT DISTINCT county FROM cemeteries WHERE county IS NOT NULL ORDER BY county`;
+  const citiesData = await sql`SELECT DISTINCT city FROM cemeteries ORDER BY city`;
+  const typesData = await sql`SELECT DISTINCT type_slug FROM cemeteries WHERE type_slug IS NOT NULL ORDER BY type_slug`;
 
-  if (!fs.existsSync(cemeteriesPath) || !fs.existsSync(summaryPath)) {
-    console.error('❌ Required data files not found');
-    console.error('Please run: npm run generate-data');
-    process.exit(1);
-  }
-
-  const cemeteriesData = JSON.parse(fs.readFileSync(cemeteriesPath, 'utf-8'));
-  const summaryData = JSON.parse(fs.readFileSync(summaryPath, 'utf-8'));
+  console.log(`   Found ${cemeteriesData.length} cemeteries, ${countiesData.length} counties, ${citiesData.length} cities`);
 
   const lastmod = new Date().toISOString().split('T')[0];
   const sitemapFiles: string[] = [];
@@ -113,28 +117,17 @@ async function generateSitemaps() {
     });
   }
 
-  // 3. TYPE PAGES
+  // 3. TYPE PAGES - from database
   console.log('🏷️  Adding type pages...');
-  const types = [
-    'public-cemetery',
-    'private-cemetery',
-    'national-cemetery',
-    'veterans-cemetery',
-    'memorial-park',
-    'church-cemetery',
-    'family-cemetery',
-    'green-cemetery',
-    'historic-cemetery',
-    'pet-cemetery'
-  ];
-
-  for (const type of types) {
-    staticUrls.push({
-      loc: `${baseUrl}/type/${type}`,
-      lastmod,
-      changefreq: 'monthly',
-      priority: '0.7'
-    });
+  for (const row of typesData) {
+    if (row.type_slug) {
+      staticUrls.push({
+        loc: `${baseUrl}/type/${row.type_slug}`,
+        lastmod,
+        changefreq: 'monthly',
+        priority: '0.7'
+      });
+    }
   }
 
   // 4. DEATHS CALENDAR PAGES (English months)
@@ -176,9 +169,8 @@ async function generateSitemaps() {
 
   // 5. COUNTY SITEMAPS
   console.log('🏘️  Generating county sitemaps...');
-  const counties = summaryData.counties || [];
-  const countyUrls: SitemapUrl[] = counties.map((county: string) => ({
-    loc: `${baseUrl}/county/${createSlug(county)}`,
+  const countyUrls: SitemapUrl[] = countiesData.map((row: any) => ({
+    loc: `${baseUrl}/county/${createSlug(row.county)}`,
     lastmod,
     changefreq: 'weekly',
     priority: '0.6'
@@ -200,14 +192,13 @@ async function generateSitemaps() {
       );
       sitemapFiles.push(filename);
     });
-    console.log(`✅ County sitemaps: ${counties.length} URLs in ${countyChunks.length} file(s)`);
+    console.log(`✅ County sitemaps: ${countiesData.length} URLs in ${countyChunks.length} file(s)`);
   }
 
   // 6. CITY SITEMAPS
   console.log('🏙️  Generating city sitemaps...');
-  const cities = summaryData.cities || [];
-  const cityUrls: SitemapUrl[] = cities.map((city: string) => ({
-    loc: `${baseUrl}/city/${createSlug(city)}`,
+  const cityUrls: SitemapUrl[] = citiesData.map((row: any) => ({
+    loc: `${baseUrl}/city/${createSlug(row.city)}`,
     lastmod,
     changefreq: 'weekly',
     priority: '0.6'
@@ -229,13 +220,13 @@ async function generateSitemaps() {
       );
       sitemapFiles.push(filename);
     });
-    console.log(`✅ City sitemaps: ${cities.length} URLs in ${cityChunks.length} file(s)`);
+    console.log(`✅ City sitemaps: ${citiesData.length} URLs in ${cityChunks.length} file(s)`);
   }
 
   // 7. CEMETERY DETAIL PAGES
   console.log('🪦  Generating cemetery sitemaps...');
-  const cemeteryUrls: SitemapUrl[] = cemeteriesData.map((cemetery: any) => ({
-    loc: `${baseUrl}/cemetery/${cemetery.slug}`,
+  const cemeteryUrls: SitemapUrl[] = cemeteriesData.map((row: any) => ({
+    loc: `${baseUrl}/cemetery/${row.slug}`,
     lastmod,
     changefreq: 'monthly',
     priority: '0.5'
@@ -281,8 +272,8 @@ async function generateSitemaps() {
   console.log('\n📊 Sitemap Generation Summary:');
   console.log('================================');
   console.log(`✅ Static pages: ${staticUrls.length} URLs`);
-  console.log(`✅ Counties: ${counties.length} URLs`);
-  console.log(`✅ Cities: ${cities.length} URLs`);
+  console.log(`✅ Counties: ${countiesData.length} URLs`);
+  console.log(`✅ Cities: ${citiesData.length} URLs`);
   console.log(`✅ Cemeteries: ${cemeteriesData.length} URLs`);
   console.log(`✅ Total sitemaps: ${sitemapFiles.length}`);
   console.log(`✅ Total URLs: ${staticUrls.length + countyUrls.length + cityUrls.length + cemeteryUrls.length}`);

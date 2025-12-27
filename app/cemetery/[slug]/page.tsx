@@ -38,6 +38,9 @@ export async function generateStaticParams() {
 // Allow dynamic params for cemeteries not in static params
 export const dynamicParams = true;
 
+// Revalidate pages every 24 hours
+export const revalidate = 86400;
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const cemetery = await getCemeteryBySlug(slug);

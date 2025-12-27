@@ -5,6 +5,10 @@
  * Searches for cemeteries across all US states via Google Maps.
  * Covers all 50 states + DC with comprehensive search queries.
  *
+ * REAL-TIME DATABASE WRITES:
+ * Each discovered cemetery is immediately written to Neon PostgreSQL
+ * to prevent data loss on PC crash. JSON files serve as backup.
+ *
  * Usage:
  *   npx tsx scripts/discovery/discover-cemeteries.ts                    # All pending locations
  *   npx tsx scripts/discovery/discover-cemeteries.ts --state California
@@ -12,13 +16,18 @@
  *   npx tsx scripts/discovery/discover-cemeteries.ts --dry-run
  *   npx tsx scripts/discovery/discover-cemeteries.ts --resume
  *   npx tsx scripts/discovery/discover-cemeteries.ts --test             # Test with 3 cities
+ *   npx tsx scripts/discovery/discover-cemeteries.ts --no-db            # Skip database writes
  */
 
 import * as dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
+
 import fs from 'fs';
 import path from 'path';
-
-dotenv.config({ path: '.env.local' });
+import { neon } from '@neondatabase/serverless';
+import { drizzle } from 'drizzle-orm/neon-http';
+import { cemeteries } from '../../drizzle/schema-simple';
+import { sql } from 'drizzle-orm';
 
 // ============================================================================
 // Configuration
@@ -66,6 +75,150 @@ const SEARCH_QUERIES = [
   'family cemetery',
   'church cemetery',
 ];
+
+// ============================================================================
+// Database Connection
+// ============================================================================
+
+const DATABASE_URL = process.env.DATABASE_URL;
+let db: ReturnType<typeof drizzle> | null = null;
+let dbEnabled = true;
+
+function initDatabase(): boolean {
+  if (!DATABASE_URL) {
+    console.log('⚠️  DATABASE_URL not set - will only save to JSON files');
+    dbEnabled = false;
+    return false;
+  }
+
+  try {
+    const client = neon(DATABASE_URL);
+    db = drizzle(client);
+    console.log('✅ Database connection initialized');
+    return true;
+  } catch (error: any) {
+    console.error('❌ Failed to initialize database:', error.message);
+    dbEnabled = false;
+    return false;
+  }
+}
+
+function createSlug(name: string, city: string, stateAbbr: string): string {
+  const base = `${name}-${city}-${stateAbbr}`;
+  return base
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function createTypeSlug(type: string): string {
+  return type.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+}
+
+function determineType(businessType: string, categories: string[]): string {
+  const allTerms = [businessType, ...(categories || [])].map(t => t?.toLowerCase() || '');
+
+  if (allTerms.some(t => t.includes('national') || t.includes('veteran'))) return 'veterans-cemetery';
+  if (allTerms.some(t => t.includes('memorial park'))) return 'memorial-park';
+  if (allTerms.some(t => t.includes('jewish'))) return 'jewish-cemetery';
+  if (allTerms.some(t => t.includes('muslim') || t.includes('islamic'))) return 'muslim-cemetery';
+  if (allTerms.some(t => t.includes('catholic'))) return 'catholic-cemetery';
+  if (allTerms.some(t => t.includes('natural') || t.includes('green'))) return 'natural-burial';
+  if (allTerms.some(t => t.includes('historic'))) return 'historic-cemetery';
+  if (allTerms.some(t => t.includes('pet') || t.includes('animal'))) return 'pet-cemetery';
+  if (allTerms.some(t => t.includes('crematori') || t.includes('cremation'))) return 'crematorium';
+  if (allTerms.some(t => t.includes('mausoleum'))) return 'mausoleum';
+
+  return 'public-cemetery';
+}
+
+/**
+ * Insert a single cemetery to database in real-time
+ * Returns true if successful, false if failed
+ */
+async function insertCemeteryToDatabase(cemetery: DiscoveredCemetery): Promise<boolean> {
+  if (!db || !dbEnabled) return false;
+
+  const stateAbbr = cemetery.state_abbr || cemetery.state?.slice(0, 2).toUpperCase() || 'XX';
+  const type = determineType(cemetery.business_type || '', cemetery.categories || []);
+
+  const record = {
+    slug: createSlug(cemetery.name, cemetery.city || '', stateAbbr),
+    name: cemetery.name,
+    type: type,
+    typeSlug: createTypeSlug(type),
+    address: cemetery.address || null,
+    city: cemetery.city || '',
+    county: cemetery.county || null,
+    state: cemetery.state || '',
+    stateAbbr: stateAbbr,
+    zipCode: cemetery.zip_code || null,
+    country: cemetery.country || 'USA',
+    latitude: cemetery.latitude?.toString() || null,
+    longitude: cemetery.longitude?.toString() || null,
+    phone: cemetery.phone || null,
+    email: null,
+    website: cemetery.website || null,
+    googlePlaceId: cemetery.google_place_id || null,
+    googleCid: cemetery.google_cid || null,
+    rating: cemetery.rating?.toString() || null,
+    reviewCount: cemetery.review_count || 0,
+    photoUrl: cemetery.photo_url || null,
+    photos: null,
+    openingHours: typeof cemetery.opening_hours === 'string'
+      ? cemetery.opening_hours
+      : JSON.stringify(cemetery.opening_hours) || null,
+    facilities: cemetery.facilities || null,
+    categories: cemetery.categories || null,
+    yearEstablished: null,
+    description: null,
+    seoTitle: null,
+    seoDescription: null,
+    enrichedContent: null,
+    generatedSummary: null,
+    generatedHistory: null,
+    generatedFeatures: null,
+    generatedAmenities: null,
+    generatedVisitorTips: null,
+    generatedDirections: null,
+    generatedLocalContext: null,
+    enrichedAt: null,
+    source: 'google_maps',
+    status: 'active',
+    discoveredAt: cemetery.discovered_at || new Date().toISOString(),
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  };
+
+  try {
+    await db.insert(cemeteries)
+      .values(record)
+      .onConflictDoUpdate({
+        target: cemeteries.slug,
+        set: {
+          name: sql`COALESCE(EXCLUDED.name, ${cemeteries.name})`,
+          address: sql`COALESCE(EXCLUDED.address, ${cemeteries.address})`,
+          phone: sql`COALESCE(EXCLUDED.phone, ${cemeteries.phone})`,
+          website: sql`COALESCE(EXCLUDED.website, ${cemeteries.website})`,
+          rating: sql`COALESCE(EXCLUDED.rating, ${cemeteries.rating})`,
+          reviewCount: sql`GREATEST(COALESCE(EXCLUDED.review_count, 0), COALESCE(${cemeteries.reviewCount}, 0))`,
+          photoUrl: sql`COALESCE(EXCLUDED.photo_url, ${cemeteries.photoUrl})`,
+          facilities: sql`COALESCE(EXCLUDED.facilities, ${cemeteries.facilities})`,
+          categories: sql`COALESCE(EXCLUDED.categories, ${cemeteries.categories})`,
+          googlePlaceId: sql`COALESCE(EXCLUDED.google_place_id, ${cemeteries.googlePlaceId})`,
+          googleCid: sql`COALESCE(EXCLUDED.google_cid, ${cemeteries.googleCid})`,
+          updatedAt: sql`EXCLUDED.updated_at`,
+        },
+      });
+    return true;
+  } catch (error: any) {
+    // Log but don't fail - data is still in JSON backup
+    console.error(`   ⚠️ DB insert failed for ${cemetery.name}: ${error.message?.slice(0, 50)}`);
+    return false;
+  }
+}
 
 // ============================================================================
 // Types
@@ -357,9 +510,15 @@ async function processSerpResponse(
     const name = place.title || place.name || '';
     const nameLower = name.toLowerCase();
 
-    const categories = place.category || [];
-    const categoryIds = categories.map((c: any) => (c.id || c).toLowerCase());
-    const categoryTitles = categories.map((c: any) => (c.title || '').toLowerCase());
+    const categories = Array.isArray(place.category) ? place.category : [];
+    const categoryIds = categories.map((c: any) => {
+      const id = c?.id ?? c;
+      return typeof id === 'string' ? id.toLowerCase() : '';
+    }).filter(Boolean);
+    const categoryTitles = categories.map((c: any) => {
+      const title = c?.title ?? '';
+      return typeof title === 'string' ? title.toLowerCase() : '';
+    }).filter(Boolean);
 
     // Cemetery detection for US
     const isCemetery =
@@ -402,7 +561,10 @@ async function processSerpResponse(
                      place.main_image;
 
     // Extract all category titles
-    const allCategories = categories.map((c: any) => c.title || c.id || c).filter(Boolean);
+    const allCategories = categories.map((c: any) => {
+      const val = c?.title ?? c?.id ?? c;
+      return typeof val === 'string' ? val : null;
+    }).filter(Boolean) as string[];
 
     // Extract facilities
     const tags = place.tags || [];
@@ -569,6 +731,7 @@ function parseArgs() {
     dryRun: false,
     resume: false,
     test: false,
+    noDb: false,
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -585,6 +748,8 @@ function parseArgs() {
     } else if (args[i] === '--test') {
       options.test = true;
       options.batch = 3;
+    } else if (args[i] === '--no-db') {
+      options.noDb = true;
     }
   }
 
@@ -605,6 +770,14 @@ async function main() {
   if (!API_KEY) {
     console.error('❌ BRIGHTDATA_API_KEY not found in .env.local');
     process.exit(1);
+  }
+
+  // Initialize database connection (unless --no-db)
+  if (options.noDb) {
+    console.log('⚠️  Database writes disabled (--no-db flag)');
+    dbEnabled = false;
+  } else {
+    initDatabase();
   }
 
   // Check if locations file exists
@@ -686,9 +859,16 @@ async function main() {
 
   // Process locations
   console.log(`🚀 Starting discovery for ${toProcess.length} locations...\n`);
+  if (dbEnabled) {
+    console.log('💾 Real-time database writes ENABLED - data saved immediately\n');
+  } else {
+    console.log('📁 Database disabled - saving to JSON files only\n');
+  }
 
   let processed = 0;
   let newCemeteries = 0;
+  let dbInserts = 0;
+  let dbFailures = 0;
 
   for (const location of toProcess) {
     console.log(`\n🏛️ ${location.city}, ${location.state_abbr}`);
@@ -705,19 +885,29 @@ async function main() {
         console.log(`   🔎 Searching: "${query} ${location.city}"...`);
 
         const response = await searchGoogleMapsSERP(query, location.city, location.state);
-        const cemeteries = await processSerpResponse(response, location, query);
+        const foundCemeteries = await processSerpResponse(response, location, query);
 
-        // Filter duplicates
-        for (const cemetery of cemeteries) {
+        // Filter duplicates and insert each to database in real-time
+        for (const cemetery of foundCemeteries) {
           if (!existingCids.has(cemetery.google_cid)) {
             existingCids.add(cemetery.google_cid);
             locationResults.push(cemetery);
             discoveredCemeteries.push(cemetery);
             newCemeteries++;
+
+            // Insert to database immediately (crash-safe)
+            if (dbEnabled) {
+              const success = await insertCemeteryToDatabase(cemetery);
+              if (success) {
+                dbInserts++;
+              } else {
+                dbFailures++;
+              }
+            }
           }
         }
 
-        console.log(`   ✓ ${cemeteries.length} CIDs found (${locationResults.length} new)`);
+        console.log(`   ✓ ${foundCemeteries.length} CIDs found (${locationResults.length} new)`);
 
         // Small delay between queries
         await sleep(RATE_LIMIT.delayBetweenQueries);
@@ -729,14 +919,15 @@ async function main() {
       location.last_searched_at = new Date().toISOString();
       location.search_query = SEARCH_QUERIES.join(', ');
 
-      // Save progress
+      // Save progress to JSON files (backup)
       saveLocations(locations);
       saveDiscoveredCemeteries(discoveredCemeteries);
       updateProgress(locations, discoveredCemeteries);
       saveRateLimits(rateLimits);
 
       processed++;
-      console.log(`   💾 Saved (${processed}/${toProcess.length}) - Total: ${newCemeteries} new cemeteries`);
+      const dbStatus = dbEnabled ? ` | DB: ${dbInserts}/${newCemeteries}` : '';
+      console.log(`   💾 Saved (${processed}/${toProcess.length}) - Total: ${newCemeteries} new cemeteries${dbStatus}`);
 
     } catch (error: any) {
       console.error(`   ❌ Error: ${error.message}`);
@@ -761,6 +952,15 @@ async function main() {
   console.log(`   New cemeteries found: ${newCemeteries}`);
   console.log(`   Total cemeteries: ${discoveredCemeteries.length}`);
   console.log(`   Unique CIDs: ${new Set(discoveredCemeteries.map(c => c.google_cid)).size}`);
+  if (dbEnabled) {
+    console.log('');
+    console.log('   💾 Database Status:');
+    console.log(`      Successful inserts: ${dbInserts}`);
+    if (dbFailures > 0) {
+      console.log(`      Failed inserts: ${dbFailures} (saved in JSON backup)`);
+    }
+    console.log(`      Success rate: ${((dbInserts / (dbInserts + dbFailures || 1)) * 100).toFixed(1)}%`);
+  }
 }
 
 main().catch(console.error);

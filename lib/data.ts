@@ -1,5 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import { db, cemeteries } from './db';
+import { eq, ilike, or, desc, asc, sql, and, count } from 'drizzle-orm';
 
 // US Cemetery Interface
 export interface Cemetery {
@@ -124,67 +126,90 @@ export interface CemeteryType {
   search_terms?: string[];
 }
 
-// Cache
-let cemeteriesCache: Cemetery[] | null = null;
+// Cache for static data (states and types only)
 let statesCache: State[] | null = null;
 let typesCache: CemeteryType[] | null = null;
+
+// ===== HELPER: Map database row to Cemetery interface =====
+
+function mapRowToCemetery(row: typeof cemeteries.$inferSelect): Cemetery {
+  return {
+    id: row.id.toString(),
+    name: row.name,
+    slug: row.slug,
+    address: row.address || undefined,
+    city: row.city,
+    county: row.county || undefined,
+    state: row.state,
+    state_abbr: row.stateAbbr,
+    zipCode: row.zipCode || undefined,
+    country: row.country,
+    latitude: row.latitude ? parseFloat(row.latitude) : undefined,
+    longitude: row.longitude ? parseFloat(row.longitude) : undefined,
+    type: row.type,
+    type_slug: row.typeSlug || row.type.toLowerCase().replace(/\s+/g, '-'),
+    phone: row.phone || undefined,
+    email: row.email || undefined,
+    website: row.website || undefined,
+    description: row.description || undefined,
+    opening_hours: row.openingHours || undefined,
+    facilities: row.facilities || undefined,
+    year_established: row.yearEstablished || undefined,
+    rating: row.rating ? parseFloat(row.rating) : undefined,
+    review_count: row.reviewCount || undefined,
+    photo_url: row.photoUrl || undefined,
+    photos: row.photos || undefined,
+    status: row.status || undefined,
+    source: row.source || undefined,
+    discovered_at: row.discoveredAt || undefined,
+    updated_at: row.updatedAt || undefined,
+  };
+}
+
+function mapRowToCemeteryWithContent(row: typeof cemeteries.$inferSelect): CemeteryWithContent {
+  const base = mapRowToCemetery(row);
+  return {
+    ...base,
+    enriched: !!row.enrichedContent || !!row.generatedSummary,
+    enriched_at: row.enrichedAt || undefined,
+    seoTitle: row.seoTitle || undefined,
+    seoDescription: row.seoDescription || undefined,
+    enrichedContent: row.enrichedContent || undefined,
+    generated: row.generatedSummary ? {
+      summary: row.generatedSummary || '',
+      history: row.generatedHistory || '',
+      features: row.generatedFeatures || [],
+      accessibility: '',
+      amenities: row.generatedAmenities || [],
+      visitor_tips: row.generatedVisitorTips || [],
+      directions: row.generatedDirections || undefined,
+      local_context: row.generatedLocalContext || undefined,
+    } : undefined,
+  };
+}
 
 // ===== CORE DATA FUNCTIONS =====
 
 export async function getAllCemeteries(): Promise<Cemetery[]> {
-  if (cemeteriesCache) return cemeteriesCache;
-
   try {
-    // Try public data first
-    const publicPath = path.join(process.cwd(), 'public', 'data', 'cemeteries.json');
-    try {
-      const content = await fs.readFile(publicPath, 'utf-8');
-      cemeteriesCache = JSON.parse(content) as Cemetery[];
-      return cemeteriesCache;
-    } catch {
-      // Continue to data directory
-    }
-
-    // Try data directory
-    const dataPath = path.join(process.cwd(), 'data', 'cemeteries.json');
-    const content = await fs.readFile(dataPath, 'utf-8');
-    cemeteriesCache = JSON.parse(content) as Cemetery[];
-    return cemeteriesCache;
+    const results = await db.select().from(cemeteries);
+    return results.map(mapRowToCemetery);
   } catch (error) {
-    console.error('Error loading cemetery data:', error);
+    console.error('Error loading cemeteries from database:', error);
     return [];
   }
 }
 
 export async function getCemeteryBySlug(slug: string): Promise<CemeteryWithContent | null> {
   try {
-    const cemeteries = await getAllCemeteries() as CemeteryWithContent[];
-    const cemetery = cemeteries.find(c => c.slug === slug);
+    const results = await db.select()
+      .from(cemeteries)
+      .where(eq(cemeteries.slug, slug))
+      .limit(1);
 
-    if (!cemetery) return null;
+    if (results.length === 0) return null;
 
-    // Try to load enriched content
-    try {
-      const enrichedPath = path.join(process.cwd(), 'data', 'enriched-content', `${slug}.json`);
-      const enrichedContent = await fs.readFile(enrichedPath, 'utf-8');
-      const enrichedData = JSON.parse(enrichedContent);
-
-      return {
-        ...cemetery,
-        enriched: true,
-        generated: enrichedData.generated,
-        enriched_at: enrichedData.enriched_at,
-        seoTitle: enrichedData.seoTitle,
-        seoDescription: enrichedData.seoDescription,
-        enrichedContent: enrichedData.content,
-      };
-    } catch {
-      // No enriched content, return basic data
-      return {
-        ...cemetery,
-        enriched: false
-      };
-    }
+    return mapRowToCemeteryWithContent(results[0]);
   } catch (error) {
     console.error('Error loading cemetery:', error);
     return null;
@@ -219,79 +244,146 @@ export async function getStateByAbbr(abbr: string): Promise<State | null> {
 }
 
 export async function getCemeteriesByState(state: string): Promise<Cemetery[]> {
-  const cemeteries = await getAllCemeteries();
-  return cemeteries.filter(c =>
-    c.state?.toLowerCase() === state.toLowerCase() ||
-    c.state_abbr?.toLowerCase() === state.toLowerCase()
-  );
+  try {
+    const results = await db.select()
+      .from(cemeteries)
+      .where(
+        or(
+          ilike(cemeteries.state, state),
+          ilike(cemeteries.stateAbbr, state)
+        )
+      );
+    return results.map(mapRowToCemetery);
+  } catch (error) {
+    console.error('Error loading cemeteries by state:', error);
+    return [];
+  }
 }
 
 // ===== COUNTY FUNCTIONS =====
 
 export async function getAllCounties(): Promise<string[]> {
-  const cemeteries = await getAllCemeteries();
-  const counties = [...new Set(cemeteries
-    .map(c => c.county)
-    .filter((c): c is string => typeof c === 'string' && c.trim() !== '')
-  )];
-  return counties.sort();
+  try {
+    const results = await db.selectDistinct({ county: cemeteries.county })
+      .from(cemeteries)
+      .where(sql`${cemeteries.county} IS NOT NULL AND ${cemeteries.county} != ''`)
+      .orderBy(asc(cemeteries.county));
+
+    return results.map(r => r.county!).filter(Boolean);
+  } catch (error) {
+    console.error('Error loading counties:', error);
+    return [];
+  }
 }
 
 export async function getCountiesByState(state: string): Promise<string[]> {
-  const cemeteries = await getCemeteriesByState(state);
-  const counties = [...new Set(cemeteries
-    .map(c => c.county)
-    .filter((c): c is string => typeof c === 'string' && c.trim() !== '')
-  )];
-  return counties.sort();
+  try {
+    const results = await db.selectDistinct({ county: cemeteries.county })
+      .from(cemeteries)
+      .where(
+        and(
+          sql`${cemeteries.county} IS NOT NULL AND ${cemeteries.county} != ''`,
+          or(
+            ilike(cemeteries.state, state),
+            ilike(cemeteries.stateAbbr, state)
+          )
+        )
+      )
+      .orderBy(asc(cemeteries.county));
+
+    return results.map(r => r.county!).filter(Boolean);
+  } catch (error) {
+    console.error('Error loading counties by state:', error);
+    return [];
+  }
 }
 
 export async function getCemeteriesByCounty(county: string, state?: string): Promise<Cemetery[]> {
-  const cemeteries = await getAllCemeteries();
-  return cemeteries.filter(c => {
-    const countyMatch = c.county?.toLowerCase() === county.toLowerCase();
+  try {
+    let whereClause = ilike(cemeteries.county, county);
+
     if (state) {
-      return countyMatch && (
-        c.state?.toLowerCase() === state.toLowerCase() ||
-        c.state_abbr?.toLowerCase() === state.toLowerCase()
-      );
+      whereClause = and(
+        whereClause,
+        or(
+          ilike(cemeteries.state, state),
+          ilike(cemeteries.stateAbbr, state)
+        )
+      )!;
     }
-    return countyMatch;
-  });
+
+    const results = await db.select()
+      .from(cemeteries)
+      .where(whereClause);
+
+    return results.map(mapRowToCemetery);
+  } catch (error) {
+    console.error('Error loading cemeteries by county:', error);
+    return [];
+  }
 }
 
 // ===== CITY FUNCTIONS =====
 
 export async function getAllCities(): Promise<string[]> {
-  const cemeteries = await getAllCemeteries();
-  const cities = [...new Set(cemeteries
-    .map(c => c.city)
-    .filter((c): c is string => typeof c === 'string' && c.trim() !== '')
-  )];
-  return cities.sort();
+  try {
+    const results = await db.selectDistinct({ city: cemeteries.city })
+      .from(cemeteries)
+      .where(sql`${cemeteries.city} IS NOT NULL AND ${cemeteries.city} != ''`)
+      .orderBy(asc(cemeteries.city));
+
+    return results.map(r => r.city).filter(Boolean);
+  } catch (error) {
+    console.error('Error loading cities:', error);
+    return [];
+  }
 }
 
 export async function getCitiesByState(state: string): Promise<string[]> {
-  const cemeteries = await getCemeteriesByState(state);
-  const cities = [...new Set(cemeteries
-    .map(c => c.city)
-    .filter((c): c is string => typeof c === 'string' && c.trim() !== '')
-  )];
-  return cities.sort();
+  try {
+    const results = await db.selectDistinct({ city: cemeteries.city })
+      .from(cemeteries)
+      .where(
+        and(
+          sql`${cemeteries.city} IS NOT NULL AND ${cemeteries.city} != ''`,
+          or(
+            ilike(cemeteries.state, state),
+            ilike(cemeteries.stateAbbr, state)
+          )
+        )
+      )
+      .orderBy(asc(cemeteries.city));
+
+    return results.map(r => r.city).filter(Boolean);
+  } catch (error) {
+    console.error('Error loading cities by state:', error);
+    return [];
+  }
 }
 
 export async function getCemeteriesByCity(city: string, state?: string): Promise<Cemetery[]> {
-  const cemeteries = await getAllCemeteries();
-  return cemeteries.filter(c => {
-    const cityMatch = c.city?.toLowerCase() === city.toLowerCase();
+  try {
+    let whereClause = ilike(cemeteries.city, city);
+
     if (state) {
-      return cityMatch && (
-        c.state?.toLowerCase() === state.toLowerCase() ||
-        c.state_abbr?.toLowerCase() === state.toLowerCase()
-      );
+      whereClause = and(
+        whereClause,
+        or(
+          ilike(cemeteries.state, state),
+          ilike(cemeteries.stateAbbr, state)
+        )
+      )!;
     }
-    return cityMatch;
-  });
+
+    const results = await db.select()
+      .from(cemeteries)
+      .where(whereClause);
+
+    return results.map(mapRowToCemetery);
+  } catch (error) {
+    console.error('Error loading cemeteries by city:', error);
+    return [];
+  }
 }
 
 // ===== TYPE FUNCTIONS =====
@@ -317,11 +409,21 @@ export async function getTypeBySlug(slug: string): Promise<CemeteryType | null> 
 }
 
 export async function getCemeteriesByType(type: string): Promise<Cemetery[]> {
-  const cemeteries = await getAllCemeteries();
-  return cemeteries.filter(c =>
-    c.type?.toLowerCase() === type.toLowerCase() ||
-    c.type_slug?.toLowerCase() === type.toLowerCase()
-  );
+  try {
+    const results = await db.select()
+      .from(cemeteries)
+      .where(
+        or(
+          ilike(cemeteries.type, type),
+          ilike(cemeteries.typeSlug, type)
+        )
+      );
+
+    return results.map(mapRowToCemetery);
+  } catch (error) {
+    console.error('Error loading cemeteries by type:', error);
+    return [];
+  }
 }
 
 // ===== SLUG UTILITIES =====
@@ -370,24 +472,43 @@ export function createTypeSlug(type: string): string {
 // ===== STATISTICS =====
 
 export async function getStats() {
-  const cemeteries = await getAllCemeteries();
-  const states = await getAllStates();
-  const types = await getAllTypes();
+  try {
+    const states = await getAllStates();
+    const types = await getAllTypes();
 
-  const statesWithCemeteries = [...new Set(cemeteries.map(c => c.state))].length;
-  const citiesWithCemeteries = [...new Set(cemeteries.map(c => c.city))].length;
-  const withRatings = cemeteries.filter(c => c.rating).length;
-  const withPhotos = cemeteries.filter(c => c.photo || (c.photos && c.photos.length > 0)).length;
+    // Use SQL aggregations for efficiency
+    const [statsResult] = await db.select({
+      totalCemeteries: count(),
+      statesWithCemeteries: sql<number>`COUNT(DISTINCT ${cemeteries.state})`,
+      citiesWithCemeteries: sql<number>`COUNT(DISTINCT ${cemeteries.city})`,
+      countiesWithCemeteries: sql<number>`COUNT(DISTINCT ${cemeteries.county})`,
+      withRatings: sql<number>`COUNT(*) FILTER (WHERE ${cemeteries.rating} IS NOT NULL)`,
+      withPhotos: sql<number>`COUNT(*) FILTER (WHERE ${cemeteries.photoUrl} IS NOT NULL)`,
+    }).from(cemeteries);
 
-  return {
-    total_cemeteries: cemeteries.length,
-    total_states: states.length,
-    states_with_cemeteries: statesWithCemeteries,
-    cities_with_cemeteries: citiesWithCemeteries,
-    total_types: types.length,
-    with_ratings: withRatings,
-    with_photos: withPhotos,
-  };
+    return {
+      total_cemeteries: Number(statsResult.totalCemeteries),
+      total_states: states.length,
+      states_with_cemeteries: Number(statsResult.statesWithCemeteries),
+      cities_with_cemeteries: Number(statsResult.citiesWithCemeteries),
+      counties_with_cemeteries: Number(statsResult.countiesWithCemeteries),
+      total_types: types.length,
+      with_ratings: Number(statsResult.withRatings),
+      with_photos: Number(statsResult.withPhotos),
+    };
+  } catch (error) {
+    console.error('Error loading stats:', error);
+    return {
+      total_cemeteries: 0,
+      total_states: 0,
+      states_with_cemeteries: 0,
+      cities_with_cemeteries: 0,
+      counties_with_cemeteries: 0,
+      total_types: 0,
+      with_ratings: 0,
+      with_photos: 0,
+    };
+  }
 }
 
 // ===== SEARCH =====
@@ -398,53 +519,71 @@ export async function searchCemeteries(query: string, filters?: {
   city?: string;
   county?: string;
 }): Promise<Cemetery[]> {
-  let cemeteries = await getAllCemeteries();
+  try {
+    // Build dynamic where conditions
+    const conditions = [];
 
-  // Apply filters
-  if (filters?.state) {
-    cemeteries = cemeteries.filter(c =>
-      c.state?.toLowerCase() === filters.state!.toLowerCase() ||
-      c.state_abbr?.toLowerCase() === filters.state!.toLowerCase()
-    );
+    if (filters?.state) {
+      conditions.push(
+        or(
+          ilike(cemeteries.state, filters.state),
+          ilike(cemeteries.stateAbbr, filters.state)
+        )
+      );
+    }
+
+    if (filters?.type) {
+      conditions.push(
+        or(
+          ilike(cemeteries.type, `%${filters.type}%`),
+          ilike(cemeteries.typeSlug, filters.type)
+        )
+      );
+    }
+
+    if (filters?.city) {
+      conditions.push(ilike(cemeteries.city, filters.city));
+    }
+
+    if (filters?.county) {
+      conditions.push(ilike(cemeteries.county, filters.county));
+    }
+
+    // Add search query
+    if (query && query.trim()) {
+      const q = `%${query.trim()}%`;
+      conditions.push(
+        or(
+          ilike(cemeteries.name, q),
+          ilike(cemeteries.city, q),
+          ilike(cemeteries.county, q),
+          ilike(cemeteries.state, q),
+          ilike(cemeteries.address, q),
+          ilike(cemeteries.zipCode, q)
+        )
+      );
+    }
+
+    let dbQuery = db.select().from(cemeteries);
+
+    if (conditions.length > 0) {
+      dbQuery = dbQuery.where(and(...conditions)) as typeof dbQuery;
+    }
+
+    const results = await dbQuery
+      .orderBy(desc(cemeteries.rating))
+      .limit(100);
+
+    return results.map(mapRowToCemetery);
+  } catch (error) {
+    console.error('Error searching cemeteries:', error);
+    return [];
   }
-
-  if (filters?.type) {
-    cemeteries = cemeteries.filter(c =>
-      c.type?.toLowerCase().includes(filters.type!.toLowerCase()) ||
-      c.type_slug?.toLowerCase() === filters.type!.toLowerCase()
-    );
-  }
-
-  if (filters?.city) {
-    cemeteries = cemeteries.filter(c =>
-      c.city?.toLowerCase() === filters.city!.toLowerCase()
-    );
-  }
-
-  if (filters?.county) {
-    cemeteries = cemeteries.filter(c =>
-      c.county?.toLowerCase() === filters.county!.toLowerCase()
-    );
-  }
-
-  // Apply search query
-  if (query && query.trim()) {
-    const q = query.toLowerCase().trim();
-    cemeteries = cemeteries.filter(c =>
-      c.name?.toLowerCase().includes(q) ||
-      c.city?.toLowerCase().includes(q) ||
-      c.county?.toLowerCase().includes(q) ||
-      c.state?.toLowerCase().includes(q) ||
-      c.address?.toLowerCase().includes(q) ||
-      c.zipCode?.includes(q)
-    );
-  }
-
-  return cemeteries;
 }
 
 // ===== NEARBY CEMETERIES =====
 
+// Haversine distance calculation (fallback if no PostGIS)
 function haversineDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const R = 3959; // Earth's radius in miles
   const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -463,42 +602,74 @@ export async function getNearbyCemeteries(
   radiusMiles: number = 25,
   limit: number = 20
 ): Promise<Array<Cemetery & { distance: number }>> {
-  const cemeteries = await getAllCemeteries();
+  try {
+    // Use database query with Haversine formula in SQL
+    // This is more efficient than loading all cemeteries
+    const results = await db.select()
+      .from(cemeteries)
+      .where(
+        sql`${cemeteries.latitude} IS NOT NULL AND ${cemeteries.longitude} IS NOT NULL`
+      )
+      .limit(1000); // Get a reasonable number to filter
 
-  const withDistance = cemeteries
-    .filter(c => c.latitude && c.longitude)
-    .map(c => ({
-      ...c,
-      distance: haversineDistance(lat, lon, c.latitude!, c.longitude!)
-    }))
-    .filter(c => c.distance <= radiusMiles)
-    .sort((a, b) => a.distance - b.distance)
-    .slice(0, limit);
+    // Calculate distances and filter client-side
+    // TODO: Enable PostGIS for better performance
+    const withDistance = results
+      .map(row => ({
+        ...mapRowToCemetery(row),
+        distance: haversineDistance(
+          lat, lon,
+          parseFloat(row.latitude!),
+          parseFloat(row.longitude!)
+        )
+      }))
+      .filter(c => c.distance <= radiusMiles)
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, limit);
 
-  return withDistance;
+    return withDistance;
+  } catch (error) {
+    console.error('Error loading nearby cemeteries:', error);
+    return [];
+  }
 }
 
 // ===== FEATURED/POPULAR =====
 
 export async function getFeaturedCemeteries(limit: number = 10): Promise<Cemetery[]> {
-  const cemeteries = await getAllCemeteries();
+  try {
+    const results = await db.select()
+      .from(cemeteries)
+      .where(
+        and(
+          sql`${cemeteries.rating} IS NOT NULL`,
+          sql`${cemeteries.reviewCount} > 0`
+        )
+      )
+      .orderBy(
+        desc(sql`${cemeteries.rating} * LOG(${cemeteries.reviewCount} + 1)`),
+        desc(cemeteries.rating)
+      )
+      .limit(limit);
 
-  // Sort by rating and review count
-  return cemeteries
-    .filter(c => c.rating && c.review_count)
-    .sort((a, b) => {
-      const scoreA = (a.rating || 0) * Math.log10((a.review_count || 1) + 1);
-      const scoreB = (b.rating || 0) * Math.log10((b.review_count || 1) + 1);
-      return scoreB - scoreA;
-    })
-    .slice(0, limit);
+    return results.map(mapRowToCemetery);
+  } catch (error) {
+    console.error('Error loading featured cemeteries:', error);
+    return [];
+  }
 }
 
 export async function getRecentlyUpdated(limit: number = 10): Promise<Cemetery[]> {
-  const cemeteries = await getAllCemeteries();
+  try {
+    const results = await db.select()
+      .from(cemeteries)
+      .where(sql`${cemeteries.updatedAt} IS NOT NULL`)
+      .orderBy(desc(cemeteries.updatedAt))
+      .limit(limit);
 
-  return cemeteries
-    .filter(c => c.updated_at)
-    .sort((a, b) => new Date(b.updated_at!).getTime() - new Date(a.updated_at!).getTime())
-    .slice(0, limit);
+    return results.map(mapRowToCemetery);
+  } catch (error) {
+    console.error('Error loading recently updated cemeteries:', error);
+    return [];
+  }
 }

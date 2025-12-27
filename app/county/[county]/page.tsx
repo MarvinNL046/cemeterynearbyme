@@ -24,6 +24,9 @@ export async function generateStaticParams() {
 // Allow dynamic params for counties not in static params
 export const dynamicParams = true;
 
+// Revalidate pages every 24 hours
+export const revalidate = 86400;
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { county: countySlug } = await params;
   const counties = await getAllCounties();
