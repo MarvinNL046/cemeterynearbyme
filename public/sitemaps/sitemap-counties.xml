@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.cemeterynearbyme.com/county/ada-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.cemeterynearbyme.com/county/adams-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -127,6 +133,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.cemeterynearbyme.com/county/bannock-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.cemeterynearbyme.com/county/barbour-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -157,7 +169,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.cemeterynearbyme.com/county/bear-lake-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.cemeterynearbyme.com/county/ben-hill-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cemeterynearbyme.com/county/benewah-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -193,6 +217,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.cemeterynearbyme.com/county/bingham-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cemeterynearbyme.com/county/blaine-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.cemeterynearbyme.com/county/bleckley-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -205,6 +241,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.cemeterynearbyme.com/county/bonner-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cemeterynearbyme.com/county/bonneville-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.cemeterynearbyme.com/county/boone-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -212,6 +260,12 @@
   </url>
   <url>
     <loc>https://www.cemeterynearbyme.com/county/boulder-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cemeterynearbyme.com/county/boundary-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -319,6 +373,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.cemeterynearbyme.com/county/camas-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.cemeterynearbyme.com/county/camden-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -331,7 +391,25 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.cemeterynearbyme.com/county/canyon-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cemeterynearbyme.com/county/caribou-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.cemeterynearbyme.com/county/carroll-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cemeterynearbyme.com/county/cassia-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1093,6 +1171,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.cemeterynearbyme.com/county/hawaii-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.cemeterynearbyme.com/county/heard-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -1262,6 +1346,18 @@
   </url>
   <url>
     <loc>https://www.cemeterynearbyme.com/county/juneau-city-and-borough</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cemeterynearbyme.com/county/kalawao-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cemeterynearbyme.com/county/kauai-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1532,6 +1628,12 @@
   </url>
   <url>
     <loc>https://www.cemeterynearbyme.com/county/matanuska-susitna-borough</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cemeterynearbyme.com/county/maui-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2564,6 +2666,12 @@
   </url>
   <url>
     <loc>https://www.cemeterynearbyme.com/county/woodruff-county</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cemeterynearbyme.com/county/worth-county</loc>
     <lastmod>2025-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
