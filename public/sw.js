@@ -1,10 +1,10 @@
-const CACHE_NAME = 'begraafplaats-v1';
+const CACHE_NAME = 'cemetery-v1';
 const OFFLINE_URL = '/offline';
 
 // Assets to cache immediately on install
 const PRECACHE_ASSETS = [
   '/',
-  '/zoeken',
+  '/search',
   '/offline',
   '/manifest.json',
   '/icons/icon-192x192.png',

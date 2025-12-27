@@ -1,14 +1,14 @@
 {
-  "name": "Begraafplaats in de Buurt",
-  "short_name": "Begraafplaats",
-  "description": "Vind eenvoudig een begraafplaats bij u in de buurt. Zoek naar begraafplaatsen in heel Nederland.",
+  "name": "Cemetery Near Me",
+  "short_name": "Cemetery",
+  "description": "Find cemeteries near you. Search for cemeteries across the United States with ratings, reviews, and directions.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1a1a2e",
   "theme_color": "#1a1a2e",
   "orientation": "portrait-primary",
   "scope": "/",
-  "lang": "nl",
+  "lang": "en",
   "categories": ["lifestyle", "utilities"],
   "icons": [
     {
@@ -73,22 +73,22 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Zoeken"
+      "label": "Search"
     }
   ],
   "shortcuts": [
     {
-      "name": "Zoeken",
-      "short_name": "Zoeken",
-      "description": "Zoek een begraafplaats",
-      "url": "/zoeken",
+      "name": "Search",
+      "short_name": "Search",
+      "description": "Search for a cemetery",
+      "url": "/search",
       "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
     },
     {
-      "name": "In de buurt",
-      "short_name": "Buurt",
-      "description": "Begraafplaatsen bij mij in de buurt",
-      "url": "/zoeken?nearby=true",
+      "name": "Near Me",
+      "short_name": "Nearby",
+      "description": "Find cemeteries near me",
+      "url": "/search?nearby=true",
       "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
     }
   ]
