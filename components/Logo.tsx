@@ -49,7 +49,7 @@ export default function Logo({
       href="/"
       className={cn("flex items-center gap-3 group", className)}
     >
-      {/* Tree Icon Container */}
+      {/* Cross Icon Container - matches favicon */}
       <div
         className={cn(
           currentSize.icon,
@@ -57,18 +57,19 @@ export default function Logo({
           "rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
         )}
       >
-        {/* Simple Tree SVG */}
+        {/* Cross with Base SVG - matching favicon design */}
         <svg
           viewBox="0 0 24 24"
           fill="none"
           className={cn(currentSize.tree, currentVariant.tree)}
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Tree crown */}
-          <path
-            d="M12 2L6 10H9L5 16H10L8 22H11V16H13V22H16L14 16H19L15 10H18L12 2Z"
-            fill="currentColor"
-          />
+          {/* Vertical bar */}
+          <rect x="10" y="4" width="4" height="14" rx="0.5" fill="currentColor" />
+          {/* Horizontal bar */}
+          <rect x="6" y="7" width="12" height="3.5" rx="0.5" fill="currentColor" />
+          {/* Base */}
+          <path d="M8 17.5h8v1.5l-4 2l-4-2z" fill="currentColor" opacity="0.8" />
         </svg>
       </div>
 
