@@ -26,6 +26,7 @@ data/discovery/
 # Environment files
 .env.openai
 .env.*
+!.env.example
 
 # Build cache
 tsconfig.tsbuildinfo
