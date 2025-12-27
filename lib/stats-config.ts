@@ -40,6 +40,12 @@ export const SITE_STATS = {
     northCarolina: 358,
     ohio: 355,
   },
+
+  // Famous deaths / notable burials
+  famousDeathsTotal: 39364,
+  famousDeathsWithWikipedia: 36558,
+  notableBurialsLinked: 9198,  // Famous deaths with cemetery_slug assigned
+  notableBurialsDisplay: '9,000+',
 } as const;
 
 /**

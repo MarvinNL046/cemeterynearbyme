@@ -248,7 +248,7 @@ export default function HomePage() {
       {/* Stats Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto text-center">
             <div>
               <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
                 {stats.totalStates}
@@ -266,6 +266,12 @@ export default function HomePage() {
                 {SITE_STATS.totalCounties.toLocaleString('en-US')}
               </div>
               <div className="text-sm md:text-base text-muted-foreground">Counties</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
+                {SITE_STATS.notableBurialsDisplay}
+              </div>
+              <div className="text-sm md:text-base text-muted-foreground">Notable Burials</div>
             </div>
           </div>
         </div>
