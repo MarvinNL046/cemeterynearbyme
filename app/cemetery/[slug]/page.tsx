@@ -7,6 +7,8 @@ import ProxiedImage from '@/components/ProxiedImage';
 import CompareButton from '@/components/CompareButton';
 import AffiliateAd from '@/components/ads/AffiliateAd';
 import InlineAd from '@/components/ads/InlineAd';
+import SidebarAd from '@/components/ads/SidebarAd';
+import { AD_SLOTS } from '@/lib/ad-config';
 import FeedbackForm from '@/components/FeedbackForm';
 import ReviewSection from '@/components/ReviewSection';
 import PhotoGallery from '@/components/PhotoGallery';
@@ -435,7 +437,7 @@ export default async function CemeteryPage({ params }: PageProps) {
               )}
 
               {/* Inline Ad */}
-              <InlineAd />
+              <InlineAd slot={AD_SLOTS.cemetery.afterInfo} />
 
               {/* Notable Burials */}
               <NotableBurials
@@ -457,6 +459,9 @@ export default async function CemeteryPage({ params }: PageProps) {
                 initialReviewCount={reviewCount}
                 embeddedReviews={cemetery.reviews}
               />
+
+              {/* Inline Ad after reviews */}
+              <InlineAd slot={AD_SLOTS.cemetery.afterReviews} />
 
               {/* FAQ Section */}
               <Card className="p-6 shadow-soft">
@@ -606,6 +611,9 @@ export default async function CemeteryPage({ params }: PageProps) {
                 </Card>
 
                 <AffiliateAd sticky={false} maxPartners={2} />
+
+                {/* Sidebar Ad */}
+                <SidebarAd slot={AD_SLOTS.cemetery.sidebar} sticky={false} />
               </div>
             </div>
           </div>

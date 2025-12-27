@@ -4,6 +4,9 @@ import { getAllStates, getStateBySlug, getCemeteriesByState, createCountySlug, c
 import { notFound } from 'next/navigation';
 import { ChevronRight, Building2, ArrowRight, Trees, MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import LeaderboardAd from '@/components/ads/LeaderboardAd';
+import InlineAd from '@/components/ads/InlineAd';
+import { AD_SLOTS } from '@/lib/ad-config';
 
 interface PageProps {
   params: Promise<{
@@ -166,6 +169,11 @@ export default async function StatePage({ params }: PageProps) {
           </div>
         </div>
 
+        {/* Leaderboard Ad after hero */}
+        <div className="container mx-auto px-4 pt-8">
+          <LeaderboardAd slot={AD_SLOTS.state.afterHero} />
+        </div>
+
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
@@ -276,6 +284,11 @@ export default async function StatePage({ params }: PageProps) {
                 </Link>
               </Card>
             )}
+
+            {/* Inline Ad before About Section */}
+            <div className="mt-12">
+              <InlineAd slot={AD_SLOTS.state.inContent} />
+            </div>
 
             {/* About Section */}
             <Card className="mt-16 p-8 bg-gradient-to-r from-forest-50 to-gold-50/30 dark:from-forest-900/20 dark:to-gold-900/10 border-forest-100 dark:border-forest-800">

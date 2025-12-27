@@ -5,6 +5,9 @@ import { notFound } from 'next/navigation';
 import { MapPin, Building2, Trees, Users, Calendar, ChevronRight, ArrowRight, Lightbulb } from 'lucide-react';
 import CemeteryCard from '@/components/CemeteryCard';
 import SidebarAd from '@/components/ads/SidebarAd';
+import LeaderboardAd from '@/components/ads/LeaderboardAd';
+import InlineAd from '@/components/ads/InlineAd';
+import { AD_SLOTS } from '@/lib/ad-config';
 import { Card } from '@/components/ui/card';
 
 interface PageProps {
@@ -179,6 +182,11 @@ export default async function CountyPage({ params }: PageProps) {
           </div>
         </div>
 
+        {/* Leaderboard Ad after hero */}
+        <div className="container mx-auto px-4 pt-8">
+          <LeaderboardAd slot={AD_SLOTS.county.afterHero} />
+        </div>
+
         <div className="container mx-auto px-4 py-12">
           <div className="grid gap-8 lg:grid-cols-3">
             {/* Main Content */}
@@ -253,6 +261,11 @@ export default async function CountyPage({ params }: PageProps) {
                     <CemeteryCard key={cemetery.slug} cemetery={cemetery} />
                   ))}
                 </div>
+              </div>
+
+              {/* Inline Ad */}
+              <div className="my-8">
+                <InlineAd slot={AD_SLOTS.county.inContent} />
               </div>
 
               {/* Cities Grid */}

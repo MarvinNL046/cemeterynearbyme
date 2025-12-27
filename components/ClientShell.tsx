@@ -22,6 +22,9 @@ const GoogleTagManagerNoscript = dynamic(
   () => import('@/components/GoogleTagManagerNoscript'),
   { ssr: false }
 );
+const AnchorAd = dynamic(() => import('@/components/ads/AnchorAd'), {
+  ssr: false,
+});
 
 interface ClientShellProps {
   children: React.ReactNode;
@@ -43,6 +46,7 @@ export function ClientShellBottom() {
       <AffiliateBottomBar />
       <FeedbackRibbon />
       <PWARegister />
+      <AnchorAd />
     </>
   );
 }

@@ -16,6 +16,8 @@ import {
 } from '@/components/ui/select';
 import InFeedAd from '@/components/ads/InFeedAd';
 import LeaderboardAd from '@/components/ads/LeaderboardAd';
+import SidebarAd from '@/components/ads/SidebarAd';
+import { AD_SLOTS } from '@/lib/ad-config';
 
 interface Cemetery {
   name: string;
@@ -342,7 +344,7 @@ function SearchResults() {
           ) : (
             <>
               {/* Leaderboard ad before results */}
-              <LeaderboardAd className="mb-8" />
+              <LeaderboardAd slot={AD_SLOTS.search.topLeaderboard} className="mb-8" />
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {results.slice(0, visibleResults).map((cemetery, index) => (
@@ -394,7 +396,7 @@ function SearchResults() {
                     {/* Show in-feed ad after every 6 results */}
                     {(index + 1) % 6 === 0 && index < visibleResults - 1 && (
                       <div key={`ad-${index}`} className="col-span-1 md:col-span-2 lg:col-span-3">
-                        <InFeedAd />
+                        <InFeedAd slot={AD_SLOTS.search.inFeed} />
                       </div>
                     )}
                   </Fragment>

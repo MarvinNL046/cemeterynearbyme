@@ -9,6 +9,9 @@ import { Card } from '@/components/ui/card';
 import FAQSection from '@/components/FAQSection';
 import TodayDeathsWidget from '@/components/TodayDeathsWidget';
 import { SITE_STATS, getComprehensiveDataText } from '@/lib/stats-config';
+import OptimizedAd from '@/components/ads/OptimizedAd';
+import MultiplexAd from '@/components/ads/MultiplexAd';
+import { AD_SLOTS } from '@/lib/ad-config';
 
 // Verified FREE Unsplash cemetery photos (Unsplash License - free for commercial use)
 const heroImages = {
@@ -278,6 +281,19 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Ad after stats - high visibility placement */}
+      <div className="bg-gray-50 py-4">
+        <div className="container mx-auto px-4">
+          <OptimizedAd
+            slot={AD_SLOTS.home.heroBelow}
+            format="horizontal"
+            priority={true}
+            minHeight={90}
+            className="max-w-[728px] mx-auto"
+          />
+        </div>
+      </div>
 
       {/* Featured Category - National Cemeteries */}
       <section className="py-16 bg-forest-900 text-white overflow-hidden">
@@ -663,6 +679,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Ad before testimonials */}
+      <div className="bg-white py-6">
+        <div className="container mx-auto px-4">
+          <OptimizedAd
+            slot={AD_SLOTS.home.afterStats}
+            format="horizontal"
+            lazy={true}
+            minHeight={90}
+            className="max-w-[728px] mx-auto"
+          />
+        </div>
+      </div>
+
       {/* Testimonials */}
       <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
@@ -739,6 +768,16 @@ export default function HomePage() {
 
       {/* FAQ Section */}
       <FAQSection />
+
+      {/* Multiplex Ad - Related Content */}
+      <section className="py-8 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <MultiplexAd
+            slot={AD_SLOTS.home.beforeFooter}
+            title="You May Also Be Interested In"
+          />
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-primary text-white">

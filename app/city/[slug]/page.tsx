@@ -7,6 +7,7 @@ import CemeteryCard from '@/components/CemeteryCard';
 import LeaderboardAd from '@/components/ads/LeaderboardAd';
 import SidebarAd from '@/components/ads/SidebarAd';
 import InlineAd from '@/components/ads/InlineAd';
+import { AD_SLOTS } from '@/lib/ad-config';
 
 interface PageProps {
   params: Promise<{
@@ -134,7 +135,7 @@ export default async function CityPage({ params }: PageProps) {
       />
 
       {/* Leaderboard Ad at top */}
-      <LeaderboardAd />
+      <LeaderboardAd slot={AD_SLOTS.city.topLeaderboard} />
 
       <div className="container mx-auto px-4 py-8">
         {/* Breadcrumb Navigation */}
@@ -203,7 +204,7 @@ export default async function CityPage({ params }: PageProps) {
         </div>
 
         {/* Inline Ad */}
-        <InlineAd />
+        <InlineAd slot={AD_SLOTS.city.inFeed} />
 
         {/* Main Content */}
         <div className="grid gap-8 lg:grid-cols-4">
@@ -216,7 +217,7 @@ export default async function CityPage({ params }: PageProps) {
                   {/* Add inline ad after every 3rd cemetery */}
                   {(index + 1) % 3 === 0 && index !== cemeteries.length - 1 && (
                     <div className="mt-6">
-                      <InlineAd />
+                      <InlineAd slot={AD_SLOTS.city.inFeed} />
                     </div>
                   )}
                 </div>
@@ -227,7 +228,7 @@ export default async function CityPage({ params }: PageProps) {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-4 space-y-6">
-              <SidebarAd sticky={false} />
+              <SidebarAd slot={AD_SLOTS.city.sidebar} sticky={false} />
 
               {/* Related Links */}
               <div className="bg-card rounded-lg p-6 shadow-sm border">
