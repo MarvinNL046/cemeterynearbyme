@@ -3,18 +3,13 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import CookieConsent from "@/components/CookieConsent";
 import GoogleConsent from "@/components/GoogleConsent";
-import GoogleTagManagerNoscript from "@/components/GoogleTagManagerNoscript";
-import FeedbackRibbon from "@/components/FeedbackRibbon";
-import AffiliateBottomBar from "@/components/AffiliateBottomBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ImpersonationBanner from "@/components/ImpersonationBanner";
+import { ClientShellTop, ClientShellBottom } from "@/components/ClientShell";
 import LeaderboardAd from "@/components/ads/LeaderboardAd";
-import PWARegister from "@/components/PWARegister";
 
-// AdSense Publisher ID - vervang met je eigen ID na goedkeuring
+// AdSense Publisher ID
 const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID || "ca-pub-XXXXXXXXXXXXXXXX";
 
 const inter = Inter({
@@ -39,6 +34,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.cemeterynearbyme.com"),
   title: "Cemetery Near Me - Find Cemeteries & Memorial Parks in the USA",
   description: "Find cemeteries, memorial parks, and burial grounds near you. Search by state, city, or zip code. Get directions, contact info, and reviews for cemeteries across the United States.",
   keywords: "cemetery near me, cemeteries, memorial park, burial ground, graveyard, funeral, crematorium, national cemetery, veterans cemetery, USA",
@@ -94,20 +90,19 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
 
-        {/* Google AdSense - Automatische advertenties */}
+        {/* Google AdSense - Deferred loading for better performance */}
         <Script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        <ImpersonationBanner />
+        <ClientShellTop />
         <GoogleConsent />
-        <GoogleTagManagerNoscript />
         <Header />
-        
+
         <main className="min-h-screen">
           {children}
         </main>
@@ -116,11 +111,10 @@ export default function RootLayout({
         <LeaderboardAd className="mt-12" />
 
         <Footer />
-        <CookieConsent />
-        <AffiliateBottomBar />
-        <FeedbackRibbon />
+
+        {/* Non-critical UI elements - lazy loaded */}
+        <ClientShellBottom />
         <Analytics />
-        <PWARegister />
       </body>
     </html>
   );
