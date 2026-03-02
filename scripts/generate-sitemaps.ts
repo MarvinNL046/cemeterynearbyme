@@ -7,7 +7,7 @@ import path from 'path';
 import { neon } from '@neondatabase/serverless';
 import { blogPosts } from '../lib/blog-data';
 
-const baseUrl = 'https://www.cemeterynearbyme.com';
+const baseUrl = 'https://cemeterynearbyme.com';
 const URLS_PER_SITEMAP = 1000;
 
 interface SitemapUrl {

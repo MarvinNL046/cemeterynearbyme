@@ -8,7 +8,7 @@ import stateGuidesData from '@/data/guides/state-guides.json'
 // Maximum URLs per sitemap file (Google limit is 50k, we use 10k for better performance)
 const MAX_URLS_PER_SITEMAP = 10000
 
-const baseUrl = 'https://www.cemeterynearbyme.com'
+const baseUrl = 'https://cemeterynearbyme.com'
 
 // Cemetery types for type pages
 const cemeteryTypes = [
