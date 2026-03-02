@@ -1,6 +1,9 @@
 import { MetadataRoute } from 'next'
 import { getAllCemeteries, getAllStates, getAllCounties, getAllCities, createCountySlug, createCitySlug } from '@/lib/data'
 import { blogPosts } from '@/lib/blog-data'
+import topicGuidesData from '@/data/guides/topic-guides.json'
+import typeGuidesData from '@/data/guides/type-guides.json'
+import stateGuidesData from '@/data/guides/state-guides.json'
 
 // Maximum URLs per sitemap file (Google limit is 50k, we use 10k for better performance)
 const MAX_URLS_PER_SITEMAP = 10000
@@ -48,39 +51,9 @@ const staticPages = [
   { path: '/guide/green-burial', priority: 0.9, changeFreq: 'weekly' as const },
 ]
 
-// Guide type pages
-const guideTypes = [
-  'public-cemetery',
-  'private-cemetery',
-  'national-cemetery',
-  'veterans-cemetery',
-  'memorial-park',
-  'historic-cemetery',
-  'natural-burial',
-]
-
-// Guide state pages (top 10 states by population)
-const guideStates = [
-  'california',
-  'texas',
-  'florida',
-  'new-york',
-  'pennsylvania',
-  'illinois',
-  'ohio',
-  'georgia',
-  'north-carolina',
-  'michigan',
-]
-
-// Guide topic pages
-const guideTopics = [
-  'choosing-cemetery',
-  'burial-costs',
-  'memorial-options',
-  'cemetery-etiquette',
-  'grave-maintenance',
-]
+const guideTypes = typeGuidesData.types.map((guide) => guide.slug)
+const guideStates = stateGuidesData.stateGuides.map((guide) => guide.slug)
+const guideTopics = topicGuidesData.topics.map((guide) => guide.slug)
 
 interface SitemapEntry {
   url: string

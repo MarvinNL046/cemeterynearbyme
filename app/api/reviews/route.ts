@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 
-const sql = neon(process.env.DATABASE_URL!);
+const sql = neon(process.env.DATABASE_URL || 'postgresql://invalid:invalid@localhost:5432/invalid');
 
 // Interface for Google reviews from JSON files
 interface GoogleReviewJson {

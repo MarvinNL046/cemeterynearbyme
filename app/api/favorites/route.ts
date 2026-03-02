@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 import { getCurrentUser } from '@/lib/auth';
 
-const sql = neon(process.env.DATABASE_URL!);
+const sql = neon(process.env.DATABASE_URL || 'postgresql://invalid:invalid@localhost:5432/invalid');
 
 /**
  * Set RLS context for the current user

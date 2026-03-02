@@ -5,6 +5,7 @@ dotenv.config({ path: '.env.local' });
 import fs from 'fs';
 import path from 'path';
 import { neon } from '@neondatabase/serverless';
+import { blogPosts } from '../lib/blog-data';
 
 const baseUrl = 'https://www.cemeterynearbyme.com';
 const URLS_PER_SITEMAP = 1000;
@@ -48,8 +49,8 @@ function createSitemapXML(urls: SitemapUrl[]): string {
 async function generateSitemaps() {
   console.log('🗺️  Generating sitemaps for cemeterynearbyme.com...');
 
-  // Initialize database connection
-  const sql = neon(process.env.DATABASE_URL!);
+  const hasDatabase = Boolean(process.env.DATABASE_URL);
+  const sql = hasDatabase ? neon(process.env.DATABASE_URL as string) : null;
 
   // Create sitemaps directory
   const sitemapsDir = path.join(process.cwd(), 'public/sitemaps');
@@ -57,12 +58,42 @@ async function generateSitemaps() {
     fs.mkdirSync(sitemapsDir, { recursive: true });
   }
 
-  // Fetch data from database
-  console.log('📊 Fetching data from database...');
-  const cemeteriesData = await sql`SELECT slug FROM cemeteries WHERE status = 'active' ORDER BY slug`;
-  const countiesData = await sql`SELECT DISTINCT county FROM cemeteries WHERE county IS NOT NULL ORDER BY county`;
-  const citiesData = await sql`SELECT DISTINCT city FROM cemeteries ORDER BY city`;
-  const typesData = await sql`SELECT DISTINCT type_slug FROM cemeteries WHERE type_slug IS NOT NULL ORDER BY type_slug`;
+  let cemeteriesData: Array<{ slug: string }> = [];
+  let countiesData: Array<{ county: string }> = [];
+  let citiesData: Array<{ city: string }> = [];
+  let typesData: Array<{ type_slug: string }> = [];
+
+  if (sql) {
+    console.log('📊 Fetching data from database...');
+    cemeteriesData = await sql`SELECT slug FROM cemeteries WHERE status = 'active' ORDER BY slug` as Array<{ slug: string }>;
+    countiesData = await sql`SELECT DISTINCT county FROM cemeteries WHERE county IS NOT NULL AND county != '' ORDER BY county` as Array<{ county: string }>;
+    citiesData = await sql`SELECT DISTINCT city FROM cemeteries WHERE city IS NOT NULL AND city != '' ORDER BY city` as Array<{ city: string }>;
+    typesData = await sql`SELECT DISTINCT type_slug FROM cemeteries WHERE type_slug IS NOT NULL AND type_slug != '' ORDER BY type_slug` as Array<{ type_slug: string }>;
+  } else {
+    console.log('⚠️  DATABASE_URL not set. Falling back to public/data/cemeteries.json');
+    const cemeteriesPath = path.join(process.cwd(), 'public/data/cemeteries.json');
+    const raw = JSON.parse(fs.readFileSync(cemeteriesPath, 'utf-8')) as Array<{
+      slug?: string;
+      county?: string;
+      city?: string;
+      type_slug?: string;
+      typeSlug?: string;
+    }>;
+
+    cemeteriesData = raw
+      .filter((row) => row.slug)
+      .map((row) => ({ slug: row.slug as string }));
+
+    countiesData = Array.from(new Set(raw.map((row) => row.county).filter(Boolean)))
+      .map((county) => ({ county: county as string }));
+
+    citiesData = Array.from(new Set(raw.map((row) => row.city).filter(Boolean)))
+      .map((city) => ({ city: city as string }));
+
+    typesData = Array.from(
+      new Set(raw.map((row) => row.type_slug || row.typeSlug).filter(Boolean))
+    ).map((typeSlug) => ({ type_slug: typeSlug as string }));
+  }
 
   console.log(`   Found ${cemeteriesData.length} cemeteries, ${countiesData.length} counties, ${citiesData.length} cities`);
 
@@ -76,7 +107,6 @@ async function generateSitemaps() {
     { loc: baseUrl, lastmod, changefreq: 'daily', priority: '1.0' },
 
     // Main navigation pages
-    { loc: `${baseUrl}/search`, lastmod, changefreq: 'daily', priority: '0.9' },
     { loc: `${baseUrl}/type`, lastmod, changefreq: 'weekly', priority: '0.8' },
 
     // Information pages
@@ -84,9 +114,6 @@ async function generateSitemaps() {
     { loc: `${baseUrl}/contact`, lastmod, changefreq: 'monthly', priority: '0.6' },
     { loc: `${baseUrl}/blog`, lastmod, changefreq: 'weekly', priority: '0.8' },
     { loc: `${baseUrl}/funeral-planning`, lastmod, changefreq: 'monthly', priority: '0.7' },
-    { loc: `${baseUrl}/compare`, lastmod, changefreq: 'weekly', priority: '0.7' },
-    { loc: `${baseUrl}/today`, lastmod, changefreq: 'daily', priority: '0.7' },
-    { loc: `${baseUrl}/deaths`, lastmod, changefreq: 'daily', priority: '0.7' },
 
     // Legal pages
     { loc: `${baseUrl}/privacy`, lastmod, changefreq: 'yearly', priority: '0.3' },
@@ -130,34 +157,15 @@ async function generateSitemaps() {
     }
   }
 
-  // 4. DEATHS CALENDAR PAGES (English months)
-  console.log('⚰️  Adding deaths calendar pages...');
-  const months = [
-    { name: 'january', days: 31 },
-    { name: 'february', days: 29 },
-    { name: 'march', days: 31 },
-    { name: 'april', days: 30 },
-    { name: 'may', days: 31 },
-    { name: 'june', days: 30 },
-    { name: 'july', days: 31 },
-    { name: 'august', days: 31 },
-    { name: 'september', days: 30 },
-    { name: 'october', days: 31 },
-    { name: 'november', days: 30 },
-    { name: 'december', days: 31 },
-  ];
-
-  for (const month of months) {
-    for (let day = 1; day <= month.days; day++) {
-      staticUrls.push({
-        loc: `${baseUrl}/deaths/${month.name}/${day}`,
-        lastmod,
-        changefreq: 'yearly',
-        priority: '0.5'
-      });
-    }
-  }
-  console.log(`✅ Deaths calendar pages: 366 day pages`);
+  // 4. Blog detail pages
+  blogPosts.forEach((post) => {
+    staticUrls.push({
+      loc: `${baseUrl}/blog/${post.slug}`,
+      lastmod: post.date || lastmod,
+      changefreq: 'monthly',
+      priority: '0.6',
+    });
+  });
 
   // Write static sitemap
   fs.writeFileSync(

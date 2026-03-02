@@ -5,7 +5,7 @@ import { writeFile, mkdir, unlink } from 'fs/promises';
 import path from 'path';
 import crypto from 'crypto';
 
-const sql = neon(process.env.DATABASE_URL!);
+const sql = neon(process.env.DATABASE_URL || 'postgresql://invalid:invalid@localhost:5432/invalid');
 
 // Max 3 photos per cemetery per IP per day
 const DAILY_LIMIT = 3;
