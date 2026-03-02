@@ -77,6 +77,15 @@ export default async function TypePage({ params }: PageProps) {
   }, {} as Record<string, typeof cemeteries>);
 
   const stateCount = Object.keys(cemeteriesByState).length;
+  const MAX_STATES_RENDERED = 30;
+  const MAX_CEMETERIES_PER_STATE = 24;
+  const sortedStates = Object.entries(cemeteriesByState)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .slice(0, MAX_STATES_RENDERED);
+  const displayedCount = sortedStates.reduce(
+    (sum, [, stateCemeteries]) => sum + Math.min(stateCemeteries.length, MAX_CEMETERIES_PER_STATE),
+    0
+  );
 
   return (
     <div className="min-h-screen bg-background">
@@ -122,9 +131,7 @@ export default async function TypePage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           {cemeteries.length > 0 ? (
             <div className="space-y-12">
-              {Object.entries(cemeteriesByState)
-                .sort(([a], [b]) => a.localeCompare(b))
-                .map(([state, stateCemeteries]) => (
+              {sortedStates.map(([state, stateCemeteries]) => (
                   <div key={state}>
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-10 h-10 rounded-lg bg-accent text-accent-foreground flex items-center justify-center">
@@ -138,7 +145,7 @@ export default async function TypePage({ params }: PageProps) {
                       </div>
                     </div>
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                      {stateCemeteries.map((cemetery) => (
+                      {stateCemeteries.slice(0, MAX_CEMETERIES_PER_STATE).map((cemetery) => (
                         <Link
                           key={cemetery.slug}
                           href={`/cemetery/${cemetery.slug}`}
@@ -167,6 +174,14 @@ export default async function TypePage({ params }: PageProps) {
                     </div>
                   </div>
                 ))}
+              {(displayedCount < cemeteries.length || sortedStates.length < stateCount) && (
+                <Card className="p-6 text-center bg-muted/30">
+                  <p className="text-sm text-muted-foreground">
+                    Showing {displayedCount.toLocaleString()} of {cemeteries.length.toLocaleString()} cemeteries to keep this page fast.
+                    Use search for the full list.
+                  </p>
+                </Card>
+              )}
             </div>
           ) : (
             <Card className="p-8 text-center">
