@@ -46,11 +46,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const state = cemeteries[0]?.state || '';
 
   return {
-    title: `Cemeteries in ${city} | Cemetery Near Me`,
-    description: `Find all ${cemeteries.length} cemeteries in ${city}, ${county ? `${county} County, ` : ''}${state}. View locations, hours, and directions for local cemeteries.`,
+    title: `${cemeteries.length} Cemeteries in ${city}, ${state} - Find a Cemetery Near You`,
+    description: `Browse ${cemeteries.length} cemeteries and memorial parks in ${city}, ${county ? `${county} County, ` : ''}${state}. Compare locations, read reviews, get visiting hours and driving directions.`,
     openGraph: {
-      title: `Cemeteries in ${city}`,
-      description: `All cemeteries in ${city}${county ? `, ${county} County` : ''}`,
+      title: `Cemeteries in ${city}, ${state}`,
+      description: `Find ${cemeteries.length} cemeteries near ${city}, ${state}. Hours, directions & reviews.`,
       type: 'website',
     },
   };

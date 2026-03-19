@@ -44,12 +44,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const cemeteries = await getCemeteriesByCounty(matchedCounty);
+  const state = cemeteries[0]?.state || '';
+
   return {
-    title: `Cemeteries in ${matchedCounty} County | Cemetery Near Me`,
-    description: `Find all cemeteries in ${matchedCounty} County. View visiting hours, locations, facilities, and directions.`,
+    title: `Cemeteries in ${matchedCounty} County, ${state} - ${cemeteries.length} Locations`,
+    description: `Browse ${cemeteries.length} cemeteries in ${matchedCounty} County, ${state}. Find memorial parks, burial grounds, and veterans cemeteries with visiting hours, maps, and reviews.`,
     openGraph: {
-      title: `Cemeteries in ${matchedCounty} County`,
-      description: `Directory of all cemeteries in ${matchedCounty} County`,
+      title: `${cemeteries.length} Cemeteries in ${matchedCounty} County`,
+      description: `Find cemeteries in ${matchedCounty} County, ${state}. Locations, hours & directions.`,
       type: 'website',
     },
   };

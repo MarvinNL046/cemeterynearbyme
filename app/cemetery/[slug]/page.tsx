@@ -53,13 +53,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const stateAbbr = cemetery.state_abbr || cemetery.state;
+  const ratingText = cemetery.rating ? ` · ${cemetery.rating}★` : '';
+  const typeText = cemetery.type || 'Cemetery';
+
+  const title = cemetery.seoTitle || `${cemetery.name} - ${cemetery.city}, ${stateAbbr} | Hours, Location & Reviews`;
+  const description = cemetery.seoDescription || cemetery.generated?.summary ||
+    `${cemetery.name} is a ${typeText.toLowerCase()} in ${cemetery.city}, ${cemetery.state}${ratingText}. Get directions, visiting hours, phone number, and nearby cemeteries.`;
+
   return {
-    title: cemetery.seoTitle || `${cemetery.name} in ${cemetery.city}, ${cemetery.state} | Cemetery Near Me`,
-    description: cemetery.seoDescription || cemetery.generated?.summary ||
-      `Information about ${cemetery.name} in ${cemetery.city}, ${cemetery.state}. View hours, facilities, and directions.`,
+    title,
+    description,
     openGraph: {
-      title: cemetery.seoTitle || cemetery.name,
-      description: cemetery.seoDescription || cemetery.generated?.summary || `${cemetery.type} in ${cemetery.city}`,
+      title: `${cemetery.name} - ${typeText} in ${cemetery.city}, ${stateAbbr}`,
+      description,
       type: 'website',
     },
   };

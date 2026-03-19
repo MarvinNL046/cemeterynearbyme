@@ -32,12 +32,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'State Not Found' };
   }
 
+  const cemeteries = await getCemeteriesByState(state.name);
+  const cities = new Set(cemeteries.map(c => c.city).filter(Boolean));
+
   return {
-    title: `Cemeteries in ${state.name} | Cemetery Near Me`,
-    description: `Find all cemeteries in ${state.name}. View hours, locations, and facilities of cemeteries near you.`,
+    title: `Cemeteries in ${state.name} (${state.abbr}) - ${cemeteries.length} Locations | Cemetery Near Me`,
+    description: `Explore ${cemeteries.length} cemeteries across ${cities.size} cities in ${state.name}. Find memorial parks, veterans cemeteries, and burial grounds with hours, directions, and reviews.`,
     openGraph: {
-      title: `Cemeteries in ${state.name}`,
-      description: `Directory of all cemeteries in ${state.name}`,
+      title: `${cemeteries.length} Cemeteries in ${state.name}`,
+      description: `Find cemeteries near you in ${state.name}. ${cities.size} cities, ${cemeteries.length} locations.`,
       type: 'website',
     },
   };
