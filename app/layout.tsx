@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.cemeterynearbyme.com"),
+  metadataBase: new URL("https://cemeterynearbyme.com"),
   title: "Cemetery Near Me - Find Cemeteries & Memorial Parks in the USA",
   description: "Find cemeteries, memorial parks, and burial grounds near you. Search by state, city, or zip code. Get directions, contact info, and reviews for cemeteries across the United States.",
   keywords: "cemetery near me, cemeteries, memorial park, burial ground, graveyard, funeral, crematorium, national cemetery, veterans cemetery, USA",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.cemeterynearbyme.com",
+    url: "https://cemeterynearbyme.com",
     title: "Cemetery Near Me - Find Cemeteries in the USA",
     description: "Find cemeteries, memorial parks, and burial grounds near you across the United States.",
     siteName: "Cemetery Near Me",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.cemeterynearbyme.com",
+    canonical: "https://cemeterynearbyme.com",
   },
 };
 
