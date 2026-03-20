@@ -25,6 +25,22 @@ export default function GoogleConsent() {
               'wait_for_update': 500
             });
             
+            // Check if user already consented (restore on page load)
+            var cc = localStorage.getItem('cookieConsent');
+            if (cc) {
+              try {
+                var parsed = JSON.parse(cc);
+                gtag('consent', 'update', {
+                  'analytics_storage': parsed.analytics ? 'granted' : 'denied',
+                  'ad_storage': parsed.advertising ? 'granted' : 'denied',
+                  'ad_user_data': parsed.advertising ? 'granted' : 'denied',
+                  'ad_personalization': parsed.advertising ? 'granted' : 'denied',
+                  'functionality_storage': parsed.functionality ? 'granted' : 'denied',
+                  'personalization_storage': parsed.functionality ? 'granted' : 'denied'
+                });
+              } catch(e) {}
+            }
+
             // Set ads data redaction
             gtag('set', 'ads_data_redaction', true);
             

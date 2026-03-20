@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import GoogleConsent from "@/components/GoogleConsent";
+import CookieConsent from "@/components/CookieConsent";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ClientShellTop, ClientShellBottom } from "@/components/ClientShell";
@@ -114,6 +115,7 @@ export default function RootLayout({
 
         {/* Non-critical UI elements - lazy loaded */}
         <ClientShellBottom />
+        <CookieConsent />
         <Analytics />
       </body>
     </html>
