@@ -8747,6 +8747,367 @@ export const blogContent: BlogContent = {
 
     </div>
   `
+,
+  'what-is-a-funeral-home': `
+    <div class="blog-content space-y-6">
+
+      <!-- Quick Answer Box -->
+      <div class="bg-green-50 border-2 border-green-300 rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-bold text-green-900 mb-3">Quick Answer: What Is a Funeral Home?</h2>
+        <p class="text-gray-700 leading-relaxed">A <strong>funeral home</strong> (also called a funeral parlor) is a licensed business that provides end-of-life services including body preparation, embalming, viewings, funeral ceremonies, cremation arrangements, transportation, death-certificate paperwork, and grief support. The median cost of a funeral with viewing and burial at a U.S. funeral home is <strong>$8,300</strong> in 2026, while a funeral with cremation averages about <strong>$6,280</strong>.</p>
+      </div>
+
+      <p class="text-lg leading-relaxed text-gray-700">
+        When a loved one passes away, most families turn to a funeral home for help. But what exactly does a funeral home do, how is it different from a mortuary or crematorium, and what will it cost? In this comprehensive guide we explain every service funeral homes provide, break down real 2026 pricing, and share tips for choosing the right provider, including your rights under the <a href="https://consumer.ftc.gov/articles/ftc-funeral-rule" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC Funeral Rule</a>.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed">
+        Whether you are making at-need arrangements or <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">planning a funeral</a> in advance, understanding how funeral homes work will help you make informed decisions during one of life's most difficult moments.
+      </p>
+
+      <!-- H2: What Is a Funeral Home? -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">What Is a Funeral Home?</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        A funeral home is a professionally staffed, state-licensed facility dedicated to caring for the deceased and supporting their families. The concept dates back to the late 1800s when undertakers began moving their operations out of family parlors and into dedicated buildings with viewing rooms, preparation areas, and chapels.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Today, funeral homes are full-service operations run by licensed funeral directors. They handle everything from the initial transfer of the body to the final disposition, whether that is burial, cremation, or another method. According to the <a href="https://en.wikipedia.org/wiki/Funeral_home" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Funeral Directors Association</a>, there are roughly 19,000 funeral homes operating in the United States.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        It is important to distinguish a funeral home from related facilities. A <strong>mortuary</strong> focuses primarily on body preparation and may offer on-site cremation, but typically has fewer ceremony-related amenities. A <strong>crematorium</strong> (or crematory) is a facility whose core purpose is performing cremations. A <strong>cemetery</strong> is the grounds where remains are interred. Many modern funeral homes incorporate some or all of these functions under one roof, but each term refers to a distinct role in end-of-life care.
+      </p>
+
+      <!-- H2: Services Funeral Homes Provide -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Services Funeral Homes Provide</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Funeral homes offer a wide range of services that can be bundled into packages or selected individually. Under the <a href="https://www.ftc.gov/business-guidance/resources/complying-funeral-rule" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC Funeral Rule</a>, you have the right to choose only the services you want, and the funeral home must provide an itemized price list. Here is what most funeral homes offer:
+      </p>
+
+      <!-- H3: Body Preparation & Embalming -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Body Preparation &amp; Embalming</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Embalming is the process of chemically preserving the body to slow decomposition, allowing for an open-casket viewing. The national average cost for embalming is <strong>$500 - $1,000</strong> (median around $763). Additional preparation, including cosmetology, hairstyling, and dressing the deceased, typically adds <strong>$200 - $400</strong>. Important: <strong>embalming is almost never required by law</strong>. The FTC Funeral Rule states that funeral homes cannot tell you it is legally required unless there is a specific state or local regulation that applies, and they must disclose it in writing.
+        </p>
+      </div>
+
+      <!-- H3: Viewing & Visitation -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Viewing &amp; Visitation</h3>
+        <p class="text-gray-700 leading-relaxed">
+          A viewing (also called a visitation or wake) is a scheduled time for family and friends to see the deceased and pay their respects. Funeral homes provide a dedicated visitation room, staff to manage the event, and optional extras like guest books and memorial displays. The facility-use fee for a viewing is typically <strong>$400 - $700</strong>, on top of embalming and preparation costs. Many families choose a one-day visitation followed by a funeral service the next morning.
+        </p>
+      </div>
+
+      <!-- H3: Funeral Ceremony -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Funeral Ceremony</h3>
+        <p class="text-gray-700 leading-relaxed">
+          The funeral ceremony can be religious, secular, or a celebration of life. Funeral homes provide a chapel or ceremony room, coordinate with clergy or celebrants, arrange music and audio-visual equipment, and handle logistics like flowers and programs. The fee for using the funeral home's facilities and staff for a ceremony generally ranges from <strong>$500 - $1,000</strong>. Some families opt to hold the ceremony at a church, synagogue, or other location, in which case the funeral home coordinates transportation and logistics.
+        </p>
+      </div>
+
+      <!-- H3: Cremation Arrangement -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Cremation Arrangement</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Many funeral homes arrange cremations even if they do not have an on-site crematory. The funeral director will coordinate with a local crematorium, handle all permits, and return the cremated remains to the family. A <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">direct cremation</a> through a funeral home typically costs <strong>$1,000 - $3,600</strong>, while a full-service cremation with a viewing and ceremony averages <strong>$4,000 - $8,000+</strong>. For a detailed cost breakdown, see our <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation cost guide</a>.
+        </p>
+      </div>
+
+      <!-- H3: Transportation -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Transportation</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Funeral homes handle all transportation of the deceased: the initial transfer from the place of death (hospital, home, medical examiner) to the funeral home, transport to the cemetery or crematory, and the hearse for the funeral procession. Transfer fees typically range from <strong>$300 - $600</strong> for local pickup, with a hearse for the ceremony costing an additional <strong>$300 - $500</strong>. Long-distance and out-of-state shipping incurs extra charges.
+        </p>
+      </div>
+
+      <!-- H3: Paperwork -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Paperwork (Death Certificate, Permits)</h3>
+        <p class="text-gray-700 leading-relaxed">
+          One of the most valuable services funeral homes provide is handling the complex paperwork. This includes filing the death certificate with the county or state, obtaining burial or cremation permits, notifying the Social Security Administration, and helping families request certified copies of the death certificate (typically <strong>$5 - $25 per copy</strong> depending on the state). Many experts recommend ordering 10-15 certified copies because banks, insurance companies, and government agencies each require an original.
+        </p>
+      </div>
+
+      <!-- H3: Grief Support & Aftercare -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Grief Support &amp; Aftercare</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Many funeral homes offer aftercare programs at no extra cost. These may include referrals to local grief counselors and support groups, check-in calls from staff in the weeks and months following the service, anniversary remembrance cards, and informational resources on topics like estate settlement and benefits claims. Some larger funeral homes employ a dedicated grief counselor or even keep a therapy dog on staff to comfort visiting families.
+        </p>
+      </div>
+
+      <!-- H2: Funeral Home vs. Mortuary vs. Crematorium -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Funeral Home vs. Mortuary vs. Crematorium</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        People often use the terms funeral home, mortuary, and crematorium interchangeably, but they are distinct facilities. Here is a side-by-side comparison:
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Feature</th>
+              <th class="px-4 py-3 text-left font-semibold">Funeral Home</th>
+              <th class="px-4 py-3 text-left font-semibold">Mortuary</th>
+              <th class="px-4 py-3 text-left font-semibold">Crematorium</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">What It Is</td>
+              <td class="px-4 py-3 text-gray-700">Full-service facility for funerals, viewings, and coordination</td>
+              <td class="px-4 py-3 text-gray-700">Facility focused on body preparation; may offer on-site cremation</td>
+              <td class="px-4 py-3 text-gray-700">Facility dedicated to performing cremations</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Services Offered</td>
+              <td class="px-4 py-3 text-gray-700">Embalming, viewing, ceremony, cremation arrangement, transport, paperwork, grief support</td>
+              <td class="px-4 py-3 text-gray-700">Body preparation, embalming, cremation, basic viewing; fewer ceremony amenities</td>
+              <td class="px-4 py-3 text-gray-700">Cremation; some offer viewing rooms and memorial services</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Typical Cost Range</td>
+              <td class="px-4 py-3 text-gray-700">$7,000 - $12,000+ (full service)</td>
+              <td class="px-4 py-3 text-gray-700">$2,000 - $7,000</td>
+              <td class="px-4 py-3 text-gray-700">$1,000 - $4,000 (cremation only)</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">On-Site Cremation</td>
+              <td class="px-4 py-3 text-gray-700">Sometimes (many outsource to a crematory)</td>
+              <td class="px-4 py-3 text-gray-700">Often yes</td>
+              <td class="px-4 py-3 text-gray-700">Always</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">When to Use</td>
+              <td class="px-4 py-3 text-gray-700">You want a full funeral experience with viewing, ceremony, and professional coordination</td>
+              <td class="px-4 py-3 text-gray-700">You want body preparation and cremation at a single, often lower-cost location</td>
+              <td class="px-4 py-3 text-gray-700">You want cremation only, with or without a simple memorial</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        In practice, the lines between these facilities are blurring. Many modern funeral homes have added on-site crematories, and some crematoriums now offer full ceremony spaces. When comparing providers, focus on the specific services you need rather than the name on the sign. Browse <a href="/type" class="text-blue-600 hover:text-blue-800 underline">types of cemeteries</a> to understand how burial grounds fit into the picture.
+      </p>
+
+      <!-- H2: How Much Do Funeral Home Services Cost? -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How Much Do Funeral Home Services Cost?</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Funeral costs have risen steadily, with families expected to pay <strong>4-6% more in 2026 compared to 2025</strong>. According to data from the <a href="https://choicemutual.com/funeral-resources/funeral-cost/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">NFDA</a> and <a href="https://worldpopulationreview.com/state-rankings/average-funeral-cost-by-state" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">industry sources</a>, here is what Americans pay on average:
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Service</th>
+              <th class="px-4 py-3 text-left font-semibold">Average Cost (2026)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Basic services fee (non-declinable)</td>
+              <td class="px-4 py-3 text-gray-700">$2,000 - $2,500</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Embalming</td>
+              <td class="px-4 py-3 text-gray-700">$500 - $1,000</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Body preparation (cosmetics, dressing)</td>
+              <td class="px-4 py-3 text-gray-700">$200 - $400</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Viewing / visitation facility use</td>
+              <td class="px-4 py-3 text-gray-700">$400 - $700</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Funeral ceremony facility use</td>
+              <td class="px-4 py-3 text-gray-700">$500 - $1,000</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Transfer of remains (local)</td>
+              <td class="px-4 py-3 text-gray-700">$300 - $600</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Hearse for funeral procession</td>
+              <td class="px-4 py-3 text-gray-700">$300 - $500</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Casket</td>
+              <td class="px-4 py-3 text-gray-700">$2,000 - $5,000+</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Cremation fee (if applicable)</td>
+              <td class="px-4 py-3 text-gray-700">$200 - $800</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Gravestone / marker</td>
+              <td class="px-4 py-3 text-gray-700">$1,000 - $3,000+</td>
+            </tr>
+            <tr class="hover:bg-gray-50 font-semibold">
+              <td class="px-4 py-3 text-gray-900">Full traditional funeral with burial</td>
+              <td class="px-4 py-3 text-gray-900">$8,200 - $8,500 (median)</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50 font-semibold">
+              <td class="px-4 py-3 text-gray-900">Funeral with cremation</td>
+              <td class="px-4 py-3 text-gray-900">~$6,280 (median)</td>
+            </tr>
+            <tr class="hover:bg-gray-50 font-semibold">
+              <td class="px-4 py-3 text-gray-900">Direct cremation (no services)</td>
+              <td class="px-4 py-3 text-gray-900">$1,000 - $3,600</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50 font-semibold">
+              <td class="px-4 py-3 text-gray-900">Direct burial (no services)</td>
+              <td class="px-4 py-3 text-gray-900">~$2,800</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-sm text-gray-500 mb-4">Sources: <a href="https://choicemutual.com/funeral-resources/funeral-cost/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Choice Mutual 2026 Funeral Cost Breakdown</a>, <a href="https://worldpopulationreview.com/state-rankings/average-funeral-cost-by-state" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">World Population Review</a>, <a href="https://consumer.ftc.gov/articles/funeral-costs-pricing-checklist" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC Funeral Costs Checklist</a></p>
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-800 font-medium">FTC Funeral Rule Reminder: Under the <a href="https://consumer.ftc.gov/articles/ftc-funeral-rule" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC Funeral Rule</a>, every funeral home <strong>must</strong> provide you with a General Price List (GPL) when you visit in person, and must give price information over the phone to any caller who asks. You have the right to choose only the services you want, and the funeral home cannot require you to purchase a package that includes items you do not need.</p>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Regional variation is significant. Northeast funeral costs average around <strong>$8,985</strong>, up to 34% more than Southern states where the average is closer to <strong>$6,700</strong>. The most expensive states include Hawaii, California, New York, and Massachusetts. For more details on gravestone pricing specifically, see our <a href="/blog/gravestone-cost-guide" class="text-blue-600 hover:text-blue-800 underline">gravestone cost guide</a>. For cremation pricing, see our <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation cost guide</a>.
+      </p>
+
+      <!-- H2: How to Choose a Funeral Home -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How to Choose a Funeral Home</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Choosing a funeral home is one of the most important decisions you will make during the arrangement process. Here are five practical steps to guide you:
+      </p>
+
+      <!-- H3: Ask for Recommendations -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Ask for Recommendations</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Start by asking friends, family, neighbors, and your faith community which funeral homes they have used and would recommend. Hospital chaplains and hospice staff often have firsthand experience with local providers and can point you toward compassionate, reliable options. Your local <a href="https://funerals.org/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral Consumers Alliance</a> chapter may also have price surveys comparing providers in your area.
+        </p>
+      </div>
+
+      <!-- H3: Compare Prices -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Compare Prices (They Must Provide Price Lists)</h3>
+        <p class="text-gray-700 leading-relaxed">
+          The <a href="https://consumer.ftc.gov/articles/ftc-funeral-rule" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC Funeral Rule</a> is your most powerful tool. It requires funeral homes to give you an itemized General Price List for free, and to provide pricing over the phone. Contact at least three funeral homes, request their price lists, and compare line by line. According to the <a href="https://funerals.org/get-help/making-decisions/how-to-choose-a-funeral-home/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral Consumers Alliance</a>, you may find price differences of <strong>several thousand dollars</strong> for the exact same services between competing funeral homes in the same city.
+        </p>
+      </div>
+
+      <!-- H3: Visit In Person -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Visit In Person</h3>
+        <p class="text-gray-700 leading-relaxed">
+          If time allows, visit your top two or three choices. Pay attention to the cleanliness and upkeep of the facility, how the staff greets and treats you, whether the viewing rooms and chapels feel comfortable and appropriate, and whether the funeral director listens carefully to your wishes rather than upselling services. Trust your instincts: if you feel pressured or rushed, that is a red flag.
+        </p>
+      </div>
+
+      <!-- H3: Check Reviews & Reputation -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Check Reviews &amp; Reputation</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Look up each funeral home on Google, Yelp, and the Better Business Bureau. Focus on recent reviews and look for patterns: are families consistently praising the staff's compassion and professionalism, or are there repeated complaints about hidden fees or poor communication? A quality funeral home will maintain strong reviews and respond thoughtfully to negative feedback. You can also <a href="/state/california" class="text-blue-600 hover:text-blue-800 underline">find funeral homes and cemeteries by state</a> on our site.
+        </p>
+      </div>
+
+      <!-- H3: Ask About Payment Plans -->
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Ask About Payment Plans</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Funeral costs are a significant expense for most families. Many funeral homes offer payment plans, accept credit cards, or work with funeral financing companies. Ask about these options upfront. Some also accept assignment of life insurance benefits, meaning the insurance company pays the funeral home directly. If cost is a primary concern, ask about their most affordable options such as direct cremation or direct burial, which can reduce the total bill by <strong>$3,000 - $6,000+</strong> compared to a full traditional funeral.
+        </p>
+      </div>
+
+      <!-- H2: FAQ -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions</h2>
+
+      <div class="space-y-3 mb-8">
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Do you have to use a funeral home?</summary>
+          <div class="px-5 pb-4 text-gray-700 leading-relaxed">
+            <p>No. In most U.S. states, there is no legal requirement to use a funeral home. Families can legally handle the care and burial of their loved one themselves, known as a home funeral or family-directed funeral. However, a few states (such as certain regulations in Connecticut, Indiana, Louisiana, Nebraska, and New York) require a licensed funeral director's involvement for specific steps. Check your state's laws before making arrangements. While it is legal to go without a funeral home, most families choose to use one because of the practical complexity of transporting the body, filing paperwork, and meeting health regulations.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can you plan a funeral without a funeral home?</summary>
+          <div class="px-5 pb-4 text-gray-700 leading-relaxed">
+            <p>Yes. A growing number of families are choosing home funerals, where family members wash and dress the body, hold a viewing at home, and arrange burial or cremation directly. According to <a href="https://us-funerals.com/do-it-yourself-funerals/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">US Funerals Online</a>, a simple home burial or direct cremation without a funeral home can cost under <strong>$2,000</strong>. You will need to file the death certificate, obtain a burial or cremation permit, and arrange transportation yourself. Organizations like the <a href="https://funerals.org/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral Consumers Alliance</a> offer guidance for families choosing this path.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">How far in advance should you choose a funeral home?</summary>
+          <div class="px-5 pb-4 text-gray-700 leading-relaxed">
+            <p>Ideally, you should research funeral homes before the need arises. Pre-planning allows you to compare prices calmly, discuss preferences with your family, and potentially lock in current pricing. Many funeral homes offer pre-need arrangements where you can plan and even prepay for services. If you are making at-need arrangements (after a death has occurred), most funeral homes can begin services within 24 hours of being contacted. Use our <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral planning hub</a> to get started.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">What questions should I ask a funeral home?</summary>
+          <div class="px-5 pb-4 text-gray-700 leading-relaxed">
+            <p>Key questions to ask include: (1) Can I see your General Price List? (2) What is included in your basic services fee? (3) Is embalming required for the service I want? (4) Do you have an on-site crematory, or do you outsource? (5) What payment options and plans do you offer? (6) Can I provide my own casket or urn? (Under the FTC Funeral Rule, they must accept it without a handling fee.) (7) What is your policy if I want to change arrangements after signing a contract? (8) Do you offer aftercare or grief support programs?</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Do funeral homes offer payment plans?</summary>
+          <div class="px-5 pb-4 text-gray-700 leading-relaxed">
+            <p>Many do, though it varies by provider. Common options include in-house payment plans (splitting the cost over 6-24 months), acceptance of credit cards, and life insurance assignment (the funeral home files a claim directly with the insurer). Some funeral homes partner with third-party funeral financing companies. Always ask about interest rates and fees before agreeing to a payment plan. If you cannot afford any funeral home services, contact your county's social services department, which may provide assistance for indigent burials.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">What is the cheapest funeral home option?</summary>
+          <div class="px-5 pb-4 text-gray-700 leading-relaxed">
+            <p>The most affordable option at a funeral home is a <strong>direct cremation</strong>, which costs between <strong>$1,000 and $3,600</strong> nationally (average around $2,200). This includes pickup of the deceased, basic paperwork, the cremation itself, and return of the ashes. There is no viewing, embalming, or ceremony. The next most affordable option is <strong>direct burial</strong>, averaging about <strong>$2,800</strong>, which skips the viewing and ceremony. Both options allow families to hold a separate memorial service at a later date, at a location of their choosing, at little or no additional cost. See our <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation cost guide</a> for a complete price breakdown.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Sources Section -->
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">Sources</h2>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li><a href="https://consumer.ftc.gov/articles/ftc-funeral-rule" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC - The FTC Funeral Rule</a></li>
+          <li><a href="https://www.ftc.gov/business-guidance/resources/complying-funeral-rule" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC - Complying with the Funeral Rule</a></li>
+          <li><a href="https://consumer.ftc.gov/articles/funeral-costs-pricing-checklist" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC - Funeral Costs and Pricing Checklist</a></li>
+          <li><a href="https://choicemutual.com/funeral-resources/funeral-cost/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Choice Mutual - How Much Does a Funeral Cost? (2026 Breakdown)</a></li>
+          <li><a href="https://worldpopulationreview.com/state-rankings/average-funeral-cost-by-state" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">World Population Review - Average Funeral Cost by State 2026</a></li>
+          <li><a href="https://www.after.com/articles/how-much-funeral-cost" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">After.com - How Much Does a Funeral Cost in 2026?</a></li>
+          <li><a href="https://funerals.org/get-help/making-decisions/how-to-choose-a-funeral-home/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral Consumers Alliance - How to Choose a Funeral Home</a></li>
+          <li><a href="https://consumer.ftc.gov/articles/choosing-funeral-provider" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC - Choosing a Funeral Provider</a></li>
+          <li><a href="https://us-funerals.com/do-it-yourself-funerals/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">US Funerals Online - DIY Funeral Care</a></li>
+          <li><a href="https://www.funeralbasics.org/what-services-do-funeral-homes-offer/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral Basics - What Services Do Funeral Homes Offer?</a></li>
+          <li><a href="https://www.empathy.com/funeral/services-a-funeral-home-can-offer" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Empathy - Services a Funeral Home Can Offer</a></li>
+          <li><a href="https://www.directcremate.com/morgue-mortuary-crematorium-whats-the-difference/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Direct Cremate - Morgue, Mortuary, Crematorium: What's the Difference?</a></li>
+        </ul>
+      </div>
+
+      <!-- CTA Box -->
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Need Help Finding a Funeral Home or Cemetery?</h3>
+        <p class="text-gray-700">
+          Use our <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral planning hub</a> to organize arrangements step by step. Compare <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation costs</a> and <a href="/blog/gravestone-cost-guide" class="text-blue-600 hover:text-blue-800 underline">gravestone costs</a>, browse <a href="/type" class="text-blue-600 hover:text-blue-800 underline">types of cemeteries</a>, or find cemeteries and funeral homes in <a href="/state/california" class="text-blue-600 hover:text-blue-800 underline">California</a>, <a href="/state/new-york" class="text-blue-600 hover:text-blue-800 underline">New York</a>, and all 50 states.
+        </p>
+      </div>
+
+    </div>
+  `
 };
 
 export function getBlogContent(slug: string): string | undefined {
