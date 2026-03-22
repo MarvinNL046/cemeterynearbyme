@@ -7924,6 +7924,411 @@ export const blogContent: BlogContent = {
       </div>
 
     </div>
+  `,
+
+  'pet-cremation-cost': `
+    <div class="blog-content space-y-6">
+
+      <!-- Quick Answer Box - Featured Snippet Bait -->
+      <div class="bg-green-50 border-2 border-green-300 rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-bold text-green-900 mb-3">Quick Answer: Pet Cremation Cost in 2026</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-lg p-4 border border-green-200">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Communal Cremation</p>
+            <p class="text-3xl font-bold text-green-700">$30 - $100</p>
+            <p class="text-sm text-gray-600 mt-1">No ashes returned</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 border border-green-200">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Private Cremation</p>
+            <p class="text-3xl font-bold text-green-700">$150 - $400</p>
+            <p class="text-sm text-gray-600 mt-1">Ashes returned to you</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 border border-green-200">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Witnessed Cremation</p>
+            <p class="text-3xl font-bold text-green-700">$200 - $500</p>
+            <p class="text-sm text-gray-600 mt-1">You can be present</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-600 mt-4">Sources: <a href="https://funeral.com/blogs/the-journal/pet-cremation-costs-in-2026-typical-price-ranges-what-changes-the-total" class="text-green-700 underline" target="_blank" rel="noopener">Funeral.com 2026 Data</a>, <a href="https://petstoremember.com/how-much-does-pet-cremation-cost-in-2026/" class="text-green-700 underline" target="_blank" rel="noopener">Pets to Remember</a></p>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">How Much Does Pet Cremation Cost? Complete 2026 Price Guide</h1>
+
+      <p class="text-lg leading-relaxed text-gray-700">
+        Losing a pet is one of the hardest experiences any animal lover faces. When the time comes to say goodbye, many pet owners choose cremation as a dignified and flexible aftercare option. But how much does pet cremation actually cost? The answer depends on your pet's size, the type of cremation you choose, and where you live. In this comprehensive 2026 price guide, we break down every cost factor so you can make an informed decision during an emotional time.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed">
+        If you are also considering human cremation or burial options, our <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation cost guide</a> covers those prices in detail. For broader end-of-life planning, visit our <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral planning</a> page.
+      </p>
+
+      <!-- Section: Average Pet Cremation Costs at a Glance -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Average Pet Cremation Costs at a Glance</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The following table shows average cremation costs by pet type and size in 2026. These prices are based on data from multiple sources including <a href="https://funeral.com/blogs/the-journal/pet-cremation-cost-by-size-small-medium-and-large-dog-and-cat-price-guide" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com</a>, <a href="https://www.dogster.com/lifestyle/how-much-does-it-cost-to-cremate-a-dog" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Dogster</a>, and <a href="https://www.catster.com/lifestyle/cat-cremation-cost/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Catster</a>.
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Pet Type / Size</th>
+              <th class="px-4 py-3 text-left font-semibold">Communal Cremation</th>
+              <th class="px-4 py-3 text-left font-semibold">Private Cremation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Cat (6-15 lbs)</td>
+              <td class="px-4 py-3 text-gray-700">$30 - $70</td>
+              <td class="px-4 py-3 text-gray-700">$75 - $200</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Small Dog (under 30 lbs)</td>
+              <td class="px-4 py-3 text-gray-700">$30 - $70</td>
+              <td class="px-4 py-3 text-gray-700">$100 - $250</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Medium Dog (30-60 lbs)</td>
+              <td class="px-4 py-3 text-gray-700">$50 - $100</td>
+              <td class="px-4 py-3 text-gray-700">$150 - $350</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Large Dog (60-100 lbs)</td>
+              <td class="px-4 py-3 text-gray-700">$75 - $150</td>
+              <td class="px-4 py-3 text-gray-700">$200 - $400</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Extra-Large Dog (100+ lbs)</td>
+              <td class="px-4 py-3 text-gray-700">$100 - $200</td>
+              <td class="px-4 py-3 text-gray-700">$250 - $600</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Horse (800-2,000 lbs)</td>
+              <td class="px-4 py-3 text-gray-700">$500 - $1,000</td>
+              <td class="px-4 py-3 text-gray-700">$1,400 - $4,600</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <p class="text-sm text-blue-800"><strong>Note:</strong> Prices vary significantly by geographic location. Pet owners in the Northeast and West Coast typically pay 15-30% above the national average due to higher operating costs and stricter regulations.</p>
+      </div>
+
+      <!-- Section: Private vs. Communal Cremation -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Private vs. Communal Cremation: Cost Difference</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The type of cremation you choose is the single biggest factor in price — even more than your pet's size. There are four main options, each at a different price point. According to <a href="https://funeral.com/blogs/the-journal/private-vs-communal-pet-cremation-pros-cons-cost-differences-and-which-option-returns-ashes" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com</a>, communal cremation costs 50% to 75% less than private cremation.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Communal (Group) Cremation: $30 - $100</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        In communal cremation, your pet is cremated alongside other animals in the same chamber. This is the most affordable option available. However, because multiple pets share the cremation chamber, <strong>you will not receive your pet's ashes back</strong>. The crematory typically handles the disposal of the combined remains respectfully, often scattering them in a designated area. This option works well for families who want a dignified aftercare solution without needing a physical memorial. Most veterinary offices default to communal cremation when they arrange aftercare services.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Partitioned Cremation: $75 - $200</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Also called "individual" or "semi-private" cremation, this option places multiple pets in the cremation chamber at the same time, but each pet is separated by dividers or partitions. You may receive ashes back, but it is important to understand that <strong>some commingling of remains is possible</strong>. This is a middle-ground option for families who want ashes returned but need to keep costs lower than a fully private cremation. Prices vary based on your pet's size and the crematory's equipment.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Private Cremation: $150 - $400</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Private cremation means your pet is the only animal in the cremation chamber during the entire process. This guarantees that the ashes you receive belong solely to your pet. According to <a href="https://petstoremember.com/private-vs-communal-pet-cremation/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Pets to Remember</a>, <strong>private cremation is the most popular choice</strong> among pet owners because it offers certainty and closure. The crematory documents your pet's identity throughout the process and prepares the remains for return, usually in a basic container or bag. Upgraded urns are available at an additional cost.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Witnessed Cremation: $200 - $500</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Witnessed cremation is a private cremation where you (and your family) can be present as your pet is placed into the cremation chamber. Many crematories offer a viewing room or dedicated space for this purpose. This is the most expensive option, typically adding $25 to $150 on top of the private cremation fee, depending on the facility. According to <a href="https://www.restingrainbow.com/blog-posts/cremating-your-pet-cost-guide" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Resting Rainbow</a>, witnessed cremations are growing in popularity as more families find that being present provides important emotional closure. Not all crematories offer this service, so call ahead to confirm availability.
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Cremation Type</th>
+              <th class="px-4 py-3 text-left font-semibold">Price Range</th>
+              <th class="px-4 py-3 text-left font-semibold">Ashes Returned?</th>
+              <th class="px-4 py-3 text-left font-semibold">Best For</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Communal</td>
+              <td class="px-4 py-3 text-gray-700">$30 - $100</td>
+              <td class="px-4 py-3 text-gray-700">No</td>
+              <td class="px-4 py-3 text-gray-700">Budget-conscious families</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Partitioned</td>
+              <td class="px-4 py-3 text-gray-700">$75 - $200</td>
+              <td class="px-4 py-3 text-gray-700">Sometimes (may be mixed)</td>
+              <td class="px-4 py-3 text-gray-700">Middle-ground option</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Private</td>
+              <td class="px-4 py-3 text-gray-700">$150 - $400</td>
+              <td class="px-4 py-3 text-gray-700">Yes (guaranteed)</td>
+              <td class="px-4 py-3 text-gray-700">Families who want their pet's ashes</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Witnessed</td>
+              <td class="px-4 py-3 text-gray-700">$200 - $500</td>
+              <td class="px-4 py-3 text-gray-700">Yes (guaranteed)</td>
+              <td class="px-4 py-3 text-gray-700">Families seeking closure</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Section: Factors That Affect Pet Cremation Cost -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Factors That Affect Pet Cremation Cost</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Beyond the type of cremation, several other factors influence the final price. Understanding these will help you anticipate the total cost and avoid surprises.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Size and Weight of Your Pet</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Pet cremation is priced by weight, not by species. A heavier animal requires more chamber space, longer processing time, and more energy, which increases the cost. Most crematories use tiered weight-based pricing brackets, with $10-$40 increases between tiers. This is why cremating a Great Dane can cost three to four times more than cremating a cat. Knowing your pet's approximate weight before you call a crematory will help you get an accurate quote.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Type of Cremation (Private vs. Communal)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        As outlined above, private cremation costs 50-75% more than communal cremation. The reason is straightforward: a private cremation reserves the entire chamber for a single pet, involves identity documentation, careful processing of remains, and coordinating the return of ashes. Communal cremation spreads these resources across multiple pets.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Urn or Memorial Keepsake</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Most crematories return ashes in a basic plastic bag inside a simple container or tin. If you want a decorative urn or memorial keepsake, that is an additional cost ranging from $25 for a basic wooden urn to $300 or more for hand-crafted ceramic or custom-engraved options. We cover specific urn prices in the "Additional Costs" section below.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Pickup/Transport Service</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        If your pet passes away at home, most crematories offer a pickup service for $50 to $150 during business hours. After-hours, evening, or weekend pickup can cost up to $200, according to <a href="https://www.dogster.com/lifestyle/how-much-does-it-cost-to-cremate-a-dog" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Dogster</a>. If your veterinarian arranges cremation on your behalf, the transport fee is usually included in their overall service charge (though their total price may be higher than going direct to a crematory).
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Geographic Location</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Where you live significantly affects pricing. Pet owners in densely populated coastal areas — such as New York City, Los Angeles, or San Francisco — often pay more due to higher disposal permitting fees, stricter emissions regulations, and greater real estate overhead. Rural Midwestern facilities may charge less thanks to lower operating costs. According to <a href="https://funeral.com/blogs/the-journal/pet-cremation-costs-in-2026-typical-price-ranges-what-changes-the-total" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com</a>, the Northeast and West Coast typically run 15-30% above the national average.
+      </p>
+
+      <!-- Section: Additional Costs to Consider -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Additional Costs to Consider</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The base cremation fee often does not include extras that many families want. Here is what you can expect to pay for common add-on services and memorial products.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Urns ($25 - $300)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Pet cremation urns range widely in price depending on material, size, and customization. A simple wooden box starts around $25-$50, while mid-range ceramic or biodegradable urns cost $50-$150. Premium options — such as hand-painted ceramic urns, photo-engraved urns, or custom sculpted pieces — can run $150-$300 or more. Some families choose a "living urn" that includes a tree seedling kit, allowing you to plant a memorial tree with your pet's ashes (typically $60-$130).
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Paw Print or Fur Clipping ($15 - $50)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Many crematories offer clay paw print impressions or ink paw prints as a keepsake. These typically cost $15-$50, though some providers include a basic clay paw print with private cremation at no extra charge. Fur clippings (a small lock of your pet's fur preserved in a keepsake pouch or locket) are usually $10-$25. Ask about these services in advance, as they must be done before cremation.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Memorial Jewelry ($30 - $200)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Memorial jewelry allows you to carry a small portion of your pet's ashes with you. Ash pendants and urn necklaces start around $30 for stainless steel designs and go up to $200 or more for sterling silver or gold options. Some jewelers offer custom pieces that incorporate your pet's ashes into glass beads or resin pendants. Cremation diamonds — where carbon from ashes is transformed into a lab-grown diamond — are also available but start at $1,000 and can exceed $10,000.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Transportation/Pickup ($25 - $75)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Standard pickup from a veterinarian's office during business hours typically costs $25-$75. Home pickup is usually more, ranging from $50-$150. If the crematory needs to return ashes to you, shipping by mail costs $20-$30, while personal delivery runs $30-$50. Some crematories include pickup from local veterinary clinics at no extra charge if they have an existing partnership.
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Add-On Service</th>
+              <th class="px-4 py-3 text-left font-semibold">Typical Cost</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Basic Urn (wood or tin)</td>
+              <td class="px-4 py-3 text-gray-700">$25 - $75</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Premium Urn (ceramic, custom)</td>
+              <td class="px-4 py-3 text-gray-700">$75 - $300</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Clay Paw Print</td>
+              <td class="px-4 py-3 text-gray-700">$15 - $50</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Fur Clipping Keepsake</td>
+              <td class="px-4 py-3 text-gray-700">$10 - $25</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Memorial Pendant/Necklace</td>
+              <td class="px-4 py-3 text-gray-700">$30 - $200</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Pickup from Vet</td>
+              <td class="px-4 py-3 text-gray-700">$25 - $75</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Home Pickup (business hours)</td>
+              <td class="px-4 py-3 text-gray-700">$50 - $150</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">After-Hours/Weekend Pickup</td>
+              <td class="px-4 py-3 text-gray-700">$100 - $200</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Section: Where to Get Your Pet Cremated -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Where to Get Your Pet Cremated</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        You have three main options for arranging pet cremation, each with its own advantages and cost implications.
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-5">
+          <h4 class="font-semibold text-gray-900 mb-2">Through Your Veterinarian</h4>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            This is the most convenient option. Most veterinary clinics partner with a local pet crematory and handle all logistics for you. However, vets typically add a markup of $50-$150 on top of the crematory's base fee for the coordination service. If your pet passes away at the vet's office, this is often the simplest path. Ask your vet which crematory they work with and request a detailed price list before agreeing to services.
+          </p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5">
+          <h4 class="font-semibold text-gray-900 mb-2">Direct Through a Pet Crematory</h4>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Contacting a pet crematory directly is typically the most affordable option, as you avoid the middleman markup. Many pet crematories are family-owned businesses that provide compassionate, personalized service. They often offer pickup from your home or your vet's office. You can compare prices and services before committing. Look for crematories certified by the Pet Loss Professionals Alliance (PLPA) or International Association of Pet Cemeteries and Crematories (IAOPCC) for added confidence.
+          </p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5">
+          <h4 class="font-semibold text-gray-900 mb-2">Human Funeral Homes with Pet Services</h4>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            A growing number of human funeral homes now offer pet cremation services as well. Their facilities are typically well-maintained and regulated, and they may offer witnessed cremation options. Pricing is comparable to dedicated pet crematories, though some charge a premium for the higher-end facility. This can be a good option if you already have a relationship with a local funeral home.
+          </p>
+        </div>
+      </div>
+
+      <!-- Section: What to Do with Your Pet's Ashes -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">What to Do with Your Pet's Ashes</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        After private or witnessed cremation, you will receive your pet's ashes (also called "cremains"). There are many meaningful ways to honor your pet's memory:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-3 text-gray-700 mb-6">
+        <li><strong>Keep at home in an urn:</strong> The most common choice. Display the urn on a mantle, shelf, or in a special spot your pet loved. Urns range from simple wooden boxes to elaborate custom designs.</li>
+        <li><strong>Scatter in a meaningful place:</strong> Spread the ashes in your pet's favorite park, hiking trail, beach, or backyard. Check local regulations first — most public lands allow scattering, but some parks and beaches have restrictions.</li>
+        <li><strong>Bury in your garden:</strong> Place the ashes in a biodegradable urn and bury them in your yard. This creates a permanent memorial spot where you can plant flowers or a marker. Most states allow burying cremated remains on private property without a permit.</li>
+        <li><strong>Memorial jewelry:</strong> Have a small portion of ashes sealed inside a pendant, ring, or bracelet so you can carry your pet's memory everywhere you go. Prices start around $30 for basic options.</li>
+        <li><strong>Plant a memorial tree:</strong> Use a living urn or biodegradable urn designed to nourish a tree seedling. Your pet's ashes become part of a growing, living memorial. Companies like <a href="https://www.thelivingurn.com/blogs/news/comprehensive-guide-to-pet-cremation" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">The Living Urn</a> specialize in these products ($60-$130).</li>
+      </ul>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <p class="text-sm text-blue-800"><strong>Tip:</strong> You do not have to choose just one option. Many families keep most of the ashes in an urn at home while using a small portion for a memorial pendant or scattering in a special place. Ask your crematory about dividing the ashes into multiple containers.</p>
+      </div>
+
+      <!-- Section: FAQ -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions About Pet Cremation</h2>
+
+      <div class="space-y-3 mb-8">
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Is private pet cremation worth it?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700 leading-relaxed">For most families, yes. Private cremation is the only way to guarantee you receive your own pet's ashes back. If keeping or scattering your pet's remains is important to you, private cremation provides that certainty. The cost difference between communal and private cremation typically ranges from $70 to $300, which many families consider worthwhile for the peace of mind and closure it provides.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">How long does pet cremation take?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700 leading-relaxed">The cremation process itself takes 1-3 hours depending on your pet's size. A small cat or dog may take about 45 minutes to 1 hour, while a large dog can take 2-3 hours. After cremation, the remains need to cool and be processed, which adds additional time. Most crematories return ashes within 1-2 weeks, though some offer expedited service (24-72 hours) for an additional fee.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can I watch my pet being cremated?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700 leading-relaxed">Yes, if you choose a witnessed cremation. Not all crematories offer this service, so you will need to ask in advance. During a witnessed cremation, you can be present as your pet is placed into the cremation chamber. Some facilities have a dedicated viewing room with a window, while others allow you to stand near the chamber. The additional cost ranges from $25 to $150 on top of the private cremation fee.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Do vets charge more for cremation than crematories?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700 leading-relaxed">Generally, yes. Veterinarians act as a middleman between you and the crematory, adding a coordination fee of $50-$150 to the crematory's base price. This covers their administrative work, storage of your pet's remains, and the convenience of handling everything for you. If cost is a priority, contacting a pet crematory directly will typically save you money. However, the convenience of having your vet handle arrangements during an emotional time is worth the extra cost for many families.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">What happens during pet cremation?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700 leading-relaxed">During pet cremation, your pet's body is placed in a cremation chamber (also called a retort) that reaches temperatures of 1,400-1,800 degrees Fahrenheit. The process reduces the body to bone fragments over 1-3 hours. These bone fragments are then cooled and processed in a cremulator (a machine that grinds them into a fine, uniform ash). The resulting ashes are light gray to white in color and have a powdery, sand-like consistency. They are placed in a container or urn and returned to you.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can you cremate two pets together?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700 leading-relaxed">Yes, some crematories allow you to cremate two or more pets together if the family requests it. This is sometimes called a "companion cremation" and is often chosen when two bonded pets pass away around the same time. The combined ashes are returned in a single container. Pricing varies, but many crematories charge a reduced rate for the second pet rather than the full price for two separate cremations. Ask your provider about their companion cremation policy and pricing.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">How do I know I got my pet's ashes back?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700 leading-relaxed">Reputable crematories use tracking systems throughout the cremation process. Your pet is assigned an identification tag (usually a small stainless steel disc) that stays with them from intake through the entire cremation process. Look for crematories that are certified by the International Association of Pet Cemeteries and Crematories (IAOPCC), as they are required to follow strict chain-of-custody protocols. You can also choose a witnessed cremation if you want to see the process firsthand. Always ask a crematory about their tracking and identification procedures before committing.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Sources Section -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Sources</h2>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li><a href="https://funeral.com/blogs/the-journal/pet-cremation-costs-in-2026-typical-price-ranges-what-changes-the-total" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com — Pet Cremation Costs in 2026: Typical Price Ranges & What Changes the Total</a></li>
+          <li><a href="https://petstoremember.com/how-much-does-pet-cremation-cost-in-2026/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Pets to Remember — How Much Does Pet Cremation Cost in 2026?</a></li>
+          <li><a href="https://funeral.com/blogs/the-journal/pet-cremation-cost-by-size-small-medium-and-large-dog-and-cat-price-guide" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com — Pet Cremation Cost by Size: Small, Medium, and Large Dog and Cat Price Guide</a></li>
+          <li><a href="https://www.dogster.com/lifestyle/how-much-does-it-cost-to-cremate-a-dog" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Dogster — How Much Does It Cost to Cremate a Dog? 2026 Price Guide</a></li>
+          <li><a href="https://www.catster.com/lifestyle/cat-cremation-cost/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Catster — How Much Does It Cost to Cremate a Cat: 2026 Update</a></li>
+          <li><a href="https://www.restingrainbow.com/blog-posts/cremating-your-pet-cost-guide" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Resting Rainbow — Understanding Pet Cremation Costs</a></li>
+          <li><a href="https://www.lemonade.com/pet/explained/how-much-does-pet-cremation-cost/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Lemonade Insurance — How Much Does Pet Cremation Cost</a></li>
+          <li><a href="https://funeral.com/blogs/the-journal/private-vs-communal-pet-cremation-pros-cons-cost-differences-and-which-option-returns-ashes" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com — Private vs Communal Pet Cremation: Pros, Cons & Cost Differences</a></li>
+          <li><a href="https://funeral.com/blogs/the-journal/horse-cremation-and-equine-aftercare-options-costs-and-choosing-an-equine-urn" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com — Horse Cremation and Equine Aftercare: Options, Costs</a></li>
+          <li><a href="https://www.animalaftercare.com/post/how-much-to-cremate-a-horse" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Animal Aftercare — How Much to Cremate a Horse: Pricing Guide</a></li>
+          <li><a href="https://www.thelivingurn.com/blogs/news/comprehensive-guide-to-pet-cremation" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">The Living Urn — Comprehensive Guide to Pet Cremation</a></li>
+        </ul>
+      </div>
+
+      <!-- Internal Links CTA -->
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Related Guides</h3>
+        <p class="text-gray-700">
+          Compare these costs with our <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">human cremation cost guide</a> for a full picture of cremation pricing. Visit our <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral planning</a> page for step-by-step help organizing arrangements. You can also browse <a href="/type" class="text-blue-600 hover:text-blue-800 underline">cemetery types</a> to explore different options for both human and pet memorial services.
+        </p>
+      </div>
+
+    </div>
   `
 };
 

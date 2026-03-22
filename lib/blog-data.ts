@@ -276,6 +276,17 @@ export const blogPosts: BlogPost[] = [
     category: 'Guide',
     image: '/images/blog/funeral-home-guide.jpg',
   },
+  {
+    id: 25,
+    slug: 'cremation-vs-burial',
+    title: 'Cremation vs. Burial: Costs, Process & How to Decide',
+    excerpt: 'A comprehensive 2026 comparison of cremation and burial. Side-by-side costs, step-by-step processes, environmental impact, religious views, and a decision-making guide to help you choose.',
+    author: 'Marvin Smit',
+    date: '2026-03-22',
+    readTime: '12 min',
+    category: 'Guide',
+    image: '/images/blog/cremation-vs-burial.jpg',
+  },
 ];
 
 export const categories = [
