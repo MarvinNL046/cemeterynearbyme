@@ -9108,6 +9108,424 @@ export const blogContent: BlogContent = {
 
     </div>
   `
+  'gravestone-cost-guide': `
+    <div class="blog-content space-y-6">
+
+      <!-- Quick Answer Box - Featured Snippet Bait -->
+      <div class="bg-green-50 border-2 border-green-300 rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-bold text-green-900 mb-3">Quick Answer: How Much Does a Gravestone Cost in 2026?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-lg p-4 border border-green-200">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Flat Marker</p>
+            <p class="text-3xl font-bold text-green-700">$200 - $1,000</p>
+            <p class="text-sm text-gray-600 mt-1">Most affordable option</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 border border-green-200">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Upright Headstone</p>
+            <p class="text-3xl font-bold text-green-700">$1,000 - $3,000</p>
+            <p class="text-sm text-gray-600 mt-1">Most popular choice</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 border border-green-200">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Custom Monument</p>
+            <p class="text-3xl font-bold text-green-700">$3,000 - $10,000+</p>
+            <p class="text-sm text-gray-600 mt-1">Personalized designs</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-600 mt-4">Sources: <a href="https://headstonemakers.com/blog/how-much-does-a-headstone-cost-complete-guide-to-grave-marker-prices-in-2026" class="text-green-700 underline" target="_blank" rel="noopener">Headstone Makers 2026 Guide</a>, <a href="https://petrosstone.com/headstone-pricelist/" class="text-green-700 underline" target="_blank" rel="noopener">Petros Stone 2026 Pricelist</a></p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Average Gravestone Costs</h2>
+
+      <p class="text-lg leading-relaxed text-gray-700">
+        The cost of a gravestone varies widely depending on the type, material, size, and level of customization you choose. Most American families spend between <strong>$1,000 and $3,000</strong> on a headstone, which typically includes the stone itself, basic engraving, and installation. However, prices can range from as low as $200 for a simple flat marker to $25,000 or more for a large custom monument.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed">
+        Understanding the full range of costs before you buy can save you thousands of dollars. Unlike <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation costs</a>, which are relatively straightforward, gravestone pricing involves multiple variables including the stone type, material, engraving complexity, cemetery fees, and installation charges. This guide breaks down every cost factor so you can budget accurately and avoid overpaying.
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Gravestone Type</th>
+              <th class="px-4 py-3 text-left font-semibold">Price Range</th>
+              <th class="px-4 py-3 text-left font-semibold">Average Cost</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Flat/Flush Marker</td>
+              <td class="px-4 py-3 text-gray-700">$200 - $1,000</td>
+              <td class="px-4 py-3 text-gray-700">$500</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Slant Marker</td>
+              <td class="px-4 py-3 text-gray-700">$1,000 - $2,500</td>
+              <td class="px-4 py-3 text-gray-700">$1,500</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Upright Headstone</td>
+              <td class="px-4 py-3 text-gray-700">$1,000 - $5,000</td>
+              <td class="px-4 py-3 text-gray-700">$2,500</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Companion/Double Headstone</td>
+              <td class="px-4 py-3 text-gray-700">$2,000 - $7,000</td>
+              <td class="px-4 py-3 text-gray-700">$4,000</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Custom Monument</td>
+              <td class="px-4 py-3 text-gray-700">$5,000 - $25,000+</td>
+              <td class="px-4 py-3 text-gray-700">$10,000+</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Bronze Marker</td>
+              <td class="px-4 py-3 text-gray-700">$500 - $2,000</td>
+              <td class="px-4 py-3 text-gray-700">$1,200</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed">
+        These prices reflect the stone or marker itself. You should also budget for <strong>engraving ($100-$500)</strong>, <strong>installation ($100-$500)</strong>, and <strong>cemetery foundation fees ($100-$300)</strong>, which can add $300 to $1,300 to your total cost.
+      </p>
+
+      <!-- Section: Cost by Gravestone Type -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cost by Gravestone Type</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The type of gravestone you choose is the single biggest factor in the price you pay. Here is what each style costs and what you get.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Flat/Flush Markers ($200 - $1,000)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Flat markers, also called flush markers or grass-level markers, sit level with the ground surface. They are the most affordable gravestone option and are required by many <a href="/type" class="text-blue-600 hover:text-blue-800 underline">cemetery types</a>, especially modern memorial parks that maintain a uniform, lawn-like appearance. A basic flat granite marker starts around <strong>$200 to $500</strong>, while a larger or more detailed flat marker can cost up to <strong>$1,000</strong>.
+      </p>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+        <p class="text-gray-700"><strong>Best for:</strong> Families on a budget, cemeteries that require flat markers, and those who prefer a simple, understated memorial. Flat markers are easy to maintain and will not obstruct mowing equipment.</p>
+      </div>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Slant Markers ($1,000 - $2,500)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Slant markers (also called bevel markers) are slightly raised at the back and angled forward, making them easier to read than flat markers while remaining lower-profile than full upright headstones. According to <a href="https://petrosstone.com/headstone-pricelist/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Petros Stone</a>, single slant markers range from <strong>$970 to $1,750</strong>, while double slant markers start at <strong>$1,600 and can exceed $3,150</strong> depending on customization.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Slant markers sit on a granite base, which adds to the cost but provides a stable foundation. The angled face provides more visible engraving space than a flat marker and handles rainwater runoff better, helping to keep inscriptions legible over time.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Upright Headstones ($1,000 - $5,000)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Upright headstones are the most traditional and recognizable type of gravestone. They consist of a vertical tablet set into a horizontal base. According to multiple sources including <a href="https://www.brownmemorials.com/blogs/prices-for-headstones" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Brown Memorials</a> and <a href="https://headstonemakers.com/blog/how-much-does-a-headstone-cost-complete-guide-to-grave-marker-prices-in-2026" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Headstone Makers</a>, a standard single upright headstone costs between <strong>$1,000 and $3,000</strong> in 2026, with larger or more ornate designs reaching <strong>$5,000 or more</strong>.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The price depends heavily on the size. A small upright (24" wide x 12" tall) on a 30" base is closer to $1,000, while a large upright (36" wide x 24" tall) on a 42" base can reach $3,000-$5,000. Because stone is purchased from quarries by the cubic inch, size is one of the biggest cost drivers.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Companion/Double Headstones ($2,000 - $7,000)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Companion headstones, also called double headstones, memorialize two people (usually spouses) on a single stone. They are wider than single headstones, with space for two sets of names, dates, and inscriptions. According to <a href="https://legacyheadstones.com/pages/headstone-pricing" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Legacy Headstones</a>, companion upright headstones typically range from <strong>$2,000 to $4,000</strong>, while premium companion designs with detailed carvings can cost <strong>$5,000 to $7,000</strong>.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Companion flat markers are a more affordable alternative, starting around <strong>$1,000 to $2,000</strong>. Installation for double headstones runs <strong>$300 to $600</strong>, roughly double the cost of a single headstone installation.
+      </p>
+
+      <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+        <p class="text-gray-700"><strong>Money-saving tip:</strong> Buying one companion headstone for two people is significantly cheaper than purchasing two individual headstones. You save on the base, installation, and foundation fees.</p>
+      </div>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Custom Monuments ($5,000 - $25,000+)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Custom monuments are one-of-a-kind memorials designed to reflect the personality, interests, or achievements of the deceased. These can include sculpted figures, benches, pillars, obelisks, and elaborate multi-piece designs. According to <a href="https://www.romemonuments.com/price_ranges_for_memorials_and_monuments" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Rome Monuments</a>, custom monuments typically start at <strong>$5,000</strong> and can reach <strong>$25,000, $50,000, or even $100,000+</strong> for large estate monuments and family mausoleums.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Bench memorials, a popular custom option, cost between <strong>$2,500 and $15,000</strong>. Since custom designs start from scratch, the final price cannot always be determined until the design is nearly complete. Factors like the complexity of the sculpture, the rarity of the granite color, and the number of laser-etched portraits all affect the total.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Bronze Markers ($500 - $2,000)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Bronze markers are flat plaques made from cast bronze, usually mounted on a granite base. They are commonly used in veterans' sections and memorial parks that require a uniform look. According to <a href="https://www.empathy.com/funeral/how-much-do-headstones-cost" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Empathy</a>, a standard 24" x 12" bronze marker typically costs between <strong>$500 and $2,000</strong>, depending on the size and complexity. Larger companion bronze markers (for two people) can reach <strong>$2,500 to $3,500</strong>.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Note that the Department of Veterans Affairs provides <strong>free bronze markers</strong> for eligible veterans, which can save families over $1,000. Contact the VA to check eligibility before purchasing a bronze marker for a veteran.
+      </p>
+
+      <!-- Section: Cost by Material -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cost by Material</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The material you choose affects not only the price but also the durability, appearance, and long-term maintenance needs of the gravestone. Here is a breakdown of costs by material.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Granite (Most Popular): $1,000 - $5,000</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Granite is by far the most popular headstone material in the United States, accounting for the vast majority of new headstone sales. It is extremely durable, weather-resistant, and available in a wide range of colors. According to <a href="https://www.stonediscover.com/blog/how-much-should-a-headstones-cost/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Stone Discover</a>, the stone alone averages around $450, but a finished granite headstone with engraving typically costs <strong>$1,000 to $3,000</strong> for a standard upright, and up to <strong>$5,000</strong> for a large or premium-color monument.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Grey granite is the most affordable color option. Black granite costs more but offers sharper contrast for laser-etched images and portraits. Premium colors like blue, red, and Indian granite command higher prices due to quarry location and rarity. Choosing locally quarried granite can reduce costs by cutting freight expenses.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Marble: $1,500 - $5,000</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Marble headstones are prized for their classic, elegant white appearance and their suitability for detailed carving. According to <a href="https://signatureheadstones.com/blogs/news/headstone-cost" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Signature Headstones</a>, marble headstones typically cost between <strong>$1,500 and $3,500</strong>, with highly customized sculpted designs reaching <strong>$5,000 or more</strong>.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        However, marble is softer than granite and weathers more quickly, especially in harsh climates. Inscriptions on marble can become illegible after 50-80 years, compared to 100+ years for granite. Professional restoration may be needed after 10-20 years. If you live in an area with harsh winters or acidic rain, granite is a better long-term investment. Learn about proper maintenance in our <a href="/blog/how-to-clean-a-gravestone" class="text-blue-600 hover:text-blue-800 underline">gravestone cleaning guide</a>.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Bronze: $500 - $2,000</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Bronze markers are cast from a copper-tin alloy and mounted on a granite base. While a small bronze marker can start at <strong>$500</strong>, a standard single bronze marker (24" x 12") from a reputable manufacturer costs <strong>$800 to $2,000</strong>. The granite base is typically included or adds $100-$300.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Bronze develops a natural patina over time that many families find appealing, though it can be polished to maintain its original shine. Bronze markers are extremely durable and resistant to cracking or chipping, making them a good long-term choice. However, they are limited to flat or low-profile designs and cannot be made into upright headstones.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Limestone/Sandstone: $500 - $2,000</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Limestone and sandstone headstones were historically common but have fallen out of favor due to durability concerns. They are softer and more porous than granite, making them susceptible to erosion, especially in wet or cold climates. Prices typically range from <strong>$500 to $2,000</strong> depending on size and carving detail.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        While they are generally more affordable than granite for similarly sized stones, the reduced lifespan means they may need replacement or restoration sooner. Limestone and sandstone are best suited for mild, dry climates where erosion is less of a concern.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Fieldstone/Natural: $200 - $800</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Fieldstone or natural stone markers use unpolished, naturally shaped stones as grave markers. They are the most affordable option, ranging from <strong>$200 to $800</strong>, and are popular in <a href="/type" class="text-blue-600 hover:text-blue-800 underline">natural burial cemeteries</a> and green burial sites.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Engraving on fieldstone is limited and more expensive per character due to the irregular surface. Some natural cemeteries allow only a simple carved name and dates, while others permit no markers at all. Check with your cemetery about marker regulations before purchasing.
+      </p>
+
+      <!-- Section: Additional Costs -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Additional Costs</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The price of the stone itself is only part of the total cost. Several additional fees can add <strong>$300 to $1,500+</strong> to your bill. Here is what to expect.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Engraving ($100 - $500)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Basic engraving (name, dates, and a short inscription) is often included in the headstone price or costs <strong>$100 to $300</strong>. According to <a href="https://markersandheadstones.com/blogs/news/how-much-does-headstone-engraving-typically-cost" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Markers and Headstones</a>, the average cost of adding engraving to an existing headstone is around <strong>$350</strong>. Per-character pricing typically runs <strong>$20 to $30 per character</strong>.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Additional engraving options and their costs include:
+      </p>
+
+      <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+        <li><strong>Laser-etched portraits or images:</strong> $200 - $1,500</li>
+        <li><strong>Custom artwork or symbols:</strong> $100 - $500</li>
+        <li><strong>Additional text (poems, verses):</strong> $20 - $30 per character</li>
+        <li><strong>Gold or color fill for lettering:</strong> $50 - $200</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Installation ($100 - $500)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Installation (also called "setting" the stone) involves transporting the headstone to the cemetery and properly placing it on the foundation. According to <a href="https://funeral.com/blogs/the-journal/how-much-does-a-headstone-cost-pricing-for-flat-markers-uprights-and-engraving" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com</a>, setting a single headstone typically costs <strong>$150 to $450</strong>, while double headstones run <strong>$300 to $600</strong>. Some monument companies include installation in the purchase price, so always ask.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Many cemeteries require that installation be performed by an approved installer, which limits your options and can affect pricing. Always check with your cemetery before arranging independent installation.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Cemetery Foundation Fee ($100 - $300)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Most cemeteries require a concrete or granite foundation beneath the headstone to prevent settling and shifting. According to <a href="https://stoltzmemorials.com/cemetery-foundation-fees/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Stoltz Memorials</a>, foundation fees typically range from <strong>$200 to $500</strong>, depending on the size of the monument and the cemetery location. Some cemeteries pour the foundation themselves (and charge for it), while others allow the monument company to handle it.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Cemeteries may also charge a <strong>permit or inspection fee of $50 to $300</strong> to approve the headstone design and verify it meets their regulations before installation.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Photo Plaques ($75 - $200)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Ceramic or porcelain photo plaques display a photograph of the deceased on the headstone. Standard oval or rectangular photo plaques cost <strong>$75 to $200</strong> and are designed to withstand outdoor weather for decades. Laser-etched photos directly into the granite surface are more expensive ($200 - $1,500) but more durable and permanent.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Flower Vases ($25 - $150)</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Built-in flower vases that attach to the headstone or its base cost <strong>$25 to $150</strong>. Bronze vases are the most common and typically cost $50 to $150. Granite vases are more affordable at $25 to $75. Some cemeteries require specific vase types or prohibit attached vases entirely, so check the regulations first.
+      </p>
+
+      <!-- Section: Where to Buy a Gravestone -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Where to Buy a Gravestone</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        You have three main options for purchasing a gravestone: a local monument company, an online retailer, or directly through the cemetery. Each has advantages and drawbacks.
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Option</th>
+              <th class="px-4 py-3 text-left font-semibold">Pros</th>
+              <th class="px-4 py-3 text-left font-semibold">Cons</th>
+              <th class="px-4 py-3 text-left font-semibold">Typical Savings</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Local Monument Company</td>
+              <td class="px-4 py-3 text-gray-700">Personal service, handles cemetery rules, local accountability, can visit showroom</td>
+              <td class="px-4 py-3 text-gray-700">Higher prices due to showroom costs, smaller selection</td>
+              <td class="px-4 py-3 text-gray-700">Baseline pricing</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Online Retailer</td>
+              <td class="px-4 py-3 text-gray-700">40-60% savings, vast selection, no sales pressure, design at your own pace</td>
+              <td class="px-4 py-3 text-gray-700">Cannot see stone in person, shipping costs, must arrange separate installation</td>
+              <td class="px-4 py-3 text-green-700 font-semibold">Save 40-60%</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Cemetery Direct</td>
+              <td class="px-4 py-3 text-gray-700">Simplest process, guaranteed to meet cemetery rules, one-stop shop</td>
+              <td class="px-4 py-3 text-gray-700">Often most expensive, limited selection, markup on stones</td>
+              <td class="px-4 py-3 text-red-700">Often 20-50% more</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        According to <a href="https://legacyheadstones.com/blogs/articles/is-it-cheaper-to-buy-a-headstone-online" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Legacy Headstones</a>, online retailers can offer savings of <strong>40% to 60%</strong> compared to local monument dealers because they operate without expensive showrooms and storage facilities. However, you will need to coordinate shipping and installation separately. According to <a href="https://funeral.com/blogs/the-journal/buying-a-headstone-online-vs-through-the-cemetery-pros-cons-and-hidden-fees" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com</a>, once you factor in shipping ($200-$600) and installation fees, the total savings may be less dramatic but are still significant for most purchases.
+      </p>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+        <p class="text-gray-700"><strong>Important:</strong> Before purchasing from any source, contact your cemetery first. Many cemeteries have specific size, material, and style requirements. Some require you to use their approved installer list. Getting the cemetery's guidelines in writing before you buy can prevent costly mistakes and delays.</p>
+      </div>
+
+      <!-- Section: How to Save Money on a Gravestone -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How to Save Money on a Gravestone</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        A gravestone is a significant expense, but there are practical ways to reduce costs without sacrificing quality or dignity.
+      </p>
+
+      <div class="bg-green-50 border border-green-200 rounded-lg p-5 mb-6">
+        <h3 class="text-lg font-semibold text-green-900 mb-3">8 Ways to Save on Gravestone Costs</h3>
+        <ol class="list-decimal pl-5 text-gray-700 space-y-3">
+          <li><strong>Get at least 3 quotes:</strong> Prices vary dramatically between providers. Always compare quotes from at least three monument companies or online retailers before committing.</li>
+          <li><strong>Buy online:</strong> Online retailers save you 40-60% on average because they eliminate showroom overhead. Reputable online sellers include Legacy Headstones, Headstone Deals, and Memorial Man.</li>
+          <li><strong>Choose a flat marker:</strong> Flat markers cost $200-$1,000 versus $1,000-$5,000 for upright headstones. If your cemetery allows it and you are on a tight budget, a flat marker is the most affordable option.</li>
+          <li><strong>Select grey granite:</strong> Grey granite is the most affordable color. Black, red, blue, and imported granite colors cost significantly more for the same size stone.</li>
+          <li><strong>Keep engraving simple:</strong> Basic name, dates, and a short epitaph are far cheaper than laser-etched portraits, custom artwork, or lengthy inscriptions. Every additional character and design element adds to the cost.</li>
+          <li><strong>Choose locally quarried stone:</strong> Granite sourced from local quarries avoids expensive freight charges that can add hundreds of dollars to imported stone.</li>
+          <li><strong>Consider a companion headstone:</strong> If you are planning for both you and your spouse, a single companion headstone is much cheaper than two separate headstones.</li>
+          <li><strong>Check veteran benefits:</strong> The VA provides free headstones and markers for eligible veterans buried in any cemetery (national, state, or private). This benefit can save you $1,000-$3,000+.</li>
+        </ol>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        If cost is a major concern, explore our <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral planning guide</a> for additional ways to manage end-of-life expenses. You can also compare <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation costs</a> as an alternative to traditional burial.
+      </p>
+
+      <!-- FAQ Section -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions</h2>
+
+      <div class="space-y-3 mb-8">
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">How long after burial do you get a headstone?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">Most families install a headstone 3 to 6 months after burial. The ground needs time to settle after a burial, which is typically 3-4 months. In addition, headstone production takes 6-12 weeks from order to delivery, depending on the complexity of the design and the manufacturer's backlog. Some cemeteries have specific waiting periods before they allow headstone installation. It is common and perfectly acceptable to wait up to a year.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can you put a headstone on a grave without permission?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">No. Virtually all cemeteries require written approval before a headstone can be installed. The cemetery will review the headstone design to ensure it meets their size, material, and style guidelines. You typically need to submit a design proof and pay a setting or foundation fee. Installing a headstone without cemetery approval can result in the stone being removed at your expense. Always contact the cemetery office before ordering.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Do cemeteries charge for headstones?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">Cemeteries do not typically charge for the headstone itself (unless you buy one through them), but they do charge related fees. Common cemetery fees include: a foundation/setting fee ($200-$500) for pouring a concrete base, a permit or approval fee ($50-$300) for reviewing and approving the headstone design, and an inspection fee (around $50) to verify proper installation. These fees vary widely by cemetery and location.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">What is the cheapest type of gravestone?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">The cheapest type of gravestone is a flat (flush) granite marker, which starts at around $200 for a basic 24" x 12" grey granite marker. Fieldstone or natural rock markers can also be very affordable at $200-$800. If the deceased is an eligible veteran, the Department of Veterans Affairs provides free headstones and markers, which is the most affordable option of all. Some online retailers like Legacy Headstones offer grave markers starting at $199.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">How long does it take to get a headstone made?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">A standard headstone takes 6 to 12 weeks to manufacture and deliver. Simple flat markers may be ready in 4-6 weeks, while custom monuments with detailed sculpting or laser etching can take 12-16 weeks or more. Factors that affect production time include the complexity of the design, the type of stone, the manufacturer's current workload, and shipping distance. Rush orders are sometimes available for an additional fee. During peak seasons (spring and summer), lead times tend to be longer.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can you buy your own headstone before you die?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">Yes, and it is increasingly common. Pre-purchasing your headstone lets you choose exactly what you want, lock in current prices (which tend to rise over time), and relieve your family of the financial and emotional burden of making that decision during their grief. Many monument companies offer "pre-need" headstones where everything except the final date is engraved. The headstone can be installed immediately or stored until needed. Adding the final date later typically costs $200-$500 for a return visit by the engraver.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Sources Section -->
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Sources</h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li><a href="https://headstonemakers.com/blog/how-much-does-a-headstone-cost-complete-guide-to-grave-marker-prices-in-2026" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Headstone Makers - Complete Guide to Grave Marker Prices in 2026</a></li>
+          <li><a href="https://petrosstone.com/headstone-pricelist/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Petros Stone - Headstone Pricelist 2026</a></li>
+          <li><a href="https://www.brownmemorials.com/blogs/prices-for-headstones" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Brown Memorials - Prices for Headstones, Tombstones and Grave Markers 2025</a></li>
+          <li><a href="https://legacyheadstones.com/pages/headstone-pricing" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Legacy Headstones - Headstone Pricing Guide</a></li>
+          <li><a href="https://www.empathy.com/funeral/how-much-do-headstones-cost" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Empathy - How Much Do Headstones Cost?</a></li>
+          <li><a href="https://funeral.com/blogs/the-journal/how-much-does-a-headstone-cost-pricing-for-flat-markers-uprights-and-engraving" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com - Headstone Cost: Pricing for Flat Markers, Uprights, and Engraving</a></li>
+          <li><a href="https://signatureheadstones.com/blogs/news/headstone-cost" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Signature Headstones - Comprehensive Guide to Headstone Costs</a></li>
+          <li><a href="https://www.romemonuments.com/price_ranges_for_memorials_and_monuments" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Rome Monuments - Price Ranges for Memorials and Monuments</a></li>
+          <li><a href="https://www.stonediscover.com/blog/how-much-should-a-headstones-cost/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Stone Discover - How Much Should a Headstone Cost?</a></li>
+          <li><a href="https://stoltzmemorials.com/cemetery-foundation-fees/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Stoltz Memorials - Cemetery & Foundation Fees</a></li>
+          <li><a href="https://markersandheadstones.com/blogs/news/how-much-does-headstone-engraving-typically-cost" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Markers and Headstones - Headstone Engraving Cost</a></li>
+          <li><a href="https://legacyheadstones.com/blogs/articles/is-it-cheaper-to-buy-a-headstone-online" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Legacy Headstones - Is It Cheaper to Buy a Headstone Online?</a></li>
+          <li><a href="https://funeral.com/blogs/the-journal/buying-a-headstone-online-vs-through-the-cemetery-pros-cons-and-hidden-fees" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com - Buying a Headstone Online vs Through the Cemetery</a></li>
+          <li><a href="https://www.iscga.org/how-much-does-a-gravestone-cost.html" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">International Southern Cemetery Gravestones Association - Gravestone Costs</a></li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Need help planning?</h3>
+        <p class="text-gray-700">
+          Use our <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral planning guide</a> to organize arrangements step by step. Browse <a href="/type" class="text-blue-600 hover:text-blue-800 underline">cemetery types</a> to explore your options, or search for cemeteries in <a href="/state/california" class="text-blue-600 hover:text-blue-800 underline">California</a>, <a href="/state/texas" class="text-blue-600 hover:text-blue-800 underline">Texas</a>, <a href="/state/florida" class="text-blue-600 hover:text-blue-800 underline">Florida</a>, and all 50 states. You may also be interested in our <a href="/blog/how-to-clean-a-gravestone" class="text-blue-600 hover:text-blue-800 underline">guide to cleaning a gravestone</a> or our <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation cost guide</a>.
+        </p>
+      </div>
+
+    </div>
+  `,
 };
 
 export function getBlogContent(slug: string): string | undefined {
