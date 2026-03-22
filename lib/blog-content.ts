@@ -8329,6 +8329,423 @@ export const blogContent: BlogContent = {
       </div>
 
     </div>
+  `,
+
+  'cremation-vs-burial': `
+    <div class="blog-content space-y-6">
+
+      <!-- H1 is rendered by the page layout -->
+
+      <!-- Quick Cost Comparison - Featured Snippet Bait -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Quick Cost Comparison</h2>
+
+      <div class="bg-green-50 border-2 border-green-300 rounded-lg p-6 mb-8">
+        <p class="text-lg font-semibold text-green-900 mb-4">Cremation vs. Burial at a Glance (2026)</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-lg p-4 border border-green-200">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Cremation (all-in)</p>
+            <p class="text-3xl font-bold text-green-700">$1,000 &ndash; $7,000</p>
+            <p class="text-sm text-gray-600 mt-1">Direct cremation avg: $2,202</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 border border-green-200">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Burial (all-in)</p>
+            <p class="text-3xl font-bold text-green-700">$7,000 &ndash; $15,000+</p>
+            <p class="text-sm text-gray-600 mt-1">Median with vault: $9,420</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-600 mt-4">Sources: <a href="https://www.after.com/articles/cost-cremation-vs-burial" class="text-green-700 underline" target="_blank" rel="noopener">After.com 2026 Cost Data</a>, <a href="https://choicemutual.com/funeral-resources/cremation-cost/" class="text-green-700 underline" target="_blank" rel="noopener">ChoiceMutual 2026</a>, <a href="https://nfda.org/news/statistics" class="text-green-700 underline" target="_blank" rel="noopener">NFDA Statistics</a></p>
+      </div>
+
+      <p class="text-lg leading-relaxed text-gray-700">
+        Choosing between cremation and burial is one of the most personal decisions a family can make. Cost is often the first consideration &mdash; and the difference is significant &mdash; but it is far from the only factor. Religious beliefs, environmental concerns, memorialization preferences, and family traditions all play a role.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed">
+        In this guide we walk through the full cremation and burial processes step by step, compare every cost line item, weigh the pros and cons of each option, examine their environmental impact with real data, summarize how five major world religions view cremation, and give you a practical decision-making framework. For deeper dives on individual topics, see our <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation cost guide</a>, <a href="/blog/gravestone-cost-guide" class="text-blue-600 hover:text-blue-800 underline">gravestone cost guide</a>, and <a href="/blog/what-is-a-funeral-home" class="text-blue-600 hover:text-blue-800 underline">funeral home explainer</a>.
+      </p>
+
+      <!-- The Cremation Process Explained -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">The Cremation Process Explained</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Understanding what actually happens during cremation can ease uncertainty. According to the <a href="https://www.cremationassociation.org/cremationprocess.html" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Cremation Association of North America (CANA)</a>, the process consists of five key steps:
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 1: Authorization &amp; Documentation</h3>
+          <p class="text-gray-600">The family signs the cremation authorization form and the provider secures all legally required permits (cremation permit, death certificate). No cremation can proceed without these documents.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 2: Preparation</h3>
+          <p class="text-gray-600">Jewelry and personal items the family wants to keep are removed. Medical devices, pacemakers, and battery-powered implants are removed to prevent reactions. The body is placed in a sturdy, combustible container &mdash; anything from a simple cardboard cremation box ($50&ndash;$200) to a purpose-built cremation casket.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 3: The Cremation Chamber (Retort)</h3>
+          <p class="text-gray-600">The container is placed into the cremation chamber, which reaches temperatures of <strong>1,400&ndash;1,600 &deg;F (760&ndash;870 &deg;C)</strong>. Only one body is cremated at a time.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 4: The Cremation (30 min &ndash; 2 hours)</h3>
+          <p class="text-gray-600">Soft tissue, organs, and the container are reduced by intense heat. Bone fragments remain. The duration depends on body size. According to <a href="https://www.funeralwise.com/cremation/cremation-process/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FuneralWise</a>, the average cremation takes about 1&ndash;2 hours.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 5: Processing &amp; Return</h3>
+          <p class="text-gray-600">After cooling, any remaining metal (surgical pins, dental work) is removed with a magnet. The bone fragments are processed in a cremulator into a fine, uniform powder &mdash; what we commonly call &ldquo;ashes&rdquo; or cremains. The remains (typically 4&ndash;6 lbs) are placed in the family&rsquo;s chosen urn or a temporary container.</p>
+        </div>
+      </div>
+
+      <!-- The Burial Process Explained -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">The Burial Process Explained</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        A traditional burial follows a well-established sequence. Here is what families can expect, based on information from <a href="https://www.wujekcalcaterra.com/understanding-the-funeral-burial-process/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Wujek-Calcaterra &amp; Sons</a> and the <a href="https://www.gracelandcemeteryinc.com/the-complete-guide-to-burials/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Graceland Cemetery guide</a>:
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 1: Pronouncement &amp; Transfer</h3>
+          <p class="text-gray-600">Death is legally pronounced and a death certificate is issued (24&ndash;72 hours). The funeral home transfers the body from the place of death to their facility.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 2: Embalming &amp; Preparation</h3>
+          <p class="text-gray-600">If a viewing is planned, the body is embalmed with formaldehyde-based solutions to slow decomposition. The body is then washed, dressed in chosen attire, and placed in the selected casket. Embalming typically costs $500&ndash;$800.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 3: Viewing &amp; Funeral Service</h3>
+          <p class="text-gray-600">A visitation or wake allows family and friends to pay respects. The funeral service &mdash; held at a <a href="/blog/what-is-a-funeral-home" class="text-blue-600 hover:text-blue-800 underline">funeral home</a>, church, or other venue &mdash; includes eulogies, readings, and music.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 4: Procession &amp; Committal</h3>
+          <p class="text-gray-600">A funeral procession leads to the cemetery. A brief graveside committal service offers a final moment of closure before the casket is lowered into the grave.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 5: Burial &amp; Memorialization</h3>
+          <p class="text-gray-600">The casket is lowered into a grave typically lined with a burial vault ($1,500&ndash;$3,000). The grave is filled and eventually marked with a <a href="/blog/gravestone-cost-guide" class="text-blue-600 hover:text-blue-800 underline">headstone or grave marker</a>. Loved ones may place soil, flowers, or personal items.</p>
+        </div>
+      </div>
+
+      <!-- Cost Breakdown: Cremation vs. Burial -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cost Breakdown: Cremation vs. Burial</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The table below compares each major cost component. All figures reflect 2026 national averages from the <a href="https://nfda.org/news/statistics" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">NFDA</a>, <a href="https://www.after.com/articles/cost-cremation-vs-burial" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">After.com</a>, and <a href="https://choicemutual.com/blog/cremation-vs-burial/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">ChoiceMutual</a>.
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Cost Item</th>
+              <th class="px-4 py-3 text-left font-semibold">Cremation</th>
+              <th class="px-4 py-3 text-left font-semibold">Burial</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Basic services fee</td>
+              <td class="px-4 py-3 text-gray-700">$1,500 &ndash; $3,500</td>
+              <td class="px-4 py-3 text-gray-700">$1,500 &ndash; $3,500</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Casket / container</td>
+              <td class="px-4 py-3 text-gray-700">$50 &ndash; $800 (cremation box or rental)</td>
+              <td class="px-4 py-3 text-gray-700">$2,000 &ndash; $5,000+ (metal casket median $2,500)</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Urn / headstone</td>
+              <td class="px-4 py-3 text-gray-700">$50 &ndash; $1,000 (urn)</td>
+              <td class="px-4 py-3 text-gray-700">$1,000 &ndash; $3,000+ (headstone)</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Embalming</td>
+              <td class="px-4 py-3 text-gray-700">Not required (usually $0)</td>
+              <td class="px-4 py-3 text-gray-700">$500 &ndash; $800</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Cremation / grave opening fee</td>
+              <td class="px-4 py-3 text-gray-700">$250 &ndash; $800 (cremation fee)</td>
+              <td class="px-4 py-3 text-gray-700">$800 &ndash; $2,500 (opening &amp; closing)</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Cemetery plot</td>
+              <td class="px-4 py-3 text-gray-700">$0 &ndash; $1,500 (columbarium niche, optional)</td>
+              <td class="px-4 py-3 text-gray-700">$1,000 &ndash; $4,000</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Burial vault / grave liner</td>
+              <td class="px-4 py-3 text-gray-700">Not required ($0)</td>
+              <td class="px-4 py-3 text-gray-700">$1,500 &ndash; $3,000</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Transportation</td>
+              <td class="px-4 py-3 text-gray-700">$200 &ndash; $500</td>
+              <td class="px-4 py-3 text-gray-700">$300 &ndash; $700 (hearse + service car)</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Viewing / facility fees</td>
+              <td class="px-4 py-3 text-gray-700">$0 &ndash; $900 (optional)</td>
+              <td class="px-4 py-3 text-gray-700">$450 &ndash; $1,000</td>
+            </tr>
+            <tr class="bg-green-50 font-semibold">
+              <td class="px-4 py-3 text-gray-900">Typical Total</td>
+              <td class="px-4 py-3 text-green-700">$1,000 &ndash; $7,000</td>
+              <td class="px-4 py-3 text-green-700">$7,000 &ndash; $15,000+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-800 font-medium">Key takeaway: A direct cremation can cost as little as $1,000, while a traditional burial with all services rarely comes in under $7,000. The biggest savings come from eliminating the casket, vault, and cemetery plot &mdash; three items that together can exceed $10,000.</p>
+      </div>
+
+      <!-- Pros and Cons of Cremation -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Pros and Cons of Cremation</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-green-50 border border-green-200 rounded-lg p-5">
+          <h3 class="text-lg font-semibold text-green-800 mb-3">Pros</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>Significantly lower cost ($1,000&ndash;$7,000 vs. $7,000&ndash;$15,000+)</span></li>
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>Flexible memorialization &mdash; keep ashes at home, scatter, bury, or create memorial jewelry</span></li>
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>No cemetery plot required (saves $1,000&ndash;$4,000)</span></li>
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>Less land use than traditional burial</span></li>
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>Simpler logistics &mdash; can still hold a full funeral service before or after</span></li>
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>Portable &mdash; ashes can travel with relocating families</span></li>
+          </ul>
+        </div>
+        <div class="bg-red-50 border border-red-200 rounded-lg p-5">
+          <h3 class="text-lg font-semibold text-red-800 mb-3">Cons</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>Produces about 535 lbs of CO&#8322; per cremation</span></li>
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>Not accepted in some religions (Islam, Orthodox Judaism)</span></li>
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>No gravesite to visit for some family members who find comfort in a physical place</span></li>
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>The finality of cremation can be difficult &mdash; you cannot exhume later</span></li>
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>Releases mercury vapor from dental fillings and other pollutants</span></li>
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>Ashes at home can become a source of family disputes during estate division</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pros and Cons of Burial -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Pros and Cons of Burial</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-green-50 border border-green-200 rounded-lg p-5">
+          <h3 class="text-lg font-semibold text-green-800 mb-3">Pros</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>A permanent, dedicated place for loved ones to visit and grieve</span></li>
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>Accepted (or required) by virtually every religion and culture</span></li>
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>The traditional funeral process provides structured closure for many families</span></li>
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>A <a href="/blog/gravestone-cost-guide" class="text-blue-600 hover:text-blue-800 underline">headstone</a> serves as a lasting, tangible memorial</span></li>
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>Exhumation is possible if needed in the future</span></li>
+            <li class="flex items-start"><span class="text-green-600 mr-2 mt-1 font-bold">+</span> <span>Cemeteries often become meaningful community and historical landmarks</span></li>
+          </ul>
+        </div>
+        <div class="bg-red-50 border border-red-200 rounded-lg p-5">
+          <h3 class="text-lg font-semibold text-red-800 mb-3">Cons</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>Substantially higher cost ($7,000&ndash;$15,000+)</span></li>
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>Requires ongoing cemetery maintenance fees</span></li>
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>Uses land permanently &mdash; U.S. cemeteries already occupy over 1 million acres</span></li>
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>Embalming uses formaldehyde, a known carcinogen, which leaches into soil</span></li>
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>Caskets and vaults consume significant resources (steel, hardwood, concrete)</span></li>
+            <li class="flex items-start"><span class="text-red-600 mr-2 mt-1 font-bold">&ndash;</span> <span>Less flexibility &mdash; relocating families may rarely visit the gravesite</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Environmental Impact -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Environmental Impact</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Neither cremation nor burial is truly &ldquo;green,&rdquo; but their environmental footprints differ in important ways. Here is what the science says.
+      </p>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Cremation&rsquo;s Footprint</h3>
+        <p class="text-gray-600">According to <a href="https://www.nationalgeographic.com/science/article/is-cremation-environmentally-friendly-heres-the-science" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Geographic</a>, a single cremation produces approximately <strong>535 lbs (243 kg) of CO&#8322;</strong>. U.S. cremations collectively emit roughly <strong>360,000 metric tons of CO&#8322; per year</strong>. Cremation also releases nitrogen oxides, carbon monoxide, particulate matter, and trace amounts of mercury from dental fillings. Many modern crematoriums now use filtration and scrubbing systems to reduce these emissions.</p>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Burial&rsquo;s Footprint</h3>
+        <p class="text-gray-600">While a single ground burial emits about half the CO&#8322; of cremation, its total environmental impact is actually <strong>higher</strong> when all 18 impact categories are considered, according to research cited by <a href="https://www.serenityridgemd.com/carbon-footprint-of-cremation-vs-traditional-burial-methods/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Serenity Ridge</a>. Traditional burial in the U.S. uses an estimated 4.3 million gallons of embalming fluid, 20 million board feet of hardwood, 1.6 million tons of concrete (vaults), and 17,000 tons of copper and bronze annually. Formaldehyde from embalming eventually leaches into groundwater.</p>
+      </div>
+
+      <div class="bg-green-50 border border-green-200 rounded-lg p-5 mb-6">
+        <h3 class="text-lg font-semibold text-green-800 mb-3">Greener Alternatives</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li><strong>Natural / green burial:</strong> No embalming, biodegradable casket or shroud, no vault. The body returns to the earth naturally. Browse <a href="/type" class="text-blue-600 hover:text-blue-800 underline">types of cemeteries</a> to find natural burial grounds.</li>
+          <li><strong>Alkaline hydrolysis (water cremation / aquamation):</strong> Uses water and an alkali solution instead of flame. According to <a href="https://www.cremationassociation.org/alkalinehydrolysis.html" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">CANA</a>, it produces <strong>90% fewer carbon emissions</strong> than flame cremation and zero direct air pollutants. Now legal in over half of U.S. states. Typical cost: $1,500&ndash;$4,000.</li>
+          <li><strong>Human composting (natural organic reduction):</strong> The body is placed in a vessel with organic materials and transformed into nutrient-rich soil over 30&ndash;45 days. Legal in a growing number of states. According to <a href="https://earthfuneral.com/resources/human-composting-vs-aquamation" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Earth Funeral</a>, it has the lowest overall environmental impact of any disposition method.</li>
+        </ul>
+      </div>
+
+      <!-- Religious & Cultural Views -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Religious &amp; Cultural Views</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Religion is often the deciding factor for families. The following summaries are based on information from the <a href="https://neptunesociety.com/resources/cremation-planning/8-religions-and-their-views-on-cremation" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Neptune Society</a>, <a href="https://inthelighturns.com/education/how-world-religions-view-cremation" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">In the Light Urns</a>, and <a href="https://eirene.ca/articles/major-religions-cremation" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Eirene</a>.
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Christianity</h3>
+          <p class="text-gray-600">Historically, Christianity favored burial to honor the body as the temple of the Holy Spirit. Today, <strong>most Protestant denominations and the Roman Catholic Church accept cremation</strong>. The Vatican&rsquo;s 2016 instruction <em>Ad resurgendum cum Christo</em> permits cremation but requires that ashes be kept in a sacred place (not scattered or divided). Some Eastern Orthodox churches &mdash; including Greek and Russian Orthodox &mdash; still prohibit cremation based on traditional resurrection theology.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Judaism</h3>
+          <p class="text-gray-600"><strong>Traditional Jewish law (Halacha) requires burial in the ground.</strong> Orthodox and Conservative Judaism consider cremation forbidden. However, <strong>Reform Judaism has become more accepting</strong> of cremation as a personal choice, though burial is still the recommended practice. The prohibition is rooted in the belief that the body belongs to God and the historical trauma of the Holocaust.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Islam</h3>
+          <p class="text-gray-600"><strong>Cremation is strictly forbidden (haram) in Islam.</strong> Islamic law requires prompt burial, ideally within 24 hours. The body is considered a trust from God (amanah), and deliberately destroying it by fire is viewed as deeply disrespectful. This prohibition is universal across all schools of Islamic jurisprudence.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Hinduism</h3>
+          <p class="text-gray-600"><strong>Cremation is the preferred and dominant practice in Hinduism.</strong> It is believed to release the soul (atman) from the physical body and the cycle of reincarnation (samsara). Traditionally, the eldest son lights the funeral pyre. In the U.S., cremation at a crematorium serves the same spiritual purpose. Exceptions: infants, saints, and monks are sometimes buried rather than cremated.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Buddhism</h3>
+          <p class="text-gray-600"><strong>Cremation is common and widely accepted in Buddhism,</strong> partly because the Buddha himself was cremated. However, Buddhism does not mandate a specific method of disposition &mdash; burial is also acceptable. The focus is on the state of mind at death and the practice of mindful mourning, rather than the treatment of the physical body.</p>
+        </div>
+      </div>
+
+      <!-- What Happens to Ashes After Cremation? -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">What Happens to Ashes After Cremation?</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        After cremation, families receive 4&ndash;6 pounds of processed remains. According to <a href="https://www.cremation.green/what-happens-to-ashes-after-cremation/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Cremation.Green</a>, there are several meaningful options:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+          <h3 class="text-lg font-semibold text-blue-800 mb-2">Keep in an Urn at Home</h3>
+          <p class="text-gray-600">Nearly 1 in 4 U.S. households keeps cremated remains at home. Urns range from simple ($30&ndash;$50 online) to artisan pieces ($500+).</p>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+          <h3 class="text-lg font-semibold text-blue-800 mb-2">Scatter the Ashes</h3>
+          <p class="text-gray-600">You can scatter remains on private land (with permission), in the ocean (3+ nautical miles from shore per EPA rules), or at designated scattering gardens in cemeteries.</p>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+          <h3 class="text-lg font-semibold text-blue-800 mb-2">Bury the Ashes</h3>
+          <p class="text-gray-600">Ashes can be buried in a cemetery urn garden, a family plot, or a columbarium niche. This gives loved ones a specific place to visit.</p>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+          <h3 class="text-lg font-semibold text-blue-800 mb-2">Memorial Keepsakes</h3>
+          <p class="text-gray-600">Options include cremation jewelry (pendants with a small chamber), memorial diamonds (created from carbon in ashes), glass art orbs, and even incorporation into an ocean reef memorial.</p>
+        </div>
+      </div>
+
+      <!-- How to Decide -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How to Decide: Questions to Ask Yourself</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        There is no universally &ldquo;right&rdquo; answer. The best choice depends on your unique circumstances. Use these questions as a framework:
+      </p>
+
+      <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-6">
+        <ol class="space-y-3 text-gray-700 list-decimal pl-5">
+          <li><strong>What is your budget?</strong> If cost is the primary concern, direct cremation ($1,000&ndash;$3,600) is the most affordable option. Traditional burial rarely costs less than $7,000.</li>
+          <li><strong>What does your faith tradition say?</strong> If your religion prohibits cremation (Islam, Orthodox Judaism), burial is the clear choice. If your tradition prefers cremation (Hinduism), that may guide your decision.</li>
+          <li><strong>How important is a gravesite to your family?</strong> Some families find deep comfort in a permanent place to visit. Others prefer the flexibility of keeping or scattering ashes.</li>
+          <li><strong>Do you have environmental concerns?</strong> Neither option is perfectly green, but natural burial or alkaline hydrolysis offer lower-impact alternatives. Standard cremation has a smaller overall footprint than traditional burial when all factors are considered.</li>
+          <li><strong>What did the deceased want?</strong> Pre-planned arrangements or expressed wishes should be honored when possible. Many people state a preference in their will or <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral plan</a>.</li>
+          <li><strong>Do you want a traditional funeral service?</strong> You can have a full funeral with either cremation or burial. Cremation does not mean skipping the service &mdash; many families hold a viewing before cremation.</li>
+          <li><strong>Are there practical constraints?</strong> Space, relocation plans, and multiple family members wishing to keep a portion of remains may favor cremation.</li>
+        </ol>
+      </div>
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-800 font-medium">Remember: cremation and burial are not mutually exclusive. You can have a traditional funeral service followed by cremation, or cremate and then bury the ashes in a cemetery plot. Many families combine elements of both.</p>
+      </div>
+
+      <!-- FAQ -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions</h2>
+
+      <div class="space-y-3 mb-8">
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Is cremation cheaper than burial?</summary>
+          <div class="px-5 pb-4 text-gray-600">
+            <p>Yes, in almost every case. A direct cremation costs $1,000&ndash;$3,600 on average, while a traditional burial with all services costs $7,000&ndash;$15,000+. Even a full-service cremation with a funeral ceremony (median $6,280) is cheaper than a median burial with vault ($9,420). For a detailed breakdown, see our <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation cost guide</a>.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can you still have a funeral with cremation?</summary>
+          <div class="px-5 pb-4 text-gray-600">
+            <p>Absolutely. Many families hold a full traditional funeral &mdash; with viewing, visitation, and ceremony at a <a href="/blog/what-is-a-funeral-home" class="text-blue-600 hover:text-blue-800 underline">funeral home</a> &mdash; before the cremation takes place. Alternatively, families can hold a memorial service after cremation with the urn present. You are not limited to one or the other.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Is cremation bad for the environment?</summary>
+          <div class="px-5 pb-4 text-gray-600">
+            <p>Cremation does have an environmental impact: each cremation produces about 535 lbs of CO&#8322; and releases small amounts of air pollutants. However, when all environmental factors are considered (land use, materials, chemicals), traditional burial actually has a <strong>higher total environmental impact</strong> than cremation. The greenest options are alkaline hydrolysis (90% less carbon than flame cremation), natural burial, and human composting.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can a cremated body be buried later?</summary>
+          <div class="px-5 pb-4 text-gray-600">
+            <p>Yes. Cremated remains can be buried in a cemetery plot, placed in a columbarium niche, or interred in an urn garden at any point after cremation. Many cemeteries offer smaller, more affordable plots specifically for urn burials. There is no time limit on when you must bury the ashes.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">What religion does not allow cremation?</summary>
+          <div class="px-5 pb-4 text-gray-600">
+            <p><strong>Islam</strong> strictly forbids cremation across all schools of jurisprudence. <strong>Orthodox Judaism</strong> also prohibits it, though Reform Judaism is more accepting. Some <strong>Eastern Orthodox Christian</strong> denominations (Greek Orthodox, Russian Orthodox) do not permit cremation. Most other major religions &mdash; including mainstream Protestantism, Catholicism, Hinduism, and Buddhism &mdash; accept or prefer cremation.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can you be buried without a casket?</summary>
+          <div class="px-5 pb-4 text-gray-600">
+            <p>In most U.S. states, there is no law requiring a casket for burial. However, most cemeteries have their own rules and may require at minimum a rigid container or a burial vault/grave liner. For natural or green burials, bodies can be buried in a simple shroud or biodegradable casket. Check with your local cemetery or explore <a href="/type" class="text-blue-600 hover:text-blue-800 underline">types of cemeteries</a> to find natural burial options.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">How long does cremation take vs. burial?</summary>
+          <div class="px-5 pb-4 text-gray-600">
+            <p>The cremation process itself takes 1&ndash;2 hours. A direct cremation can be arranged and completed within 24&ndash;72 hours of death. A full burial process &mdash; including embalming, viewing, funeral service, and interment &mdash; typically takes 3&ndash;7 days. If a full funeral service is held before cremation, the timeline is similar to burial (3&ndash;7 days).</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Sources -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Sources</h2>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+        <p class="text-gray-700 mb-3">This guide uses data from the following sources, all accessed in March 2026:</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li><a href="https://nfda.org/news/statistics" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Funeral Directors Association (NFDA) - Statistics</a> - Median funeral and cremation costs</li>
+          <li><a href="https://www.after.com/articles/cost-cremation-vs-burial" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">After.com - Cremation vs. Burial: What's the Real Cost in 2026?</a></li>
+          <li><a href="https://choicemutual.com/funeral-resources/cremation-cost/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">ChoiceMutual - How Much Does Cremation Cost? (2026)</a></li>
+          <li><a href="https://choicemutual.com/blog/cremation-vs-burial/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">ChoiceMutual - Cremation vs Burial: Cost Comparison & How to Choose</a></li>
+          <li><a href="https://www.nationalgeographic.com/science/article/is-cremation-environmentally-friendly-heres-the-science" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Geographic - The Environmental Toll of Cremating the Dead</a></li>
+          <li><a href="https://www.serenityridgemd.com/carbon-footprint-of-cremation-vs-traditional-burial-methods/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Serenity Ridge - Carbon Footprint of Cremation vs. Traditional Burial</a></li>
+          <li><a href="https://www.cremationassociation.org/cremationprocess.html" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Cremation Association of North America (CANA) - Cremation Process</a></li>
+          <li><a href="https://www.cremationassociation.org/alkalinehydrolysis.html" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">CANA - Alkaline Hydrolysis</a></li>
+          <li><a href="https://neptunesociety.com/resources/cremation-planning/8-religions-and-their-views-on-cremation" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Neptune Society - 8 Religions and Their Views on Cremation</a></li>
+          <li><a href="https://inthelighturns.com/education/how-world-religions-view-cremation" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">In the Light Urns - Religious Views on Cremation</a></li>
+          <li><a href="https://eirene.ca/articles/major-religions-cremation" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Eirene - What Judaism, Hinduism, Christianity & Islam Say About Cremation</a></li>
+          <li><a href="https://www.cremation.green/what-happens-to-ashes-after-cremation/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Cremation.Green - What Happens to Ashes After Cremation</a></li>
+          <li><a href="https://earthfuneral.com/resources/human-composting-vs-aquamation" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Earth Funeral - Human Composting vs. Aquamation</a></li>
+          <li><a href="https://www.funeralwise.com/cremation/cremation-process/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FuneralWise - The Cremation Process Step-by-Step</a></li>
+          <li><a href="https://www.wujekcalcaterra.com/understanding-the-funeral-burial-process/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Wujek-Calcaterra - A Step-by-Step Guide to the Funeral & Burial Process</a></li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Need Help Planning?</h3>
+        <p class="text-gray-700">
+          Use our <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral planning guide</a> to organize arrangements step by step. Read our <a href="/blog/cremation-cost-guide" class="text-blue-600 hover:text-blue-800 underline">cremation cost guide</a> for detailed pricing by state, or explore <a href="/blog/gravestone-cost-guide" class="text-blue-600 hover:text-blue-800 underline">gravestone costs</a> if you are considering a burial marker. Browse <a href="/type" class="text-blue-600 hover:text-blue-800 underline">types of cemeteries</a> or <a href="/state/california" class="text-blue-600 hover:text-blue-800 underline">find cemeteries near you</a> in any state.
+        </p>
+      </div>
+
+    </div>
   `
 };
 
