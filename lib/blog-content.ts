@@ -6984,6 +6984,591 @@ export const blogContent: BlogContent = {
   </p>
 </div>
   `
+  'cremation-cost-guide': `
+    <div class="blog-content space-y-6">
+
+      <!-- Quick Answer Box - Featured Snippet Bait -->
+      <div class="bg-green-50 border-2 border-green-300 rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-bold text-green-900 mb-3">Quick Answer: How Much Does Cremation Cost in 2026?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-lg p-4 border border-green-200">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Direct Cremation</p>
+            <p class="text-3xl font-bold text-green-700">$1,000 - $3,600</p>
+            <p class="text-sm text-gray-600 mt-1">National average: $2,202</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 border border-green-200">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Full-Service Cremation</p>
+            <p class="text-3xl font-bold text-green-700">$4,000 - $8,000+</p>
+            <p class="text-sm text-gray-600 mt-1">NFDA median: $6,280</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-600 mt-4">Sources: <a href="https://nfda.org/news/statistics" class="text-green-700 underline" target="_blank" rel="noopener">NFDA 2023 General Price List Study</a>, <a href="https://cremationinstitute.com/cremation-costs/" class="text-green-700 underline" target="_blank" rel="noopener">Cremation Institute 2026 Data</a></p>
+      </div>
+
+      <p class="text-lg leading-relaxed text-gray-700">
+        Cremation has become the most popular end-of-life choice in America. According to the <a href="https://nfda.org/news/statistics" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Funeral Directors Association (NFDA)</a>, the projected cremation rate for 2025 is 63.4%, up from just 27% in 2001, and it is expected to reach 82.3% by 2045. A major factor driving this shift is cost: cremation is significantly more affordable than traditional burial.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed">
+        But "cremation cost" is not a single number. The price you pay depends on the type of service, your location, optional add-ons, and the provider you choose. In this guide, we break down every cost component so you can make an informed decision. Whether you are <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">planning a funeral</a> for a loved one or pre-planning your own arrangements, this guide covers what you need to know.
+      </p>
+
+      <!-- Section 1: Cremation Cost With vs Without Services -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cremation Cost With vs. Without Services</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The single biggest factor in cremation pricing is whether you choose a <strong>direct cremation</strong> (no services) or a <strong>full-service cremation</strong> (with viewing, ceremony, and funeral director involvement). Here is how they compare:
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Feature</th>
+              <th class="px-4 py-3 text-left font-semibold">Direct Cremation</th>
+              <th class="px-4 py-3 text-left font-semibold">Full-Service Cremation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">National Average Cost</td>
+              <td class="px-4 py-3 text-gray-700">$2,202</td>
+              <td class="px-4 py-3 text-gray-700">$6,280</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Typical Price Range</td>
+              <td class="px-4 py-3 text-gray-700">$1,000 - $3,600</td>
+              <td class="px-4 py-3 text-gray-700">$4,000 - $8,000+</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Viewing / Visitation</td>
+              <td class="px-4 py-3 text-gray-700">No</td>
+              <td class="px-4 py-3 text-gray-700">Yes</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Embalming Required</td>
+              <td class="px-4 py-3 text-gray-700">No</td>
+              <td class="px-4 py-3 text-gray-700">Typically yes</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Funeral Ceremony</td>
+              <td class="px-4 py-3 text-gray-700">No (can hold memorial separately)</td>
+              <td class="px-4 py-3 text-gray-700">Yes, at funeral home or church</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Casket</td>
+              <td class="px-4 py-3 text-gray-700">Basic cremation container ($50-$200)</td>
+              <td class="px-4 py-3 text-gray-700">Rental casket ($400-$800) or purchased</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Transportation</td>
+              <td class="px-4 py-3 text-gray-700">Transfer to crematory only</td>
+              <td class="px-4 py-3 text-gray-700">Hearse, service car, multiple transfers</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Timeline</td>
+              <td class="px-4 py-3 text-gray-700">24-72 hours</td>
+              <td class="px-4 py-3 text-gray-700">3-7 days</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Potential Savings</td>
+              <td class="px-4 py-3 text-green-700 font-semibold">Save $3,000 - $6,000+</td>
+              <td class="px-4 py-3 text-gray-700">Full traditional experience</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        <strong>Direct cremation</strong> is the simplest and most affordable option. The funeral provider collects the deceased, handles all paperwork and permits, performs the cremation, and returns the ashes to the family. There is no viewing, no embalming, and no ceremony at the funeral home. According to <a href="https://cremationinstitute.com/cremation-costs/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Cremation Institute</a>, direct cremation saves families an average of $5,000-$7,000 compared to traditional burial options.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        <strong>Full-service cremation</strong> includes everything a traditional funeral offers, except the body is cremated instead of buried. This typically includes embalming, a viewing or visitation, a formal ceremony, use of funeral home facilities, a hearse, and professional staff coordination. The NFDA reports the median cost of a funeral with cremation at <strong>$6,280</strong> as of their 2023 study, an 8.1% increase from $5,810 in 2021.
+      </p>
+
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-800 font-medium">Important: You do not have to choose one extreme or the other. Many families opt for a "cremation with memorial service" package ($1,500-$3,500), which includes a simple ceremony but skips the viewing, embalming, and rental casket.</p>
+      </div>
+
+      <!-- Section 2: Cost Breakdown -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cost Breakdown: Every Cremation Fee Explained</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Whether you choose direct or full-service cremation, the final bill is made up of individual line items. Understanding each fee helps you spot unnecessary charges and negotiate a fair price. Here are the eight main fee categories:
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">1. Basic Services Fee (Non-Declinable)</h3>
+          <p class="text-gray-700"><strong>Typical cost: $1,500 - $3,500</strong></p>
+          <p class="text-gray-600 mt-1">This is the funeral home's base fee covering staff, planning, coordination with the crematory, securing permits, and filing the death certificate. Under the <a href="https://www.ftc.gov/legal-library/browse/rules/funeral-industry-practices-rule-702" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC Funeral Rule</a>, this is the only fee a funeral home can make non-declinable. It varies widely: budget cremation-only providers may charge as little as $200-$500, while high-end funeral homes charge $3,500 or more.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">2. Transfer / Transportation of Remains</h3>
+          <p class="text-gray-700"><strong>Typical cost: $200 - $500</strong></p>
+          <p class="text-gray-600 mt-1">This covers picking up the deceased from the place of death (hospital, home, nursing facility) and transporting them to the funeral home or crematory. Most providers include a set mileage radius (typically 25-50 miles); beyond that, expect a per-mile surcharge of $2-$5. If you need a hearse for a funeral procession, add another $200-$400.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">3. Cremation Process Fee (Crematory Fee)</h3>
+          <p class="text-gray-700"><strong>Typical cost: $250 - $800</strong></p>
+          <p class="text-gray-600 mt-1">This is the fee charged by the crematory for the actual cremation. Many funeral homes do not operate their own crematory and outsource this to a third-party facility, adding a markup. If you work directly with a cremation-only provider that has an on-site crematory, this fee may be lower. The cremation process itself takes 2-3 hours at 1,400-1,800 degrees Fahrenheit.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">4. Cremation Container or Casket</h3>
+          <p class="text-gray-700"><strong>Typical cost: $50 - $800</strong></p>
+          <p class="text-gray-600 mt-1">State laws vary, but most require that the body be in a rigid, combustible container for cremation. A basic cardboard cremation container costs $50-$200. If you want a viewing before cremation, you can rent a ceremonial casket for $400-$800 rather than purchasing one. No state law requires you to buy a casket for cremation.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">5. Urn</h3>
+          <p class="text-gray-700"><strong>Typical cost: $50 - $1,000+</strong></p>
+          <p class="text-gray-600 mt-1">Funeral homes typically offer urns at retail markup. A basic urn at a funeral home costs $200-$400, but you can purchase urns online for as little as $30-$50 from retailers like Amazon or specialty urn shops. High-end artisan urns, companion urns for couples ($150-$500), and biodegradable urns for scattering ($50-$200) are also available. The NFDA reports a median urn cost of $295.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">6. Death Certificates</h3>
+          <p class="text-gray-700"><strong>Typical cost: $60 - $250 total</strong></p>
+          <p class="text-gray-600 mt-1">Most families need 6-10 certified copies of the death certificate for legal purposes (insurance claims, bank accounts, property transfers, Social Security). Each copy costs $10-$25 depending on the state. Some funeral homes add a handling fee on top of the state fee. Order enough copies upfront, as re-ordering later is more expensive.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">7. Embalming and Body Preparation</h3>
+          <p class="text-gray-700"><strong>Typical cost: $200 - $800 (if applicable)</strong></p>
+          <p class="text-gray-600 mt-1">Embalming is <strong>not required</strong> for direct cremation in any state. However, if you choose a viewing or visitation before cremation, embalming is typically required (or strongly recommended) by the funeral home. Embalming alone costs $200-$800, with additional charges of $100-$500 for dressing, cosmetology, and preparation. For direct cremation, refrigeration ($100-$300) may be used instead if there is a waiting period.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">8. Optional Services and Add-Ons</h3>
+          <p class="text-gray-700"><strong>Typical cost: $0 - $3,000+</strong></p>
+          <p class="text-gray-600 mt-1">These include facility use for a ceremony ($400-$1,000), flowers ($50-$1,000), printed programs and prayer cards ($100-$300), obituary placement ($200-$1,500 depending on the newspaper), music, clergy honorarium ($100-$300), and a reception or catering. These costs add up fast but are entirely optional with direct cremation.</p>
+        </div>
+      </div>
+
+      <!-- Section 3: Average Cost by State -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Average Cremation Cost by State (2026)</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Cremation costs vary dramatically depending on where you live. Factors include local cost of living, competition among providers, state regulations, and urban vs. rural pricing. States like <a href="/state/california" class="text-blue-600 hover:text-blue-800 underline">California</a> and <a href="/state/florida" class="text-blue-600 hover:text-blue-800 underline">Florida</a> have wide ranges due to diverse metro and rural markets.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The following table shows direct cremation cost ranges for the 25 most populated states, based on 2026 data from <a href="https://www.myfarewelling.com/article/cremation-costs-by-state" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">MyFarewelling</a> and <a href="https://us-funerals.com/what-is-the-average-cost-of-a-cremation/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">US Funerals Online</a>:
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">State</th>
+              <th class="px-4 py-3 text-left font-semibold">Direct Cremation Range</th>
+              <th class="px-4 py-3 text-left font-semibold">Cost Level</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900"><a href="/state/california" class="text-blue-600 hover:text-blue-800 underline">California</a></td>
+              <td class="px-4 py-3 text-gray-700">$800 - $3,500</td>
+              <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Medium-High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900"><a href="/state/texas" class="text-blue-600 hover:text-blue-800 underline">Texas</a></td>
+              <td class="px-4 py-3 text-gray-700">$750 - $2,800</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Medium</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900"><a href="/state/florida" class="text-blue-600 hover:text-blue-800 underline">Florida</a></td>
+              <td class="px-4 py-3 text-gray-700">$750 - $3,000</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Medium</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">New York</td>
+              <td class="px-4 py-3 text-gray-700">$1,300 - $4,200</td>
+              <td class="px-4 py-3"><span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Pennsylvania</td>
+              <td class="px-4 py-3 text-gray-700">$1,100 - $3,400</td>
+              <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Medium-High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Illinois</td>
+              <td class="px-4 py-3 text-gray-700">$950 - $3,200</td>
+              <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Medium-High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Ohio</td>
+              <td class="px-4 py-3 text-gray-700">$900 - $2,800</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Medium</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Georgia</td>
+              <td class="px-4 py-3 text-gray-700">$850 - $2,900</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Medium</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">North Carolina</td>
+              <td class="px-4 py-3 text-gray-700">$900 - $2,800</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Medium</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Michigan</td>
+              <td class="px-4 py-3 text-gray-700">$950 - $3,000</td>
+              <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Medium-High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">New Jersey</td>
+              <td class="px-4 py-3 text-gray-700">$1,300 - $3,800</td>
+              <td class="px-4 py-3"><span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Virginia</td>
+              <td class="px-4 py-3 text-gray-700">$1,050 - $3,200</td>
+              <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Medium-High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Washington</td>
+              <td class="px-4 py-3 text-gray-700">$850 - $3,100</td>
+              <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Medium-High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Arizona</td>
+              <td class="px-4 py-3 text-gray-700">$650 - $2,400</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Low</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Massachusetts</td>
+              <td class="px-4 py-3 text-gray-700">$1,400 - $4,000</td>
+              <td class="px-4 py-3"><span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Tennessee</td>
+              <td class="px-4 py-3 text-gray-700">$850 - $2,700</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Medium</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Indiana</td>
+              <td class="px-4 py-3 text-gray-700">$900 - $2,800</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Medium</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Missouri</td>
+              <td class="px-4 py-3 text-gray-700">$850 - $2,700</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Medium</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Maryland</td>
+              <td class="px-4 py-3 text-gray-700">$1,200 - $3,500</td>
+              <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Medium-High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Colorado</td>
+              <td class="px-4 py-3 text-gray-700">$700 - $2,800</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Medium</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Minnesota</td>
+              <td class="px-4 py-3 text-gray-700">$950 - $3,000</td>
+              <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Medium-High</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Connecticut</td>
+              <td class="px-4 py-3 text-gray-700">$1,400 - $4,200</td>
+              <td class="px-4 py-3"><span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">Highest</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Nevada</td>
+              <td class="px-4 py-3 text-gray-700">$700 - $2,600</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Low</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Oregon</td>
+              <td class="px-4 py-3 text-gray-700">$800 - $2,900</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Low</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Alabama</td>
+              <td class="px-4 py-3 text-gray-700">$895 - $2,800</td>
+              <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Medium</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-800"><strong>Key takeaway:</strong> The most expensive states for cremation (Connecticut, New York, Massachusetts) can cost 3-4x more than the most affordable states (Arizona, Nevada, Oregon). High costs correlate with strict state regulations, higher cost of living, and less competition among providers.</p>
+      </div>
+
+      <!-- Section 4: Cremation vs Burial Cost Comparison -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cremation vs. Burial Cost Comparison (2026)</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        One of the most common questions families ask is whether cremation or burial is more affordable. The short answer: cremation costs significantly less. According to <a href="https://www.after.com/articles/cost-cremation-vs-burial" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">After.com</a>, choosing cremation can save approximately 74% compared to traditional burial. Here is a side-by-side comparison using NFDA and industry data:
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Cost Category</th>
+              <th class="px-4 py-3 text-left font-semibold">Cremation</th>
+              <th class="px-4 py-3 text-left font-semibold">Traditional Burial</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Basic Services Fee</td>
+              <td class="px-4 py-3 text-gray-700">$1,500 - $3,500</td>
+              <td class="px-4 py-3 text-gray-700">$1,500 - $3,500</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Embalming</td>
+              <td class="px-4 py-3 text-gray-700">$0 (not required)</td>
+              <td class="px-4 py-3 text-gray-700">$200 - $800</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Casket / Container</td>
+              <td class="px-4 py-3 text-gray-700">$50 - $200 (basic container)</td>
+              <td class="px-4 py-3 text-gray-700">$2,500 (median metal casket)</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Cremation Fee / Burial Vault</td>
+              <td class="px-4 py-3 text-gray-700">$250 - $800</td>
+              <td class="px-4 py-3 text-gray-700">$1,695 (median vault)</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Urn / Grave Plot</td>
+              <td class="px-4 py-3 text-gray-700">$50 - $400</td>
+              <td class="px-4 py-3 text-gray-700">$1,000 - $4,000+ (cemetery plot)</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Headstone / Marker</td>
+              <td class="px-4 py-3 text-gray-700">$0 (optional)</td>
+              <td class="px-4 py-3 text-gray-700">$1,000 - $3,000</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Opening & Closing Grave</td>
+              <td class="px-4 py-3 text-gray-700">$0</td>
+              <td class="px-4 py-3 text-gray-700">$1,000 - $1,500</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50 font-bold">
+              <td class="px-4 py-3 font-medium text-gray-900">Total (Direct / Simple)</td>
+              <td class="px-4 py-3 text-green-700">$1,000 - $3,600</td>
+              <td class="px-4 py-3 text-red-700">$8,300 - $15,000+</td>
+            </tr>
+            <tr class="hover:bg-gray-50 font-bold">
+              <td class="px-4 py-3 font-medium text-gray-900">Total (Full-Service)</td>
+              <td class="px-4 py-3 text-green-700">$4,000 - $8,000</td>
+              <td class="px-4 py-3 text-red-700">$12,000 - $20,000+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The NFDA's 2023 data shows the median cost of a funeral with viewing and burial at <strong>$8,300</strong>, but this does <em>not</em> include the cemetery plot, headstone, opening/closing of the grave, or perpetual care fees. When you add those, the total cost of a traditional burial easily reaches <strong>$12,000-$15,000</strong> or more. Meanwhile, a direct cremation averages <strong>$2,202</strong> nationally, and discount providers through networks like <a href="https://dfsmemorials.com/cremation-blog/cremation-costs-2026-guide-to-average-prices-by-state-city/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">DFS Memorials</a> offer all-inclusive direct cremation from as low as $495-$1,395.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Explore different <a href="/type" class="text-blue-600 hover:text-blue-800 underline">cemetery types</a> to understand the various burial options available and their associated costs.
+      </p>
+
+      <!-- Section 5: How to Save Money on Cremation -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How to Save Money on Cremation: 5 Proven Tips</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Even within cremation, prices vary enormously. Here are five actionable strategies to reduce your costs without sacrificing dignity:
+      </p>
+
+      <div class="space-y-6 mb-6">
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Choose Direct Cremation</h3>
+            <p class="text-gray-700">This is the single most effective way to save. By eliminating the viewing, embalming, ceremony, and rental casket, you cut $3,000-$6,000 from the bill. You can still hold a meaningful <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">memorial service</a> afterward, at home, in a park, or at a place of worship, at little to no cost. According to the <a href="https://www.funerals.org/get-help/how-to-save-money/ten-tips-for-saving-funeral-dollars/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral Consumers Alliance</a>, separating the cremation from the memorial gives families both savings and flexibility.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Compare at Least Three Providers</h3>
+            <p class="text-gray-700">Under the <a href="https://www.ftc.gov/legal-library/browse/rules/funeral-industry-practices-rule-702" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC Funeral Rule</a>, every funeral home <em>must</em> provide a General Price List (GPL) to anyone who asks, whether in person or by phone. You do not have to visit the funeral home to get pricing. Call at least three providers and compare their line-item costs. Prices for the same service can vary by 300% or more within the same city.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Use a Cremation-Only Provider</h3>
+            <p class="text-gray-700">Traditional funeral homes that offer both burial and cremation have higher overhead: large viewing rooms, chapels, floral displays, and more staff. Cremation-only providers operate leaner facilities and pass those savings to families. According to <a href="https://www.smartcremation.com/articles/tips-to-lower-the-cost-of-cremation/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Smart Cremation</a>, cremation-only providers can be 40-60% cheaper than full-service funeral homes for the same cremation.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">4</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Buy the Urn Separately</h3>
+            <p class="text-gray-700">Funeral homes mark up urns significantly. A basic urn at a funeral home costs $200-$400, while the same or better quality urn can be purchased online for $30-$100. The FTC Funeral Rule prohibits funeral homes from refusing to accept a casket or urn purchased elsewhere, or charging a handling fee for it. You can also use any suitable container as an urn; there is no legal requirement to purchase a commercial urn.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">5</div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Pre-Plan and Pre-Pay</h3>
+            <p class="text-gray-700">By arranging and paying for cremation services in advance, you lock in current prices and protect your family from future price increases. The <a href="https://neptunesociety.com/resources/cremation-planning/what-does-cremation-cost" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Neptune Society</a>, one of the largest pre-need cremation providers, reports that pre-planning also reduces emotional overspending, as families making arrangements during grief tend to spend 20-40% more than those who planned ahead.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-green-50 border border-green-200 rounded-lg p-5 mb-6">
+        <p class="text-gray-800"><strong>Bottom line:</strong> A savvy consumer choosing direct cremation from a cremation-only provider, with a separately purchased urn, can arrange a dignified cremation for <strong>$500-$1,500</strong> in most markets, compared to the $6,280 national median for full-service cremation.</p>
+      </div>
+
+      <!-- Section 6: Pet Cremation Cost -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Pet Cremation Cost in 2026</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Losing a pet is a deeply personal experience, and many families choose cremation as a dignified way to say goodbye. Pet cremation costs vary based on the type of service, your pet's size, and your location. According to <a href="https://petstoremember.com/how-much-does-pet-cremation-cost-in-2026/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Pets to Remember</a> and <a href="https://funeral.com/blogs/the-journal/pet-cremation-costs-in-2026-typical-price-ranges-what-changes-the-total" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com</a>, here are current pet cremation prices:
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Cremation Type</th>
+              <th class="px-4 py-3 text-left font-semibold">Small Pet (Cat, Small Dog)</th>
+              <th class="px-4 py-3 text-left font-semibold">Medium Pet (30-60 lbs)</th>
+              <th class="px-4 py-3 text-left font-semibold">Large Pet (60+ lbs)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Communal Cremation</td>
+              <td class="px-4 py-3 text-gray-700">$50 - $150</td>
+              <td class="px-4 py-3 text-gray-700">$100 - $200</td>
+              <td class="px-4 py-3 text-gray-700">$150 - $250</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Individual Cremation</td>
+              <td class="px-4 py-3 text-gray-700">$100 - $200</td>
+              <td class="px-4 py-3 text-gray-700">$150 - $275</td>
+              <td class="px-4 py-3 text-gray-700">$200 - $400</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Private Cremation</td>
+              <td class="px-4 py-3 text-gray-700">$125 - $275</td>
+              <td class="px-4 py-3 text-gray-700">$200 - $400</td>
+              <td class="px-4 py-3 text-gray-700">$250 - $500+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed mb-2"><strong>What is the difference between these three types?</strong></p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+        <li><strong>Communal cremation:</strong> Your pet is cremated alongside other animals. Ashes are not returned to you. This is the most affordable option.</li>
+        <li><strong>Individual (partitioned) cremation:</strong> Multiple pets are cremated at the same time but separated by partitions. Ashes are returned to you, though minimal commingling is possible.</li>
+        <li><strong>Private cremation:</strong> Your pet is cremated alone. You receive only your pet's ashes. This is the most expensive option but guarantees no commingling.</li>
+      </ul>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Additional costs may include pickup/transportation ($25-$75), a pet urn ($20-$200), paw print or clay impression ($25-$75), and engraved memorial items ($30-$150). Some veterinary offices include cremation coordination in their end-of-life services. Pet weight is often the single biggest price factor, as larger animals require more time, fuel, and space in the cremation chamber.
+      </p>
+
+      <!-- Section 7: FAQ -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions About Cremation Costs</h2>
+
+      <div class="space-y-3 mb-8">
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">What is the cheapest cremation option available?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">Direct cremation is the most affordable option, with prices starting as low as $495-$650 through discount cremation networks like DFS Memorials and providers in competitive markets such as Arizona and Nevada. The national average for direct cremation is $2,202 in 2026, but shopping around can yield prices well below the average.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Does Medicare or Medicaid cover cremation costs?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">No, Medicare does not cover cremation or funeral costs. Medicaid may provide a small death benefit ($255 in most states through Social Security) to help with expenses, but this is a one-time lump-sum payment that covers only a fraction of the cost. Some states have indigent burial/cremation programs for families who cannot afford any services. Veterans may be eligible for burial benefits through the VA, including a $948 burial allowance (2026) for service-connected deaths.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can I be cremated without a casket?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">Yes. No state law requires a casket for cremation. However, most states require a rigid, combustible container for the cremation process. A simple cardboard cremation container ($50-$200) fulfills this requirement. If you want a viewing before cremation, you can rent a casket from the funeral home ($400-$800) instead of purchasing one. The FTC Funeral Rule requires funeral homes to offer this rental option.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">How long does cremation take?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">The cremation process itself takes 2-3 hours at temperatures of 1,400-1,800 degrees Fahrenheit. However, the total timeline from death to receiving ashes is typically 3-7 business days for direct cremation, accounting for paperwork, permits, the mandatory waiting period (24-48 hours in most states), and processing. Some states like California have a 48-hour waiting period after death before cremation can occur.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">What can I do with cremated remains (ashes)?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">You have many options: keep the ashes in an urn at home, inter them in a cemetery columbarium niche ($500-$5,000), scatter them at a meaningful location (check local laws), bury them in a cemetery plot (smaller and cheaper than a casket plot), divide them among family members using keepsake urns, turn them into memorial diamonds ($3,000-$10,000+), incorporate them into an artificial reef, or launch them into space. Laws regarding scattering vary by state and locality.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Is cremation cheaper than burial?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">Yes, significantly. Direct cremation ($1,000-$3,600) costs 70-80% less than traditional burial with all associated costs ($12,000-$15,000+). Even a full-service cremation with a ceremony ($6,280 median) costs less than a traditional funeral with burial ($8,300 median, per NFDA), and burial costs do not include the cemetery plot, headstone, vault, or perpetual care fees that typically add $3,000-$7,000 more.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can I arrange cremation myself without a funeral home?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">In most states, families have the legal right to handle their own funeral arrangements, including transporting the body and contracting directly with a crematory. However, this varies by state. Some states (such as Connecticut, Illinois, Indiana, Louisiana, Michigan, Nebraska, New Jersey, and New York) require a funeral director's involvement. Even where legal, the process involves obtaining a death certificate, securing cremation permits, and meeting the crematory's requirements. A home funeral guide organization in your state can help navigate local laws.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Are cremation costs tax-deductible?</summary>
+          <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-gray-700">Cremation costs are generally <strong>not</strong> tax-deductible on a personal income tax return. However, if the cremation expenses are paid by the deceased's estate, they may be deductible on the estate tax return (IRS Form 706) as an administrative expense. This is typically relevant only for large estates subject to federal estate tax (over $13.61 million in 2026). Consult a tax professional for your specific situation.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Section 8: Sources -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Sources</h2>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+        <p class="text-gray-700 mb-3">This guide uses data from the following sources, all accessed in March 2026:</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li><a href="https://nfda.org/news/statistics" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Funeral Directors Association (NFDA) - Statistics</a> - 2023 General Price List Study, 2025 Cremation & Burial Report</li>
+          <li><a href="https://nfda.org/Portals/0/12-8-2023--2023%20GPL%20Survey.pdf" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">NFDA 2023 GPL Survey (PDF)</a> - Median funeral costs with viewing, burial, and cremation</li>
+          <li><a href="https://cremationinstitute.com/cremation-costs/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Cremation Institute - US Cremation Costs Breakdown 2026</a> - Detailed fee analysis and savings guide</li>
+          <li><a href="https://us-funerals.com/what-is-the-average-cost-of-a-cremation/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">US Funerals Online - Average Cost of Cremation 2026</a> - State-by-state pricing guide</li>
+          <li><a href="https://www.myfarewelling.com/article/cremation-costs-by-state" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">MyFarewelling - Average Cremation Costs by State 2026</a> - Direct cremation cost ranges for all 50 states</li>
+          <li><a href="https://www.after.com/articles/cost-cremation-vs-burial" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">After.com - Cremation vs. Burial: What's the Real Cost in 2026?</a> - Cost comparison data</li>
+          <li><a href="https://dfsmemorials.com/cremation-blog/cremation-costs-2026-guide-to-average-prices-by-state-city/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">DFS Memorials - Cremation Costs 2026</a> - Provider network pricing and trends</li>
+          <li><a href="https://funeral.com/blogs/the-journal/pet-cremation-costs-in-2026-typical-price-ranges-what-changes-the-total" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral.com - Pet Cremation Costs in 2026</a> - Pet cremation pricing data</li>
+          <li><a href="https://petstoremember.com/how-much-does-pet-cremation-cost-in-2026/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Pets to Remember - Pet Cremation Cost 2026</a> - Pet cremation service types and pricing</li>
+          <li><a href="https://www.ftc.gov/legal-library/browse/rules/funeral-industry-practices-rule-702" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">FTC Funeral Rule</a> - Consumer rights regarding funeral pricing transparency</li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Need help planning?</h3>
+        <p class="text-gray-700">
+          Use our <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral planning guide</a> to organize arrangements step by step. Browse <a href="/type" class="text-blue-600 hover:text-blue-800 underline">cemetery types</a> to explore your options, or search for cemeteries in <a href="/state/california" class="text-blue-600 hover:text-blue-800 underline">California</a>, <a href="/state/texas" class="text-blue-600 hover:text-blue-800 underline">Texas</a>, <a href="/state/florida" class="text-blue-600 hover:text-blue-800 underline">Florida</a>, and all 50 states.
+        </p>
+      </div>
+
+    </div>
+  `
 };
 
 export function getBlogContent(slug: string): string | undefined {
