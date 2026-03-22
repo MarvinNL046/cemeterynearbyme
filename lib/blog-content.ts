@@ -6983,7 +6983,7 @@ export const blogContent: BlogContent = {
     Een dierenbegraafplaats biedt een waardige en respectvolle manier om afscheid te nemen van uw huisdier. Of u nu kiest voor begraven of crematie, het belangrijkste is dat u een afscheid kiest dat bij u en uw gezin past. Neem de tijd om verschillende opties te verkennen en kies wat het beste voelt voor u en uw trouwe metgezel.
   </p>
 </div>
-  `
+  `,
   'cremation-cost-guide': `
     <div class="blog-content space-y-6">
 
@@ -7564,6 +7564,362 @@ export const blogContent: BlogContent = {
         <h3 class="text-xl font-semibold text-gray-900 mb-3">Need help planning?</h3>
         <p class="text-gray-700">
           Use our <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral planning guide</a> to organize arrangements step by step. Browse <a href="/type" class="text-blue-600 hover:text-blue-800 underline">cemetery types</a> to explore your options, or search for cemeteries in <a href="/state/california" class="text-blue-600 hover:text-blue-800 underline">California</a>, <a href="/state/texas" class="text-blue-600 hover:text-blue-800 underline">Texas</a>, <a href="/state/florida" class="text-blue-600 hover:text-blue-800 underline">Florida</a>, and all 50 states.
+        </p>
+      </div>
+
+    </div>
+  `,
+
+  'how-to-clean-a-gravestone': `
+    <div class="blog-content space-y-6">
+
+      <!-- Quick Answer Box -->
+      <div class="bg-green-50 border-2 border-green-300 rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-bold text-green-900 mb-3">Quick Answer: How Do You Clean a Gravestone Safely?</h2>
+        <p class="text-gray-700">Pre-soak the stone with clean water, apply <strong>D/2 Biological Solution</strong> (the industry standard used by the National Park Service and VA), scrub gently with a soft-bristle brush from bottom to top, and rinse thoroughly. Never use bleach, pressure washers, wire brushes, or household cleaners. Always get cemetery permission first.</p>
+      </div>
+
+      <p class="text-lg leading-relaxed text-gray-700">
+        Over time, gravestones accumulate lichen, moss, algae, bird droppings, and hard water stains. A dirty headstone can become difficult to read and may look neglected. The good news: with the right products and technique, you can safely clean most gravestones without causing damage.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed">
+        The bad news? Using the wrong method can cause <strong>irreversible harm</strong>. Bleach leaves permanent orange staining. Pressure washers erode carved details. Wire brushes can remove entire inscriptions. This guide covers exactly what to do and what to avoid, based on recommendations from the <a href="https://www.nps.gov/articles/000/cemetery-preservation-course-cleaning-grave-markers.htm" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Park Service</a>, the <a href="https://www.cem.va.gov/hmm/cleaning.asp" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Department of Veterans Affairs</a>, and the <a href="https://cemeteryconservatorsunitedstandards.org/standards/cleaning/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Cemetery Conservators for United Standards (CCUS)</a>.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed">
+        Whether you are maintaining a family member's headstone or volunteering to clean graves, this guide will walk you through every step. If you are also considering a new memorial, check our <a href="/blog/gravestone-cost-guide" class="text-blue-600 hover:text-blue-800 underline">gravestone cost guide</a> for pricing information.
+      </p>
+
+      <!-- Section: Before You Start -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Before You Start: Important Rules</h2>
+
+      <div class="bg-red-50 border border-red-200 rounded-lg p-5 mb-6">
+        <p class="text-red-900 font-semibold mb-2">Stop and Read Before You Clean</p>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li><strong>Always get permission</strong> from the cemetery office, superintendent, or sexton before cleaning any gravestone. Some cemeteries have specific rules about approved products and methods.</li>
+          <li><strong>Never use bleach, wire brushes, or pressure washers.</strong> These cause permanent, irreversible damage to stone.</li>
+          <li><strong>Test any product</strong> on a small, hidden area of the stone first (such as the back base) and wait 24 hours before proceeding.</li>
+          <li><strong>Do not clean historic gravestones</strong> older than 100 years without consulting a professional conservator. Fragile stones can crumble during cleaning.</li>
+          <li><strong>Never clean when temperatures are near freezing.</strong> Water trapped in stone pores expands when it freezes, causing cracks. The National Park Service recommends cleaning only when no freeze is expected within 48 hours.</li>
+          <li><strong>If the stone is hot</strong> from direct sun, do not apply cool water. Cover the stone and let it cool first, or let the water warm in the sun. Sudden temperature changes can cause stress cracks.</li>
+        </ul>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed">
+        Every time a gravestone is cleaned, microscopic particles are removed from the surface. This is why the <a href="https://cemeteryconservatorsunitedstandards.org/standards/cleaning/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">CCUS</a> recommends cleaning gravestones no more than once per year. The gentlest effective method is always the best approach.
+      </p>
+
+      <!-- Section: What You'll Need -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">What You'll Need</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-green-800 mb-3">Recommended Supplies</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li><strong>Clean water</strong> — at least 5 gallons (bring your own; do not use cemetery spigots without permission)</li>
+            <li><strong>Soft-bristle brush</strong> — natural or nylon bristles only (never metal)</li>
+            <li><strong>Wooden or plastic scraper</strong> — for removing heavy lichen or moss</li>
+            <li><strong>D/2 Biological Solution</strong> — the industry-standard cleaner, available at <a href="https://www.gravestonecleaner.com/shop/d2-biological-solution-1-gallon-size/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">GravestoneCleaner.com</a> or <a href="https://www.d2bio.com/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">D2bio.com</a></li>
+            <li><strong>Spray bottle</strong> — for applying D/2 evenly</li>
+            <li><strong>Soft cloths or sponges</strong> — for gentle wiping</li>
+            <li><strong>Bucket</strong> — for mixing and carrying water</li>
+            <li><strong>Protective gloves and safety glasses</strong></li>
+          </ul>
+        </div>
+        <div class="bg-white border border-red-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-red-800 mb-3">What NOT to Use</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li><strong>Bleach or bleach-based products</strong></li>
+            <li><strong>Pressure washers or power washers</strong></li>
+            <li><strong>Wire brushes or metal scrapers</strong></li>
+            <li><strong>Vinegar, lemon juice, or acidic cleaners</strong></li>
+            <li><strong>Household cleaners</strong> (Formula 409, Fantastik, Spic and Span)</li>
+            <li><strong>Shaving cream</strong> (a common myth)</li>
+            <li><strong>Muriatic acid or TSP (trisodium phosphate)</strong></li>
+            <li><strong>Products containing sodium compounds</strong> (sodium bicarbonate, sodium chloride, sodium sulfate)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section: Step-by-Step Guide -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step-by-Step Cleaning Guide</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-6">
+        Follow these six steps for safe and effective gravestone cleaning. This method is based on guidelines from the <a href="https://www.nps.gov/articles/000/best-practice-recommendations-for-cleaning-government-issued-headstones.htm" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Park Service</a> and <a href="https://www.d2bio.com/use-d2" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">D/2 manufacturer instructions</a>.
+      </p>
+
+      <div class="space-y-6 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 1: Assess the Stone's Condition</h3>
+          <p class="text-gray-700">Before touching the stone, do a thorough inspection. Look for:</p>
+          <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+            <li>Cracks, chips, or fracture lines</li>
+            <li>Loose or flaking pieces</li>
+            <li>Delamination (layers separating, especially on slate and sandstone)</li>
+            <li>Leaning or unstable base</li>
+          </ul>
+          <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-3">
+            <p class="text-gray-800"><strong>If the stone shows any signs of structural damage, do not clean it.</strong> Cleaning a fragile stone can accelerate deterioration. Contact a professional conservator instead.</p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 2: Pre-Wet the Entire Stone</h3>
+          <p class="text-gray-700">Thoroughly soak the entire gravestone with clean water. Use a bucket, spray bottle, or gentle hose (no nozzle pressure). The stone should be completely saturated before any cleaning product is applied.</p>
+          <p class="text-gray-700 mt-2">Pre-wetting serves two purposes: it prevents the stone from absorbing cleaning chemicals too deeply, and it loosens surface dirt and biological growth. Let the water soak in for at least 5 minutes. For heavily soiled stones, the <a href="https://www.funeralbasics.org/how-to-clean-a-headstone/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral Basics guide</a> recommends soaking for up to 15 minutes.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 3: Apply Cleaning Solution</h3>
+          <p class="text-gray-700"><strong>D/2 Biological Solution</strong> is the gold standard for gravestone cleaning. It is used by the National Park Service, the Department of Veterans Affairs, and professional conservators nationwide. D/2 is a non-acidic, non-abrasive, biodegradable cleaner based on quaternary ammonium compounds that effectively removes mold, mildew, algae, lichens, and air pollutant stains.</p>
+          <p class="text-gray-700 mt-2">Apply D/2 <strong>undiluted</strong> using a spray bottle, brush, or roller. Cover the entire surface generously. Let it sit for <strong>5 to 15 minutes</strong> to break down biological growth. For heavy lichen or moss, use a wooden or plastic scraper to gently detach thick growth immediately after applying D/2.</p>
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-3">
+            <p class="text-gray-800"><strong>No D/2 available?</strong> Clean water with a few drops of non-ionic detergent (pH neutral, no salts or bleach) is an acceptable alternative. Regular dish soap mixed in warm water can work for light soiling. However, D/2 significantly outperforms other cleaners, as confirmed by a <a href="https://www.nps.gov/articles/000/comparative-study-of-commercially-available-cleaners-for-use-on-federally-issued-headstones.htm" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Park Service comparative study</a>.</p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 4: Scrub Gently with a Soft Brush</h3>
+          <p class="text-gray-700">Using a soft-bristle nylon or natural-fiber brush, scrub the stone in <strong>gentle circular motions</strong>. Work from the <strong>bottom to the top</strong> to avoid dirty streaks running down the stone and staining clean areas.</p>
+          <p class="text-gray-700 mt-2">Key points:</p>
+          <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+            <li>Use light to moderate pressure only — let the cleaning solution do the work</li>
+            <li>Pay extra attention to carved lettering and decorative details where grime accumulates</li>
+            <li>Use a smaller brush or old toothbrush (with soft bristles) for tight spaces and inscriptions</li>
+            <li><strong>Never use metal tools, wire brushes, or abrasive pads.</strong> A wire brush can remove layers of stone and even scrape away entire inscriptions</li>
+          </ul>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 5: Rinse Thoroughly</h3>
+          <p class="text-gray-700">Rinse the entire stone with plenty of clean water. Make sure to remove <strong>all cleaning solution residue</strong>. Leftover chemicals, even mild ones, can leave deposits that attract new biological growth or cause discoloration over time.</p>
+          <p class="text-gray-700 mt-2">Use at least 2 to 3 gallons of clean water for rinsing. A gentle stream from a hose works well. Check all carved areas, corners, and the base where solution tends to pool.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Step 6: Let It Air Dry</h3>
+          <p class="text-gray-700">Allow the stone to air dry naturally. Do not try to speed up drying with cloths or heat. One of the remarkable properties of D/2 Biological Solution is that it <strong>continues working for weeks and even months after application</strong>. Stains that appear unchanged immediately after cleaning will often fade dramatically over the following 2 to 4 weeks as D/2 continues to break down biological growth at the cellular level.</p>
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-3">
+            <p class="text-gray-800"><strong>Pro tip:</strong> Take a "before" photo and return in 30 days to see the full effect. Many volunteers report dramatic improvement between their cleaning visit and a follow-up check weeks later.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Cleaning by Stone Type -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cleaning Methods by Stone Type</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-6">
+        Different stone materials require different levels of care. Understanding your stone type is essential for selecting the right approach. When in doubt, always use the gentlest method and consult a professional for valuable or historic stones. For more information about cemetery types and traditions, visit our <a href="/type" class="text-blue-600 hover:text-blue-800 underline">types of cemeteries</a> page.
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Granite Headstones</h3>
+          <p class="text-gray-700">Granite is the <strong>most durable and easiest to clean</strong> of all gravestone materials. It is highly resistant to weathering, chemicals, and physical abrasion. You can safely use D/2, non-ionic detergents, or plain water with a soft brush.</p>
+          <p class="text-gray-700 mt-2">For <strong>polished granite</strong>, you can also use household glass cleaner for a streak-free finish after the main cleaning (never use industrial-strength glass cleaners). Stubborn calcium deposits on polished granite can be gently removed with a non-abrasive scouring pad. Granite generally tolerates more vigorous brushing than other stone types, but there is never a reason to use wire brushes or metal tools.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Marble Headstones</h3>
+          <p class="text-gray-700">Marble is a <strong>softer, more porous stone</strong> that requires a more delicate approach. Marble is made of calcium carbonate, which means <strong>acidic cleaners will literally dissolve it</strong>. Never use vinegar, lemon juice, or any acidic product on marble.</p>
+          <p class="text-gray-700 mt-2">Thoroughly soak the marble headstone with clean water for at least 15 minutes before applying any cleaner. Use a wooden scraper to carefully remove loose debris. Apply D/2 or a neutral pH cleaner and allow it to soak for 10 minutes before gentle scrubbing. For stubborn stains, a poultice made from baking soda and water can be applied, covered with plastic wrap for 24 hours, and then rinsed off.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Limestone &amp; Sandstone</h3>
+          <p class="text-gray-700">Limestone and sandstone are <strong>very porous and extremely sensitive</strong> to cleaning. Like marble, limestone contains calcium carbonate and must never be exposed to acidic products. Sandstone can deteriorate after cleaning if improper methods are used.</p>
+          <p class="text-gray-700 mt-2">Use only water and D/2 with the <strong>softest brush available</strong> and the lightest possible pressure. The <a href="https://cemeteryconservatorsunitedstandards.org/standards/cleaning/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">CCUS</a> recommends that <strong>sandstone headstones should ideally only be cleaned by professionals</strong> who understand the delicacy and porous nature of these stones. If you do clean them yourself, work slowly and stop immediately if you see any particles coming off the stone.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Bronze Markers</h3>
+          <p class="text-gray-700">Bronze markers require a <strong>completely different approach</strong> than stone. Bronze develops a natural patina (greenish oxidation) over time, which some families and cemeteries prefer to leave intact.</p>
+          <p class="text-gray-700 mt-2">For basic cleaning, use mild soap or a non-ionic detergent with distilled water and a soft cloth. Do not use anything stronger than soap and water, as you risk compromising the clear coat that protects the bronze. To remove oxidation and restore shine, use a dedicated <a href="https://www.trigardmemorials.com/bronze-cleaner/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">bronze cleaner</a> or Renaissance Wax Polish. After cleaning, apply a thin coat of <strong>microcrystalline paste wax</strong> to seal the surface and prevent moisture penetration. Reapply the wax annually for ongoing protection.</p>
+        </div>
+      </div>
+
+      <!-- Section: Common Stains -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Common Gravestone Stains &amp; How to Remove Them</h2>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Stain Type</th>
+              <th class="px-4 py-3 text-left font-semibold">Appearance</th>
+              <th class="px-4 py-3 text-left font-semibold">Recommended Removal Method</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Lichen</td>
+              <td class="px-4 py-3 text-gray-700">Crusty, gray-green or yellow patches</td>
+              <td class="px-4 py-3 text-gray-700">Soak with water, scrape with wooden tool, apply D/2, scrub gently</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Moss</td>
+              <td class="px-4 py-3 text-gray-700">Soft, green, fuzzy growth</td>
+              <td class="px-4 py-3 text-gray-700">Remove bulk by hand or plastic scraper, apply D/2, scrub with soft brush</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Algae</td>
+              <td class="px-4 py-3 text-gray-700">Thin green or black film</td>
+              <td class="px-4 py-3 text-gray-700">D/2 application; often clears with a single treatment</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-gray-900">Mold / Mildew</td>
+              <td class="px-4 py-3 text-gray-700">Dark black or gray patches</td>
+              <td class="px-4 py-3 text-gray-700">D/2 is highly effective; may need repeat application for heavy growth</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="space-y-4 mb-6">
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Biological Growth (Lichen, Moss, Algae)</h3>
+          <p class="text-gray-700">Biological growth is the most common issue on gravestones. Lichen is the toughest to remove because it anchors into the stone surface with root-like structures. Soak the stone thoroughly with water first, then use a wooden or plastic scraper to gently detach heavy growth. Apply D/2 generously and let it dwell for 10 to 15 minutes. Scrub with a soft brush and rinse. Heavy lichen may require <strong>repeat applications</strong> of D/2 over several weeks, as the solution continues to kill biological material after each treatment.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Hard Water Stains</h3>
+          <p class="text-gray-700">Hard water deposits leave white or grayish mineral buildup on stone surfaces, often caused by sprinkler systems or natural runoff. For granite, a non-abrasive scouring pad with D/2 can remove these deposits. For marble and limestone, use only a soft brush with a baking soda and water poultice. Avoid acidic products, which will dissolve calcium carbonate stones while attempting to remove calcium deposits.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Bird Droppings</h3>
+          <p class="text-gray-700">Bird droppings are acidic and should be removed promptly to prevent etching, especially on marble and limestone. Soak the affected area with water to soften the deposits, then gently scrape with a wooden or plastic tool. Clean the area with D/2 or mild non-ionic detergent and rinse thoroughly. Regular cleaning visits help prevent long-term acid damage from accumulated droppings.</p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Rust Stains</h3>
+          <p class="text-gray-700">Rust stains typically appear as orange or reddish-brown streaks, often caused by iron hardware, nearby metal fixtures, or iron content within the stone itself. Rust stains are among the most difficult to remove. D/2 can help lighten them over multiple applications. For severe rust staining, consult a professional conservator who may use specialized iron-removal poultices. <strong>Never use acidic rust removers</strong> on stone, as they will cause more damage than the stain itself.</p>
+        </div>
+      </div>
+
+      <!-- Section: Products to Never Use -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Products to NEVER Use on Gravestones</h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        According to the <a href="https://cemeteryconservatorsunitedstandards.org/harmful-methods/dont-clean-with/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Cemetery Conservators for United Standards</a>, the following products and methods cause permanent, irreversible damage to gravestones:
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+          <thead>
+            <tr class="bg-red-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Product / Method</th>
+              <th class="px-4 py-3 text-left font-semibold">Why It Causes Damage</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-red-800">Bleach</td>
+              <td class="px-4 py-3 text-gray-700">Dissolves the outer layer of stone on contact. Bleach salts soak into the stone permanently, causing bright orange staining over time. There is no way to reverse bleach damage once it has occurred.</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-red-800">Pressure Washers</td>
+              <td class="px-4 py-3 text-gray-700">Even at low settings, pressure washers erode stone surfaces, strip carved details, and force water deep into stone pores. This causes internal damage during freeze-thaw cycles. If it can strip paint off a building, it can strip layers off a gravestone.</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-red-800">Wire Brushes / Metal Tools</td>
+              <td class="px-4 py-3 text-gray-700">Remove layers of stone with each stroke. Can scrape away entire inscriptions and carved details permanently. Metal fragments left behind can cause rust staining.</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-red-800">Vinegar / Lemon Juice / Acidic Cleaners</td>
+              <td class="px-4 py-3 text-gray-700">Acids literally dissolve calcium carbonate, which is a primary component of marble, limestone, and sandstone. Even "mild" acids cause permanent etching and surface loss.</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium text-red-800">Household Cleaners</td>
+              <td class="px-4 py-3 text-gray-700">Products like Formula 409, Fantastik, Spic and Span, and similar cleaners contain sodium compounds and other chemicals that build up soluble salts beneath the stone surface, accelerating deterioration.</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-4 py-3 font-medium text-red-800">Shaving Cream</td>
+              <td class="px-4 py-3 text-gray-700">A persistent myth on social media. Shaving cream contains chemicals and fragrances that can stain stone and leave residues. It does not help with reading inscriptions and can damage the surface.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Section: FAQ -->
+      <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Frequently Asked Questions</h2>
+
+      <div class="space-y-3 mb-8">
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can I use bleach to clean a gravestone?</summary>
+          <div class="px-5 pb-4 text-gray-700">
+            <p><strong>No, never use bleach on a gravestone.</strong> Bleach is the number one harmful cleaner used on gravestones. It dissolves the outer layer of stone immediately upon contact and leaves behind permanent salt deposits that cause bright orange staining over time. Once a stone has been bleached, the damage cannot be reversed. Use D/2 Biological Solution or plain water with a soft brush instead.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">What is the best product to clean headstones?</summary>
+          <div class="px-5 pb-4 text-gray-700">
+            <p><strong>D/2 Biological Solution</strong> is widely considered the best product for cleaning headstones. It is the cleaner used and recommended by the National Park Service, the Department of Veterans Affairs, and professional cemetery conservators. In a <a href="https://www.nps.gov/articles/000/comparative-study-of-commercially-available-cleaners-for-use-on-federally-issued-headstones.htm" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">comparative study by the National Park Service</a>, D/2 was the best performer among five commercially available cleaners tested. It is non-acidic, non-abrasive, biodegradable, and contains no salts, bleach, or acids. A quart spray bottle costs approximately $15 to $20 and covers several headstones.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">How often should you clean a gravestone?</summary>
+          <div class="px-5 pb-4 text-gray-700">
+            <p>Gravestones should be cleaned <strong>no more than once per year</strong>. Every cleaning, no matter how gentle, removes microscopic particles from the stone surface. The Cemetery Conservators for United Standards recommends annual cleaning at most. If you use D/2, it continues to work for months after application, so the stone may actually look better several weeks after cleaning than it did immediately after.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Can you clean a gravestone with vinegar?</summary>
+          <div class="px-5 pb-4 text-gray-700">
+            <p><strong>No.</strong> Vinegar is acidic and will dissolve calcium carbonate, which is a primary component of marble, limestone, and sandstone. Even on granite, vinegar can damage polished surfaces over time. The Cemetery Conservators for United Standards lists vinegar among the products that should never be used on gravestones. Use D/2 Biological Solution or plain water instead.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Is it disrespectful to clean someone else's gravestone?</summary>
+          <div class="px-5 pb-4 text-gray-700">
+            <p>Cleaning someone else's gravestone is generally seen as a kind and respectful act, <strong>but you must get permission first</strong>. Contact the cemetery office, superintendent, or sexton before cleaning any headstone. Some cemeteries have specific rules about approved cleaning products and methods. Many organizations, such as <a href="https://blog.billiongraves.com/gravestone-cleaning-101/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">BillionGraves</a>, organize volunteer cleaning events in coordination with cemeteries. Always learn proper techniques before cleaning to avoid accidental damage.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">How do you clean a gravestone that is black?</summary>
+          <div class="px-5 pb-4 text-gray-700">
+            <p>Black discoloration on gravestones is usually caused by <strong>dark algae, mold, mildew, or air pollution deposits</strong>. D/2 Biological Solution is highly effective at removing these dark stains. Apply D/2 undiluted, let it dwell for 10 to 15 minutes, scrub gently with a soft brush, and rinse. Heavy black staining may require multiple treatments spaced a few weeks apart, as D/2 continues to break down biological growth after each application. If the stone is black granite by design, regular cleaning with water and a soft cloth is usually sufficient.</p>
+          </div>
+        </details>
+
+        <details class="bg-white border border-gray-200 rounded-lg shadow-sm">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50">Does D/2 really work on gravestones?</summary>
+          <div class="px-5 pb-4 text-gray-700">
+            <p><strong>Yes, D/2 is proven and widely trusted.</strong> It was the top-performing cleaner in a <a href="https://www.nps.gov/articles/000/comparative-study-of-commercially-available-cleaners-for-use-on-federally-issued-headstones.htm" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Park Service comparative study</a> of commercially available cleaners for federally issued headstones. It is the approved cleaner for the National Cemetery Administration (VA) and is used by professional conservators across the country. The key to D/2 is patience: it continues working for weeks after application, so results improve dramatically over time. For heavily stained stones, two or three applications over several months may be needed for complete cleaning.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Sources Section -->
+      <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">Sources</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li><a href="https://www.nps.gov/articles/000/cemetery-preservation-course-cleaning-grave-markers.htm" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Park Service - Cleaning Grave Markers</a> - Cemetery preservation course and cleaning guidelines</li>
+          <li><a href="https://www.nps.gov/articles/000/best-practice-recommendations-for-cleaning-government-issued-headstones.htm" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Park Service - Best Practice Recommendations for Cleaning Government Issued Headstones</a></li>
+          <li><a href="https://www.nps.gov/articles/000/comparative-study-of-commercially-available-cleaners-for-use-on-federally-issued-headstones.htm" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">National Park Service - Comparative Study of Commercially Available Cleaners</a> - D/2 rated as top performer</li>
+          <li><a href="https://www.cem.va.gov/hmm/cleaning.asp" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Department of Veterans Affairs - Cleaning Government-Furnished Headstones and Markers</a></li>
+          <li><a href="https://cemeteryconservatorsunitedstandards.org/standards/cleaning/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Cemetery Conservators for United Standards (CCUS) - Cleaning Basics</a></li>
+          <li><a href="https://cemeteryconservatorsunitedstandards.org/harmful-methods/dont-clean-with/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">CCUS - Harmful Methods: Don't Clean With</a></li>
+          <li><a href="https://www.d2bio.com/use-d2" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">D/2 Biological Solution - Official Usage Instructions</a></li>
+          <li><a href="https://hollandsupplyinc.com/blog/how-to-use-d2-biological-solution-for-gravestone-cleaning/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Holland Supply - How to Use D/2 Biological Solution</a></li>
+          <li><a href="https://www.funeralbasics.org/how-to-clean-a-headstone/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Funeral Basics - How to Clean a Headstone in 6 Steps</a></li>
+          <li><a href="https://www.trigardmemorials.com/blog/how-to-clean-your-bronze-grave-marker/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Trigard Memorials - How to Clean a Bronze Grave Marker</a></li>
+          <li><a href="https://blog.billiongraves.com/gravestone-cleaning-101/" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">BillionGraves - Gravestone Cleaning 101</a></li>
+          <li><a href="https://www.farmersalmanac.com/how-to-clean-a-gravestone" class="text-blue-600 hover:text-blue-800 underline" target="_blank" rel="noopener">Farmers' Almanac - How to Clean a Gravestone</a></li>
+        </ul>
+      </div>
+
+      <!-- CTA Box -->
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">Find a Cemetery Near You</h3>
+        <p class="text-gray-700">
+          Looking for a cemetery to visit or maintain? Use our directory to <a href="/state/california" class="text-blue-600 hover:text-blue-800 underline">find cemeteries in California</a>, <a href="/state/texas" class="text-blue-600 hover:text-blue-800 underline">Texas</a>, or any state. Learn about <a href="/type" class="text-blue-600 hover:text-blue-800 underline">different types of cemeteries</a>, get help with <a href="/funeral-planning" class="text-blue-600 hover:text-blue-800 underline">funeral planning</a>, or read our <a href="/blog/gravestone-cost-guide" class="text-blue-600 hover:text-blue-800 underline">gravestone cost guide</a> if you are considering a new memorial.
         </p>
       </div>
 
