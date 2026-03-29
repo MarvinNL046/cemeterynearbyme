@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { getAllCemeteries, getAllStates } from '@/lib/data';
 import HomePageClient from '@/components/HomePageClient';
 
-export const revalidate = 86400;
+export const revalidate = 604800;
 
 export const metadata: Metadata = {
   title: 'Find a Cemetery Near You - CemeteryNearByMe.com',

@@ -30,3 +30,4 @@ data/discovery/
 
 # Build cache
 tsconfig.tsbuildinfo
+.env*.local

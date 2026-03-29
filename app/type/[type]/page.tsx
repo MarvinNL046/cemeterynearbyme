@@ -34,7 +34,7 @@ export async function generateStaticParams() {
 }
 
 // Revalidate pages every 24 hours
-export const revalidate = 86400;
+export const revalidate = 604800;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { type: typeSlug } = await params;
