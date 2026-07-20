@@ -10,9 +10,6 @@ import InlineAd from '@/components/ads/InlineAd';
 import SidebarAd from '@/components/ads/SidebarAd';
 import { AD_SLOTS } from '@/lib/ad-config';
 import FeedbackForm from '@/components/FeedbackForm';
-import ReviewSection from '@/components/ReviewSection';
-import PhotoGallery from '@/components/PhotoGallery';
-import FavoriteButton from '@/components/FavoriteButton';
 import ReadMore from '@/components/ReadMore';
 import NotableBurials from '@/components/NotableBurials';
 import RelatedGuides from '@/components/RelatedGuides';
@@ -361,11 +358,6 @@ export default async function CemeteryPage({ params }: PageProps) {
                   <span>Call</span>
                 </a>
               )}
-              <FavoriteButton
-                cemeterySlug={slug}
-                cemeteryName={cemetery.name}
-                variant="hero"
-              />
             </div>
           </div>
         </div>
@@ -452,22 +444,7 @@ export default async function CemeteryPage({ params }: PageProps) {
                 cemeteryName={cemetery.name}
               />
 
-              {/* Photo Gallery */}
-              <PhotoGallery
-                cemeterySlug={slug}
-                cemeteryName={cemetery.name}
-              />
-
-              {/* Reviews Section */}
-              <ReviewSection
-                cemeterySlug={slug}
-                cemeteryName={cemetery.name}
-                initialRating={rating || 0}
-                initialReviewCount={reviewCount}
-                embeddedReviews={cemetery.reviews}
-              />
-
-              {/* Inline Ad after reviews */}
+              {/* Inline Ad */}
               <InlineAd slot={AD_SLOTS.cemetery.afterReviews} />
 
               {/* FAQ Section */}

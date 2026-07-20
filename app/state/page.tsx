@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { MapPin, ChevronRight, Building2, ArrowRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import statesData from '@/data/states.json';
-import cemeteriesData from '@/data/cemeteries.json';
+import { getStateSummaries } from '@/lib/data';
 import { getStatesComingSoonText } from '@/lib/stats-config';
 
 export const metadata: Metadata = {
@@ -16,33 +16,14 @@ export const metadata: Metadata = {
   }
 };
 
-interface Cemetery {
-  state: string;
-  county?: string;
-  city?: string;
-}
-
-export default function StatesPage() {
-  const cemeteries = cemeteriesData as Cemetery[];
-
-  // Get cemetery count for each state
-  const statesWithCounts = statesData.states.map((state) => {
-    const stateCemeteries = cemeteries.filter(c =>
-      c.state === state.abbr || c.state === state.name
-    );
-    const uniqueCounties = [...new Set(stateCemeteries.map(c => c.county).filter(Boolean))];
-    const uniqueCities = [...new Set(stateCemeteries.map(c => c.city).filter(Boolean))];
-
-    return {
-      ...state,
-      cemeteryCount: stateCemeteries.length,
-      countyCount: uniqueCounties.length,
-      cityCount: uniqueCities.length,
-    };
-  });
+export default async function StatesPage() {
+  // Counts come from the static data layer (all 53,428 records) through the
+  // same predicate /state/[state] and the footer use, so the three never
+  // disagree. The old @/data/cemeteries.json import only held 6,038 rows.
+  const statesWithCounts = await getStateSummaries();
 
   // Sort by cemetery count (states with data first) then alphabetically
-  const sortedStates = statesWithCounts.sort((a, b) => {
+  const sortedStates = [...statesWithCounts].sort((a, b) => {
     if (b.cemeteryCount !== a.cemeteryCount) {
       return b.cemeteryCount - a.cemeteryCount;
     }

@@ -1,4 +1,4 @@
-import { getAllCemeteries, getAllTypes, createStateSlug, createTypeSlug } from './data';
+import { getAllCemeteries, getAllTypes, getStateSummaries, createTypeSlug } from './data';
 
 // Interfaces for footer data
 export interface FooterState {
@@ -63,24 +63,18 @@ export async function getTopStatesByCemeteryCount(limit: number = 8): Promise<Fo
   }
 
   try {
-    const cemeteries = await getAllCemeteries();
+    // Single source of truth: the same per-state totals /state and
+    // /state/[state] render. Counting raw `state` column values here used to
+    // produce different numbers (and slugs for non-canonical values that have
+    // no page) than the state detail page showed in its <title>.
+    const summaries = await getStateSummaries();
 
-    // Count cemeteries per state
-    const stateCounts = new Map<string, number>();
-
-    for (const cemetery of cemeteries) {
-      if (cemetery.state && cemetery.state.trim()) {
-        const state = cemetery.state.trim();
-        stateCounts.set(state, (stateCounts.get(state) || 0) + 1);
-      }
-    }
-
-    // Convert to array and sort by count
-    const sortedStates: FooterState[] = Array.from(stateCounts.entries())
-      .map(([name, count]) => ({
-        name,
-        slug: createStateSlug(name),
-        count
+    const sortedStates: FooterState[] = summaries
+      .filter((s) => s.cemeteryCount > 0)
+      .map((s) => ({
+        name: s.name,
+        slug: s.slug,
+        count: s.cemeteryCount
       }))
       .sort((a, b) => b.count - a.count);
 

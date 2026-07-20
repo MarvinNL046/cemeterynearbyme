@@ -1,14 +1,53 @@
-// Load environment variables first
-import * as dotenv from 'dotenv';
-dotenv.config({ path: '.env.local' });
-
+/**
+ * Writes public/sitemaps/*.xml + public/sitemap.xml from the STATIC data layer
+ * (data/static/, built by scripts/build-static-data.ts). No database, no
+ * DATABASE_URL, no fallback to public/data/cemeteries.json — that fallback held
+ * 6,038 of the 53,428 records and silently deleted 47,390 indexed URLs from the
+ * sitemap robots.txt points Google at.
+ */
 import fs from 'fs';
 import path from 'path';
-import { neon } from '@neondatabase/serverless';
 import { blogPosts } from '../lib/blog-data';
 
 const baseUrl = 'https://cemeterynearbyme.com';
 const URLS_PER_SITEMAP = 1000;
+
+const STATIC_DIR = path.join(process.cwd(), 'data', 'static');
+const SHARD_DIR = path.join(STATIC_DIR, 'cemeteries');
+
+interface StaticRecord {
+  slug: string;
+  city?: string;
+  county?: string;
+  type_slug?: string;
+  status?: string;
+}
+
+interface Facets {
+  counties: Array<{ county: string; state: string }>;
+  cities: Array<{ city: string; state: string }>;
+  types: Array<{ slug: string; name: string }>;
+}
+
+function readJson<T>(file: string): T {
+  return JSON.parse(fs.readFileSync(file, 'utf-8')) as T;
+}
+
+/** Every record, from every state shard. */
+function readAllRecords(): StaticRecord[] {
+  if (!fs.existsSync(SHARD_DIR)) {
+    throw new Error(
+      `Static data missing: ${SHARD_DIR}\nRun: npm run build-static-data -- <exportDir>`
+    );
+  }
+
+  const files = fs.readdirSync(SHARD_DIR).filter((f) => f.endsWith('.json')).sort();
+  const records: StaticRecord[] = [];
+  for (const file of files) {
+    records.push(...readJson<StaticRecord[]>(path.join(SHARD_DIR, file)));
+  }
+  return records;
+}
 
 interface SitemapUrl {
   loc: string;
@@ -49,51 +88,59 @@ function createSitemapXML(urls: SitemapUrl[]): string {
 async function generateSitemaps() {
   console.log('🗺️  Generating sitemaps for cemeterynearbyme.com...');
 
-  const hasDatabase = Boolean(process.env.DATABASE_URL);
-  const sql = hasDatabase ? neon(process.env.DATABASE_URL as string) : null;
-
   // Create sitemaps directory
   const sitemapsDir = path.join(process.cwd(), 'public/sitemaps');
   if (!fs.existsSync(sitemapsDir)) {
     fs.mkdirSync(sitemapsDir, { recursive: true });
   }
 
-  let cemeteriesData: Array<{ slug: string }> = [];
-  let countiesData: Array<{ county: string }> = [];
-  let citiesData: Array<{ city: string }> = [];
-  let typesData: Array<{ type_slug: string }> = [];
-
-  if (sql) {
-    console.log('📊 Fetching data from database...');
-    cemeteriesData = await sql`SELECT slug FROM cemeteries WHERE status = 'active' ORDER BY slug` as Array<{ slug: string }>;
-    countiesData = await sql`SELECT DISTINCT county FROM cemeteries WHERE county IS NOT NULL AND county != '' ORDER BY county` as Array<{ county: string }>;
-    citiesData = await sql`SELECT DISTINCT city FROM cemeteries WHERE city IS NOT NULL AND city != '' ORDER BY city` as Array<{ city: string }>;
-    typesData = await sql`SELECT DISTINCT type_slug FROM cemeteries WHERE type_slug IS NOT NULL AND type_slug != '' ORDER BY type_slug` as Array<{ type_slug: string }>;
-  } else {
-    console.log('⚠️  DATABASE_URL not set. Falling back to public/data/cemeteries.json');
-    const cemeteriesPath = path.join(process.cwd(), 'public/data/cemeteries.json');
-    const raw = JSON.parse(fs.readFileSync(cemeteriesPath, 'utf-8')) as Array<{
-      slug?: string;
-      county?: string;
-      city?: string;
-      type_slug?: string;
-      typeSlug?: string;
-    }>;
-
-    cemeteriesData = raw
-      .filter((row) => row.slug)
-      .map((row) => ({ slug: row.slug as string }));
-
-    countiesData = Array.from(new Set(raw.map((row) => row.county).filter(Boolean)))
-      .map((county) => ({ county: county as string }));
-
-    citiesData = Array.from(new Set(raw.map((row) => row.city).filter(Boolean)))
-      .map((city) => ({ city: city as string }));
-
-    typesData = Array.from(
-      new Set(raw.map((row) => row.type_slug || row.typeSlug).filter(Boolean))
-    ).map((typeSlug) => ({ type_slug: typeSlug as string }));
+  // Remove stale sitemap files from previous runs. The chunk count depends on
+  // the dataset size, so a smaller dataset (or the old single-chunk naming,
+  // e.g. sitemap-cities.xml vs sitemap-cities-1.xml) leaves behind orphan
+  // files that are no longer referenced by the index but stay on disk and get
+  // served. Always start from a clean directory.
+  const staleFiles = fs
+    .readdirSync(sitemapsDir)
+    .filter((f) => /^sitemap-.*\.xml$/.test(f));
+  for (const f of staleFiles) {
+    fs.unlinkSync(path.join(sitemapsDir, f));
   }
+  if (staleFiles.length > 0) {
+    console.log(`🧹 Cleared ${staleFiles.length} existing sitemap file(s)`);
+  }
+
+  console.log('📊 Reading data/static ...');
+  const records = readAllRecords();
+
+  // SELECT slug FROM cemeteries WHERE status = 'active' ORDER BY slug
+  // (build-static-data maps a NULL/'' status to undefined; the export has no
+  // non-active rows, so this filter is a safety net, not a reduction.)
+  const skippedInactive = records.filter((r) => r.status && r.status !== 'active').length;
+  const cemeteriesData = records
+    .filter((r) => r.slug && (!r.status || r.status === 'active'))
+    .map((r) => ({ slug: r.slug }))
+    .sort((a, b) => a.slug.localeCompare(b.slug));
+
+  // SELECT DISTINCT county / city / type_slug — facets.json already holds these
+  // per state; collapse to the distinct values the sitemap needs.
+  const facetsPath = path.join(STATIC_DIR, 'facets.json');
+  const facets: Facets = fs.existsSync(facetsPath)
+    ? readJson<Facets>(facetsPath)
+    : { counties: [], cities: [], types: [] };
+
+  const countiesData = Array.from(new Set(facets.counties.map((e) => e.county).filter(Boolean)))
+    .sort((a, b) => a.localeCompare(b))
+    .map((county) => ({ county }));
+
+  const citiesData = Array.from(new Set(facets.cities.map((e) => e.city).filter(Boolean)))
+    .sort((a, b) => a.localeCompare(b))
+    .map((city) => ({ city }));
+
+  const typesData = Array.from(new Set(facets.types.map((t) => t.slug).filter(Boolean)))
+    .sort((a, b) => a.localeCompare(b))
+    .map((type_slug) => ({ type_slug }));
+
+  console.log(`   ${records.length} records read, ${skippedInactive} skipped as non-active`);
 
   console.log(`   Found ${cemeteriesData.length} cemeteries, ${countiesData.length} counties, ${citiesData.length} cities`);
 

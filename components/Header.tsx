@@ -3,8 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-// MVP: Login temporarily disabled
-// import { User, LogOut, LayoutDashboard, ChevronDown, Shield } from 'lucide-react';
 import Logo from '@/components/Logo';
 import { Button } from '@/components/ui/button';
 
@@ -16,19 +14,8 @@ const navLinks = [
   { href: '/funeral-planning', label: 'Funeral Planning', highlight: true },
 ];
 
-// MVP: Login temporarily disabled
-// interface UserData {
-//   id: number;
-//   email: string;
-//   name: string;
-//   role: string;
-// }
-
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // MVP: Login temporarily disabled
-  // const [user, setUser] = useState<UserData | null>(null);
-  // const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -38,37 +25,6 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // MVP: Login temporarily disabled
-  // useEffect(() => {
-  //   const checkAuth = async () => {
-  //     try {
-  //       const response = await fetch('/api/auth/me', {
-  //         credentials: 'include',
-  //         cache: 'no-store',
-  //       });
-  //       if (response.ok) {
-  //         const data = await response.json();
-  //         setUser(data.user);
-  //       }
-  //     } catch {
-  //       // User not logged in
-  //     }
-  //   };
-  //   checkAuth();
-  // }, []);
-
-  // MVP: Login temporarily disabled
-  // const handleLogout = async () => {
-  //   try {
-  //     await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
-  //     setUser(null);
-  //     setUserMenuOpen(false);
-  //     window.location.href = '/';
-  //   } catch (error) {
-  //     console.error('Logout error:', error);
-  //   }
-  // };
 
   return (
     <header
@@ -101,71 +57,6 @@ export default function Header() {
 
           {/* Desktop Auth + CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* MVP: Login temporarily disabled */}
-            {/* {user ? (
-              <div className="relative">
-                <button
-                  onClick={() => setUserMenuOpen(!userMenuOpen)}
-                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-secondary/50 transition-colors"
-                >
-                  <div className="w-9 h-9 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm font-medium">
-                      {user.name?.charAt(0).toUpperCase() || user.email.charAt(0).toUpperCase()}
-                    </span>
-                  </div>
-                  <span className="text-sm font-medium hidden xl:inline">{user.name || 'Account'}</span>
-                  <ChevronDown className="w-4 h-4 text-muted-foreground" />
-                </button>
-
-                {userMenuOpen && (
-                  <>
-                    <div
-                      className="fixed inset-0 z-10"
-                      onClick={() => setUserMenuOpen(false)}
-                    />
-                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-hover border py-2 z-20">
-                      <div className="px-4 py-2 border-b">
-                        <p className="font-medium text-sm">{user.name || 'Account'}</p>
-                        <p className="text-xs text-muted-foreground">{user.email}</p>
-                      </div>
-                      <Link
-                        href="/dashboard"
-                        onClick={() => setUserMenuOpen(false)}
-                        className="flex items-center gap-3 px-4 py-2.5 text-sm text-foreground hover:bg-secondary/50 transition-colors"
-                      >
-                        <LayoutDashboard className="w-4 h-4" />
-                        Dashboard
-                      </Link>
-                      {user.role === 'admin' && (
-                        <Link
-                          href="/admin"
-                          onClick={() => setUserMenuOpen(false)}
-                          className="flex items-center gap-3 px-4 py-2.5 text-sm text-purple-600 hover:bg-purple-50 transition-colors"
-                        >
-                          <Shield className="w-4 h-4" />
-                          Admin Panel
-                        </Link>
-                      )}
-                      <div className="border-t my-1" />
-                      <button
-                        onClick={handleLogout}
-                        className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-foreground hover:bg-secondary/50 transition-colors"
-                      >
-                        <LogOut className="w-4 h-4" />
-                        Sign Out
-                      </button>
-                    </div>
-                  </>
-                )}
-              </div>
-            ) : (
-              <Link href="/login">
-                <Button variant="ghost" size="sm">
-                  <User className="w-4 h-4" />
-                  Sign In
-                </Button>
-              </Link>
-            )} */}
             <Link href="/search">
               <Button variant="gold" size="sm">
                 Find a Cemetery
@@ -218,66 +109,6 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* MVP: Mobile Auth Section temporarily disabled */}
-            {/* <div className="mt-4 pt-4 border-t">
-              {user ? (
-                <div className="space-y-1">
-                  <div className="flex items-center gap-3 px-4 py-3 bg-secondary/30 rounded-lg">
-                    <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                      <span className="text-white font-medium">
-                        {user.name?.charAt(0).toUpperCase() || user.email.charAt(0).toUpperCase()}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-medium">{user.name || 'Account'}</p>
-                      <p className="text-sm text-muted-foreground">{user.email}</p>
-                    </div>
-                  </div>
-                  <Link
-                    href="/dashboard"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center gap-3 px-4 py-3 text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
-                  >
-                    <LayoutDashboard className="w-5 h-5" />
-                    Dashboard
-                  </Link>
-                  {user.role === 'admin' && (
-                    <Link
-                      href="/admin"
-                      onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center gap-3 px-4 py-3 text-purple-600 hover:bg-purple-50 rounded-lg transition-colors"
-                    >
-                      <Shield className="w-5 h-5" />
-                      Admin Panel
-                    </Link>
-                  )}
-                  <button
-                    onClick={() => {
-                      handleLogout();
-                      setIsMenuOpen(false);
-                    }}
-                    className="flex items-center gap-3 px-4 py-3 text-foreground hover:bg-secondary/50 rounded-lg transition-colors w-full"
-                  >
-                    <LogOut className="w-5 h-5" />
-                    Sign Out
-                  </button>
-                </div>
-              ) : (
-                <div className="flex gap-3">
-                  <Link href="/login" onClick={() => setIsMenuOpen(false)} className="flex-1">
-                    <Button variant="default" className="w-full" size="lg">
-                      <User className="w-5 h-5" />
-                      Sign In
-                    </Button>
-                  </Link>
-                  <Link href="/register" onClick={() => setIsMenuOpen(false)} className="flex-1">
-                    <Button variant="outline" className="w-full" size="lg">
-                      Register
-                    </Button>
-                  </Link>
-                </div>
-              )}
-            </div> */}
           </div>
         )}
       </nav>

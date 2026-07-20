@@ -12,9 +12,6 @@ const FeedbackRibbon = dynamic(() => import('@/components/FeedbackRibbon'), {
 const AffiliateBottomBar = dynamic(() => import('@/components/AffiliateBottomBar'), {
   ssr: false,
 });
-const ImpersonationBanner = dynamic(() => import('@/components/ImpersonationBanner'), {
-  ssr: false,
-});
 const PWARegister = dynamic(() => import('@/components/PWARegister'), {
   ssr: false,
 });
@@ -33,7 +30,6 @@ interface ClientShellProps {
 export function ClientShellTop() {
   return (
     <>
-      <ImpersonationBanner />
       <GoogleTagManagerNoscript />
     </>
   );
