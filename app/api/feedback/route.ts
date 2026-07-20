@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db, websiteFeedback } from '@/lib/db';
 import { Resend } from 'resend';
 
 // Lazy initialization to avoid build errors when API key is not set
@@ -38,17 +37,12 @@ export async function POST(request: NextRequest) {
                request.headers.get('x-real-ip') ||
                'Unknown';
 
-    // Insert feedback into Neon database
-    const [data] = await db.insert(websiteFeedback).values({
-      type,
-      rating: type === 'rating' ? rating : null,
-      feedback: comment || null,
-      pageTitle: page_title || null,
-      pageUrl: page_url || null,
-      userAgent,
-      ipAddress: ip,
-      status: 'new',
-    }).returning();
+    // Feedback is delivered by email only -- there is no database behind this
+    // route. The user agent and IP are passed along in the log line below so a
+    // spam wave is still traceable without persisting anything.
+    console.log(
+      `[feedback] type=${type} rating=${rating ?? '-'} page=${page_url || '/'} ua=${userAgent} ip=${ip}`
+    );
 
     // Send email notification for feedback (only if Resend is configured)
     const resendClient = getResend();
@@ -149,7 +143,6 @@ This is an automatic notification from cemeterynearbyme.com
     return NextResponse.json({
       success: true,
       message: 'Thank you for your feedback!',
-      data
     });
   } catch (error) {
     console.error('Feedback API error:', error);

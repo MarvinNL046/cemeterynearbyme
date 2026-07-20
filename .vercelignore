@@ -1,4 +1,11 @@
-# Development and script files
+# Development and script files.
+#
+# scripts/ is excluded on purpose and the build does NOT need it. There used to
+# be a "prebuild": "tsx scripts/build-data.ts && npm run generate-sitemaps" in
+# package.json, which could only ever fail here with MODULE_NOT_FOUND. It is
+# gone. The data layer (data/static/**) and the sitemaps (public/sitemap.xml +
+# public/sitemaps/**) are generated locally and committed; `next build` just
+# reads them. See README "Data and sitemap regeneration".
 scripts/
 data/discovery/
 data/*-backup-*.json

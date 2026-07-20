@@ -3,20 +3,18 @@ import { MetadataRoute } from 'next';
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = 'https://cemeterynearbyme.com';
 
-  // Common disallowed paths
+  // Common disallowed paths. /admin, /dashboard, /login and /register are gone
+  // (the account features they belonged to were removed with the database), so
+  // they are no longer listed -- there is nothing left to disallow.
   const commonDisallow = [
     '/api/',
     '/cache/',
-    '/admin/',
     '/_next/',
     '/search',
     '/compare',
     '/deaths/',
     '/calendar',
     '/today',
-    '/dashboard/',
-    '/login',
-    '/register',
   ];
 
   return {
@@ -39,7 +37,9 @@ export default function robots(): MetadataRoute.Robots {
         disallow: commonDisallow,
       },
     ],
-    // Reference sitemap index - Next.js auto-generates at /sitemap.xml
+    // Points at the STATIC index in public/sitemap.xml (written by
+    // `npm run generate-sitemaps`). There is no app/sitemap.ts route handler
+    // anymore -- while it existed it shadowed this file.
     sitemap: `${baseUrl}/sitemap.xml`,
     host: baseUrl,
   };
